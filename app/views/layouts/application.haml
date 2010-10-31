@@ -2,5 +2,30 @@
 %html
   %head
     %title http://bikle100.heroku.com
+    %meta(http-equiv="content-type" content="text/html; charset=UTF-8")
+    %link(href="/stylesheets/layout.css" rel="stylesheet" type="text/css")
+    %link(href="/stylesheets/content.css" rel="stylesheet" type="text/css")
+    %link(href="/stylesheets/local.css" rel="stylesheet" type="text/css")
+    %link(href="/stylesheets/application.css" rel="stylesheet" type="text/css")
   %body
-    =yield
+    #container
+      #header
+        %h1
+          %span
+            %a(href="http://bikle.com/")http://bikle.com
+        %h2 contact: bikle@bikle.com
+      #page
+        #content
+          =yield
+        #sidebar
+          .sidebar-node
+            %h3 Dan
+            Dan Bikle is an Oracle DBA and Rails Developer.
+          .sidebar-node
+            %h3 Links
+            %a(href="/r10/about")About
+
+          %hr/
+          .sidebar-node
+            %a(target="colorw" href="http://www.ficml.org/jemimap/style/color/wheel.html")
+              %img(src="/images/hsvwheel.png" alt="4096 color wheel" height="63" width="142")
