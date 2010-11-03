@@ -1,0 +1,131 @@
+%a(href="/r10/site_map")Site Map
+>
+%a(href="/r10/forex")Forex
+> 
+%a(href="/forex/fx_cct")Current Correlation Trends
+>  woq2010_1103
+%h5 woq2010_1103
+
+I found that the 11th week of any quarter is a good time to buy Swiss
+Francs with US Dollars and hold that position for 1 week.
+
+I show some data from 2010:
+
+%pre
+  :preserve
+    14:11:48 SQL> SELECT
+    14:11:48   2  qtr
+    14:11:48   3  ,-AVG(wgain)
+    14:11:48   4  FROM wjw
+    14:11:48   5  WHERE pair = 'usd_chf'
+    14:11:48   6  AND yr = '2010'
+    14:11:48   7  AND woq = 11
+    14:11:48   8  GROUP BY qtr
+    14:11:48   9  ORDER BY qtr
+    14:11:48  10  /
+    
+    Q -AVG(WGAIN)
+    - -----------
+    1     -.00348
+    2      .02556
+    3      .00958
+
+Notice in the above output that I use the predicate: WHERE pair = 'usd_chf'
+
+%br/
+%br/
+When I trade Swiss Francs (CHF) with US dollars (USD) in the Forex market, the prices are typically displayed for the USD/CHF pair:
+%a(href="http://finance.yahoo.com/currency-investing" target="y")http://finance.yahoo.com/currency-investing
+
+%br/
+%br/
+These prices describe a transaction where I use CHF to buy USD.
+
+If, however, I want to use USD to buy CHF, the prices will be displayed as negative numbers.
+
+Notice in the above output that I have placed a minus-sign in front of the avg-calculation.
+%br/
+
+Now notice the actual output.  In the 11th week of Q1 of 2010 had I bought 1 CHF with USD, I would have lost 348 pips.  For a position of 10,000 CHF this is about $350.
+
+%br/
+%br/
+For week 11 of Q2 and Q3 of 2010, though, the strategy was a winner.  And so far, for 2010, the strategy has gained:
+\-348 + 2556 + 958 pips which is 3166 pips.
+
+%br/
+%br/
+
+I display data for other years below:
+%br/
+%br/
+
+%pre
+  :preserve
+
+
+    14:53:11 SQL> 
+    14:53:11 SQL> SELECT
+    14:53:11   2  qtr
+    14:53:11   3  ,-AVG(wgain)
+    14:53:11   4  FROM wjw
+    14:53:11   5  WHERE pair = 'usd_chf'
+    14:53:11   6  AND yr = '2009'
+    14:53:11   7  AND woq = 11
+    14:53:11   8  GROUP BY qtr
+    14:53:11   9  ORDER BY qtr
+    14:53:11  10  /
+    
+    Q -AVG(WGAIN)
+    - -----------
+    1      .05688
+    2      .00236
+    3      .00868
+    4     -.01054
+    
+    Elapsed: 00:00:00.00
+    14:53:11 SQL> 
+    14:53:11 SQL> SELECT
+    14:53:11   2  qtr
+    14:53:11   3  ,-AVG(wgain)
+    14:53:11   4  FROM wjw
+    14:53:11   5  WHERE pair = 'usd_chf'
+    14:53:11   6  AND yr = '2008'
+    14:53:11   7  AND woq = 11
+    14:53:11   8  GROUP BY qtr
+    14:53:11   9  ORDER BY qtr
+    14:53:11  10  /
+    
+    Q -AVG(WGAIN)
+    - -----------
+    1       .0046
+    2     -.00048
+    3      .02396
+    4      .08364
+    
+    Elapsed: 00:00:00.01
+    14:53:11 SQL> 
+    14:53:11 SQL> SELECT
+    14:53:11   2  qtr
+    14:53:11   3  ,-AVG(wgain)
+    14:53:11   4  FROM wjw
+    14:53:11   5  WHERE pair = 'usd_chf'
+    14:53:11   6  AND yr = '2007'
+    14:53:11   7  AND woq = 11
+    14:53:11   8  GROUP BY qtr
+    14:53:11   9  ORDER BY qtr
+    14:53:11  10  /
+    
+    Q -AVG(WGAIN)
+    - -----------
+    1      .00262
+    2      .00464
+    3      .00598
+    4     -.01628
+    
+    Elapsed: 00:00:00.00
+    14:53:11 SQL> 
+    14:53:11 SQL> exit
+    Disconnected from Oracle Database 11g Enterprise Edition Release 11.2.0.1.0 - 64bit Production
+    With the Partitioning, OLAP, Data Mining and Real Application Testing options
+    oracle@z2:/pt/s/rlk/sbw_woq$ 
