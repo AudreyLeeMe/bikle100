@@ -164,3 +164,96 @@ The Currency Pairs are listed below in the form of URLs:
     %a(href="https://www.google.com/finance?q=USDCHF" target="g")USD/CHF
   %li
     %a(href="https://www.google.com/finance?q=USDJPY" target="g")USD/JPY
+
+So, the data is simple, what about the common sense I used uncover this correlation trend?
+
+I started by visualizing the data into 2 groups: far-past and near-past.
+
+I arbitrarily set the far-past as any data before 2007-01-01.  Obviously then, the near-past would be any data after 2007-01-01.
+
+Next, for each pair in each week of each quarter in the far-past I calculated the gain for that pair.
+
+Then, I averaged the gains and aggregated the results into a simple 3 column table:
+
+%br/
+%br/
+
+pair, week_of_quarter, far_past_avg_gain
+
+%br/
+%br/
+
+Next, I followed the same process to aggregate results for the near-past into a 3 column table:
+
+%br/
+%br/
+
+pair, week_of_quarter, near_past_avg_gain
+
+%br/
+%br/
+
+Then, I joined the tables on pair, week_of_quarter to give me a 4 column table:
+
+
+%br/
+%br/
+
+pair, week_of_quarter, far_past_avg_gain, near_past_avg_gain
+
+%br/
+%br/
+
+Next, I asked a question, "Could near_past_avg_gain be dependent on far_past_avg_gain?"
+
+%br/
+%br/
+
+In my opinion, this is a dangerous question to ask.
+If I assume that past prices in the Forex market affect future prices, and I make trades based on that assumption, I could lose money if that assumption is false.  Even if the assumption is true, I could still lose money.
+
+%br/
+%br/
+
+In any event, I had a 4 column table where column 3 contained data older than column 4.  How do I see if a connection exists between the two columns?
+
+This type of question is discussed in Freshman Statistics.  A common approach is to create a two dimensional object called a scatter plot:
+
+%br/
+%br/
+%a(href="http://en.wikipedia.org/wiki/Scatter_plot" target="w")http://en.wikipedia.org/wiki/Scatter_plot
+%br/
+%br/
+
+So, I visualized a scatter plot which had far_past_avg_gain on the x-axis and near_past_avg_gain on the y-axis.
+
+Then, I used a statistical technique to quantify the dependence of near_past_avg_gain on far_past_avg_gain (based on the bold assumption that near_past_avg_gain depends on far_past_avg_gain):
+
+%br/
+%br/
+
+%a(href="http://en.wikipedia.org/wiki/Pearson_product-moment_correlation_coefficient" target="w")
+  http://en.wikipedia.org/wiki/Pearson_product-moment_correlation_coefficient
+%br/
+%br/
+
+With SQL, it is easy to calculate Pearson product-moment correlation coefficient (aka correlation) using an aggregation function called CORR():
+
+%br/
+%br/
+
+%a(href="https://encrypted.google.com/search?q=sql+corr+function" target="g")
+  https://encrypted.google.com/search?q=sql+corr+function
+
+%br/
+%br/
+
+Here is a demonstration of the SQL-CORR() function.  I prefer to list the independent variable first since it corresponds to the x-axis and x sorts before y:
+%br/
+%br/
+
+SELECT CORR(far_past_avg_gain, near_past_avg_gain) FROM mytable;
+
+%br/
+%br/
+
