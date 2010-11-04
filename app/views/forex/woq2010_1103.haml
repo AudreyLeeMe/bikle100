@@ -210,7 +210,14 @@ Next, I asked a question, "Could near_past_avg_gain be dependent on far_past_avg
 %br/
 
 In my opinion, this is a dangerous question to ask.
-If I assume that past prices in the Forex market affect future prices, and I make trades based on that assumption, I could lose money if that assumption is false.  Even if the assumption is true, I could still lose money.
+
+If I assume that past prices in the Forex market affect future prices, and I make trades based on that assumption, I could lose money if that assumption is false.
+
+The economic cataclysm of 2008 probably altered the Forex market.  Market forces at work before 2008 are probably different than forces after 2008.
+
+I think it wise to challenge the assumption that that past prices in the Forex market affect future prices.
+
+Even if the assumption is true, I could still lose money.
 
 %br/
 %br/
@@ -257,3 +264,173 @@ SELECT CORR(far_past_avg_gain, near_past_avg_gain) FROM mytable;
 %br/
 %br/
 
+Here is output from a query against the actual data:
+
+%pre
+  :preserve
+    01:18:58 SQL> SELECT pair,COUNT(pair),CORR(avg_a,avg_b)
+    01:18:58   2  FROM qwjw2007
+    01:18:58   3  GROUP BY pair
+    01:18:58   4  HAVING CORR(avg_a,avg_b)>0
+    01:18:58   5  ORDER BY CORR(avg_a,avg_b)
+    01:18:58   6  /
+    
+    PAIR    COUNT(PAIR) CORR(AVG_A,AVG_B)
+    ------- ----------- -----------------
+    usd_jpy         260        .077890295
+    usd_chf         260        .090772839
+
+Out of the 6 pairs, only 2 had a positive correlation.
+
+%br/
+%br/
+
+Next, I divided the data into a group before 2008-01-01 and a group after 2008-01-01.
+
+And again, I looked for a correlation between far-past and near-past:
+
+%pre
+  :preserve
+    01:18:59 SQL> SELECT pair,COUNT(pair),CORR(avg_a,avg_b)
+    01:18:59   2  FROM qwjw2008
+    01:18:59   3  GROUP BY pair
+    01:18:59   4  HAVING CORR(avg_a,avg_b)>0
+    01:18:59   5  ORDER BY CORR(avg_a,avg_b)
+    01:18:59   6  /
+    
+    PAIR    COUNT(PAIR) CORR(AVG_A,AVG_B)
+    ------- ----------- -----------------
+    usd_cad         260        .022423519
+    usd_chf         260        .076902042
+    aud_usd         260        .084665975
+    gbp_usd         260        .088865187
+
+
+Here is output from data where I used 2009-01-01 as the dividing line:
+
+%pre
+  :preserve
+    01:18:59 SQL> SELECT pair,COUNT(pair),CORR(avg_a,avg_b)
+    01:18:59   2  FROM qwjw2009
+    01:18:59   3  GROUP BY pair
+    01:18:59   4  HAVING CORR(avg_a,avg_b)>0
+    01:18:59   5  ORDER BY CORR(avg_a,avg_b)
+    01:18:59   6  /
+    
+    PAIR    COUNT(PAIR) CORR(AVG_A,AVG_B)
+    ------- ----------- -----------------
+    gbp_usd         253        .053736667
+    eur_usd         253        .090092116
+    aud_usd         253        .093125333
+    usd_chf         253        .228706773
+
+Here is output from data where I used 2010-01-01 as the dividing line:
+%pre
+  :preserve
+    01:18:59 SQL> SELECT pair,COUNT(pair),CORR(avg_a,avg_b)
+    01:18:59   2  FROM qwjw2010
+    01:18:59   3  GROUP BY pair
+    01:18:59   4  HAVING CORR(avg_a,avg_b)>0
+    01:18:59   5  ORDER BY CORR(avg_a,avg_b)
+    01:18:59   6  /
+    
+    PAIR    COUNT(PAIR) CORR(AVG_A,AVG_B)
+    ------- ----------- -----------------
+    usd_cad         189        .021278571
+    aud_usd         189        .029606463
+    usd_jpy         189        .040154359
+    eur_usd         189         .12309825
+    gbp_usd         189        .201797084
+    usd_chf         189        .237863124
+
+I noticed 2 pieces of information from the above 4 queries:
+%ul
+  %li
+    usd_chf was the only pair to appear in all 4 queries
+  %li
+    The correlation was getting stronger as I moved closer to the present
+
+I returned my attention to 2007 and asked the question,
+"Is there any particular Week of Quarter where I see a connection between far-past and near-past?"
+
+%br/
+%br/
+
+This time, instead of using the CORR() function I just multiplied the far-past-avg-gain with the near-past-avg-gain.
+
+I passed this product into a predicate which filtered in rows where dependence appeared the most strong.
+
+Also I sorted the results by this product.
+
+The results are listed below:
+
+%pre
+  :preserve
+    01:18:59 SQL> SELECT * FROM
+    01:18:59   2  (
+    01:18:59   3    SELECT
+    01:18:59   4    woq_start_day
+    01:18:59   5    ,woq
+    01:18:59   6    ,avg_a
+    01:18:59   7    ,avg_b
+    01:18:59   8    ,row_cnt
+    01:18:59   9    FROM qwjw2007
+    01:18:59  10    WHERE avg_a * avg_b > 0
+    01:18:59  11    AND pair = 'usd_chf'
+    01:18:59  12    ORDER BY(avg_a * avg_b)DESC
+    01:18:59  13  )
+    01:18:59  14  WHERE rownum < 10
+    01:18:59  15  /
+    
+    W        WOQ      AVG_A      AVG_B    ROW_CNT
+    - ---------- ---------- ---------- ----------
+    3         12 -.00713333 -.01954167        324
+    2         11 -.00702857    -.01894        420
+    2          9   -.012975   -.009625        320
+    2         11 -.00702857   -.015155        560
+    4         13 -.00893462 -.01128667        390
+    5         13 -.00875385 -.01128667        390
+    6          8 -.00667857 -.01297368        532
+    3          9 -.00886071   -.009625        560
+    2         11 -.00702857    -.01205        560
+    
+    9 rows selected.
+
+It was in the above output that I first noticed week #11.  It appeared more times than any other week.
+%br/
+%br/
+
+Next, I looked at data separated by the 2008-01-01 dividing line:
+
+
+%pre
+  :preserve
+    01:18:59 SQL> SELECT * FROM
+    01:18:59   2  (
+    01:18:59   3    SELECT
+    01:18:59   4    woq_start_day
+    01:18:59   5    ,woq
+    01:18:59   6    ,avg_a
+    01:18:59   7    ,avg_b
+    01:18:59   8    ,row_cnt
+    01:18:59   9    FROM qwjw2008
+    01:18:59  10    WHERE avg_a * avg_b > 0
+    01:18:59  11    AND pair = 'usd_chf'
+    01:18:59  12    ORDER BY(avg_a * avg_b)DESC
+    01:18:59  13  )
+    01:18:59  14  WHERE rownum < 10
+    01:18:59  15  /
+    
+    W        WOQ      AVG_A      AVG_B    ROW_CNT
+    - ---------- ---------- ---------- ----------
+    2         11 -.00565625    -.03655        320
+    3         12 -.00753667   -.023575        240
+    2          9 -.00978947    -.01394        285
+    2         11 -.00565625 -.01933333        480
+    3          9   -.007075    -.01394        480
+    5         13 -.00887667 -.01091818        330
+    4         13  -.0087069 -.01091818        319
+    3         12 -.00753667 -.01119333        450
+    3         12 -.00753667 -.01059333        450
+    
+    9 rows selected.
