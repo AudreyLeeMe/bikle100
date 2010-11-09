@@ -6,4 +6,141 @@
 >  
 %h5 12 Hour Period (12hp2010_1108)
 
+Similar to the Day-Of-Week trade is something I call the 12 Hour Period.
 
+Conceptually I cut up the week into many 12 hour pieces.
+
+I identify each piece with a string which tells me something about the piece.
+
+For example I might have a piece named 2_13.
+
+That name would signify to me that the piece starts on day 2 of the week (Monday) at 13:00 GMT.
+
+It would have a duration of 12 hours so it would end on Tuesday at 01:00 GMT.
+%br/
+%br/
+So, for every week after 2009-01-01 I cut it into many 12 hour pieces and then used SQL to look for pieces which,
+on average, returned more than 1 pip / hour.  The SQL I used to do this is displayed below:
+
+%pre
+  :preserve
+    SQL*Plus: Release 11.2.0.1.0 Production on Tue Nov 9 03:02:40 2010
+    
+    Copyright (c) 1982, 2009, Oracle.  All rights reserved.
+    
+    
+    Connected to:
+    Oracle Database 11g Enterprise Edition Release 11.2.0.1.0 - 64bit Production
+    With the Partitioning, OLAP, Data Mining and Real Application Testing options
+    
+    03:02:40 SQL> ALTER SESSION SET NLS_DATE_FORMAT = 'YYYY-MM-DD hh24:mi:ss';
+    
+    Session altered.
+    
+    Elapsed: 00:00:00.00
+    03:02:40 SQL> 
+    03:02:40 SQL> --
+    03:02:40 SQL> -- 12hp.sql
+    03:02:40 SQL> --
+    
+    03:02:40 SQL> 
+    03:02:40 SQL> CREATE OR REPLACE VIEW hp10 AS
+    03:02:40   2  SELECT
+    03:02:40   3  pair
+    03:02:40   4  -- ydate is granular down to the hour:
+    03:02:40   5  ,ydate
+    03:02:40   6  ,opn
+    03:02:40   7  -- Derive an attribute I call "day_hour":
+    03:02:40   8  ,TO_CHAR(ydate,'D')||'_'||TO_CHAR(ydate,'HH24')dhr
+    03:02:40   9  -- Get ydate 12 hours in the future:
+    03:02:40  10  ,LEAD(ydate,12,NULL)OVER(PARTITION BY pair ORDER BY pair,ydate) ydate12
+    03:02:40  11  -- Get closing price 12 hours in the future:
+    03:02:40  12  ,LEAD(clse,11,NULL)OVER(PARTITION BY pair ORDER BY pair,ydate) clse12
+    03:02:40  13  FROM hourly
+    03:02:40  14  WHERE ydate > '2009-01-01'
+    03:02:40  15  -- Prevent divide by zero:
+    03:02:40  16  AND opn > 0
+    03:02:40  17  ORDER BY pair,ydate
+    03:02:40  18  /
+    
+    View created.
+    
+    Elapsed: 00:00:00.05
+    03:02:40 SQL> 
+    03:02:40 SQL> -- I derive more attributes:
+    03:02:40 SQL> CREATE OR REPLACE VIEW hp12 AS
+    03:02:40   2  SELECT
+    03:02:40   3  pair
+    03:02:40   4  ,ydate
+    03:02:40   5  ,opn
+    03:02:40   6  ,dhr
+    03:02:40   7  ,ydate12
+    03:02:40   8  ,clse12
+    03:02:40   9  ,(clse12 - opn)/opn npg
+    03:02:40  10  FROM hp10
+    03:02:40  11  ORDER BY pair,ydate
+    03:02:40  12  /
+    
+    View created.
+    
+    Elapsed: 00:00:00.04
+    
+    03:02:41 SQL> 
+    03:02:41 SQL> -- Now I can aggregate:
+    03:02:41 SQL> CREATE OR REPLACE VIEW hdp AS
+    03:02:41   2  SELECT
+    03:02:41   3  pair
+    03:02:41   4  ,ydate
+    03:02:41   5  ,opn
+    03:02:41   6  ,dhr
+    03:02:41   7  ,ydate12
+    03:02:41   8  ,clse12
+    03:02:41   9  ,npg
+    03:02:41  10  FROM hp12
+    03:02:41  11  WHERE (ydate12 - ydate) = 0.5
+    03:02:41  12  /
+    
+    View created.
+    
+    03:02:42 SQL> SELECT
+    03:02:42   2  pair,dhr
+    03:02:42   3  ,COUNT(npg)count_npg
+    03:02:42   4  ,ROUND(MIN(npg),4)min_npg
+    03:02:42   5  ,ROUND(AVG(npg),4)avg_npg
+    03:02:42   6  ,ROUND(STDDEV(npg),4)stddev_npg
+    03:02:42   7  ,ROUND(MAX(npg),4)max_npg
+    03:02:42   8  ,ROUND(SUM(npg),4)sum_npg
+    03:02:42   9  FROM hdp
+    03:02:42  10  GROUP BY pair,dhr
+    03:02:42  11  -- I want more than 1 pip / hr which is 12 pips:
+    03:02:42  12  HAVING AVG(npg) > 0.0012
+    03:02:42  13  ORDER BY pair,dhr
+    03:02:42  14  /
+
+    PAIR            DHR   COUNT_NPG    MIN_NPG    AVG_NPG STDDEV_NPG    MAX_NPG    SUM_NPG
+    --------------- ---- ---------- ---------- ---------- ---------- ---------- ----------
+    aud_usd         4_05         96     -.0286      .0013       .008      .0272       .121
+    aud_usd         4_19         95     -.0198      .0013       .007      .0168      .1211
+    aud_usd         4_20         96     -.0187      .0013      .0069      .0175      .1279
+    aud_usd         4_21         96     -.0189      .0013      .0074      .0151      .1264
+    aud_usd         4_22         96     -.0224      .0017      .0081      .0201      .1618
+    aud_usd         4_23         96     -.0223      .0017      .0082      .0199       .166
+    aud_usd         5_00         96     -.0236      .0014      .0078      .0178      .1337
+    aud_usd         5_01         97     -.0213      .0014      .0079        .02      .1317
+    gbp_usd         3_12         94     -.0157      .0012      .0056       .021      .1128
+    usd_cad         5_13         96     -.0135      .0012      .0057      .0182      .1163
+    
+    10 rows selected.
+    
+    Elapsed: 00:00:00.62
+    03:02:43 SQL> 
+    03:02:43 SQL> 
+    03:02:43 SQL> exit
+    Disconnected from Oracle Database 11g Enterprise Edition Release 11.2.0.1.0 - 64bit Production
+    With the Partitioning, OLAP, Data Mining and Real Application Testing options
+
+After 2009-01-01,
+based on the above output,
+it appears that Wednesday,
+starting at 19:00 GMT,
+was a good time to open long positions in the aud_usd pair.
