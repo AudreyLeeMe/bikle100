@@ -24,7 +24,7 @@ on average, returned more than 0.75 pips / hour.  The SQL I used to do this is d
 
 %pre
   :preserve
-    SQL*Plus: Release 11.2.0.1.0 Production on Tue Nov 9 07:43:12 2010
+    SQL*Plus: Release 11.2.0.1.0 Production on Tue Nov 9 08:15:01 2010
     
     Copyright (c) 1982, 2009, Oracle.  All rights reserved.
     
@@ -32,64 +32,66 @@ on average, returned more than 0.75 pips / hour.  The SQL I used to do this is d
     Connected to:
     Oracle Database 11g Enterprise Edition Release 11.2.0.1.0 - 64bit Production
     With the Partitioning, OLAP, Data Mining and Real Application Testing options
-    
-    07:43:12 SQL> 
-    07:43:12 SQL> CREATE OR REPLACE VIEW hp10 AS
-    07:43:12   2  SELECT
-    07:43:12   3  pair
-    07:43:12   4  -- ydate is granular down to the hour:
-    07:43:12   5  ,ydate
-    07:43:12   6  ,opn
-    07:43:12   7  -- Derive an attribute I call "day_hour":
-    07:43:12   8  ,TO_CHAR(ydate,'D')||'_'||TO_CHAR(ydate,'HH24')dhr
-    07:43:12   9  -- Get ydate 24 hours in the future:
-    07:43:12  10  ,LEAD(ydate,24,NULL)OVER(PARTITION BY pair ORDER BY pair,ydate) ydate24
-    07:43:12  11  -- Get closing price 24 hours in the future:
-    07:43:12  12  ,LEAD(clse,23,NULL)OVER(PARTITION BY pair ORDER BY pair,ydate) clse24
-    07:43:12  13  FROM hourly
-    07:43:12  14  WHERE ydate > '2009-01-01'
-    07:43:12  15  -- Prevent divide by zero:
-    07:43:12  16  AND opn > 0
-    07:43:12  17  ORDER BY pair,ydate
-    07:43:12  18  /
-    
-    View created.
-    
-    Elapsed: 00:00:00.06
-    07:43:12 SQL> 
-    07:43:12 SQL> -- I derive more attributes:
-    07:43:12 SQL> CREATE OR REPLACE VIEW hdp AS
-    07:43:12   2  SELECT
-    07:43:12   3  pair
-    07:43:12   4  ,ydate
-    07:43:12   5  ,opn
-    07:43:12   6  ,dhr
-    07:43:12   7  ,ydate24
-    07:43:12   8  ,clse24
-    07:43:12   9  ,(clse24 - opn)/opn npg
-    07:43:12  10  FROM hp10
-    07:43:12  11  ORDER BY pair,ydate
-    07:43:12  12  /
+
+    08:15:01 SQL> -- 24hp.sql
+    08:15:01 SQL> --
+    08:15:01 SQL> CREATE OR REPLACE VIEW hp10 AS
+    08:15:01   2  SELECT
+    08:15:01   3  pair
+    08:15:01   4  -- ydate is granular down to the hour:
+    08:15:01   5  ,ydate
+    08:15:01   6  ,opn
+    08:15:01   7  -- Derive an attribute I call "day_hour":
+    08:15:01   8  ,TO_CHAR(ydate,'D')||'_'||TO_CHAR(ydate,'HH24')dhr
+    08:15:01   9  -- Get ydate 24 hours in the future:
+    08:15:01  10  ,LEAD(ydate,24,NULL)OVER(PARTITION BY pair ORDER BY pair,ydate) ydate24
+    08:15:01  11  -- Get closing price 24 hours in the future:
+    08:15:01  12  ,LEAD(clse,23,NULL)OVER(PARTITION BY pair ORDER BY pair,ydate) clse24
+    08:15:01  13  FROM hourly
+    08:15:01  14  WHERE ydate > '2009-01-01'
+    08:15:01  15  -- Prevent divide by zero:
+    08:15:01  16  AND opn > 0
+    08:15:01  17  ORDER BY pair,ydate
+    08:15:01  18  /
     
     View created.
     
-    07:43:13 SQL> 
-    07:43:13 SQL> -- Now I can aggregate:
-    07:43:13 SQL> SELECT
-    07:43:13   2  pair,dhr
-    07:43:13   3  ,COUNT(npg)          count_npg
-    07:43:13   4  ,ROUND(MIN(npg),4)   min_npg
-    07:43:13   5  ,ROUND(AVG(npg),4)   avg_npg
-    07:43:13   6  ,ROUND(STDDEV(npg),4)stddev_npg
-    07:43:13   7  ,ROUND(MAX(npg),4)   max_npg
-    07:43:13   8  ,ROUND(SUM(npg),4)   sum_npg
-    07:43:13   9  FROM hdp
-    07:43:13  10  WHERE (ydate24 - ydate) = 1
-    07:43:13  11  GROUP BY pair,dhr
-    07:43:13  12  -- I want more than 0.75 pip / hr
-    07:43:13  13  HAVING AVG(npg) > 0.75*0.0024
-    07:43:13  14  ORDER BY pair,dhr
-    07:43:13  15  /
+    Elapsed: 00:00:00.03
+    08:15:01 SQL> 
+    08:15:01 SQL> -- I derive more attributes:
+    08:15:01 SQL> CREATE OR REPLACE VIEW hdp AS
+    08:15:01   2  SELECT
+    08:15:01   3  pair
+    08:15:01   4  ,ydate
+    08:15:01   5  ,opn
+    08:15:01   6  ,dhr
+    08:15:01   7  ,ydate24
+    08:15:01   8  ,clse24
+    08:15:01   9  ,(clse24 - opn)/opn npg
+    08:15:01  10  FROM hp10
+    08:15:01  11  ORDER BY pair,ydate
+    08:15:01  12  /
+    
+    View created.
+    
+    Elapsed: 00:00:00.05
+
+    08:15:03 SQL> -- Now I can aggregate:
+    08:15:03 SQL> SELECT
+    08:15:03   2  pair,dhr
+    08:15:03   3  ,COUNT(npg)          count_npg
+    08:15:03   4  ,ROUND(MIN(npg),4)   min_npg
+    08:15:03   5  ,ROUND(AVG(npg),4)   avg_npg
+    08:15:03   6  ,ROUND(STDDEV(npg),4)stddev_npg
+    08:15:03   7  ,ROUND(MAX(npg),4)   max_npg
+    08:15:03   8  ,ROUND(SUM(npg),4)   sum_npg
+    08:15:03   9  FROM hdp
+    08:15:03  10  WHERE (ydate24 - ydate) = 1
+    08:15:03  11  GROUP BY pair,dhr
+    08:15:03  12  -- I want more than 0.75 pip / hr
+    08:15:03  13  HAVING ABS(AVG(npg)) > 0.75*0.0024
+    08:15:03  14  ORDER BY pair,dhr
+    08:15:03  15  /
     
     PAIR            DHR   COUNT_NPG    MIN_NPG    AVG_NPG STDDEV_NPG    MAX_NPG    SUM_NPG
     --------------- ---- ---------- ---------- ---------- ---------- ---------- ----------
@@ -104,13 +106,14 @@ on average, returned more than 0.75 pips / hour.  The SQL I used to do this is d
     aud_usd         4_16         94     -.0191      .0021      .0111      .0513      .1953
     aud_usd         4_19         94     -.0262      .0021      .0108      .0274      .2013
     aud_usd         4_20         95     -.0286       .002       .011      .0337      .1897
+    usd_jpy         2_22         94     -.0147     -.0018      .0067      .0216     -.1701
     
-    11 rows selected.
+    12 rows selected.
     
-    Elapsed: 00:00:00.61
-    07:43:14 SQL> 
-    07:43:14 SQL> 
-    07:43:14 SQL> exit
+    Elapsed: 00:00:00.58
+    08:15:04 SQL> 
+    08:15:04 SQL> 
+    08:15:04 SQL> exit
     Disconnected from Oracle Database 11g Enterprise Edition Release 11.2.0.1.0 - 64bit Production
     With the Partitioning, OLAP, Data Mining and Real Application Testing options
 
