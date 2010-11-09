@@ -1,0 +1,165 @@
+%a(href="/r10/site_map")Site Map
+>
+%a(href="/r10/forex")Forex
+> 
+%a(href="/forex/fx_cct")Current Correlation Trends
+>  
+%h5 6 Hour Period (6hp2010_1108)
+
+Similar to the Day-Of-Week trade is something I call the 6 Hour Period.
+
+Conceptually I cut up the week into many 6 hour pieces.
+
+I identify each piece with a string which tells me something about the piece.
+
+For example I might have a piece named 2_13.
+
+That name would signify to me that the piece starts on day 2 of the week (Monday) at 13:00 GMT.
+
+It would have a duration of 6 hours so it would end later that day at 19:00 GMT.
+%br/
+%br/
+So, for every week after 2009-01-01 I cut it into many 6 hour pieces and then used SQL to look for pieces which,
+on average, returned more than 1 pip / hour.  The SQL I used to do this is displayed below:
+
+%pre
+  :preserve
+    SQL*Plus: Release 11.2.0.1.0 Production on Tue Nov 9 07:49:41 2010
+    
+    Copyright (c) 1982, 2009, Oracle.  All rights reserved.
+    
+    
+    Connected to:
+    Oracle Database 11g Enterprise Edition Release 11.2.0.1.0 - 64bit Production
+    With the Partitioning, OLAP, Data Mining and Real Application Testing options
+    
+    07:49:41 SQL> --
+    07:49:41 SQL> -- 6hp.sql
+    07:49:41 SQL> --
+    07:49:41 SQL> 
+    07:49:41 SQL> CREATE OR REPLACE VIEW hp10 AS
+    07:49:41   2  SELECT
+    07:49:41   3  pair
+    07:49:41   4  -- ydate is granular down to the hour:
+    07:49:41   5  ,ydate
+    07:49:41   6  ,opn
+    07:49:41   7  -- Derive an attribute I call "day_hour":
+    07:49:41   8  ,TO_CHAR(ydate,'D')||'_'||TO_CHAR(ydate,'HH24')dhr
+    07:49:41   9  -- Get ydate 6 hours in the future:
+    07:49:41  10  ,LEAD(ydate,6,NULL)OVER(PARTITION BY pair ORDER BY pair,ydate) ydate6
+    07:49:41  11  -- Get closing price 6 hours in the future:
+    07:49:41  12  ,LEAD(clse,5,NULL)OVER(PARTITION BY pair ORDER BY pair,ydate) clse6
+    07:49:41  13  FROM hourly
+    07:49:41  14  WHERE ydate > '2009-01-01'
+    07:49:41  15  -- Prevent divide by zero:
+    07:49:41  16  AND opn > 0
+    07:49:41  17  ORDER BY pair,ydate
+    07:49:41  18  /
+    
+    View created.
+    
+    Elapsed: 00:00:00.04
+    07:49:41 SQL> 
+    07:49:41 SQL> -- I derive more attributes:
+    07:49:41 SQL> CREATE OR REPLACE VIEW hp12 AS
+    07:49:41   2  SELECT
+    07:49:41   3  pair
+    07:49:41   4  ,ydate
+    07:49:41   5  ,opn
+    07:49:41   6  ,dhr
+    07:49:41   7  ,ydate6
+    07:49:41   8  ,clse6
+    07:49:41   9  ,(clse6 - opn)/opn npg
+    07:49:41  10  FROM hp10
+    07:49:41  11  ORDER BY pair,ydate
+    07:49:41  12  /
+    
+    View created.
+    
+    07:49:42 SQL> -- Now I can aggregate:
+    07:49:42 SQL> SELECT
+    07:49:42   2  pair,dhr
+    07:49:42   3  ,COUNT(npg)count_npg
+    07:49:42   4  ,ROUND(MIN(npg),4)min_npg
+    07:49:42   5  ,ROUND(AVG(npg),4)avg_npg
+    07:49:42   6  ,ROUND(STDDEV(npg),4)stddev_npg
+    07:49:42   7  ,ROUND(MAX(npg),4)max_npg
+    07:49:42   8  ,ROUND(SUM(npg),4)sum_npg
+    07:49:42   9  FROM hp12
+    07:49:42  10  WHERE (ydate6 - ydate) = 6/24
+    07:49:42  11  GROUP BY pair,dhr
+    07:49:42  12  -- I want more than 1 pip / hr which is 6 pips:
+    07:49:42  13  HAVING AVG(npg) > 0.0006
+    07:49:42  14  ORDER BY pair,dhr
+    07:49:42  15  /
+    
+    PAIR            DHR   COUNT_NPG    MIN_NPG    AVG_NPG STDDEV_NPG    MAX_NPG    SUM_NPG
+    --------------- ---- ---------- ---------- ---------- ---------- ---------- ----------
+    aud_usd         2_10         97     -.0146      .0008      .0051       .018       .076
+    aud_usd         2_11         97     -.0117      .0008       .005      .0164      .0787
+    aud_usd         2_12         97     -.0108      .0008      .0051      .0164      .0782
+    aud_usd         2_14         97      -.011      .0006      .0049      .0144      .0591
+    aud_usd         3_09         95      -.016      .0008      .0051      .0165      .0795
+    aud_usd         3_10         95     -.0131      .0009      .0058      .0131       .084
+    aud_usd         3_11         95     -.0147      .0009      .0065      .0195      .0875
+    aud_usd         3_12         95     -.0112      .0007       .006       .017      .0694
+    aud_usd         4_05         96     -.0154      .0007      .0047      .0098      .0696
+    aud_usd         4_19         95     -.0139      .0009      .0047      .0131      .0875
+    aud_usd         4_20         96     -.0126      .0009      .0045      .0128      .0859
+    aud_usd         4_22         96     -.0105      .0006      .0051      .0139      .0579
+    aud_usd         5_03         97     -.0168      .0008      .0051      .0105      .0779
+    aud_usd         5_04         97     -.0148      .0011      .0051      .0149      .1047
+    aud_usd         5_05         97     -.0166      .0011      .0054      .0138      .1096
+    aud_usd         5_06         97      -.011      .0009      .0051      .0181      .0836
+    aud_usd         5_07         97     -.0106       .001      .0055      .0213      .0973
+    aud_usd         5_08         97     -.0159      .0006       .006      .0158      .0608
+    aud_usd         6_13         97     -.0177      .0006      .0072      .0276       .062
+    aud_usd         6_15         96       -.01      .0008       .005      .0169       .075
+    eur_usd         4_04         96     -.0076      .0007      .0027      .0068      .0624
+    eur_usd         4_05         96     -.0082      .0007      .0031      .0083       .065
+    eur_usd         5_07         97     -.0099      .0007      .0049       .016      .0704
+    eur_usd         5_08         97     -.0122      .0007      .0052      .0148      .0724
+    gbp_usd         3_10         95      -.009       .001      .0045      .0127      .0915
+    gbp_usd         3_11         95     -.0139       .001      .0051      .0162      .0955
+    gbp_usd         3_12         95     -.0117      .0012      .0052      .0232      .1117
+    gbp_usd         3_13         95      -.021      .0007      .0053      .0213      .0697
+    gbp_usd         3_14         95     -.0177      .0011      .0051      .0258      .1056
+    gbp_usd         4_11         96     -.0163      .0007      .0052       .022      .0675
+    gbp_usd         4_13         95     -.0119      .0006      .0049      .0191      .0592
+    gbp_usd         5_08         97     -.0151      .0007      .0063      .0227      .0703
+    gbp_usd         5_09         97     -.0122      .0007      .0056      .0195      .0676
+    gbp_usd         6_15         95     -.0141      .0006      .0043      .0124      .0571
+    usd_cad         5_11         96     -.0134      .0008      .0055      .0154       .074
+    usd_cad         5_13         96     -.0132      .0009       .006      .0265       .087
+    usd_cad         6_11         97     -.0138      .0006       .006      .0137      .0627
+    usd_chf         5_21         96     -.0064      .0007      .0025      .0087       .069
+    usd_chf         6_07         96     -.0093       .001      .0042      .0155      .0976
+    usd_chf         6_09         97     -.0128      .0007      .0051      .0145      .0639
+    usd_jpy         4_09         96     -.0082      .0006      .0042      .0102      .0607
+    usd_jpy         5_19         96     -.0066      .0007      .0039      .0297      .0652
+    usd_jpy         6_10         97      -.012      .0008      .0063      .0263       .074
+    usd_jpy         6_12         97     -.0134      .0006      .0058      .0235      .0617
+    
+    44 rows selected.
+    
+    Elapsed: 00:00:00.66
+    07:49:43 SQL> 
+    07:49:43 SQL> 
+    07:49:43 SQL> exit
+    Disconnected from Oracle Database 11g Enterprise Edition Release 11.2.0.1.0 - 64bit Production
+    With the Partitioning, OLAP, Data Mining and Real Application Testing options
+
+
+After 2009-01-01,
+based on the above output,
+it appears that Wednesday,
+starting at 08:00 GMT,
+was a good time to open long positions in the aud_usd pair for 6 hours.
+%br/
+%br/
+If you want to try to duplicate my results you will find my scripts here:
+%br/
+%a(href="https://github.com/bikle/rluck/tree/master/6hp2010_1108" target="t")
+  https://github.com/bikle/rluck/tree/master/6hp2010_1108
+%br/
+%br/
