@@ -42,16 +42,28 @@ It shows, for 2009 and 2010, the average hourly rate of return for various curre
 
 I sorted the list by absolute value of the return:
 
-
 %pre
   :preserve
-    17:10:19 SQL> 
-    17:10:19 SQL> --
-    17:10:19 SQL> -- sbw_wom.sql
-    17:10:19 SQL> --
-    17:10:19 SQL> 
-    17:10:19 SQL> SET LINES 66
-    17:10:19 SQL> DESC hourly
+    SQL*Plus: Release 11.2.0.1.0 Production on Wed Nov 10 20:14:43 2010
+    
+    Copyright (c) 1982, 2009, Oracle.  All rights reserved.
+    
+    
+    Connected to:
+    Oracle Database 11g Enterprise Edition Release 11.2.0.1.0 - 64bit Production
+    With the Partitioning, OLAP, Data Mining and Real Application Testing options
+    
+    20:14:44 SQL> ALTER SESSION SET NLS_DATE_FORMAT = 'YYYY-MM-DD hh24:mi:ss';
+    
+    Session altered.
+    
+    Elapsed: 00:00:00.00
+    20:14:44 SQL> 20:14:44 SQL> --
+    20:14:44 SQL> -- sbw_wom.sql
+    20:14:44 SQL> --
+    20:14:44 SQL> 
+    20:14:44 SQL> SET LINES 66
+    20:14:44 SQL> DESC hourly
      Name                             Null?    Type
      -------------------------------- -------- -----------------------
      PAIR                                      VARCHAR2(15)
@@ -62,63 +74,70 @@ I sorted the list by absolute value of the return:
      MN                                        NUMBER
      MX                                        NUMBER
     
-    17:10:19 SQL> SET LINES 166
-    17:10:19 SQL> 
-    17:10:19 SQL> -- For each pair, look at wom over 2009, 2010:
-    17:10:19 SQL> SELECT pair,week_of_month,AVG(nhgain),SUM(nhgain),COUNT(nhgain)
-    17:10:19   2  FROM
-    17:10:19   3  (
-    17:10:19   4    SELECT
-    17:10:19   5    pair
-    17:10:19   6    ,ydate
-    17:10:19   7    ,opn
-    17:10:19   8    ,clse
-    17:10:19   9    -- Hourly gain:
-    17:10:19  10    ,(clse-opn)      hgain
-    17:10:19  11    -- Normalized hourly gain:
-    17:10:19  12    ,(clse-opn)/opn nhgain
-    17:10:19  13    ,0+TO_CHAR(ydate,'W')week_of_month
-    17:10:19  14    FROM hourly WHERE opn>0
-    17:10:19  15  )
-    17:10:19  16  WHERE ydate > '2009-01-01'
-    17:10:19  17  GROUP BY pair,week_of_month
-    17:10:19  18  ORDER BY ABS(AVG(nhgain))DESC
-    17:10:19  19  /
+    20:14:44 SQL> SET LINES 166
+    20:14:44 SQL> 
+    20:14:44 SQL> -- For each pair, look at wom WHERE ydate > '2009-01-01'
+    20:14:44 SQL> SELECT pair,week_of_month,AVG(nhgain),SUM(nhgain),COUNT(nhgain)
+    20:14:44   2  FROM
+    20:14:44   3  (
+    20:14:44   4    SELECT
+    20:14:44   5    pair
+    20:14:44   6    ,ydate
+    20:14:44   7    ,opn
+    20:14:44   8    ,clse
+    20:14:44   9    -- Hourly gain:
+    20:14:44  10    ,(clse-opn)      hgain
+    20:14:44  11    -- Normalized hourly gain:
+    20:14:44  12    ,(clse-opn)/opn nhgain
+    20:14:44  13    ,0+TO_CHAR(ydate,'W')week_of_month
+    20:14:44  14    FROM hourly WHERE opn>0
+    20:14:44  15  )
+    20:14:44  16  WHERE ydate > '2009-01-01'
+    20:14:44  17  GROUP BY pair,week_of_month
+    20:14:44  18  ORDER BY ABS(AVG(nhgain))DESC
+    20:14:44  19  /
     
     PAIR            WEEK_OF_MONTH AVG(NHGAIN) SUM(NHGAIN) COUNT(NHGAIN)
     --------------- ------------- ----------- ----------- -------------
     gbp_usd                     5  .000095108  .085216558           896
     usd_chf                     5  -.00007708  -.06906327           896
-    aud_usd                     1  .000061987  .170588059          2752
-    usd_cad                     2  -.00006065  -.16107621          2656
-    aud_usd                     2  .000054304   .14423268          2656
-    usd_cad                     1  -.00005388  -.14827881          2752
-    usd_jpy                     2  -.00005066  -.15989152          3156
-    usd_chf                     2  -.00004419  -.11736529          2656
-    eur_usd                     2  .000042163  .111986246          2656
-    usd_jpy                     3  -.00003667  -.11516483          3141
+    aud_usd                     1   .00006102  .169574576          2779
+    usd_jpy                     2  -.00005833   -.1577175          2704
+    usd_cad                     2  -.00005683  -.15365759          2704
+    usd_cad                     1  -.00005431  -.15091846          2779
+    aud_usd                     2  .000049227  .133110114          2704
+    usd_chf                     2  -.00004043  -.10932496          2704
+    usd_jpy                     1  .000036974  .102751974          2779
     aud_usd                     3   -.0000358  -.09512569          2657
-    usd_jpy                     5  -.00002981  -.03183549          1068
+    eur_usd                     2   .00003358  .090800063          2704
     aud_usd                     5  .000026627  .023857728           896
-    usd_jpy                     1  .000024388  .078896089          3235
-    gbp_usd                     2  .000022415  .059533548          2656
     usd_cad                     3   .00002229  .059224864          2657
     eur_usd                     5  .000022025  .019734154           896
+    usd_jpy                     3   -.0000196  -.05208242          2657
     gbp_usd                     3  -.00001874  -.04969654          2652
+    gbp_usd                     2   .00001714  .046346731          2704
+    usd_chf                     1  .000014172  .039384148          2779
     eur_usd                     3  .000014025  .037265422          2657
-    usd_chf                     1  .000013124  .036118175          2752
-    gbp_usd                     1  .000011741      .03231          2752
-    eur_usd                     1  -.00000914  -.02515245          2752
+    eur_usd                     1  -.00001214  -.03374724          2779
+    gbp_usd                     1  .000010381  .028848434          2779
     eur_usd                     4  7.0153E-06  .018555414          2645
     aud_usd                     4  6.3436E-06  .016778794          2645
     usd_chf                     3  -6.235E-06  -.01656746          2657
     gbp_usd                     4  -4.915E-06  -.01296691          2638
+    usd_jpy                     5  3.6263E-06  .003249155           896
     usd_cad                     5  3.4071E-06  .003052725           896
     usd_chf                     4  1.5534E-06  .004108684          2645
     usd_cad                     4  -5.664E-07  -.00149807          2645
-    usd_jpy                     4  1.0993E-07  .000343872          3128
+    usd_jpy                     4  5.1457E-07  .001361027          2645
     
     30 rows selected.
+    
+    Elapsed: 00:00:00.19
+    20:14:44 SQL> 
+    20:14:44 SQL> exit
+    Disconnected from Oracle Database 11g Enterprise Edition Release 11.2.0.1.0 - 64bit Production
+    With the Partitioning, OLAP, Data Mining and Real Application Testing options
+
 
 A copy of the above report and the SQL which created it is at this URL:
 %br/
@@ -172,25 +191,26 @@ I wrote a second script which separates them:
 
 %pre
   :preserve
-    SQL*Plus: Release 11.2.0.1.0 Production on Sun Nov 7 02:03:25 2010
-
+    SQL*Plus: Release 11.2.0.1.0 Production on Tue Nov 9 18:37:59 2010
+    
     Copyright (c) 1982, 2009, Oracle.  All rights reserved.
+    
     
     Connected to:
     Oracle Database 11g Enterprise Edition Release 11.2.0.1.0 - 64bit Production
     With the Partitioning, OLAP, Data Mining and Real Application Testing options
     
-    02:03:26 SQL> ALTER SESSION SET NLS_DATE_FORMAT = 'YYYY-MM-DD hh24:mi:ss';
+    18:37:59 SQL> ALTER SESSION SET NLS_DATE_FORMAT = 'YYYY-MM-DD hh24:mi:ss';
     
     Session altered.
     
     Elapsed: 00:00:00.00
-    02:03:26 SQL> 02:03:26 SQL> --
-    02:03:26 SQL> -- bb_wom.sql
-    02:03:26 SQL> --
-    02:03:26 SQL> 
-    02:03:26 SQL> SET LINES 66
-    02:03:26 SQL> DESC hourly
+    18:37:59 SQL> 18:37:59 SQL> --
+    18:37:59 SQL> -- bb_wom.sql
+    18:37:59 SQL> --
+    18:37:59 SQL> 
+    18:37:59 SQL> SET LINES 66
+    18:37:59 SQL> DESC hourly
      Name                             Null?    Type
      -------------------------------- -------- -----------------------
      PAIR                                      VARCHAR2(15)
@@ -201,104 +221,105 @@ I wrote a second script which separates them:
      MN                                        NUMBER
      MX                                        NUMBER
     
-    02:03:26 SQL> SET LINES 166
-    02:03:26 SQL> 
-    02:03:26 SQL> -- For each pair, look at wom WHERE ydate > '2009-01-01'
-    02:03:26 SQL> -- Filter out anything with abs(nhgain) < 0.0001 / 4
-    02:03:26 SQL> CREATE OR REPLACE VIEW bb_wom AS
-    02:03:26   2  SELECT
-    02:03:26   3  pair,week_of_month
-    02:03:26   4  ,ROUND(avg_nhgain,6)avg_nhgain
-    02:03:26   5  ,ROUND(sum_nhgain,4)sum_nhgain
-    02:03:26   6  ,count_nhgain
-    02:03:26   7  FROM
-    02:03:26   8  (
-    02:03:26   9    SELECT
-    02:03:26  10    pair,week_of_month
-    02:03:26  11    ,AVG(nhgain)  avg_nhgain
-    02:03:26  12    ,SUM(nhgain)  sum_nhgain
-    02:03:26  13    ,COUNT(nhgain)count_nhgain
-    02:03:26  14    FROM
-    02:03:26  15    (
-    02:03:26  16      SELECT
-    02:03:26  17      pair
-    02:03:26  18      ,ydate
-    02:03:26  19      ,opn
-    02:03:26  20      ,clse
-    02:03:26  21      -- Hourly gain:
-    02:03:26  22      ,(clse-opn)     hgain
-    02:03:26  23      -- Normalized hourly gain:
-    02:03:26  24      ,(clse-opn)/opn nhgain
-    02:03:26  25      ,0+TO_CHAR(ydate,'W')week_of_month
-    02:03:26  26      FROM hourly WHERE opn>0
-    02:03:26  27    )
-    02:03:26  28    WHERE ydate > '2009-01-01'
-    02:03:26  29    GROUP BY pair,week_of_month
-    02:03:26  30  )
-    02:03:26  31  -- I only want to see trades which give more that 1/4 pip per hour:
-    02:03:26  32  WHERE ABS(avg_nhgain) > (0.0001 / 4)
-    02:03:26  33  /
+    18:37:59 SQL> SET LINES 166
+    18:37:59 SQL> 
+    18:37:59 SQL> -- For each pair, look at wom WHERE ydate > '2009-01-01'
+    18:37:59 SQL> -- Filter out anything with abs(nhgain) < 0.0001 / 4
+    18:37:59 SQL> CREATE OR REPLACE VIEW bb_wom AS
+    18:37:59   2  SELECT
+    18:37:59   3  pair,week_of_month
+    18:37:59   4  ,ROUND(avg_nhgain,6)avg_nhgain
+    18:37:59   5  ,ROUND(sum_nhgain,4)sum_nhgain
+    18:37:59   6  ,count_nhgain
+    18:37:59   7  FROM
+    18:37:59   8  (
+    18:37:59   9    SELECT
+    18:37:59  10    pair,week_of_month
+    18:37:59  11    ,AVG(nhgain)  avg_nhgain
+    18:37:59  12    ,SUM(nhgain)  sum_nhgain
+    18:37:59  13    ,COUNT(nhgain)count_nhgain
+    18:37:59  14    FROM
+    18:37:59  15    (
+    18:37:59  16      SELECT
+    18:37:59  17      pair
+    18:37:59  18      ,ydate
+    18:37:59  19      ,opn
+    18:37:59  20      ,clse
+    18:37:59  21      -- Hourly gain:
+    18:37:59  22      ,(clse-opn)     hgain
+    18:37:59  23      -- Normalized hourly gain:
+    18:37:59  24      ,(clse-opn)/opn nhgain
+    18:37:59  25      ,0+TO_CHAR(ydate,'W')week_of_month
+    18:37:59  26      FROM hourly WHERE opn>0
+    18:37:59  27    )
+    18:37:59  28    WHERE ydate > '2009-01-01'
+    18:37:59  29    GROUP BY pair,week_of_month
+    18:37:59  30  )
+    18:37:59  31  -- I only want to see trades which give more that 1/4 pip per hour:
+    18:37:59  32  WHERE ABS(avg_nhgain) > (0.0001 / 4)
+    18:37:59  33  /
     
     View created.
     
-    Elapsed: 00:00:00.13
-    02:03:26 SQL> 
-    02:03:26 SQL> -- I want to see USD bearish positions first.
-    02:03:26 SQL> SELECT * FROM bb_wom
-    02:03:26   2  WHERE
-    02:03:26   3  (
-    02:03:26   4    (pair LIKE'%_usd'AND avg_nhgain>0)
-    02:03:26   5    OR
-    02:03:26   6    (pair LIKE'usd_%'AND avg_nhgain<0)
-    02:03:26   7  )
-    02:03:26   8  -- Sort better trades to the top:
-    02:03:26   9  ORDER BY ABS(avg_nhgain) DESC
-    02:03:26  10  /
+    Elapsed: 00:00:00.09
+    18:37:59 SQL> 
+    18:37:59 SQL> -- I want to see USD bearish positions first.
+    18:37:59 SQL> SELECT * FROM bb_wom
+    18:37:59   2  WHERE
+    18:37:59   3  (
+    18:37:59   4    (pair LIKE'%_usd'AND avg_nhgain>0)
+    18:37:59   5    OR
+    18:37:59   6    (pair LIKE'usd_%'AND avg_nhgain<0)
+    18:37:59   7  )
+    18:37:59   8  -- Sort better trades to the top:
+    18:37:59   9  ORDER BY ABS(avg_nhgain) DESC
+    18:37:59  10  /
     
     PAIR            WEEK_OF_MONTH AVG_NHGAIN SUM_NHGAIN COUNT_NHGAIN
     --------------- ------------- ---------- ---------- ------------
     gbp_usd                     5    .000095      .0852          896
     usd_chf                     5   -.000077     -.0691          896
-    aud_usd                     1    .000062      .1699         2759
-    usd_cad                     2   -.000061     -.1611         2656
-    aud_usd                     2    .000054      .1442         2656
-    usd_cad                     1   -.000053     -.1476         2759
-    usd_jpy                     2   -.000051     -.1599         3156
-    usd_chf                     2   -.000044     -.1174         2656
-    eur_usd                     2    .000042       .112         2656
-    usd_jpy                     3   -.000037     -.1152         3141
-    usd_jpy                     5    -.00003     -.0318         1068
+    aud_usd                     1    .000061      .1696         2779
+    usd_jpy                     2   -.000061     -.1639         2678
+    usd_cad                     2   -.000059     -.1574         2678
+    usd_cad                     1   -.000054     -.1509         2779
+    aud_usd                     2    .000053      .1415         2678
+    usd_chf                     2   -.000042     -.1119         2678
+    eur_usd                     2    .000038       .101         2678
     aud_usd                     5    .000027      .0239          896
     
-    12 rows selected.
+    10 rows selected.
     
     Elapsed: 00:00:00.17
-    02:03:26 SQL> 
-    02:03:26 SQL> 
-    02:03:26 SQL> -- Now show USD bullish positions:
-    02:03:26 SQL> SELECT * FROM bb_wom
-    02:03:26   2  WHERE
-    02:03:26   3  (
-    02:03:26   4    (pair LIKE'%_usd'AND avg_nhgain<0)
-    02:03:26   5    OR
-    02:03:26   6    (pair LIKE'usd_%'AND avg_nhgain>0)
-    02:03:26   7  )
-    02:03:26   8  -- Sort better trades to the top:
-    02:03:26   9  ORDER BY ABS(avg_nhgain) DESC
-    02:03:26  10  /
+    18:38:00 SQL> 
+    18:38:00 SQL> 
+    18:38:00 SQL> -- Now show USD bullish positions:
+    18:38:00 SQL> SELECT * FROM bb_wom
+    18:38:00   2  WHERE
+    18:38:00   3  (
+    18:38:00   4    (pair LIKE'%_usd'AND avg_nhgain<0)
+    18:38:00   5    OR
+    18:38:00   6    (pair LIKE'usd_%'AND avg_nhgain>0)
+    18:38:00   7  )
+    18:38:00   8  -- Sort better trades to the top:
+    18:38:00   9  ORDER BY ABS(avg_nhgain) DESC
+    18:38:00  10  /
     
     PAIR            WEEK_OF_MONTH AVG_NHGAIN SUM_NHGAIN COUNT_NHGAIN
     --------------- ------------- ---------- ---------- ------------
+    usd_jpy                     1    .000037      .1028         2779
     aud_usd                     3   -.000036     -.0951         2657
     
-    Elapsed: 00:00:00.13
-    02:03:26 SQL> 
-    02:03:26 SQL> exit
+    Elapsed: 00:00:00.16
+    18:38:00 SQL> 
+    18:38:00 SQL> exit
     Disconnected from Oracle Database 11g Enterprise Edition Release 11.2.0.1.0 - 64bit Production
     With the Partitioning, OLAP, Data Mining and Real Application Testing options
 
-The first obvious piece of information I see in the above report is that only one lucrative trade is USD bullish.
-The other 12 are USD bearish.
+
+
+The first obvious piece of information I see in the above report is that only two lucrative trades are USD bullish.
+The others are USD bearish.
 
 %br/
 %br/
@@ -323,3 +344,4 @@ A copy of the above report and the SQL which created it is at this URL:
   https://github.com/bikle/rluck/tree/master/wom2010_1104/
 %br/
 %br/
+
