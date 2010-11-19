@@ -15,6 +15,42 @@ Here is the code behind the above chart:
   <img src="http://chart.apis.google.com/chart?chxr=0,0,46&chxt=y&chs=300x225&cht=lc&chco=3D7930&chd=s:Xhiugtqi&chg=14.3,-1,1,1&chls=2,4,0&chm=B,C5D4B5BB,0,0,0&chtt=Bikle+Chart+2010-11-19+22%3A20+GMT" width="300" height="225" alt="Bikle Chart 2010-11-19 22:20 GMT" />
 %br/
 %br/
+The data in the chart has been encoded and passed to Google via the chd attribute of the img-tag:
+%br/
+%br/
+chd=s:Xhiugtqi
+%br/
+%br/
+Also note that I use the chxr attribute like this:
+%br/
+%br/
+chxr=0,0,46
+%br/
+%br/
+According to the Google documentation, the chxr attribute controls the axis.
+%br/
+%br/
+The documentation on chxr says this:
+:escaped
+  chxr= <axis_index>,  <start_val>,  <end_val>, <step>|...
 
+%br/
+%br/
+To me, start_val and end_val were at frist obvious; axis_index was not.
+Then I found a description of axis_index: 
+This is a zero-based index into the axis array specified by chxt. For example, the r-axis would be 1 in chxt=x,r,y.
+%br/
+%br/
+So, I looked for chxt in the above example and I found this:
+%br/
+%br/
+chxt=y
+%br/
+%br/
+And, now I see that 
+%br/
+chxr=0,0,46
+%br/
+is a signal to Google-charts to scale the y axis where the minimum is 0 and the maximum is 46.
 %br/
 %br/
