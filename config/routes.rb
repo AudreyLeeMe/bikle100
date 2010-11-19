@@ -1,4 +1,6 @@
 Bikle100::Application.routes.draw do
+  get "tech/index"
+
   get "r10/about"
 
   get "r10/blog"
