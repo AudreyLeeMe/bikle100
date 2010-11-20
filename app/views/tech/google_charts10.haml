@@ -70,15 +70,19 @@ I started on the task of creating a chart which can react to numbers submitted b
 %br/
 %br/
 
-%style(type="text/css")
-  span#sb {background-color:#CCC; border-style:solid}
-
 %form#f1
-  %input#n0(type="checkbox" name="n0" value="0")0
+  %input#n0(type="checkbox"  name="n0"  value="0")0
+  %br/
   %input#n10(type="checkbox" name="n10" value="10")10
+  %br/
   %input#n40(type="checkbox" name="n40" value="40")40
+  %br/
   %input#n20(type="checkbox" name="n20" value="20")20
+  %br/
   %input#n30(type="checkbox" name="n30" value="30")30
+  %br/
+  %style(type="text/css")
+    span#sb {background-color:#CCC; border-style:solid}
   %span#sb Click Here to Draw Chart
 
 %br/
@@ -90,6 +94,7 @@ I started on the task of creating a chart which can react to numbers submitted b
     $("img#c10").hide();
 
     $("#sb").click(function() {
+      $("img#c10").hide();
       $("img#c10").show("slow");
     });
 
@@ -99,5 +104,99 @@ I started on the task of creating a chart which can react to numbers submitted b
 
 %br/
 %br/
+
+:javascript
+  $(document).ready(function() {
+
+    $("span#cb00").hide();
+    $("span#cb01").hide();
+
+    var in0 = $("input#n0").attr("checked");
+    if(in0 == true)
+      {
+        $("span#cb00").hide();
+        $("span#cb01").show();
+      }
+    else
+      {
+        $("span#cb00").show();
+        $("span#cb01").hide();
+      }
+
+    var in10 = $("input#n10").attr("checked");
+    if(in10 == true)
+      {
+        $("span#cb100").hide();
+        $("span#cb101").show();
+      }
+    else
+      {
+        $("span#cb100").show();
+        $("span#cb101").hide();
+      }
+
+    var in40 = $("input#n40").attr("checked");
+    if(in40 == true)
+      {
+        $("span#cb400").hide();
+        $("span#cb401").show();
+      }
+    else
+      {
+        $("span#cb400").show();
+        $("span#cb401").hide();
+      }
+
+    var in20 = $("input#n20").attr("checked");
+    if(in20 == true)
+      {
+        $("span#cb200").hide();
+        $("span#cb201").show();
+      }
+    else
+      {
+        $("span#cb200").show();
+        $("span#cb201").hide();
+      }
+
+    var in30 = $("input#n30").attr("checked");
+    if(in30 == true)
+      {
+        $("span#cb300").hide();
+        $("span#cb301").show();
+      }
+    else
+      {
+        $("span#cb300").show();
+        $("span#cb301").hide();
+      }
+
+  });
+
+checkbox 0 is
+%span#cb00 not checked
+%span#cb01 checked
+%br/
+
+checkbox 10 is
+%span#cb100 not checked
+%span#cb101 checked
+%br/
+
+checkbox 40 is
+%span#cb400 not checked
+%span#cb401 checked
+%br/
+
+checkbox 20 is
+%span#cb200 not checked
+%span#cb201 checked
+%br/
+
+checkbox 30 is
+%span#cb300 not checked
+%span#cb301 checked
+%br/
+
 
 
