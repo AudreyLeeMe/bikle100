@@ -11,13 +11,18 @@
 :javascript
   $(document).ready(function() {
 
-    var chd_s = "&chd=s:Xhiugtqi";
+    var gatt1 = $("img#chart11").attr('width');
+    var gatt2 = $("img#chart11").attr('width');
+    $("img#chart11").attr('dan','bikle');
+    var gatt2 = $("img#chart11").attr('dan');
+    var gatt2 = $("img#chart11").attr('dan');
 
-    var valueArray = new Array(0,1,4,4,6,11,14,17,23,28,33,36,43,59,65);
-    var maxValue = 70;
-    var se_out1 = simpleEncode(valueArray, maxValue);
-    var se_out2 = simpleEncode(valueArray, maxValue);
+    var src_s = "http://chart.apis.google.com/chart?chxr=0,0,70&chxt=y&chs=300x225&cht=lc&chco=3D7930&chd=s:Xhiugtqi&chg=14.3,-1,1,1&chls=2,4,0&chm=B,C5D4B5BB,0,0,0&chtt=Bikle+Chart+2010-11-19+22%3A20+GMT"
 
+    $("img#chart11").attr('src',src_s);
+
+    // This function scales the submitted values so that
+    // maxVal becomes the highest value.
     function simpleEncode(valueArray,maxValue) {
       var simpleEncoding = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
       var chartData = ['s:'];
@@ -34,10 +39,7 @@
       return chartData.join('');
     }
 
-    chd_s = "&chd=" + se_out1;
-
-    var src_s = "http://chart.apis.google.com/chart?chxr=0,0,70&chxt=y&chs=300x225&cht=lc&chco=3D7930&chg=14.3,-1,1,1&chls=2,4,0&chm=B,C5D4B5BB,0,0,0&chtt=Bikle+Chart+2010-11-19+22%3A20+GMT" + chd_s;
-
-    $("img#chart11").attr('src',src_s);
 
   });
+
+
