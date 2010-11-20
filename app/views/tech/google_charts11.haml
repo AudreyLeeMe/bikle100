@@ -1,0 +1,26 @@
+%a(href="/r10/site_map")Site Map
+>
+%a(href="/tech")Tech
+> google_charts11
+%br/
+%br/
+
+:javascript
+  var simpleEncoding = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  // This function scales the submitted values so that
+  // maxVal becomes the highest value.
+  function simpleEncode(valueArray,maxValue) {
+    var chartData = ['s:'];
+    for (var i = 0; i < valueArray.length; i++) {
+      var currentValue = valueArray[i];
+      if (!isNaN(currentValue) && currentValue >= 0) {
+      chartData.push(simpleEncoding.charAt(Math.round((simpleEncoding.length-1) * 
+        currentValue / maxValue)));
+      }
+        else {
+        chartData.push('_');
+        }
+    }
+    return chartData.join('');
+  }
+
