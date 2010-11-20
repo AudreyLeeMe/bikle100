@@ -108,16 +108,18 @@ I started on the task of creating a chart which can react to numbers submitted b
     }
 
     var valueArray = new Array(0,1,4,4,6,11,14,17,23,28,33,36,43,59,65);
-    var maxValue = 70;
+    var valueArray = new Array(0,10,40);
+    var valueArray = new Array(0,30);
+    var maxValue = 45;
     var se_out1 = simpleEncode(valueArray, maxValue);
     var se_out2 = simpleEncode(valueArray, maxValue);
 
     var chd_s = "&chd=s:Xhiugtqi";
+    var chd_s = "&chd=" + se_out1;
 
     $("img#c10").hide();
 
     $("#sb").click(function() {
-
 
       var src_s = "http://chart.apis.google.com/chart?chxr=0,0,46&chxt=y&chs=300x225&cht=lc&chco=3D7930&chg=14.3,-1,1,1&chls=2,4,0&chm=B,C5D4B5BB,0,0,0&chtt=Bikle+Chart+2010-11-19+22%3A20+GMT" + chd_s ;
 
