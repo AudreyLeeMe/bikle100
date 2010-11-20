@@ -69,13 +69,27 @@ After I created the above chart,
 I started on the task of creating a chart which can react to numbers submitted by a form:
 %br/
 %br/
+
+%style(type="text/css")
+  span#sb {background-color:#CCC; border-style:solid}
+
 %form#f1
   %input#n0(type="checkbox" name="n0" value="0")0
   %input#n10(type="checkbox" name="n10" value="10")10
   %input#n40(type="checkbox" name="n40" value="40")40
   %input#n20(type="checkbox" name="n20" value="20")20
   %input#n30(type="checkbox" name="n30" value="30")30
-  %input#sb(type="submit" value="Draw Chart")
+  %span#sb Click Here to Draw Chart
+
+
+:javascript
+  $(document).ready(function() {
+
+    $("#sb").click(function() {
+      $("#f1").hide();
+    });
+
+  });
 
 
 %br/
