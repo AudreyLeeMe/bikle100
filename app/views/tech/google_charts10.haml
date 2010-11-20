@@ -110,7 +110,38 @@ I started on the task of creating a chart which can react to numbers submitted b
     var valueArray = new Array(0,1,4,4,6,11,14,17,23,28,33,36,43,59,65);
     var valueArray = new Array(0,10,40);
     var valueArray = new Array(0,30);
+
+    var valueArray = new Array();
+ 
+    var in0 = $("input#n0").attr("checked");
+    var in10 = $("input#n10").attr("checked");
+    var in40 = $("input#n40").attr("checked");
+    var in20 = $("input#n20").attr("checked");
+    var in30 = $("input#n30").attr("checked");
+
+    if(in0 == true)
+      {
+        valueArray.push(0);
+      }
+    if(in10 == true)
+      {
+        valueArray.push(10);
+      }
+    if(in40 == true)
+      {
+        valueArray.push(40);
+      }
+    if(in20 == true)
+      {
+        valueArray.push(20);
+      }
+    if(in30 == true)
+      {
+        valueArray.push(30);
+      }
+
     var maxValue = 45;
+
     var se_out1 = simpleEncode(valueArray, maxValue);
     var se_out2 = simpleEncode(valueArray, maxValue);
 
