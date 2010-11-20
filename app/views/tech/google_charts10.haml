@@ -71,15 +71,15 @@ I started on the task of creating a chart which can react to numbers submitted b
 %br/
 
 %form#f1
-  %input#n0(type="checkbox"  name="n0"  value="0")0
+  %input.input_cb#n0(type="checkbox"  name="n0"  value="0" checked="checked")0
   %br/
-  %input#n10(type="checkbox" name="n10" value="10")10
+  %input.input_cb#n10(type="checkbox" name="n10" value="10" checked="checked")10
   %br/
-  %input#n40(type="checkbox" name="n40" value="40")40
+  %input.input_cb#n40(type="checkbox" name="n40" value="40" checked="checked")40
   %br/
-  %input#n20(type="checkbox" name="n20" value="20")20
+  %input.input_cb#n20(type="checkbox" name="n20" value="20" checked="checked")20
   %br/
-  %input#n30(type="checkbox" name="n30" value="30")30
+  %input.input_cb#n30(type="checkbox" name="n30" value="30" checked="checked")30
   %br/
   %style(type="text/css")
     span#sb {background-color:#CCC; border-style:solid}
@@ -109,67 +109,74 @@ I started on the task of creating a chart which can react to numbers submitted b
   $(document).ready(function() {
 
     $("span#cb00").hide();
-    $("span#cb01").hide();
+    $("span#cb100").hide();
+    $("span#cb200").hide();
+    $("span#cb300").hide();
+    $("span#cb400").hide();
 
-    var in0 = $("input#n0").attr("checked");
-    if(in0 == true)
-      {
-        $("span#cb00").hide();
-        $("span#cb01").show();
-      }
-    else
-      {
-        $("span#cb00").show();
-        $("span#cb01").hide();
-      }
+    $("input.input_cb").click(function() {
 
-    var in10 = $("input#n10").attr("checked");
-    if(in10 == true)
-      {
-        $("span#cb100").hide();
-        $("span#cb101").show();
-      }
-    else
-      {
-        $("span#cb100").show();
-        $("span#cb101").hide();
-      }
+      var in0 = $("input#n0").attr("checked");
+      if(in0 == true)
+        {
+          $("span#cb00").hide();
+          $("span#cb01").show();
+        }
+      else
+        {
+          $("span#cb00").show();
+          $("span#cb01").hide();
+        }
 
-    var in40 = $("input#n40").attr("checked");
-    if(in40 == true)
-      {
-        $("span#cb400").hide();
-        $("span#cb401").show();
-      }
-    else
-      {
-        $("span#cb400").show();
-        $("span#cb401").hide();
-      }
+      var in10 = $("input#n10").attr("checked");
+      if(in10 == true)
+        {
+          $("span#cb100").hide();
+          $("span#cb101").show();
+        }
+      else
+        {
+          $("span#cb100").show();
+          $("span#cb101").hide();
+        }
 
-    var in20 = $("input#n20").attr("checked");
-    if(in20 == true)
-      {
-        $("span#cb200").hide();
-        $("span#cb201").show();
-      }
-    else
-      {
-        $("span#cb200").show();
-        $("span#cb201").hide();
-      }
+      var in40 = $("input#n40").attr("checked");
+      if(in40 == true)
+        {
+          $("span#cb400").hide();
+          $("span#cb401").show();
+        }
+      else
+        {
+          $("span#cb400").show();
+          $("span#cb401").hide();
+        }
 
-    var in30 = $("input#n30").attr("checked");
-    if(in30 == true)
-      {
-        $("span#cb300").hide();
-        $("span#cb301").show();
-      }
-    else
-      {
-        $("span#cb300").show();
-        $("span#cb301").hide();
-      }
+      var in20 = $("input#n20").attr("checked");
+      if(in20 == true)
+        {
+          $("span#cb200").hide();
+          $("span#cb201").show();
+        }
+      else
+        {
+          $("span#cb200").show();
+          $("span#cb201").hide();
+        }
+
+      var in30 = $("input#n30").attr("checked");
+      if(in30 == true)
+        {
+          $("span#cb300").hide();
+          $("span#cb301").show();
+        }
+      else
+        {
+          $("span#cb300").show();
+          $("span#cb301").hide();
+        }
+
+    });
 
   });
 
