@@ -81,16 +81,21 @@ I started on the task of creating a chart which can react to numbers submitted b
   %input#n30(type="checkbox" name="n30" value="30")30
   %span#sb Click Here to Draw Chart
 
+%br/
+%br/
 
 :javascript
   $(document).ready(function() {
 
+    $("img#c10").hide();
+
     $("#sb").click(function() {
-      $("#f1").hide();
+      $("img#c10").show("slow");
     });
 
   });
 
+%img#c10(src="http://chart.apis.google.com/chart?chxr=0,0,46&chxt=y&chs=300x225&cht=lc&chco=3D7930&chd=s:Xhiugtqi&chg=14.3,-1,1,1&chls=2,4,0&chm=B,C5D4B5BB,0,0,0&chtt=Bikle+Chart+2010-11-19+22%3A20+GMT" width="300" height="225" alt="Bikle Chart 2010-11-19 22:20 GMT")
 
 %br/
 %br/
