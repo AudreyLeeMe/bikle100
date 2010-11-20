@@ -82,7 +82,7 @@ I started on the task of creating a chart which can react to numbers submitted b
   %input.input_cb#n30(type="checkbox" name="n30" value="30" checked="checked")30
   %br/
   %style(type="text/css")
-    span#sb {background-color:#CCC; border-style:solid}
+    span#sb {background-color:#CCC; border-style:solid; cursor:pointer;}
   %span#sb Click Here to Draw Chart
 
 %br/
@@ -94,13 +94,34 @@ I started on the task of creating a chart which can react to numbers submitted b
     $("img#c10").hide();
 
     $("#sb").click(function() {
+
+      var chd_s = "&chd=s:Xhiugtqi";
+
+      var src_s = "http://chart.apis.google.com/chart?chxr=0,0,46&chxt=y&chs=300x225&cht=lc&chco=3D7930&chg=14.3,-1,1,1&chls=2,4,0&chm=B,C5D4B5BB,0,0,0&chtt=Bikle+Chart+2010-11-19+22%3A20+GMT" + chd_s ;
+
+      $("img#c10").attr("src",src_s);
+
       $("img#c10").hide();
+
       $("img#c10").show("slow");
+
     });
 
   });
+Values passed in:
+#values_passed_in
+  %span#v0  0
+  %br/
+  %span#v10 10
+  %br/
+  %span#v40 40
+  %br/
+  %span#v20 20
+  %br/
+  %span#v30 30
+  %br/
 
-%img#c10(src="http://chart.apis.google.com/chart?chxr=0,0,46&chxt=y&chs=300x225&cht=lc&chco=3D7930&chd=s:Xhiugtqi&chg=14.3,-1,1,1&chls=2,4,0&chm=B,C5D4B5BB,0,0,0&chtt=Bikle+Chart+2010-11-19+22%3A20+GMT" width="300" height="225" alt="Bikle Chart 2010-11-19 22:20 GMT")
+%img#c10(width="300" height="225" alt="Bikle Chart 2010-11-19 22:20 GMT")
 
 %br/
 %br/
@@ -180,30 +201,27 @@ I started on the task of creating a chart which can react to numbers submitted b
 
   });
 
-checkbox 0 is
-%span#cb00 not checked
-%span#cb01 checked
-%br/
-
-checkbox 10 is
-%span#cb100 not checked
-%span#cb101 checked
-%br/
-
-checkbox 40 is
-%span#cb400 not checked
-%span#cb401 checked
-%br/
-
-checkbox 20 is
-%span#cb200 not checked
-%span#cb201 checked
-%br/
-
-checkbox 30 is
-%span#cb300 not checked
-%span#cb301 checked
-%br/
+/
+  checkbox 0 is
+  %span#cb00 not checked
+  %span#cb01 checked
+  %br/
+  checkbox 10 is
+  %span#cb100 not checked
+  %span#cb101 checked
+  %br/
+  checkbox 40 is
+  %span#cb400 not checked
+  %span#cb401 checked
+  %br/
+  checkbox 20 is
+  %span#cb200 not checked
+  %span#cb201 checked
+  %br/
+  checkbox 30 is
+  %span#cb300 not checked
+  %span#cb301 checked
+  %br/
 
 
 
