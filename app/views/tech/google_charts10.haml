@@ -1,7 +1,10 @@
 %a(href="/r10/site_map")Site Map
 >
 %a(href="/tech")Tech
-> google_charts10
+> google_charts
+%br/
+%br/
+A simple Google Chart is displayed below:
 %br/
 %br/
 <img src="http://chart.apis.google.com/chart?chxr=0,0,46&chxt=y&chs=300x225&cht=lc&chco=3D7930&chd=s:Xhiugtqi&chg=14.3,-1,1,1&chls=2,4,0&chm=B,C5D4B5BB,0,0,0&chtt=Bikle+Chart+2010-11-19+22%3A20+GMT" width="300" height="225" alt="Bikle Chart 2010-11-19 22:20 GMT" />
@@ -15,7 +18,10 @@ Here is the code behind the above chart:
   <img src="http://chart.apis.google.com/chart?chxr=0,0,46&chxt=y&chs=300x225&cht=lc&chco=3D7930&chd=s:Xhiugtqi&chg=14.3,-1,1,1&chls=2,4,0&chm=B,C5D4B5BB,0,0,0&chtt=Bikle+Chart+2010-11-19+22%3A20+GMT" width="300" height="225" alt="Bikle Chart 2010-11-19 22:20 GMT" />
 %br/
 %br/
-The data in the chart has been encoded and passed to Google via the chd attribute of the img-tag:
+I can see that the chart is just one img-element with a long src attribute.
+%br/
+%br/
+The data in the chart has been encoded and passed to Google via the chd parameter of the src attribute:
 %br/
 %br/
 chd=s:Xhiugtqi
@@ -56,3 +62,23 @@ chxr=0,0,46
 is a signal to Google-charts to scale the y axis where the minimum is 0 and the maximum is 46.
 %br/
 %br/
+I used the above chart as my introduction to Google Charts.
+%br/
+%br/
+After I created the above chart,
+I started on the task of creating a chart which can react to numbers submitted by a form:
+%br/
+%br/
+%form#f1
+  %input#n0(type="checkbox" name="n0" value="0")0
+  %input#n10(type="checkbox" name="n10" value="10")10
+  %input#n40(type="checkbox" name="n40" value="40")40
+  %input#n20(type="checkbox" name="n20" value="20")20
+  %input#n30(type="checkbox" name="n30" value="30")30
+  %input#sb(type="submit" value="Draw Chart")
+
+
+%br/
+%br/
+
+
