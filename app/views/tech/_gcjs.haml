@@ -1,0 +1,17 @@
+
+:javascript
+  $(document).ready(function() {
+
+    gvChartInit();
+
+    $('#myTableClean').gvChart({
+          chartType: 'ColumnChart',
+          gvSettings: {
+                  vAxis: {title: 'No of players'},
+                  hAxis: {title: 'Month'},
+                  width: 720,
+                  height: 300,
+                  }
+    });
+
+  });

@@ -13,13 +13,22 @@ to my browser.
 Also I added a declaration to serve jquery.gvChart-1.0.min.js
 %br/
 %br/
-In addition I added syntax to call a JavaScript function named gvChartInit()
-%br/
-%br/
-After those 3 additions,  my head-element looked like this:
+After I added the two declarations my head-element looked like this:
 %br/
 %br/
 =render :partial => "head_demo"
+%br/
+%br/
+Then I added this syntax to the page you are currently reading:
+%br/
+%br/
+:escaped
+  <script type="text/javascript">gvChartInit();</script>
+%br/
+%br/
+:javascript
+  var x = 1;
+
 %br/
 %br/
 Next, I added a table which is displayed below:
@@ -42,31 +51,4 @@ Next, I added this jQuery syntax:
                   height: 300,
                   }
     });
-
-%br/
-%br/
-:javascript
-  $(document).ready(function() {
-
-    $('#myTable').gvChart({
-          chartType: 'ColumnChart',
-          gvSettings: {
-                  vAxis: {title: 'No of players'},
-                  hAxis: {title: 'Month'},
-                  width: 720,
-                  height: 300,
-                  }
-    });
-
-  });
-
-Then I added the table again but with the id: myTable
-%br/
-%br/
-Instead of seeing a table, I saw this chart:
-%br/
-
-=render :partial => "my_table"
-%br/
-%br/
 
