@@ -107,13 +107,9 @@ I started on the task of creating a chart which can react to numbers submitted b
       return chartData.join('');
     }
 
-    var valueArray = new Array(0,1,4,4,6,11,14,17,23,28,33,36,43,59,65);
-    var valueArray = new Array(0,10,40);
-    var valueArray = new Array(0,30);
-
     var valueArray = new Array();
  
-    var in0 = $("input#n0").attr("checked");
+    var in0 =  $("input#n0").attr("checked");
     var in10 = $("input#n10").attr("checked");
     var in40 = $("input#n40").attr("checked");
     var in20 = $("input#n20").attr("checked");
@@ -141,12 +137,12 @@ I started on the task of creating a chart which can react to numbers submitted b
       }
 
     var maxValue = 45;
-
     var se_out1 = simpleEncode(valueArray, maxValue);
-    var se_out2 = simpleEncode(valueArray, maxValue);
+    var valueArray = new Array();
 
     var chd_s = "&chd=s:Xhiugtqi";
     var chd_s = "&chd=" + se_out1;
+
 
     $("img#c10").hide();
 
@@ -162,9 +158,68 @@ I started on the task of creating a chart which can react to numbers submitted b
 
     });
 
+
   });
-Values passed in:
+
+
+:javascript
+  $(document).ready(function() {
+    $("#values_passed_in").hide();
+    $(".input_cb").click(function() {
+      $("#values_passed_in").show("slow");
+      var in0 = $("input#n0").attr("checked");
+      if(in0 == true)
+        {
+          $("span#v0").show("slow");
+        }
+      else
+        {
+          $("span#v0").hide();
+        }
+      var in10 = $("input#n10").attr("checked");
+      if(in10 == true)
+        {
+          $("span#v10").show("slow");
+        }
+      else
+        {
+          $("span#v10").hide();
+        }
+      var in40 = $("input#n40").attr("checked");
+      if(in40 == true)
+        {
+          $("span#v40").show("slow");
+        }
+      else
+        {
+          $("span#v40").hide();
+        }
+
+      var in20 = $("input#n20").attr("checked");
+      if(in20 == true)
+        {
+          $("span#v20").show("slow");
+        }
+      else
+        {
+          $("span#v20").hide();
+        }
+
+      var in30 = $("input#n30").attr("checked");
+      if(in30 == true)
+        {
+          $("span#v30").show("slow");
+        }
+      else
+        {
+          $("span#v30").hide();
+        }
+    });
+  });
+
 #values_passed_in
+  Values passed in:
+  %br/
   %span#v0  0
   %br/
   %span#v10 10
@@ -206,7 +261,6 @@ Values passed in:
           $("span#cb00").show();
           $("span#cb01").hide();
         }
-
       var in10 = $("input#n10").attr("checked");
       if(in10 == true)
         {
