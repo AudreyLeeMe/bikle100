@@ -70,26 +70,40 @@ I started on the task of creating a chart which can react to numbers submitted b
 %br/
 %br/
 
-%form#f1
-  %input.input_cb#n0(type="checkbox"  name="n0"  value="0" checked="checked")0
+%form#f1(action="/tech/google_charts10#f1" method="get")
+  %input.input_cb#n0(type="checkbox" value="0" name="n0")0
   %br/
-  %input.input_cb#n10(type="checkbox" name="n10" value="10" checked="checked")10
+  %input.input_cb#n10(type="checkbox" value="10" name="n10")10
   %br/
-  %input.input_cb#n40(type="checkbox" name="n40" value="40" checked="checked")40
+  %input.input_cb#n40(type="checkbox" value="40" name="n40")40
   %br/
-  %input.input_cb#n20(type="checkbox" name="n20" value="20" checked="checked")20
+  %input.input_cb#n20(type="checkbox" value="20" name="n20")20
   %br/
-  %input.input_cb#n30(type="checkbox" name="n30" value="30" checked="checked")30
+  %input.input_cb#n30(type="checkbox" value="30" name="n30")30
   %br/
-  %style(type="text/css")
-    span#sb {background-color:#CCC; border-style:solid; cursor:pointer;}
-  %span#sb Click Here to Draw Chart
+  %input#is0(type="submit" value="Click Here to Draw Chart")
+  %br/
 
 %br/
 %br/
+
+/
+  The JavaScript below is a demo of some simple jQuery syntax mixed with a JavaScript function I obtained from Google named: simpleEncode().
+  I start by filling valueArray with values from the form.
+  Then I pass valueArray to simpleEncode() which does the encoding.
+  I use a variable named chd_s to capture output from simpleEncode().
+  Next, I attach chd_s to the end of a string named src_s.
+  Then I pass src_s to a jQuery call which edits the img-element-src-attribute.
+  Next, I use a jQuery call to serve the img-element.
 
 :javascript
   $(document).ready(function() {
+
+    $("#n0").attr("checked","#{params[:n0]}");
+    $("#n10").attr("checked","#{params[:n10]}");
+    $("#n40").attr("checked","#{params[:n40]}");
+    $("#n20").attr("checked","#{params[:n20]}");
+    $("#n30").attr("checked","#{params[:n30]}");
 
     function simpleEncode(valueArray,maxValue) {
       var simpleEncoding = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -108,232 +122,43 @@ I started on the task of creating a chart which can react to numbers submitted b
     }
 
     var valueArray = new Array();
+
+    valueArray.push("#{params[:n0]}");
+    valueArray.push("#{params[:n10]}");
+    valueArray.push("#{params[:n40]}");
+    valueArray.push("#{params[:n20]}");
+    valueArray.push("#{params[:n30]}");
  
-    var in0 =  $("input#n0").attr("checked");
-    var in10 = $("input#n10").attr("checked");
-    var in40 = $("input#n40").attr("checked");
-    var in20 = $("input#n20").attr("checked");
-    var in30 = $("input#n30").attr("checked");
-
-    if(in0 == true)
-      {
-        valueArray.push(0);
-      }
-    if(in10 == true)
-      {
-        valueArray.push(10);
-      }
-    if(in40 == true)
-      {
-        valueArray.push(40);
-      }
-    if(in20 == true)
-      {
-        valueArray.push(20);
-      }
-    if(in30 == true)
-      {
-        valueArray.push(30);
-      }
-
     var maxValue = 45;
     var se_out1 = simpleEncode(valueArray, maxValue);
     var valueArray = new Array();
 
-    var chd_s = "&chd=s:Xhiugtqi";
     var chd_s = "&chd=" + se_out1;
 
+    var src_s = "http://chart.apis.google.com/chart?chxr=0,0,46&chxt=y&chs=300x225&cht=lc&chco=3D7930&chg=14.3,-1,1,1&chls=2,4,0&chm=B,C5D4B5BB,0,0,0&chtt=Bikle+Chart+2010-11-19+22%3A20+GMT" + chd_s ;
+
+    $("img#c10").attr("src",src_s);
 
     $("img#c10").hide();
 
-    $("#sb").click(function() {
-
-      var src_s = "http://chart.apis.google.com/chart?chxr=0,0,46&chxt=y&chs=300x225&cht=lc&chco=3D7930&chg=14.3,-1,1,1&chls=2,4,0&chm=B,C5D4B5BB,0,0,0&chtt=Bikle+Chart+2010-11-19+22%3A20+GMT" + chd_s ;
-
-      $("img#c10").attr("src",src_s);
-
-      $("img#c10").hide();
-
-      $("img#c10").show("slow");
-
-    });
-
+    $("img#c10").show("slow");
 
   });
-
-
-:javascript
-  $(document).ready(function() {
-    $("#values_passed_in").hide();
-    $(".input_cb").click(function() {
-      $("#values_passed_in").show("slow");
-      var in0 = $("input#n0").attr("checked");
-      if(in0 == true)
-        {
-          $("span#v0").show("slow");
-        }
-      else
-        {
-          $("span#v0").hide();
-        }
-      var in10 = $("input#n10").attr("checked");
-      if(in10 == true)
-        {
-          $("span#v10").show("slow");
-        }
-      else
-        {
-          $("span#v10").hide();
-        }
-      var in40 = $("input#n40").attr("checked");
-      if(in40 == true)
-        {
-          $("span#v40").show("slow");
-        }
-      else
-        {
-          $("span#v40").hide();
-        }
-
-      var in20 = $("input#n20").attr("checked");
-      if(in20 == true)
-        {
-          $("span#v20").show("slow");
-        }
-      else
-        {
-          $("span#v20").hide();
-        }
-
-      var in30 = $("input#n30").attr("checked");
-      if(in30 == true)
-        {
-          $("span#v30").show("slow");
-        }
-      else
-        {
-          $("span#v30").hide();
-        }
-    });
-  });
-
-#values_passed_in
-  Values passed in:
-  %br/
-  %span#v0  0
-  %br/
-  %span#v10 10
-  %br/
-  %span#v40 40
-  %br/
-  %span#v20 20
-  %br/
-  %span#v30 30
-  %br/
 
 %img#c10(width="300" height="225" alt="Bikle Chart 2010-11-19 22:20 GMT")
 
 %br/
 %br/
+The above chart is similar to the first chart on the page.
+The only difference is that I am use jQuery to dynamically set the value of the chd parameter of the src attribute.
+My jQuery code depends on a JavaScript snippet I obtained from Google:
+%br/
+%br/
 
-/
-  The javascript below is for debugging:
-
-:javascript
-  $(document).ready(function() {
-
-    $("span#cb00").hide();
-    $("span#cb100").hide();
-    $("span#cb200").hide();
-    $("span#cb300").hide();
-    $("span#cb400").hide();
-
-    $("input.input_cb").click(function() {
-
-      var in0 = $("input#n0").attr("checked");
-      if(in0 == true)
-        {
-          $("span#cb00").hide();
-          $("span#cb01").show();
-        }
-      else
-        {
-          $("span#cb00").show();
-          $("span#cb01").hide();
-        }
-      var in10 = $("input#n10").attr("checked");
-      if(in10 == true)
-        {
-          $("span#cb100").hide();
-          $("span#cb101").show();
-        }
-      else
-        {
-          $("span#cb100").show();
-          $("span#cb101").hide();
-        }
-
-      var in40 = $("input#n40").attr("checked");
-      if(in40 == true)
-        {
-          $("span#cb400").hide();
-          $("span#cb401").show();
-        }
-      else
-        {
-          $("span#cb400").show();
-          $("span#cb401").hide();
-        }
-
-      var in20 = $("input#n20").attr("checked");
-      if(in20 == true)
-        {
-          $("span#cb200").hide();
-          $("span#cb201").show();
-        }
-      else
-        {
-          $("span#cb200").show();
-          $("span#cb201").hide();
-        }
-
-      var in30 = $("input#n30").attr("checked");
-      if(in30 == true)
-        {
-          $("span#cb300").hide();
-          $("span#cb301").show();
-        }
-      else
-        {
-          $("span#cb300").show();
-          $("span#cb301").hide();
-        }
-
-    });
-
-  });
-
-/
-  checkbox 0 is
-  %span#cb00 not checked
-  %span#cb01 checked
-  %br/
-  checkbox 10 is
-  %span#cb100 not checked
-  %span#cb101 checked
-  %br/
-  checkbox 40 is
-  %span#cb400 not checked
-  %span#cb401 checked
-  %br/
-  checkbox 20 is
-  %span#cb200 not checked
-  %span#cb201 checked
-  %br/
-  checkbox 30 is
-  %span#cb300 not checked
-  %span#cb301 checked
-  %br/
-
-
-
+%a(href="http://code.google.com/apis/chart/docs/data_formats.html#encoding_data" target="g")
+  http://code.google.com/apis/chart/docs/data_formats.html#encoding_data
+%br/
+%br/
+If you want to see my code, just use the view-source method in your browser (perhaps via mouse-right-click).
+%br/
+%br/
