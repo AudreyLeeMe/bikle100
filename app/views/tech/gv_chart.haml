@@ -70,3 +70,19 @@ Instead of seeing a table, I saw this chart:
 %br/
 %br/
 
+:javascript
+  $(document).ready(function() {
+
+    $('#sql').gvChart({
+          chartType: 'ColumnChart',
+          gvSettings: {
+                  vAxis: {title: 'No of players'},
+                  hAxis: {title: 'Month'},
+                  width: 720,
+                  height: 300,
+                  }
+    });
+
+  });
+
+=render :partial => "sql"
