@@ -25,49 +25,31 @@ After those 3 additions,  my head-element looked like this:
 Next, I added a table which is displayed below:
 %br/
 %br/
-=render :partial => "my_table_clean"
+=render :partial => "plain_table"
 %br/
 %br/
 
-Next, I added this jQuery syntax:
+Then, I added this jQuery syntax:
 
 %pre
   :preserve
-    $('#myTable').gvChart({
+    $('#sql').gvChart({
           chartType: 'ColumnChart',
           gvSettings: {
-                  vAxis: {title: 'No of players'},
-                  hAxis: {title: 'Month'},
+                  vAxis: {title: 'Correlation Value'},
                   width: 720,
                   height: 300,
                   }
     });
 
+
 %br/
 %br/
-:javascript
-  $(document).ready(function() {
 
-    $('#myTable').gvChart({
-          chartType: 'ColumnChart',
-          gvSettings: {
-                  vAxis: {title: 'No of players'},
-                  hAxis: {title: 'Month'},
-                  width: 720,
-                  height: 300,
-                  }
-    });
-
-  });
-
-Then I added the table again but with the id: myTable
+Next, I added the table again but with the id: sql
 %br/
 %br/
 Instead of seeing a table, I saw this chart:
-%br/
-
-=render :partial => "my_table"
-%br/
 %br/
 
 :javascript
@@ -76,8 +58,7 @@ Instead of seeing a table, I saw this chart:
     $('#sql').gvChart({
           chartType: 'ColumnChart',
           gvSettings: {
-                  vAxis: {title: 'No of players'},
-                  hAxis: {title: 'Month'},
+                  vAxis: {title: 'Correlation Value'},
                   width: 720,
                   height: 300,
                   }
@@ -86,3 +67,5 @@ Instead of seeing a table, I saw this chart:
   });
 
 =render :partial => "sql"
+%br/
+%br/
