@@ -7,3 +7,1013 @@
 %h5 4 Hour Period (4hp2010_1123)
 
 This page describes some of my work at cutting up the week into four hour periods.
+%br/
+%br/
+I start the discussion by describing a script named h15c.sql.
+%br/
+%br/
+
+Prior to 2010-11-23 I had only looked at currency pairs which had USD as one of the currencies.
+%br/
+%br/
+
+Then, I decided to study other types of pairs.
+%br/
+%br/
+
+Due to the Irish Banking crisis in late 2010, it seemed natural to look at interactions between the Euro and the British Pound.
+%br/
+%br/
+
+So I wrote h15c.sql which is a script to derive prices of currency pairs like eur_gbp.
+%br/
+%br/
+
+
+I use h15c.sql to derive the prices of the 9 currency pairs listed below:
+
+%br/
+%br/
+
+eur_aud
+%br/
+eur_cad
+%br/
+eur_chf
+%br/
+eur_gbp
+%br/
+eur_jpy
+%br/
+%br/
+
+gbp_aud
+%br/
+gbp_cad
+%br/
+gbp_chf
+%br/
+gbp_jpy
+%br/
+%br/
+
+The prices of the above 9 pairs can be derived from these 6 pairs:
+%br/
+%br/
+
+eur_usd
+%br/
+aud_usd
+%br/
+gbp_usd
+%br/
+usd_cad
+%br/
+usd_chf
+%br/
+usd_jpy
+%br/
+%br/
+
+For example, to derive the price of the eur_aud pair, I use this expression:
+%br/
+%br/
+
+eur_aud price = eur_usd price / aud_usd price
+%br/
+%br/
+
+So, I use h15c.sql to derive the prices of 9 pairs from the prices of 6 pairs I downloaded from the net.
+
+In all, then, I have 15 currency pairs to study when I look for trading opportunities.
+%br/
+%br/
+
+A copy of h15c.sql can be found here:
+%br/
+%br/
+
+%a(href="https://github.com/bikle/rluck/blob/master/4hp2010_1123/h15c.sql" target="t")
+  https://github.com/bikle/rluck/blob/master/4hp2010_1123/h15c.sql
+%br/
+%br/
+
+Next, I wrote and ran a script to cut the data up into thousands of 4 hour pieces for each of the 15 currency pairs.
+%br/
+%br/
+The duration covered by this script ran from 2007-07-01 to 2010-11-24 and the total number of 4 hour pieces was 321,543 which is about 21,435 4-hr-pieces per currency pair.
+%br/
+%br/
+Then, I used SQL to look for lucrative patterns in the data:
+%br/
+%br/
+%pre
+  :preserve
+    SQL*Plus: Release 11.2.0.1.0 Production on Thu Nov 25 02:33:11 2010
+    
+    Copyright (c) 1982, 2009, Oracle.  All rights reserved.
+    
+    
+    Connected to:
+    Oracle Database 11g Enterprise Edition Release 11.2.0.1.0 - 64bit Production
+    With the Partitioning, OLAP, Data Mining and Real Application Testing options
+    
+    02:33:11 SQL> ALTER SESSION SET NLS_DATE_FORMAT = 'YYYY-MM-DD hh24:mi:ss';
+    
+    Session altered.
+    
+    Elapsed: 00:00:00.00
+    02:33:11 SQL> 02:33:11 SQL> --
+    02:33:11 SQL> -- 4hp.sql
+    02:33:11 SQL> --
+    02:33:11 SQL> 
+    02:33:11 SQL> SET LINES 66
+    02:33:11 SQL> -- I create h15c using h15c.sql to derive prices from hourly table:
+    02:33:11 SQL> DESC h15c
+     Name                             Null?    Type
+     -------------------------------- -------- -----------------------
+     PAIR                                      CHAR(7)
+     YDATE                                     DATE
+     CLSE                                      NUMBER
+    
+    02:33:11 SQL> SET LINES 166
+    02:33:11 SQL> 
+    02:33:11 SQL> CREATE OR REPLACE VIEW hp410 AS
+    02:33:11   2  SELECT
+    02:33:11   3  pair
+    02:33:11   4  -- ydate is granular down to the hour:
+    02:33:11   5  ,ydate
+    02:33:11   6  ,clse
+    02:33:11   7  -- Derive an attribute I call "day_hour":
+    02:33:11   8  ,TO_CHAR(ydate,'D')||'_'||TO_CHAR(ydate,'HH24')dhr
+    02:33:11   9  -- Get ydate 4 hours in the future:
+    02:33:11  10  ,LEAD(ydate,4,NULL)OVER(PARTITION BY pair ORDER BY pair,ydate) ydate4
+    02:33:11  11  -- Get closing price 4 hours in the future:
+    02:33:11  12  ,LEAD(clse,4,NULL)OVER(PARTITION BY pair ORDER BY pair,ydate) clse4
+    02:33:11  13  -- Calculate "Normalized-Price-Gain":
+    02:33:11  14  ,((LEAD(clse,4,NULL)OVER(PARTITION BY pair ORDER BY pair,ydate) - clse)/clse) npg
+    02:33:11  15  FROM h15c
+    02:33:11  16  WHERE ydate >= '2007-07-01'
+    02:33:11  17  -- Prevent divide by zero:
+    02:33:11  18  AND clse > 0
+    02:33:11  19  ORDER BY pair,ydate
+    02:33:11  20  /
+    
+    View created.
+    
+    Elapsed: 00:00:00.04
+    02:33:11 SQL> 
+    02:33:11 SQL> -- hp410 rpt:
+    02:33:11 SQL> -- I should see 15 pairs and nearly identical counts for each pair:
+    02:33:11 SQL> SELECT pair,MIN(ydate),COUNT(*),MAX(ydate)FROM hp410 GROUP BY pair ORDER BY pair;
+    
+    PAIR    MIN(YDATE)            COUNT(*) MAX(YDATE)
+    ------- ------------------- ---------- -------------------
+    aud_usd 2007-07-01 21:00:00      21453 2010-11-24 19:00:00
+    eur_aud 2007-07-01 21:00:00      21453 2010-11-24 19:00:00
+    eur_cad 2007-07-01 21:00:00      21453 2010-11-24 19:00:00
+    eur_chf 2007-07-01 21:00:00      21453 2010-11-24 19:00:00
+    eur_gbp 2007-07-01 21:00:00      21411 2010-11-24 19:00:00
+    eur_jpy 2007-07-01 21:00:00      21453 2010-11-24 19:00:00
+    eur_usd 2007-07-01 21:00:00      21453 2010-11-24 19:00:00
+    gbp_aud 2007-07-01 21:00:00      21411 2010-11-24 19:00:00
+    gbp_cad 2007-07-01 21:00:00      21411 2010-11-24 19:00:00
+    gbp_chf 2007-07-01 21:00:00      21411 2010-11-24 19:00:00
+    gbp_jpy 2007-07-01 21:00:00      21411 2010-11-24 19:00:00
+    gbp_usd 2007-07-01 21:00:00      21411 2010-11-24 19:00:00
+    usd_cad 2007-07-01 21:00:00      21453 2010-11-24 19:00:00
+    usd_chf 2007-07-01 21:00:00      21453 2010-11-24 19:00:00
+    usd_jpy 2007-07-01 21:00:00      21453 2010-11-24 19:00:00
+    
+    15 rows selected.
+    
+    Elapsed: 00:00:00.81
+    02:33:12 SQL> 
+    02:33:12 SQL> -- Study distribution of (ydate4 - ydate):
+    02:33:12 SQL> SELECT AVG(ydate4 - ydate), MIN(ydate4 - ydate),MAX(ydate4 - ydate),COUNT(ydate)FROM hp410;
+    
+    AVG(YDATE4-YDATE) MIN(YDATE4-YDATE) MAX(YDATE4-YDATE) COUNT(YDATE)
+    ----------------- ----------------- ----------------- ------------
+           .231761866        .166666667             2.625       321543
+    
+    Elapsed: 00:00:01.50
+    02:33:14 SQL> 
+    02:33:14 SQL> -- I should see no rows WHERE the date difference is less than 4 hours:
+    02:33:14 SQL> SELECT COUNT(ydate)FROM hp410 WHERE (ydate4 - ydate) < 4/24;
+    
+    COUNT(YDATE)
+    ------------
+               0
+    
+    Elapsed: 00:00:00.94
+    02:33:15 SQL> 
+    02:33:15 SQL> -- I should see many rows WHERE the date difference is exactly 4 hours:
+    02:33:15 SQL> SELECT COUNT(ydate)FROM hp410 WHERE (ydate4 - ydate) = 4/24;
+    
+    COUNT(YDATE)
+    ------------
+          310272
+    
+    Elapsed: 00:00:00.93
+    02:33:15 SQL> 
+    02:33:15 SQL> -- I should see some rows
+    02:33:15 SQL> -- WHERE the date difference is greater than 4 hours due to Saturday getting sandwiched between some of the records.
+    02:33:15 SQL> -- Also if I am missing some rows, counts will appear here:
+    02:33:15 SQL> SELECT TO_CHAR(ydate,'Day'),MIN(ydate),COUNT(ydate),MAX(ydate)
+    02:33:15   2  FROM hp410 WHERE (ydate4 - ydate) > 4/24
+    02:33:15   3  GROUP BY TO_CHAR(ydate,'Day')
+    02:33:15   4  ORDER BY COUNT(ydate)
+    02:33:15   5  /
+    
+    TO_CHAR(Y MIN(YDATE)          COUNT(YDATE) MAX(YDATE)
+    --------- ------------------- ------------ -------------------
+    Sunday    2009-05-10 23:00:00           15 2009-05-10 23:00:00
+    Monday    2009-05-11 00:00:00           45 2009-05-11 02:00:00
+    Tuesday   2007-12-25 12:00:00          144 2009-08-18 21:00:00
+    Wednesday 2008-01-09 20:00:00          171 2010-06-23 18:00:00
+    Thursday  2008-08-14 00:00:00          189 2009-06-25 15:00:00
+    Friday    2007-07-06 18:00:00        10647 2010-11-19 21:00:00
+    
+    6 rows selected.
+    
+    Elapsed: 00:00:00.99
+    02:33:16 SQL> 
+    02:33:16 SQL> -- Now I can aggregate:
+    02:33:16 SQL> CREATE OR REPLACE VIEW hp4agg AS
+    02:33:16   2  SELECT
+    02:33:16   3  pair,dhr
+    02:33:16   4  ,COUNT(npg)count_npg
+    02:33:16   5  ,ROUND(MIN(npg),4)min_npg
+    02:33:16   6  ,ROUND(AVG(npg),4)avg_npg
+    02:33:16   7  ,ROUND(STDDEV(npg),4)stddev_npg
+    02:33:16   8  ,ROUND(MAX(npg),4)max_npg
+    02:33:16   9  ,ROUND(SUM(npg),4)sum_npg
+    02:33:16  10  FROM hp410
+    02:33:16  11  GROUP BY pair,dhr
+    02:33:16  12  /
+    
+    View created.
+    
+    Elapsed: 00:00:00.04
+    02:33:16 SQL> 
+    02:33:16 SQL> -- I want more than 2 pips / hr:
+    02:33:16 SQL> SELECT * FROM hp4agg WHERE ABS(avg_npg) > 2 * 0.0001 * 4 ORDER BY dhr,pair;
+    
+    PAIR    DHR   COUNT_NPG    MIN_NPG    AVG_NPG STDDEV_NPG    MAX_NPG    SUM_NPG
+    ------- ---- ---------- ---------- ---------- ---------- ---------- ----------
+    gbp_aud 2_04        176     -.0095     -.0009      .0033      .0093     -.1497
+    aud_usd 2_20        178     -.0158      -.001      .0038      .0136     -.1748
+    gbp_jpy 2_20        178     -.0166     -.0009      .0037      .0144     -.1578
+    gbp_jpy 4_10        178     -.0148       .001      .0051      .0171      .1696
+    aud_usd 4_22        177     -.0124      .0009      .0049      .0255      .1596
+    gbp_aud 5_03        174     -.0168     -.0009      .0036      .0092     -.1557
+    eur_gbp 5_05        175     -.2243      -.001      .0174      .0171     -.1739
+    eur_jpy 5_05        177      -.013      .0014      .0132      .1651      .2435
+    gbp_aud 5_05        175     -.0148      .0018      .0356       .467      .3155
+    gbp_cad 5_05        175     -.0123      .0018      .0296      .3873       .314
+    gbp_chf 5_05        175     -.0246      .0024      .0364      .4771      .4253
+    gbp_jpy 5_05        175     -.0169       .003      .0383      .5021       .532
+    usd_cad 5_05        177     -.0088      .0009      .0161      .2102      .1672
+    usd_chf 5_05        177     -.0186      .0015       .022      .2885      .2638
+    usd_jpy 5_05        177      -.007      .0021      .0235      .3104      .3685
+    aud_usd 5_09        177     -.0148      .0016      .0218      .2839      .2768
+    eur_gbp 5_09        176     -.0128      .0013      .0219      .2869      .2272
+    eur_jpy 5_09        177     -.1389     -.0011      .0114      .0122     -.1928
+    gbp_aud 5_09        176      -.317     -.0015      .0243      .0125     -.2563
+    gbp_chf 5_09        176      -.321     -.0014      .0246      .0239     -.2439
+    gbp_jpy 5_09        176     -.3309     -.0018      .0255      .0157     -.3241
+    usd_chf 5_09        177     -.2257     -.0011      .0176        .03     -.1939
+    usd_jpy 5_09        177      -.237     -.0016      .0182      .0135     -.2771
+    aud_usd 5_10        176     -.2207     -.0016      .0173       .017     -.2847
+    eur_aud 5_10        176     -.0142       .001      .0112      .1377      .1823
+    eur_cad 5_10        176     -.0139       .001      .0072      .0751      .1835
+    eur_chf 5_10        176     -.0108       .001      .0113      .1433      .1707
+    eur_gbp 5_10        175     -.2238     -.0013      .0173       .014     -.2362
+    gbp_aud 5_10        175     -.0133       .003      .0355      .4658      .5264
+    gbp_cad 5_10        175     -.0195      .0029      .0295      .3852      .5067
+    gbp_chf 5_10        175     -.0145      .0029       .036       .473      .5132
+    gbp_jpy 5_10        175     -.0229      .0026       .038      .4975      .4484
+    usd_cad 5_10        176     -.0155       .002      .0168      .2127      .3447
+    usd_chf 5_10        176     -.0152      .0019      .0223      .2896       .341
+    usd_jpy 5_10        176     -.0178      .0015      .0239       .311      .2725
+    aud_usd 5_12        177     -.0183     -.0009      .0056      .0183     -.1559
+    usd_cad 5_12        177     -.0175      .0009      .0053      .0212      .1632
+    aud_usd 5_14        177      -.019      .0017      .0219      .2839      .2974
+    eur_gbp 5_14        177     -.0118      .0018      .0214      .2824      .3268
+    eur_usd 5_14        177     -.0118      .0009      .0101      .1264      .1648
+    gbp_aud 5_14        177     -.3159     -.0019      .0241      .0119     -.3318
+    gbp_cad 5_14        177     -.2747     -.0013       .021      .0141     -.2372
+    gbp_chf 5_14        177     -.3127     -.0021      .0237      .0088      -.365
+    gbp_jpy 5_14        177     -.3268     -.0019      .0255      .0173     -.3418
+    usd_chf 5_14        177     -.2175     -.0015      .0167       .009     -.2633
+    usd_jpy 5_14        177     -.2336     -.0014      .0184      .0177     -.2439
+    gbp_jpy 6_03        175     -.0297     -.0009      .0051      .0134     -.1571
+    gbp_jpy 6_05        175     -.0744      -.001      .0079      .0193     -.1671
+    eur_cad 6_08        177     -.0178     -.0009       .005      .0131     -.1566
+    aud_usd 6_18        177     -.0309      .0012      .0076      .0705      .2064
+    gbp_aud 6_18        177     -.0535      -.001      .0054      .0169     -.1827
+    gbp_aud 6_20        175     -.0473     -.0009      .0049      .0153     -.1493
+    gbp_aud 6_21        176     -.0409      -.001      .0051      .0162     -.1686
+    
+    53 rows selected.
+    
+    Elapsed: 00:00:01.79
+    02:33:18 SQL> 
+    02:33:18 SQL> exit
+    Disconnected from Oracle Database 11g Enterprise Edition Release 11.2.0.1.0 - 64bit Production
+    With the Partitioning, OLAP, Data Mining and Real Application Testing options
+
+It seemed to me from the above report that the most lucrative 4-hour-periods of the week were clustered around London market hours on Thursdays (day 5).
+%br/
+%br/
+I wrote some more SQL to see if this was indeed true:
+%pre
+  :preserve
+    02:57:56 SQL> 
+    02:57:56 SQL> SELECT dhr,ROUND(SUM(ABS(sum_npg)),4)SUM_npg FROM
+    02:57:56   2    (SELECT * FROM hp4agg WHERE ABS(avg_npg) > 2 * 0.0001 * 4)
+    02:57:56   3  GROUP BY dhr ORDER BY dhr
+    02:57:56   4  /
+    
+    DHR     SUM_NPG
+    ---- ----------
+    2_04      .1497
+    2_20      .3326
+    4_10      .1696
+    4_22      .1596
+    5_03      .1557
+    5_05     2.8037
+    5_09     1.9921
+    5_10     4.0103
+    5_12      .3191
+    5_14      2.572
+    6_03      .1571
+    6_05      .1671
+    6_08      .1566
+    6_18      .3891
+    6_20      .1493
+    6_21      .1686
+    
+    16 rows selected.
+    
+    Elapsed: 00:00:01.69
+    02:57:58 SQL> 
+
+%br/
+The above query confirms my observation.
+Also it suggests that a significant amount of trading happens at 05:00 GMT which is about 4 hours before the London bank offices fill with traders.  Perhaps that activity comes from Asia.  Japan is 9 hours ahead of London so 05:00 GMT is 2pm in Tokyo and 1pm in Hong Kong.
+%br/
+%br/
+So, the above discussion covers a period of about 41 months starting on 2007-07-01.
+%br/
+%br/
+I am curious about 2010 so I ran some queries to look at the first 11 months in 2010:
+%pre
+  :preserve
+    03:15:03 SQL> 
+    03:15:03 SQL> -- I want to see 2010:
+    03:15:03 SQL> CREATE OR REPLACE VIEW hp4agg2010 AS
+    03:15:03   2  SELECT
+    03:15:03   3  pair,dhr
+    03:15:03   4  ,COUNT(npg)count_npg
+    03:15:03   5  ,ROUND(MIN(npg),4)min_npg
+    03:15:03   6  ,ROUND(AVG(npg),4)avg_npg
+    03:15:03   7  ,ROUND(STDDEV(npg),4)stddev_npg
+    03:15:03   8  ,ROUND(MAX(npg),4)max_npg
+    03:15:03   9  ,ROUND(SUM(npg),4)sum_npg
+    03:15:03  10  FROM hp410
+    03:15:03  11  WHERE ydate > '2010-01-01'
+    03:15:03  12  GROUP BY pair,dhr
+    03:15:03  13  /
+    
+    View created.
+    
+    Elapsed: 00:00:00.07
+    03:15:04 SQL> 
+    03:15:04 SQL> -- I want more than 2 pips / hr:
+    03:15:04 SQL> SELECT * FROM hp4agg2010 WHERE ABS(avg_npg) > 2 * 0.0001 * 4 ORDER BY dhr,pair;
+    
+    PAIR    DHR   COUNT_NPG    MIN_NPG    AVG_NPG STDDEV_NPG    MAX_NPG    SUM_NPG
+    ------- ---- ---------- ---------- ---------- ---------- ---------- ----------
+    usd_chf 1_21         47      -.004      .0009      .0027      .0079       .042
+    eur_cad 2_07         47     -.0066     -.0009      .0024      .0048     -.0411
+    eur_chf 2_07         47     -.0052     -.0009       .002      .0038     -.0402
+    eur_aud 2_09         47     -.0095     -.0009      .0025      .0052     -.0422
+    eur_jpy 2_09         47     -.0123      -.001      .0033      .0052     -.0452
+    eur_aud 2_11         47     -.0093      -.001      .0029      .0047     -.0452
+    eur_jpy 2_11         47       -.01      -.001      .0037      .0072     -.0451
+    eur_jpy 2_12         47     -.0073     -.0009       .003       .005     -.0421
+    gbp_aud 2_14         47     -.0092     -.0009      .0032        .01     -.0406
+    aud_usd 2_18         47     -.0088     -.0009      .0026      .0048     -.0418
+    aud_usd 2_19         47     -.0071     -.0011      .0019      .0028     -.0517
+    aud_usd 2_20         47     -.0079     -.0009      .0026       .006     -.0419
+    eur_jpy 2_20         47     -.0083     -.0011      .0032       .005     -.0496
+    eur_jpy 2_21         47     -.0058     -.0011      .0028      .0064     -.0505
+    eur_jpy 2_22         47     -.0075     -.0014      .0029      .0054     -.0663
+    gbp_jpy 2_22         47     -.0072     -.0012      .0028      .0047     -.0568
+    eur_jpy 2_23         47     -.0071     -.0012      .0032      .0054     -.0541
+    gbp_jpy 2_23         47     -.0074     -.0012       .003      .0059     -.0558
+    usd_jpy 2_23         47     -.0059      -.001      .0021      .0036     -.0489
+    gbp_jpy 3_00         47      -.009     -.0009       .003      .0061     -.0439
+    usd_jpy 3_00         47      -.007      -.001      .0022      .0025     -.0456
+    eur_jpy 3_04         47     -.0156     -.0011      .0046      .0074     -.0499
+    gbp_jpy 3_04         47     -.0097     -.0012      .0042       .011     -.0552
+    eur_jpy 3_05         47     -.0148     -.0011      .0049      .0067     -.0506
+    gbp_jpy 3_05         47     -.0127     -.0014      .0049      .0106     -.0648
+    gbp_usd 3_05         47     -.0083     -.0009      .0035      .0068     -.0427
+    eur_jpy 3_06         47     -.0109      -.001      .0048      .0096      -.045
+    gbp_jpy 3_06         47     -.0131     -.0013      .0049      .0099     -.0601
+    gbp_usd 3_06         47     -.0093     -.0009      .0038       .006      -.043
+    eur_jpy 3_07         47     -.0095     -.0009      .0042      .0082     -.0422
+    eur_usd 3_07         47     -.0091     -.0009      .0035      .0072     -.0405
+    gbp_cad 3_10         47     -.0153       .001      .0046       .008      .0478
+    gbp_usd 3_10         47     -.0048      .0009      .0037      .0135      .0434
+    usd_chf 3_10         47     -.0149     -.0011      .0055      .0142     -.0499
+    usd_jpy 3_10         47     -.0067      -.001      .0032      .0054     -.0459
+    aud_usd 3_11         47     -.0073      .0018      .0042      .0103      .0838
+    eur_usd 3_11         47     -.0087       .001      .0046       .013      .0487
+    gbp_usd 3_11         47     -.0047      .0013      .0039      .0124      .0629
+    usd_chf 3_11         47      -.012     -.0017       .005      .0091     -.0793
+    usd_jpy 3_11         47      -.009     -.0009      .0035      .0061     -.0401
+    aud_usd 3_12         47      -.008      .0011      .0043      .0103        .05
+    usd_chf 3_12         47     -.0107     -.0012      .0044      .0078     -.0554
+    gbp_cad 3_15         47     -.0059      .0009      .0034      .0088       .041
+    usd_cad 3_15         47     -.0077       .001      .0034      .0093      .0451
+    eur_cad 3_19         47     -.0045     -.0009      .0014       .002     -.0406
+    gbp_jpy 3_22         47     -.0039      .0009      .0034      .0147      .0402
+    gbp_jpy 4_00         47     -.0051      .0009      .0039      .0208      .0405
+    eur_jpy 4_05         47     -.0079      .0012      .0037      .0082      .0545
+    gbp_jpy 4_05         47       -.01      .0011      .0044      .0086      .0531
+    eur_jpy 4_10         47     -.0092      .0013      .0046      .0153      .0634
+    gbp_jpy 4_10         47     -.0068      .0014      .0045      .0137      .0641
+    usd_jpy 4_10         47     -.0043      .0011      .0031      .0099      .0537
+    gbp_jpy 4_12         47     -.0066      .0012      .0031      .0068      .0542
+    gbp_usd 4_12         47     -.0055      .0009      .0029      .0075      .0417
+    aud_usd 4_22         46     -.0074      .0009       .004      .0149      .0428
+    aud_usd 4_23         46     -.0102       .001      .0043      .0123      .0446
+    usd_jpy 4_23         46     -.0076     -.0009      .0026      .0059     -.0409
+    gbp_aud 5_03         46     -.0057      -.001      .0029      .0086     -.0444
+    gbp_cad 5_03         46     -.0072     -.0011      .0025      .0051     -.0526
+    aud_usd 5_04         46     -.0119       .001      .0036      .0092      .0472
+    gbp_aud 5_04         46     -.0082     -.0011      .0033      .0114     -.0524
+    gbp_cad 5_04         46     -.0083     -.0012       .003      .0057     -.0544
+    gbp_chf 5_04         46     -.0095     -.0011      .0029      .0041     -.0496
+    usd_cad 5_04         46     -.0074     -.0011      .0028      .0063     -.0485
+    usd_chf 5_04         46     -.0125     -.0009      .0032      .0042     -.0437
+    aud_usd 5_05         46     -.2186     -.0037      .0326      .0081       -.17
+    eur_aud 5_05         46     -.0076      .0024      .0206      .1379      .1096
+    eur_cad 5_05         46     -.0069      .0012      .0117      .0761      .0556
+    eur_chf 5_05         46     -.0093      .0025      .0218      .1457       .116
+    eur_gbp 5_05         46     -.2243     -.0045      .0333      .0091     -.2063
+    eur_jpy 5_05         46     -.0097      .0038      .0248      .1651      .1731
+    eur_usd 5_05         46     -.1108      -.002      .0169      .0096     -.0907
+    gbp_aud 5_05         46     -.0083      .0092      .0691       .467       .421
+    gbp_cad 5_05         46     -.0084      .0076      .0573      .3873      .3491
+    gbp_chf 5_05         46     -.0085      .0093      .0706      .4771      .4296
+    gbp_jpy 5_05         46     -.0112      .0107      .0742      .5021      .4923
+    gbp_usd 5_05         46      -.008      .0032      .0219      .1463      .1487
+    usd_cad 5_05         46     -.0073      .0037      .0313      .2102      .1699
+    usd_chf 5_05         46     -.0141      .0052      .0429      .2885      .2391
+    usd_jpy 5_05         46     -.0046      .0065      .0459      .3104      .2982
+    aud_usd 5_06         46     -.0076      .0012      .0039      .0132      .0553
+    eur_chf 5_06         46     -.0077      -.001      .0033      .0085     -.0441
+    gbp_chf 5_06         46     -.0087     -.0009      .0032      .0047     -.0397
+    usd_cad 5_06         46     -.0072      -.001      .0031      .0076     -.0465
+    usd_chf 5_06         46      -.015     -.0015      .0042      .0068     -.0695
+    usd_chf 5_07         46     -.0087      -.001       .003       .005     -.0462
+    aud_usd 5_09         46     -.0075      .0059       .042      .2839      .2714
+    eur_aud 5_09         46     -.1211     -.0023      .0182      .0094     -.1055
+    eur_chf 5_09         46     -.1263     -.0031      .0189      .0112     -.1416
+    eur_gbp 5_09         46     -.0056      .0061      .0424      .2869      .2801
+    eur_jpy 5_09         46     -.1389     -.0037      .0208      .0062     -.1694
+    eur_usd 5_09         46     -.0064      .0029      .0192      .1285      .1313
+    gbp_aud 5_09         46      -.317     -.0064       .047      .0091     -.2945
+    gbp_cad 5_09         46     -.2777     -.0052      .0413      .0079     -.2371
+    gbp_chf 5_09         46      -.321     -.0072      .0475      .0123     -.3295
+    gbp_jpy 5_09         46     -.3309     -.0077      .0489      .0064     -.3545
+    gbp_usd 5_09         46     -.1231     -.0025      .0185      .0127     -.1133
+    usd_cad 5_09         46     -.1763     -.0032      .0263        .01     -.1453
+    usd_chf 5_09         46     -.2257     -.0053      .0335      .0125     -.2436
+    usd_jpy 5_09         46      -.237     -.0059       .035      .0061     -.2701
+    aud_usd 5_10         46     -.2207      -.006      .0326      .0067     -.2761
+    eur_aud 5_10         46     -.0057      .0043      .0205      .1377      .1989
+    eur_cad 5_10         46     -.0052      .0033      .0117      .0751      .1519
+    eur_chf 5_10         46     -.0108      .0032      .0214      .1433      .1463
+    eur_gbp 5_10         46     -.2238     -.0047      .0332      .0102     -.2152
+    eur_jpy 5_10         46     -.0179      .0031      .0246      .1623      .1413
+    eur_usd 5_10         46     -.1135     -.0023      .0171      .0095     -.1081
+    gbp_aud 5_10         46      -.009      .0113      .0686      .4658      .5187
+    gbp_cad 5_10         46     -.0148      .0099      .0568      .3852      .4536
+    gbp_chf 5_10         46     -.0113      .0102      .0699       .473      .4677
+    gbp_jpy 5_10         46     -.0187      .0102      .0737      .4975      .4682
+    gbp_usd 5_10         46     -.0099       .003      .0213      .1422      .1393
+    usd_cad 5_10         46     -.0049      .0062      .0314      .2127      .2842
+    usd_chf 5_10         46       -.01      .0063      .0429      .2896      .2875
+    usd_jpy 5_10         46     -.0178      .0062      .0462       .311      .2848
+    aud_usd 5_11         46      -.011      -.001      .0045      .0098     -.0479
+    eur_aud 5_11         46      -.005      .0012      .0038      .0117      .0551
+    eur_cad 5_11         46     -.0083      .0011      .0047      .0162      .0527
+    gbp_aud 5_11         46      -.009      .0011      .0036      .0075      .0492
+    gbp_cad 5_11         46     -.0131       .001      .0044      .0119      .0468
+    
+    PAIR    DHR   COUNT_NPG    MIN_NPG    AVG_NPG STDDEV_NPG    MAX_NPG    SUM_NPG
+    ------- ---- ---------- ---------- ---------- ---------- ---------- ----------
+    usd_cad 5_11         46     -.0067       .001      .0046      .0135      .0463
+    aud_usd 5_12         46     -.0183     -.0022      .0052        .01     -.1026
+    eur_aud 5_12         46      -.007      .0013      .0044      .0128      .0607
+    eur_jpy 5_12         46     -.0246     -.0019      .0066      .0129     -.0868
+    eur_usd 5_12         46     -.0099     -.0009      .0036      .0084     -.0428
+    gbp_aud 5_12         46     -.0051      .0016      .0041      .0161      .0715
+    gbp_jpy 5_12         46     -.0245     -.0017      .0068      .0093      -.076
+    usd_cad 5_12         46     -.0068      .0014      .0045      .0109      .0658
+    usd_chf 5_12         46     -.0063      .0012      .0038      .0096      .0537
+    usd_jpy 5_12         46     -.0183      -.001      .0057      .0077      -.044
+    aud_usd 5_13         46     -.0145     -.0013      .0051      .0111     -.0592
+    eur_aud 5_13         46      -.005      .0012      .0038      .0121      .0564
+    gbp_aud 5_13         46     -.0083       .001      .0037      .0106      .0471
+    usd_cad 5_13         46     -.0067      .0009      .0044      .0142      .0424
+    aud_usd 5_14         46      -.019      .0057      .0422      .2839      .2625
+    eur_aud 5_14         46     -.1227     -.0023      .0185      .0105     -.1061
+    eur_cad 5_14         46     -.0698     -.0011      .0112       .017     -.0499
+    eur_chf 5_14         46     -.1186     -.0023      .0178      .0132     -.1077
+    eur_gbp 5_14         46     -.0038      .0064      .0417      .2824      .2962
+    eur_jpy 5_14         46     -.1367     -.0043      .0224      .0247     -.1975
+    eur_usd 5_14         46     -.0087      .0026      .0191      .1264      .1212
+    gbp_aud 5_14         46     -.3159     -.0068      .0467      .0088      -.313
+    gbp_cad 5_14         46     -.2747     -.0058      .0407      .0131     -.2686
+    gbp_chf 5_14         46     -.3127     -.0069      .0462      .0073     -.3154
+    gbp_jpy 5_14         46     -.3268     -.0087       .049       .014     -.4013
+    gbp_usd 5_14         46     -.1217     -.0031      .0182      .0081     -.1406
+    usd_cad 5_14         46     -.1742     -.0032      .0262       .026     -.1486
+    usd_chf 5_14         46     -.2175     -.0044      .0323      .0079      -.201
+    usd_jpy 5_14         46     -.2336     -.0063      .0352      .0058     -.2897
+    aud_usd 5_16         46     -.0095      .0011      .0035      .0092      .0492
+    usd_jpy 5_18         46     -.0073       .001      .0037       .021      .0476
+    aud_usd 5_19         46      -.014     -.0009      .0028      .0032     -.0394
+    usd_jpy 5_19         46     -.0018       .001      .0025      .0125      .0441
+    aud_usd 5_20         46     -.0098     -.0011      .0023      .0049     -.0518
+    eur_usd 5_20         46     -.0089      -.001      .0019      .0028     -.0451
+    usd_jpy 5_20         46      -.003      .0011      .0026      .0112      .0499
+    eur_chf 6_00         46     -.0025      .0009      .0023      .0114      .0398
+    gbp_cad 6_08         47     -.0169      -.001      .0049      .0127     -.0456
+    gbp_jpy 6_08         47     -.0136     -.0009      .0052      .0103     -.0418
+    gbp_usd 6_08         47     -.0093      -.001      .0035      .0068     -.0452
+    aud_usd 6_16         47     -.0043      .0009      .0026      .0069      .0405
+    aud_usd 6_18         47     -.0082      .0015       .004      .0126      .0726
+    eur_gbp 6_18         47     -.0043      .0012      .0031      .0135      .0553
+    eur_jpy 6_18         47     -.0064      .0016      .0053      .0297      .0743
+    eur_usd 6_18         47     -.0036      .0013      .0037       .016      .0628
+    gbp_aud 6_18         47     -.0099     -.0014      .0034      .0058     -.0645
+    gbp_chf 6_18         47     -.0065     -.0012      .0024      .0039     -.0582
+    usd_cad 6_18         47     -.0109     -.0009      .0024      .0032     -.0419
+    usd_chf 6_18         47     -.0112     -.0014      .0029      .0025     -.0654
+    eur_gbp 6_19         47     -.0037      .0011       .003      .0152      .0531
+    eur_jpy 6_19         47     -.0039      .0009      .0036      .0197      .0442
+    gbp_chf 6_19         47     -.0087      -.001      .0021      .0033     -.0474
+    eur_jpy 6_20         46      -.006      .0012      .0039      .0155      .0534
+    eur_usd 6_20         46     -.0047       .001      .0031      .0116       .044
+    eur_jpy 6_21         47     -.0121       .001      .0045      .0156      .0453
+    
+    175 rows selected.
+    
+    Elapsed: 00:00:01.44
+    03:15:05 SQL> 
+    03:15:05 SQL> SELECT dhr,ROUND(SUM(ABS(sum_npg)),4)SUM_npg FROM
+    03:15:05   2    (SELECT * FROM hp4agg2010 WHERE ABS(avg_npg) > 2 * 0.0001 * 4)
+    03:15:05   3  GROUP BY dhr ORDER BY dhr
+    03:15:05   4  /
+    
+    DHR     SUM_NPG
+    ---- ----------
+    1_21       .042
+    2_07      .0813
+    2_09      .0874
+    2_11      .0903
+    2_12      .0421
+    2_14      .0406
+    2_18      .0418
+    2_19      .0517
+    2_20      .0915
+    2_21      .0505
+    2_22      .1231
+    2_23      .1588
+    3_00      .0895
+    3_04      .1051
+    3_05      .1581
+    3_06      .1481
+    3_07      .0827
+    3_10       .187
+    3_11      .3148
+    3_12      .1054
+    3_15      .0861
+    3_19      .0406
+    3_22      .0402
+    4_00      .0405
+    4_05      .1076
+    4_10      .1812
+    4_12      .0959
+    4_22      .0428
+    4_23      .0855
+    5_03       .097
+    5_04      .2958
+    5_05     3.4692
+    5_06      .2551
+    5_07      .0462
+    5_09     3.0872
+    5_10     4.1418
+    5_11       .298
+    5_12      .6039
+    5_13      .2051
+    5_14     3.2193
+    5_16      .0492
+    5_18      .0476
+    5_19      .0835
+    5_20      .1468
+    6_00      .0398
+    6_08      .1326
+    6_16      .0405
+    6_18       .495
+    6_19      .1447
+    6_20      .0974
+    6_21      .0453
+    
+    51 rows selected.
+    
+    Elapsed: 00:00:01.40
+    03:15:06 SQL> 
+    03:15:06 SQL> exit
+    Disconnected from Oracle Database 11g Enterprise Edition Release 11.2.0.1.0 - 64bit Production
+    With the Partitioning, OLAP, Data Mining and Real Application Testing options
+%br/
+The above report is a bit too large for my taste.
+
+But what I read from it is that 11 month period in 2010 is similar to the 41 month period from 2007-07-01 to 2010-11-24.
+
+The main point is that Thursday is a lucrative trading day for the trader who wants to open a currency-pair-position for 4 hours and then close it.
+%br/
+%br/
+Since the 11 months in 2010 bore some resemblence to the the 41 months between  2007-07-01 and 2010-11-24, I wrote SQL to help me quantify the correlation between what I call "Far-Past" and "Near-Past".
+%br/
+%br/
+
+Output from that effort is displayed below:
+%br/
+%pre
+  :preserve
+    SQL*Plus: Release 11.2.0.1.0 Production on Thu Nov 25 01:57:46 2010
+    
+    Copyright (c) 1982, 2009, Oracle.  All rights reserved.
+    
+    
+    Connected to:
+    Oracle Database 11g Enterprise Edition Release 11.2.0.1.0 - 64bit Production
+    With the Partitioning, OLAP, Data Mining and Real Application Testing options
+    
+    01:57:46 SQL> ALTER SESSION SET NLS_DATE_FORMAT = 'YYYY-MM-DD hh24:mi:ss';
+    
+    Session altered.
+    
+    Elapsed: 00:00:00.00
+    01:57:46 SQL> 01:57:46 SQL> --
+    01:57:46 SQL> -- hp4aggj.sql
+    01:57:46 SQL> --
+    01:57:46 SQL> 
+    01:57:46 SQL> SET LINES 66
+    01:57:46 SQL> -- I create h15c using h15c.sql to derive prices from hourly table:
+    01:57:46 SQL> DESC h15c
+     Name                             Null?    Type
+     -------------------------------- -------- -----------------------
+     PAIR                                      CHAR(7)
+     YDATE                                     DATE
+     CLSE                                      NUMBER
+    
+    01:57:46 SQL> SET LINES 166
+    01:57:46 SQL> 
+    01:57:46 SQL> CREATE OR REPLACE VIEW hp10 AS
+    01:57:46   2  SELECT
+    01:57:46   3  pair
+    01:57:46   4  -- ydate is granular down to the hour:
+    01:57:46   5  ,ydate
+    01:57:46   6  ,clse
+    01:57:46   7  -- Derive an attribute I call "day_hour":
+    01:57:46   8  ,TO_CHAR(ydate,'D')||'_'||TO_CHAR(ydate,'HH24')dhr
+    01:57:46   9  -- Get ydate 4 hours in the future:
+    01:57:46  10  ,LEAD(ydate,4,NULL)OVER(PARTITION BY pair ORDER BY pair,ydate) ydate4
+    01:57:46  11  -- Get closing price 4 hours in the future:
+    01:57:46  12  ,LEAD(clse,4,NULL)OVER(PARTITION BY pair ORDER BY pair,ydate) clse4
+    01:57:46  13  -- Calculate "Normalized-Price-Gain":
+    01:57:46  14  ,((LEAD(clse,4,NULL)OVER(PARTITION BY pair ORDER BY pair,ydate) - clse)/clse) npg
+    01:57:46  15  -- I use hourly to supply 6 pairs:
+    01:57:46  16  -- FROM hourly
+    01:57:46  17  -- I use h15c to supply 15 pairs instead of just 6:
+    01:57:46  18  FROM h15c
+    01:57:46  19  WHERE ydate > sysdate - 366
+    01:57:46  20  -- Prevent divide by zero:
+    01:57:46  21  AND clse > 0
+    01:57:46  22  ORDER BY pair,ydate
+    01:57:46  23  /
+    
+    View created.
+
+    01:57:48 SQL> 
+    01:57:48 SQL> -- I create a view of what I call "Near-Past":
+    01:57:48 SQL> CREATE OR REPLACE VIEW hpnp AS SELECT * FROM hp10 WHERE ydate > sysdate - 60;
+    
+    View created.
+    
+    Elapsed: 00:00:00.07
+    01:57:48 SQL> 
+    01:57:48 SQL> -- I create a view of what I call "Far-Past":
+    01:57:48 SQL> CREATE OR REPLACE VIEW hpfp AS SELECT * FROM hp10 WHERE ydate <= sysdate - 60;
+    
+    View created.
+    
+    Elapsed: 00:00:00.07
+    01:57:48 SQL> 
+    01:57:48 SQL> 
+    01:57:48 SQL> -- Now I can aggregate Far-Past:
+    01:57:48 SQL> CREATE OR REPLACE VIEW hpfp_agg AS
+    01:57:48   2  SELECT
+    01:57:48   3  pair,dhr
+    01:57:48   4  ,COUNT(npg)count_npg
+    01:57:48   5  ,ROUND(MIN(npg),4)min_npg
+    01:57:48   6  ,ROUND(AVG(npg),4)avg_npg
+    01:57:48   7  ,ROUND(STDDEV(npg),4)stddev_npg
+    01:57:48   8  ,ROUND(MAX(npg),4)max_npg
+    01:57:48   9  ,ROUND(SUM(npg),4)sum_npg
+    01:57:48  10  FROM hpfp
+    01:57:48  11  WHERE (ydate4 - ydate) = 4/24
+    01:57:48  12  GROUP BY pair,dhr
+    01:57:48  13  -- I want more than 1.5 pip / hr over the 4hr period:
+    01:57:48  14  HAVING ABS(AVG(npg)) > 1.5 * 0.0001 * 4
+    01:57:48  15  /
+    
+    View created.
+    
+    Elapsed: 00:00:00.04
+    01:57:48 SQL> 
+    01:57:48 SQL> -- hpfp_agg rpt:
+    01:57:48 SQL> SELECT COUNT(*)FROM hpfp_agg;
+    
+      COUNT(*)
+    ----------
+           338
+    
+    Elapsed: 00:00:00.55
+    01:57:49 SQL> 
+    01:57:49 SQL> SELECT * FROM hpfp_agg ORDER BY pair,dhr
+    01:57:49   2  
+    01:57:49 SQL> -- Now I can aggregate Near-Past:
+    01:57:49 SQL> CREATE OR REPLACE VIEW hpnp_agg AS
+    01:57:49   2  SELECT
+    01:57:49   3  pair,dhr
+    01:57:49   4  ,COUNT(npg)count_npg
+    01:57:49   5  ,ROUND(MIN(npg),4)min_npg
+    01:57:49   6  ,ROUND(AVG(npg),4)avg_npg
+    01:57:49   7  ,ROUND(STDDEV(npg),4)stddev_npg
+    01:57:49   8  ,ROUND(MAX(npg),4)max_npg
+    01:57:49   9  ,ROUND(SUM(npg),4)sum_npg
+    01:57:49  10  FROM hpnp
+    01:57:49  11  WHERE (ydate4 - ydate) = 4/24
+    01:57:49  12  GROUP BY pair,dhr
+    01:57:49  13  /
+    
+    View created.
+    
+    Elapsed: 00:00:00.03
+    01:57:49 SQL> 
+    01:57:49 SQL> -- hpnp_agg rpt:
+    01:57:49 SQL> SELECT COUNT(*)FROM hpnp_agg;
+    
+      COUNT(*)
+    ----------
+          1755
+    
+    Elapsed: 00:00:00.38
+    01:57:49 SQL> 
+    01:57:49 SQL> SELECT * FROM hpnp_agg ORDER BY pair,dhr
+    01:57:49   2  
+    01:57:49 SQL> -- Join agg views:
+    01:57:49 SQL> 
+    01:57:49 SQL> CREATE OR REPLACE VIEW hp4aggj AS
+    01:57:49   2  SELECT
+    01:57:49   3  a.pair
+    01:57:49   4  ,a.dhr
+    01:57:49   5  ,a.avg_npg avg_npg1
+    01:57:49   6  ,b.avg_npg avg_npg2
+    01:57:49   7  FROM hpfp_agg a, hpnp_agg b
+    01:57:49   8  WHERE a.pair = b.pair AND a.dhr = b.dhr
+    01:57:49   9  /
+    
+    View created.
+    
+    Elapsed: 00:00:00.08
+    01:57:50 SQL> 
+    01:57:50 SQL> -- Sort by dhr since I can then easily compare to my calendar:
+    01:57:50 SQL> SELECT * FROM hp4aggj ORDER BY dhr,pair;
+    
+    PAIR    DHR    AVG_NPG1   AVG_NPG2
+    ------- ---- ---------- ----------
+    gbp_chf 1_21      .0008      .0011
+    usd_chf 1_21      .0007      .0012
+    aud_usd 1_22      .0007      .0005
+
+    SNIP...
+    Output is here:
+    https://github.com/bikle/rluck/blob/master/4hp2010_1123/hp4aggj.txt
+
+    
+    338 rows selected.
+    
+    Elapsed: 00:00:01.05
+    01:57:51 SQL> 
+    01:57:51 SQL> -- Look for CORR() for each pair:
+    01:57:51 SQL> SELECT pair, CORR(avg_npg1,avg_npg2),COUNT(dhr)FROM hp4aggj GROUP BY pair ORDER BY pair;
+    
+    PAIR    CORR(AVG_NPG1,AVG_NPG2) COUNT(DHR)
+    ------- ----------------------- ----------
+    aud_usd               .22680665         32
+    eur_aud              .321476916         21
+    eur_cad              .091212572         30
+    eur_chf              -.10967434         10
+    eur_gbp              .071785754         13
+    eur_jpy              .160635176         32
+    eur_usd              -.01509197         19
+    gbp_aud              .056792026         22
+    gbp_cad              -.07015904         28
+    gbp_chf              -.38981076         12
+    gbp_jpy              .204043685         37
+    gbp_usd              -.52272106         23
+    usd_cad              .139164506         19
+    usd_chf              -.10750556         21
+    usd_jpy              .390594208         19
+    
+    15 rows selected.
+    
+    Elapsed: 00:00:00.94
+    01:57:52 SQL> 
+    01:57:52 SQL> -- Look CORR() for each day:
+    01:57:52 SQL> SELECT CORR(avg_npg1,avg_npg2),COUNT(dhr)FROM hp4aggj WHERE dhr LIKE'1%';
+    
+    CORR(AVG_NPG1,AVG_NPG2) COUNT(DHR)
+    ----------------------- ----------
+                 .833213282          7
+    
+    Elapsed: 00:00:00.90
+    01:57:52 SQL> SELECT CORR(avg_npg1,avg_npg2),COUNT(dhr)FROM hp4aggj WHERE dhr LIKE'2%';
+    
+    CORR(AVG_NPG1,AVG_NPG2) COUNT(DHR)
+    ----------------------- ----------
+                 -.10279936         51
+    
+    Elapsed: 00:00:00.91
+    01:57:53 SQL> SELECT CORR(avg_npg1,avg_npg2),COUNT(dhr)FROM hp4aggj WHERE dhr LIKE'3%';
+    
+    CORR(AVG_NPG1,AVG_NPG2) COUNT(DHR)
+    ----------------------- ----------
+                 -.65426647         90
+    
+    Elapsed: 00:00:00.90
+    01:57:54 SQL> SELECT CORR(avg_npg1,avg_npg2),COUNT(dhr)FROM hp4aggj WHERE dhr LIKE'4%';
+    
+    CORR(AVG_NPG1,AVG_NPG2) COUNT(DHR)
+    ----------------------- ----------
+                 .266920557         53
+    
+    Elapsed: 00:00:00.95
+    01:57:55 SQL> SELECT CORR(avg_npg1,avg_npg2),COUNT(dhr)FROM hp4aggj WHERE dhr LIKE'5%';
+    
+    CORR(AVG_NPG1,AVG_NPG2) COUNT(DHR)
+    ----------------------- ----------
+                 .085706469         93
+    
+    Elapsed: 00:00:00.93
+    01:57:56 SQL> SELECT CORR(avg_npg1,avg_npg2),COUNT(dhr)FROM hp4aggj WHERE dhr LIKE'6%';
+    
+    CORR(AVG_NPG1,AVG_NPG2) COUNT(DHR)
+    ----------------------- ----------
+                 -.05569176         44
+    
+    Elapsed: 00:00:00.90
+    01:57:57 SQL> 
+    01:57:57 SQL> -- Look at CORR()-combo of some pairs and days:
+    01:57:57 SQL> 
+    01:57:57 SQL> SELECT CORR(avg_npg1,avg_npg2),COUNT(dhr)FROM hp4aggj WHERE dhr LIKE'3%'AND pair IN('gbp_usd','gbp_chf');
+    
+    CORR(AVG_NPG1,AVG_NPG2) COUNT(DHR)
+    ----------------------- ----------
+                 -.80765338         11
+    
+    Elapsed: 00:00:00.59
+    01:57:58 SQL> 
+    01:57:58 SQL> SELECT
+    01:57:58   2  CORR(avg_npg1,avg_npg2)
+    01:57:58   3  ,COUNT(dhr)
+    01:57:58   4  FROM hp4aggj
+    01:57:58   5  WHERE dhr LIKE'4%'
+    01:57:58   6  AND pair IN('aud_usd','eur_aud','gbp_jpy','usd_jpy')
+    01:57:58   7  /
+    
+    CORR(AVG_NPG1,AVG_NPG2) COUNT(DHR)
+    ----------------------- ----------
+                 .605633854         20
+    
+    Elapsed: 00:00:00.65
+    01:57:58 SQL> 
+    01:57:58 SQL> -- Look at pair IN('gbp_usd','gbp_chf') WHERE dhr LIKE'3%':
+    01:57:58 SQL> SELECT * FROM hp4aggj WHERE dhr LIKE'3%'AND pair IN('gbp_usd','gbp_chf')ORDER BY dhr,pair;
+    
+    PAIR    DHR    AVG_NPG1   AVG_NPG2
+    ------- ---- ---------- ----------
+    gbp_usd 3_04     -.0008      .0001
+    gbp_usd 3_05     -.0012      .0005
+    gbp_usd 3_06     -.0011      .0004
+    gbp_usd 3_07     -.0009          0
+    gbp_usd 3_09      .0007      -.002
+    gbp_usd 3_10      .0013     -.0013
+    gbp_usd 3_11      .0018     -.0015
+    gbp_usd 3_12      .0012     -.0033
+    gbp_usd 3_13       .001      -.002
+    gbp_chf 3_14      .0007      -.001
+    gbp_usd 3_14      .0007     -.0029
+    
+    11 rows selected.
+    
+    Elapsed: 00:00:00.60
+    01:57:59 SQL> 
+    01:57:59 SQL> -- Look at pair IN('aud_usd','eur_aud','gbp_jpy','usd_jpy') WHERE dhr LIKE'4%':
+    01:57:59 SQL> SELECT * FROM hp4aggj WHERE dhr LIKE'4%'AND pair IN('aud_usd','eur_aud','gbp_jpy','usd_jpy')ORDER BY dhr,pair;
+    
+    PAIR    DHR    AVG_NPG1   AVG_NPG2
+    ------- ---- ---------- ----------
+    aud_usd 4_00     -.0006     -.0002
+    eur_aud 4_00      .0007      .0007
+    gbp_jpy 4_00      .0007      .0006
+    gbp_jpy 4_03      .0008     -.0002
+    gbp_jpy 4_04      .0009      .0001
+    gbp_jpy 4_05      .0012      .0002
+    gbp_jpy 4_06      .0007      .0008
+    gbp_jpy 4_07      .0008      .0014
+    gbp_jpy 4_08      .0006      .0012
+    gbp_jpy 4_10      .0012      .0008
+    usd_jpy 4_10      .0011      .0004
+    gbp_jpy 4_11      .0007      .0009
+    gbp_jpy 4_12      .0011       .001
+    gbp_jpy 4_13       .001     -.0004
+    eur_aud 4_20     -.0007     -.0001
+    eur_aud 4_21     -.0007     -.0005
+    aud_usd 4_22      .0007      .0019
+    eur_aud 4_22     -.0007     -.0007
+    aud_usd 4_23      .0007      .0018
+    usd_jpy 4_23     -.0008     -.0014
+    
+    20 rows selected.
+    
+    Elapsed: 00:00:00.65
+    01:57:59 SQL> 
+    01:57:59 SQL> exit
+    Disconnected from Oracle Database 11g Enterprise Edition Release 11.2.0.1.0 - 64bit Production
+    With the Partitioning, OLAP, Data Mining and Real Application Testing options
+
+%br/
+
+The above report is showing me two types of correlation.
+
+The first type of correlation is related to currency pair.
+%br/
+%br/
+For example the correlation value for usd_jpy is 0.39.
+%br/
+%br/
+
+And the value for gbp_chf is -0.39.  I am more inclined to trade
+usd_jpy since the correlation between Far-Past gains and Near-Past
+gains is positive; I perceive usd_jpy to be more predictable than
+gbp_chf.
+
+%br/
+%br/
+The second type of correlation is for day of the week.
+
+For example, day 3 (Tuesday), has a strong negative correlation value of -0.65.
+The meaning I attach to this fact is that Tuesday is less predictable than Wednesday which has a positive correlation value of +0.27.
+%br/
+%br/
+It seemed obvious to me that I should then write SQL to look for trades which are affected by both types of correlation simultaneously.
+%br/
+%br/
+The output from that SQL is at the bottom of the above report.
+%br/
+%br/
+I interpret the output to mean that if I trade the pairs
+aud_usd, eur_aud, gbp_jpy, usd_jpy on Wednesdays,
+then those trades will yield the most predictable results.
+%br/
+%br/
+Both the scripts and the output I used to writeup the analysis on this webpage can be found on github:
+%br/
+%br/
+%a(href="https://github.com/bikle/rluck/tree/master/4hp2010_1123" target="t")
+  https://github.com/bikle/rluck/tree/master/4hp2010_1123
+%br/
+%br/
