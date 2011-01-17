@@ -80,3 +80,35 @@ Here is info about the git repo:
 [remote "heroku"]
 	url = git@heroku.com:bikle100.git
 	fetch = +refs/heads/*:refs/remotes/heroku/*
+
+
+
+oracle@z2:/pt/s/rl/bikle100$ gst
+# On branch master
+nothing to commit (working directory clean)
+oracle@z2:/pt/s/rl/bikle100$ gphm
+The authenticity of host 'heroku.com (75.101.163.44)' can't be established.
+RSA key fingerprint is 8b:48:5e:67:0e:c9:16:47:32:f2:87:0c:1f:c8:60:ad.
+Are you sure you want to continue connecting (yes/no)? yes
+
+Warning: Permanently added 'heroku.com,75.101.163.44' (RSA) to the list of known hosts.
+Counting objects: 7, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 1.45 KiB, done.
+Total 6 (delta 3), reused 0 (delta 0)
+
+-----> Heroku receiving push
+-----> Rails app detected
+-----> Detected Rails is not set to serve static_assets
+       Installing rails3_serve_static_assets... done
+-----> Gemfile detected, running Bundler version 1.0.3
+       All dependencies are satisfied
+       Compiled slug size is 3.9MB
+-----> Launching... done
+       http://bikle100.heroku.com deployed to Heroku
+
+To git@heroku.com:bikle100.git
+   f561759..55fa785  master -> master
+oracle@z2:/pt/s/rl/bikle100$ 
+
