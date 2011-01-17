@@ -71,3 +71,12 @@ oracle@z2:/pt/s/rl/bikle100$ rvm gemdir
 oracle@z2:/pt/s/rl/bikle100$ 
 oracle@z2:/pt/s/rl/bikle100$ 
 
+Here is info about the git repo:
+
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+[remote "heroku"]
+	url = git@heroku.com:bikle100.git
+	fetch = +refs/heads/*:refs/remotes/heroku/*
