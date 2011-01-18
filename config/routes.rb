@@ -1,4 +1,10 @@
 Bikle100::Application.routes.draw do
+  get "predictions/index"
+
+  get "predictions/fx"
+
+  get "predictions/usstock"
+
   get "tech/index"
 
   get "r10/about"
