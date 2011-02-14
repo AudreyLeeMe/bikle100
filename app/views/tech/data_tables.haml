@@ -20,10 +20,33 @@ Next, I created an HTML table:
 
 =render :partial => 'dt10'
 
+%br/
+%br/
+%br/
 Then, I made a copy of the table and added an id attribute to it:
 %br/
 %br/
 id = my_data_table
+%br/
+%br/
+Next, I installed the data_tables code on my webserver and added this declaration to my header:
+%br/
+%br/
+=render :partial => 'data_tables_declaration'
+
+%br/
+%br/
+Then, I added 3 lines of JavaScript to the page you are currently reading:
+
+%pre
+  :preserve
+    $(document).ready(function() {
+    	$('#my_data_table').dataTable();
+    } );
+
+%br/
+%br/
+The result is displayed below:
 %br/
 %br/
 

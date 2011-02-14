@@ -448,3 +448,8 @@ pre.wraptext {
  /* width: 99%; */
  word-wrap: break-word; /* Internet Explorer 5.5+ */
 }
+
+table#my_data_table {
+  float: left;
+  margin-top: 11px;
+}
