@@ -19,3 +19,17 @@ Next, I created an HTML table:
 %br/
 
 =render :partial => 'dt10'
+
+Then, I made a copy of the table and added an id attribute to it:
+%br/
+%br/
+id = my_data_table
+%br/
+%br/
+
+:javascript
+  $(document).ready(function() {
+  	$('#my_data_table').dataTable();
+  } );
+
+=render :partial => 'dt12'
