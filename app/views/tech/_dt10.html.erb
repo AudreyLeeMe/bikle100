@@ -1,41 +1,25 @@
 <style type='text/css'> table,tr,td {font:10pt Arial,Helvetica,sans-serif; color:Black; background:#f7f7e7; padding:0px 0px 0px 0px; margin:0px 0px 0px 0px;} th.or {font:bold 10pt Arial,Helvetica,sans-serif; color:#336699; background:#cccc99; padding:0px 0px 0px 0px;}
 </style>
 
-<br>
-02:01:32 SQL&gt; SELECT
-<br>
-02:01:32   2  pair,dhr,dyhr
-<br>
-02:01:32   3  ,MIN(ydate)min_date
-<br>
-02:01:32   4  ,COUNT(npg)count_npg
-<br>
-02:01:32   5  ,MAX(ydate)max_date
-<br>
-02:01:32   6  ,ROUND(MIN(npg),4)min_npg
-<br>
-02:01:32   7  ,ROUND(AVG(npg),4)avg_npg
-<br>
-02:01:32   8  ,ROUND(STDDEV(npg),4)stddev_npg
-<br>
-02:01:32   9  ,ROUND(AVG(npg)/STDDEV(npg),2)sharpe_ratio
-<br>
-02:01:32  10  ,ROUND(MAX(npg),4)max_npg
-<br>
-02:01:32  11  ,ROUND(SUM(npg),4)sum_npg
-<br>
-02:01:32  12  FROM hp12
-<br>
-02:01:32  13  GROUP BY pair,dhr,dyhr
-<br>
-02:01:32  14  -- I want a Sharpe Ratio &gt; 0.5
-<br>
-02:01:32  15  HAVING ABS(AVG(npg)/STDDEV(npg)) &gt; 0.5
-<br>
-02:01:32  16  ORDER BY pair,dhr,dyhr
-<br>
-02:01:32  17  /
-<br>
+<pre>
+SQL&gt; SELECT
+ 2  pair,dhr,dyhr
+ 3  ,MIN(ydate)min_date
+ 4  ,COUNT(npg)count_npg
+ 5  ,MAX(ydate)max_date
+ 6  ,ROUND(MIN(npg),4)min_npg
+ 7  ,ROUND(AVG(npg),4)avg_npg
+ 8  ,ROUND(STDDEV(npg),4)stddev_npg
+ 9  ,ROUND(AVG(npg)/STDDEV(npg),2)sharpe_ratio
+10  ,ROUND(MAX(npg),4)max_npg
+11  ,ROUND(SUM(npg),4)sum_npg
+12  FROM hp12
+13  GROUP BY pair,dhr,dyhr
+14  -- I want a Sharpe Ratio &gt; 0.5
+15  HAVING ABS(AVG(npg)/STDDEV(npg)) &gt; 0.5
+16  ORDER BY pair,dhr,dyhr
+17  /</pre>
+
 <p>
 <table border='1' width='90%' align='center' summary='Script output'>
 <tr>
@@ -789,7 +773,7 @@ Mon_13
      .0035
 </td>
 <td align="right">
-	.6
+        .6
 </td>
 <td align="right">
      .0086
@@ -1283,7 +1267,7 @@ Thu_23
      .0018
 </td>
 <td align="right">
-	.6
+        .6
 </td>
 <td align="right">
      .0047
@@ -1382,7 +1366,7 @@ Sun_22
 2010-11-07 21:30:00
 </td>
 <td align="right">
-	78
+        78
 </td>
 <td>
 2011-02-06 22:25:00
@@ -1496,7 +1480,7 @@ Sun_21
 2010-11-07 20:55:00
 </td>
 <td align="right">
-	28
+        28
 </td>
 <td>
 2010-11-28 21:25:00
@@ -1534,7 +1518,7 @@ Sun_22
 2010-11-07 21:30:00
 </td>
 <td align="right">
-	78
+        78
 </td>
 <td>
 2011-02-06 22:25:00
@@ -1701,7 +1685,7 @@ Wed_09
      .0039
 </td>
 <td align="right">
-	.5
+        .5
 </td>
 <td align="right">
      .0098
@@ -1739,7 +1723,7 @@ Wed_10
      .0034
 </td>
 <td align="right">
-	.6
+        .6
 </td>
 <td align="right">
      .0089
@@ -1838,7 +1822,7 @@ Sun_22
 2010-11-07 21:30:00
 </td>
 <td align="right">
-	78
+        78
 </td>
 <td>
 2011-02-06 22:25:00
@@ -2233,7 +2217,7 @@ Mon_23
      .0017
 </td>
 <td align="right">
-	.6
+        .6
 </td>
 <td align="right">
      .0044
@@ -3525,7 +3509,7 @@ Tue_18
      .0026
 </td>
 <td align="right">
-	.6
+        .6
 </td>
 <td align="right">
      .0073
