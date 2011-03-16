@@ -14,7 +14,7 @@
 # %a(href="/predictions/fx_past_wk2011_02_20")
 #   Week: 2011-02-20 Through 2011-02-25
 
-# The data will come from a join of 3 tables:
+# The data will come from a join of 3 types of tables:
 # prices,gains
 # gatt-scores
 # gattn-scores
