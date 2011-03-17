@@ -21,7 +21,7 @@ pair
 ,(LEAD(clse,12*2,NULL)OVER(PARTITION BY pair ORDER BY ydate)-clse)/clse g2
 ,(LEAD(clse,12*6,NULL)OVER(PARTITION BY pair ORDER BY ydate)-clse)/clse g6
 FROM di5min
-WHERE ydate > sysdate - 9
+WHERE ydate > sysdate - (7 * 7)
 AND clse > 0
 ORDER BY pair,ydate
 /
@@ -46,11 +46,29 @@ AND   s.targ='gattn'
 AND l.prdate = s.prdate
 AND l.prdate = m.prdate
 -- Speed things up:
-AND l.ydate > sysdate - 5
-AND s.ydate > sysdate - 5
+AND l.ydate > sysdate - (7 * 7)
+AND s.ydate > sysdate - (7 * 7)
 /
 
 ANALYZE TABLE fxpst12 COMPUTE STATISTICS;
+
+SELECT
+TO_CHAR(ydate,'W')
+,TO_CHAR(ydate,'WW')
+,MIN(ydate)
+,COUNT(ydate)
+,MAX(ydate)
+FROM fxpst12
+GROUP BY 
+TO_CHAR(ydate,'W')
+,TO_CHAR(ydate,'WW')
+ORDER BY 
+TO_CHAR(ydate,'W')
+,TO_CHAR(ydate,'WW')
+/
+
+exit
+
 
 select count(*)from
 (
@@ -63,27 +81,12 @@ pair
 ,(sysdate - ydate)*24*60 minutes_age
 FROM fxpst12
 WHERE rnng_crr1 > 0.1
-AND ydate > sysdate - 4/24
 ORDER BY pair,ydate
 )
 /
 
 select count(*)from
 (
-SELECT
-pair
-,rscore_diff2
-,g2
-,ROUND(rnng_crr1,2)      rnng_crr1
-,(sysdate - ydate)*24*60 minutes_age
-FROM fxpst12
-WHERE rnng_crr1 > 0.1
-AND ydate > sysdate - 4/24
-AND ABS(rscore_diff2) > 0.6
-ORDER BY pair,ydate
-)
-/
-
 SELECT
 pair
 ,CASE WHEN rscore_diff2<0 THEN'sell'ELSE'buy'END bors
@@ -96,9 +99,9 @@ pair
 ,TO_CHAR(ydate + 6/24,'YYYYMMDD_HH24:MI:SS')||'_GMT' cls_str
 FROM fxpst12
 WHERE rnng_crr1 > 0.1
-AND ydate > sysdate - 4/24
 AND ABS(rscore_diff2) > 0.6
 ORDER BY pair,ydate
+)
 /
 
 exit
