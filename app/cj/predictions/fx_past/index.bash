@@ -19,5 +19,13 @@
 # gatt-scores
 # gattn-scores
 
+cd /pt/s/rl/bikle100/app/cj/predictions/fx_past/
+
+sqt>>fx_past.txt<<EOF
+@fx_past.sql
+EOF
+
+cp -p _fx_past_spool.html.erb /pt/s/rl/bikle100/app/views/predictions/
+
 exit 0
 
