@@ -26,7 +26,7 @@ AND clse > 0
 ORDER BY pair,ydate
 /
 
-ANALYZE TABLE fxpst10 COMPUTE STATISTICS;
+ANALYZE TABLE fxpst10 ESTIMATE STATISTICS SAMPLE 9 PERCENT;
 
 DROP TABLE fxpst12;
 CREATE TABLE fxpst12 COMPRESS AS
@@ -50,21 +50,23 @@ AND l.ydate > sysdate - (7 * 7)
 AND s.ydate > sysdate - (7 * 7)
 /
 
-ANALYZE TABLE fxpst12 COMPUTE STATISTICS;
+ANALYZE TABLE fxpst12 ESTIMATE STATISTICS SAMPLE 9 PERCENT;
 
+-- rpt
+-- This select gives me a list of recent week-names.
+-- I use minday, maxday to help me understand the contents of each week.
 SELECT
-TO_CHAR(ydate,'W')
-,TO_CHAR(ydate,'WW')
+TO_CHAR(ydate,'WW')
 ,MIN(ydate)
+,TO_CHAR(MIN(ydate),'Dy')minday
 ,COUNT(ydate)
 ,MAX(ydate)
+,TO_CHAR(MAX(ydate),'Dy')maxday
 FROM fxpst12
 GROUP BY 
-TO_CHAR(ydate,'W')
-,TO_CHAR(ydate,'WW')
+TO_CHAR(ydate,'WW')
 ORDER BY 
-TO_CHAR(ydate,'W')
-,TO_CHAR(ydate,'WW')
+MIN(ydate)
 /
 
 exit
