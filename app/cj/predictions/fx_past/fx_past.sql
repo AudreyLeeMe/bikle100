@@ -53,7 +53,7 @@ AND s.ydate > sysdate - (7 * 7)
 ANALYZE TABLE fxpst12 ESTIMATE STATISTICS SAMPLE 9 PERCENT;
 
 -- rpt
--- This select gives me a list of recent week-names.
+-- This SELECT gives me a list of recent week-names.
 -- I use minday, maxday to help me understand the contents of each week.
 SELECT
 TO_CHAR(ydate,'WW')
@@ -62,6 +62,18 @@ TO_CHAR(ydate,'WW')
 ,COUNT(ydate)
 ,MAX(ydate)
 ,TO_CHAR(MAX(ydate),'Dy')maxday
+FROM fxpst12
+GROUP BY 
+TO_CHAR(ydate,'WW')
+ORDER BY 
+MIN(ydate)
+/
+
+-- This SELECT gives me text for a-tags
+ALTER SESSION SET NLS_DATE_FORMAT = 'YYYY-MM-DD';
+
+SELECT
+MIN(ydate)||' Through '||MAX(ydate) wweek
 FROM fxpst12
 GROUP BY 
 TO_CHAR(ydate,'WW')
