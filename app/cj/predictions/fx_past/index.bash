@@ -19,6 +19,8 @@
 # gatt-scores
 # gattn-scores
 
+set -x
+
 cd /pt/s/rl/bikle100/app/cj/predictions/fx_past/
 
 sqt>>fx_past.txt<<EOF
