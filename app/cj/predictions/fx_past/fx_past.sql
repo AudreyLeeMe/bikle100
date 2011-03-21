@@ -71,7 +71,8 @@ MIN(ydate)
 
 -- This SELECT gives me text for a-tags
 ALTER SESSION SET NLS_DATE_FORMAT = 'YYYY-MM-DD';
-SET TIME off TIMING off ECHO off PAGESIZE 123 LINESIZE 77 TRIMSPOOL ON
+SET TIME off TIMING off ECHO off
+SET MARKUP HTML ON TABLE "id='table_fx_past'" ENTMAP ON
 SPOOL _fx_past_spool.html.erb
 
 SELECT

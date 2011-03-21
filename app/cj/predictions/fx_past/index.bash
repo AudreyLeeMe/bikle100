@@ -19,6 +19,8 @@
 # gatt-scores
 # gattn-scores
 
+. /pt/s/rluck/svm62/.jruby
+
 set -x
 
 cd /pt/s/rl/bikle100/app/cj/predictions/fx_past/
@@ -27,7 +29,9 @@ sqt>>fx_past.txt<<EOF
 @fx_past.sql
 EOF
 
-cp -p _fx_past_spool.html.erb /pt/s/rl/bikle100/app/views/predictions/
+grep -v 'rows selected' _fx_past_spool.html.erb | sed '1,$s/WWEEK//' > tmp.html
+
+jruby index.rb > /pt/s/rl/bikle100/app/views/predictions/_fx_past_spool.html.erb
 
 exit 0
 

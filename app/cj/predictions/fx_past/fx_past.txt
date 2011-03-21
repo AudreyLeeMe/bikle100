@@ -148,3 +148,189 @@ WWEEK
 
 Disconnected from Oracle Database 11g Enterprise Edition Release 11.2.0.1.0 - 64bit Production
 With the Partitioning, OLAP, Data Mining and Real Application Testing options
+
+SQL*Plus: Release 11.2.0.1.0 Production on Mon Mar 21 02:00:40 2011
+
+Copyright (c) 1982, 2009, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 11g Enterprise Edition Release 11.2.0.1.0 - 64bit Production
+With the Partitioning, OLAP, Data Mining and Real Application Testing options
+
+02:00:40 SQL> ALTER SESSION SET NLS_DATE_FORMAT = 'YYYY-MM-DD hh24:mi:ss';
+
+Session altered.
+
+Elapsed: 00:00:00.01
+02:00:40 SQL> 02:00:40 SQL> --
+02:00:40 SQL> -- fx_past.sql
+02:00:40 SQL> --
+02:00:40 SQL> 
+02:00:40 SQL> -- I use this script to join 3 types of tables:
+02:00:40 SQL> -- prices,gains
+02:00:40 SQL> -- gatt-scores
+02:00:40 SQL> -- gattn-scores
+02:00:40 SQL> 
+02:00:40 SQL> -- I can pattern off this script:
+02:00:40 SQL> -- /pt/s/rluck/svm62/qrs2.sql
+02:00:40 SQL> 
+02:00:40 SQL> DROP TABLE fxpst10;
+
+Table dropped.
+
+Elapsed: 00:00:00.89
+02:00:41 SQL> PURGE RECYCLEBIN;
+
+Recyclebin purged.
+
+Elapsed: 00:00:00.36
+02:00:41 SQL> CREATE TABLE fxpst10 COMPRESS AS
+02:00:41   2  SELECT
+02:00:41   3  pair
+02:00:41   4  ,ydate
+02:00:41   5  ,clse
+02:00:41   6  ,prdate
+02:00:41   7  ,(LEAD(clse,12*2,NULL)OVER(PARTITION BY pair ORDER BY ydate)-clse)/clse g2
+02:00:41   8  ,(LEAD(clse,12*6,NULL)OVER(PARTITION BY pair ORDER BY ydate)-clse)/clse g6
+02:00:41   9  FROM di5min
+02:00:41  10  WHERE ydate > sysdate - (7 * 7)
+02:00:41  11  AND clse > 0
+02:00:41  12  ORDER BY pair,ydate
+02:00:41  13  /
+
+Table created.
+
+Elapsed: 00:00:02.82
+02:00:44 SQL> 
+02:00:44 SQL> ANALYZE TABLE fxpst10 ESTIMATE STATISTICS SAMPLE 9 PERCENT;
+
+Table analyzed.
+
+Elapsed: 00:00:00.69
+02:00:45 SQL> 
+02:00:45 SQL> DROP TABLE fxpst12;
+
+Table dropped.
+
+Elapsed: 00:00:00.22
+02:00:45 SQL> CREATE TABLE fxpst12 COMPRESS AS
+02:00:45   2  SELECT
+02:00:45   3  m.pair
+02:00:45   4  ,m.ydate
+02:00:45   5  ,m.clse
+02:00:45   6  ,ROUND(l.score-s.score,1) rscore_diff1
+02:00:45   7  ,ROUND(l.score-s.score,2) rscore_diff2
+02:00:45   8  ,m.g2
+02:00:45   9  ,m.g6
+02:00:45  10  ,m.g6-m.g2 g4
+02:00:45  11  ,CORR(l.score-s.score,g6)OVER(PARTITION BY l.pair ORDER BY l.ydate ROWS BETWEEN 12*24*1 PRECEDING AND CURRENT ROW)rnng_crr1
+02:00:45  12  FROM svm62scores l,svm62scores s,fxpst10 m
+02:00:45  13  WHERE l.targ='gatt'
+02:00:45  14  AND   s.targ='gattn'
+02:00:45  15  AND l.prdate = s.prdate
+02:00:45  16  AND l.prdate = m.prdate
+02:00:45  17  -- Speed things up:
+02:00:45  18  AND l.ydate > sysdate - (7 * 7)
+02:00:45  19  AND s.ydate > sysdate - (7 * 7)
+02:00:45  20  /
+
+Table created.
+
+Elapsed: 00:00:00.99
+02:00:46 SQL> 
+02:00:46 SQL> ANALYZE TABLE fxpst12 ESTIMATE STATISTICS SAMPLE 9 PERCENT;
+
+Table analyzed.
+
+Elapsed: 00:00:00.07
+02:00:46 SQL> 
+02:00:46 SQL> -- rpt
+02:00:46 SQL> -- This SELECT gives me a list of recent week-names.
+02:00:46 SQL> -- I use minday, maxday to help me understand the contents of each week.
+02:00:46 SQL> SELECT
+02:00:46   2  TO_CHAR(ydate,'WW')
+02:00:46   3  ,MIN(ydate)
+02:00:46   4  ,TO_CHAR(MIN(ydate),'Dy')minday
+02:00:46   5  ,COUNT(ydate)
+02:00:46   6  ,MAX(ydate)
+02:00:46   7  ,TO_CHAR(MAX(ydate),'Dy')maxday
+02:00:46   8  FROM fxpst12
+02:00:46   9  GROUP BY
+02:00:46  10  TO_CHAR(ydate,'WW')
+02:00:46  11  ORDER BY
+02:00:46  12  MIN(ydate)
+02:00:46  13  /
+
+TO MIN(YDATE)	       MIN COUNT(YDATE) MAX(YDATE)	    MAX
+-- ------------------- --- ------------ ------------------- ---
+05 2011-01-31 02:05:00 Mon	   7340 2011-02-04 21:55:00 Fri
+06 2011-02-06 22:15:00 Sun	   5644 2011-02-11 21:55:00 Fri
+07 2011-02-13 22:15:00 Sun	   4271 2011-02-18 21:55:00 Fri
+08 2011-02-20 22:15:00 Sun	   3230 2011-02-25 21:55:00 Fri
+09 2011-02-27 22:15:00 Sun	   3885 2011-03-04 21:55:00 Fri
+10 2011-03-06 22:15:00 Sun	   1594 2011-03-11 21:55:00 Fri
+11 2011-03-13 21:15:00 Sun	   8375 2011-03-18 20:45:00 Fri
+
+7 rows selected.
+
+Elapsed: 00:00:00.04
+02:00:46 SQL> 
+02:00:46 SQL> -- This SELECT gives me text for a-tags
+02:00:46 SQL> ALTER SESSION SET NLS_DATE_FORMAT = 'YYYY-MM-DD';
+
+Session altered.
+
+Elapsed: 00:00:00.00
+02:00:46 SQL> SET TIME off TIMING off ECHO off
+<p>
+<table id='table_fx_past'>
+<tr>
+<th scope="col">
+WWEEK
+</th>
+</tr>
+<tr>
+<td>
+2011-01-31 Through 2011-02-04
+</td>
+</tr>
+<tr>
+<td>
+2011-02-06 Through 2011-02-11
+</td>
+</tr>
+<tr>
+<td>
+2011-02-13 Through 2011-02-18
+</td>
+</tr>
+<tr>
+<td>
+2011-02-20 Through 2011-02-25
+</td>
+</tr>
+<tr>
+<td>
+2011-02-27 Through 2011-03-04
+</td>
+</tr>
+<tr>
+<td>
+2011-03-06 Through 2011-03-11
+</td>
+</tr>
+<tr>
+<td>
+2011-03-13 Through 2011-03-18
+</td>
+</tr>
+</table>
+<p>
+
+7 rows selected.<br>
+<br>
+
+
+Disconnected from Oracle Database 11g Enterprise Edition Release 11.2.0.1.0 - 64bit Production
+With the Partitioning, OLAP, Data Mining and Real Application Testing options
