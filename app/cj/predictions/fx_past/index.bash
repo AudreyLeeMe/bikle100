@@ -31,6 +31,7 @@ EOF
 
 grep -v 'rows selected' _fx_past_spool.html.erb | sed '1,$s/WWEEK//' > tmp.html
 
+# jruby --debug index.rb > /pt/s/rl/bikle100/app/views/predictions/_fx_past_spool.html.erb
 jruby index.rb > /pt/s/rl/bikle100/app/views/predictions/_fx_past_spool.html.erb
 
 exit 0

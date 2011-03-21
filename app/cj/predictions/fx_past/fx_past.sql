@@ -76,7 +76,7 @@ SET MARKUP HTML ON TABLE "id='table_fx_past'" ENTMAP ON
 SPOOL _fx_past_spool.html.erb
 
 SELECT
-MIN(ydate)||' Through '||MAX(ydate) wweek
+'Week: '||MIN(ydate)||' Through '||MAX(ydate) wweek
 FROM fxpst12
 GROUP BY 
 TO_CHAR(ydate,'WW')
