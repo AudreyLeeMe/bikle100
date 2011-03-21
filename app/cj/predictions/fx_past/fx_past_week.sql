@@ -1,5 +1,5 @@
 --
--- fx_past_week
+-- fx_past_week.sql
 --
 
 -- Usage: @fx_past_week.sql 2011-01-30
@@ -13,6 +13,10 @@ COLUMN avg_g4 FORMAT 99.9999
 COLUMN sharpe_ratio FORMAT 9.99
 COLUMN min_g4 FORMAT 99.9999
 COLUMN max_g4 FORMAT 99.9999
+
+SET TIME off TIMING off ECHO off
+SET MARKUP HTML ON TABLE "class='table_fx_past_week'"
+SPOOL tmp_fx_past_week.html
 
 SELECT
 pair
@@ -51,6 +55,8 @@ GROUP BY pair
 HAVING(STDDEV(g4) > 0)
 ORDER BY pair
 /
+
+SPOOL OFF
 
 -- This is called by other sql scripts.
 -- So, comment out exit:
