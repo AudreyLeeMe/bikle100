@@ -21,7 +21,7 @@ pair
 ,(LEAD(clse,12*2,NULL)OVER(PARTITION BY pair ORDER BY ydate)-clse)/clse g2
 ,(LEAD(clse,12*6,NULL)OVER(PARTITION BY pair ORDER BY ydate)-clse)/clse g6
 FROM di5min
-WHERE ydate > sysdate - (7 * 7)
+WHERE ydate > '2011-01-30'
 AND clse > 0
 ORDER BY pair,ydate
 /
@@ -34,6 +34,7 @@ SELECT
 m.pair
 ,m.ydate
 ,m.clse
+,(l.score-s.score)         score_diff
 ,ROUND(l.score-s.score,1) rscore_diff1
 ,ROUND(l.score-s.score,2) rscore_diff2
 ,m.g2
@@ -46,8 +47,8 @@ AND   s.targ='gattn'
 AND l.prdate = s.prdate
 AND l.prdate = m.prdate
 -- Speed things up:
-AND l.ydate > sysdate - (7 * 7)
-AND s.ydate > sysdate - (7 * 7)
+AND l.ydate > '2011-01-30'
+AND s.ydate > '2011-01-30'
 /
 
 ANALYZE TABLE fxpst12 ESTIMATE STATISTICS SAMPLE 9 PERCENT;
@@ -71,7 +72,7 @@ MIN(ydate)
 
 -- This SELECT gives me text for a-tags
 ALTER SESSION SET NLS_DATE_FORMAT = 'YYYY-MM-DD';
-SET TIME off TIMING off ECHO off
+SET TIME off TIMING off ECHO off HEADING off
 SET MARKUP HTML ON TABLE "id='table_fx_past'" ENTMAP ON
 SPOOL _fx_past_spool.html.erb
 
@@ -84,6 +85,23 @@ ORDER BY
 MIN(ydate)
 /
 SPOOL OFF
+SET MARKUP HTML OFF
+
+-- This SELECT gives me syntax to run a series of SQL scripts.
+-- Each script will give me data for 1 week.
+
+SPOOL fx_past_week.txt
+SELECT
+'@fx_past_week.sql '||MIN(ydate) cmd
+FROM fxpst12
+GROUP BY 
+TO_CHAR(ydate,'WW')
+ORDER BY 
+MIN(ydate)
+/
+SPOOL OFF
+
+
 exit
 
 

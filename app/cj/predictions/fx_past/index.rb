@@ -24,8 +24,5 @@ td_elems.each{|td|
   td.innerHTML="<a href='#{hhref}'>#{td.innerHTML.gsub(/\n/,'')}</a>"
 }
 
-# I dont need the th-element (or its parent):
-doc.search("table#table_fx_past th/..").remove
-
 # Im done, print it now so my shell can redirect the HTML into a file:
 print doc.search("table#table_fx_past").to_html
