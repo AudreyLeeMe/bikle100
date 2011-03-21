@@ -8,6 +8,12 @@
 
 -- Start by showing summarized data for each pair:
 
+COLUMN sum_g4 FORMAT 99.9999
+COLUMN avg_g4 FORMAT 99.9999
+COLUMN sharpe_ratio FORMAT 9.99
+COLUMN min_g4 FORMAT 99.9999
+COLUMN max_g4 FORMAT 99.9999
+
 SELECT
 pair
 ,ROUND(SUM(g4),4)   sum_g4
