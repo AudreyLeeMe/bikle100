@@ -1,0 +1,118 @@
+old  12: AND ydate &gt; '&amp;1'
+<br>
+new  12: AND ydate &gt; '2011-03-20'
+<br>
+old  13: AND ydate - 7 &lt; '&amp;1'
+<br>
+new  13: AND ydate - 7 &lt; '2011-03-20'
+<br>
+<p>
+<table class='table_fx_past_week'>
+<tr>
+<th scope="col">
+PAIR
+</th>
+<th scope="col">
+SUM_G4
+</th>
+<th scope="col">
+AVG_G4
+</th>
+<th scope="col">
+SHARPE_RATIO
+</th>
+<th scope="col">
+MIN_G4
+</th>
+<th scope="col">
+MAX_G4
+</th>
+<th scope="col">
+POSITION_COUNT
+</th>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td align="right">
+   .0243
+</td>
+<td align="right">
+   .0016
+</td>
+<td align="right">
+ 1.78
+</td>
+<td align="right">
+  -.0002
+</td>
+<td align="right">
+   .0035
+</td>
+<td align="right">
+        15
+</td>
+</tr>
+</table>
+<p>
+
+old  12: AND ydate &gt; '&amp;1'
+<br>
+new  12: AND ydate &gt; '2011-03-20'
+<br>
+old  13: AND ydate - 7 &lt; '&amp;1'
+<br>
+new  13: AND ydate - 7 &lt; '2011-03-20'
+<br>
+<p>
+<table class='table_fx_past_week'>
+<tr>
+<th scope="col">
+PAIR
+</th>
+<th scope="col">
+SUM_G4
+</th>
+<th scope="col">
+AVG_G4
+</th>
+<th scope="col">
+SHARPE_RATIO
+</th>
+<th scope="col">
+MIN_G4
+</th>
+<th scope="col">
+MAX_G4
+</th>
+<th scope="col">
+POSITION_COUNT
+</th>
+</tr>
+<tr>
+<td>
+usd_chf
+</td>
+<td align="right">
+   .0188
+</td>
+<td align="right">
+   .0008
+</td>
+<td align="right">
+  .93
+</td>
+<td align="right">
+  -.0012
+</td>
+<td align="right">
+   .0021
+</td>
+<td align="right">
+        23
+</td>
+</tr>
+</table>
+<p>
+

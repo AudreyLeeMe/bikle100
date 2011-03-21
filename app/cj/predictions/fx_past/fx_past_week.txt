@@ -6,6 +6,7 @@
 @fx_past_week.sql 2011-02-27
 @fx_past_week.sql 2011-03-06
 @fx_past_week.sql 2011-03-13
+@fx_past_week.sql 2011-03-20
 
-7 rows selected.
+8 rows selected.
 

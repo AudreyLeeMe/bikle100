@@ -36,7 +36,7 @@ cd /pt/s/rl/bikle100/app/cj/predictions/fx_past/
 sqt>>fx_past.txt<<EOF
 @fx_past.sql
 EOF
-grep -v 'rows selected' _fx_past_spool.html.erb|grep -v WWEEK > tmp.html
+grep -v 'rows selected' _fx_past_spool.html.erb > tmp.html
 
 # Use Hpricot to massage the HTML in tmp.html and redirect it into the partial full of a-tags:
 # jruby --debug index.rb > /pt/s/rl/bikle100/app/views/predictions/_fx_past_spool.html.erb
@@ -47,7 +47,16 @@ jruby index.rb > /pt/s/rl/bikle100/app/views/predictions/_fx_past_spool.html.erb
 # which was created by my call to fx_past.sql
 grep fx_past_week.sql fx_past_week.txt > run_fx_past_week.sql
 
+sqt>>run_fx_past_week.txt<<EOF
+@run_fx_past_week.sql
+EOF
 
+# Loop through each file created by run_fx_past_week.sql
+for f in tmp_fx_past_week*.lst
+do
+  echo This file was just created:
+  echo $f
+done
 
 exit 0
 
