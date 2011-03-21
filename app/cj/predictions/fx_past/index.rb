@@ -2,7 +2,7 @@
 
 require 'rubygems'
 require 'hpricot'
-require 'ruby-debug'
+# require 'ruby-debug'
 
 doc = open("tmp.html") { |f| Hpricot(f) }
 
@@ -21,8 +21,11 @@ td_elems.each{|td|
   hhref=td.innerHTML.gsub(/\n/,'').sub(/Week: /,'').sub(/ Through .*$/,'')
   hhref=td.innerHTML.gsub(/\n/,'').sub(/Week: /,'').sub(/ Through .*$/,'').gsub(/-/,'_')
   hhref="/predictions/fx_past_wk#{hhref}"
-  debugger  
   td.innerHTML="<a href='#{hhref}'>#{td.innerHTML.gsub(/\n/,'')}</a>"
 }
 
+# I dont need the th-element (or its parent):
+doc.search("table#table_fx_past th/..").remove
+
+# Im done, print it now so my shell can redirect the HTML into a file:
 print doc.search("table#table_fx_past").to_html
