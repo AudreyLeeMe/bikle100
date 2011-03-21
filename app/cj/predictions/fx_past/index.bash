@@ -42,7 +42,9 @@ grep -v 'rows selected' _fx_past_spool.html.erb|grep -v WWEEK > tmp.html
 # jruby --debug index.rb > /pt/s/rl/bikle100/app/views/predictions/_fx_past_spool.html.erb
 jruby index.rb > /pt/s/rl/bikle100/app/views/predictions/_fx_past_spool.html.erb
 
-# Fill each of the partials with data:
+# Fill each of the partials with data.
+# Start by pulling some syntax out of fx_past_week.txt
+# which was created by my call to fx_past.sql
 grep fx_past_week.sql fx_past_week.txt > run_fx_past_week.sql
 
 

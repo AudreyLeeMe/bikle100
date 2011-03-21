@@ -16,7 +16,7 @@ COLUMN max_g4 FORMAT 99.9999
 
 SET TIME off TIMING off ECHO off
 SET MARKUP HTML ON TABLE "class='table_fx_past_week'"
-SPOOL tmp_fx_past_week.html
+SPOOL tmp_fx_past_week_&1
 
 SELECT
 pair
@@ -57,6 +57,7 @@ ORDER BY pair
 /
 
 SPOOL OFF
+SET MARKUP HTML OFF
 
 -- This is called by other sql scripts.
 -- So, comment out exit:
