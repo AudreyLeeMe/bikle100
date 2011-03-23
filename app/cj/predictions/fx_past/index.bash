@@ -51,12 +51,9 @@ sqt>>run_fx_past_week.txt<<EOF
 @run_fx_past_week.sql
 EOF
 
-# Loop through each file created by run_fx_past_week.sql
-for f in tmp_fx_past_week*.lst
-do
-  echo This file was just created:
-  echo $f
-done
+# Use ruby to loop through each file created by run_fx_past_week.sql
+jruby run_fx_past_week.rb
+
 
 exit 0
 

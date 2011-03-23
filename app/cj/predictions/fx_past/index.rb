@@ -1,4 +1,8 @@
+#
 # index.rb
+#
+
+# I use this script to massage the contents of tmp.html after it is created by sqlplus.
 
 require 'rubygems'
 require 'hpricot'
