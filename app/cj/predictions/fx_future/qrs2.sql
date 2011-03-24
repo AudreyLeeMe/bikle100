@@ -18,12 +18,10 @@ pair
 ,(LEAD(clse,12*2,NULL)OVER(PARTITION BY pair ORDER BY ydate)-clse)/clse g2
 ,(LEAD(clse,12*6,NULL)OVER(PARTITION BY pair ORDER BY ydate)-clse)/clse g6
 FROM di5min
-WHERE ydate > sysdate - 9
+WHERE ydate > sysdate - 1
 AND clse > 0
 ORDER BY pair,ydate
 /
-
-ANALYZE TABLE qrs10 COMPUTE STATISTICS;
 
 DROP TABLE qrs12;
 CREATE TABLE qrs12 COMPRESS AS
@@ -43,8 +41,8 @@ AND   s.targ='gattn'
 AND l.prdate = s.prdate
 AND l.prdate = m.prdate
 -- Speed things up:
-AND l.ydate > sysdate - 5
-AND s.ydate > sysdate - 5
+AND l.ydate > sysdate - 1
+AND s.ydate > sysdate - 1
 /
 
 ANALYZE TABLE qrs12 COMPUTE STATISTICS;
@@ -59,8 +57,7 @@ pair
 ,ROUND(rnng_crr1,2)      rnng_crr1
 ,(sysdate - ydate)*24*60 minutes_age
 FROM qrs12
-WHERE rnng_crr1 > 0.1
-AND ydate > sysdate - 4/24
+WHERE ydate > sysdate - 1
 ORDER BY pair,ydate
 )
 /
@@ -74,8 +71,8 @@ pair
 ,ROUND(rnng_crr1,2)      rnng_crr1
 ,(sysdate - ydate)*24*60 minutes_age
 FROM qrs12
-WHERE rnng_crr1 > 0.1
-AND ydate > sysdate - 4/24
+WHERE ydate > sysdate - 4/24
+AND rnng_crr1 > 0.1
 AND ABS(rscore_diff2) > 0.6
 ORDER BY pair,ydate
 )
