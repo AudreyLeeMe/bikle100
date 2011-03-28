@@ -33,7 +33,7 @@ set -x
 cd /pt/s/rl/bikle100/app/cj/predictions/fx_past/
 
 # Get the data spooled into tmp.html via a join of 3 types of tables.
-sqt>>fx_past.txt<<EOF
+sqt>fx_past.txt<<EOF
 @fx_past.sql
 EOF
 grep -v 'rows selected' _fx_past_spool.html.erb > tmp.html

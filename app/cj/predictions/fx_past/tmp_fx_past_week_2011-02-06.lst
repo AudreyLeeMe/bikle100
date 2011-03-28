@@ -33,6 +33,29 @@ POSITION_COUNT
 </tr>
 <tr>
 <td>
+aud_jpy
+</td>
+<td align="right">
+   .0220
+</td>
+<td align="right">
+   .0003
+</td>
+<td align="right">
+  .31
+</td>
+<td align="right">
+  -.0013
+</td>
+<td align="right">
+   .0025
+</td>
+<td align="right">
+        72
+</td>
+</tr>
+<tr>
+<td>
 aud_usd
 </td>
 <td align="right">
@@ -52,6 +75,98 @@ aud_usd
 </td>
 <td align="right">
         15
+</td>
+</tr>
+<tr>
+<td>
+eur_aud
+</td>
+<td align="right">
+   .0609
+</td>
+<td align="right">
+   .0009
+</td>
+<td align="right">
+  .30
+</td>
+<td align="right">
+  -.0033
+</td>
+<td align="right">
+   .0061
+</td>
+<td align="right">
+        71
+</td>
+</tr>
+<tr>
+<td>
+eur_chf
+</td>
+<td align="right">
+   .0492
+</td>
+<td align="right">
+   .0025
+</td>
+<td align="right">
+ 1.41
+</td>
+<td align="right">
+   .0003
+</td>
+<td align="right">
+   .0055
+</td>
+<td align="right">
+        20
+</td>
+</tr>
+<tr>
+<td>
+eur_gbp
+</td>
+<td align="right">
+  -.0007
+</td>
+<td align="right">
+  -.0001
+</td>
+<td align="right">
+ -.06
+</td>
+<td align="right">
+  -.0016
+</td>
+<td align="right">
+   .0019
+</td>
+<td align="right">
+         7
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td align="right">
+   .0293
+</td>
+<td align="right">
+   .0007
+</td>
+<td align="right">
+  .42
+</td>
+<td align="right">
+  -.0038
+</td>
+<td align="right">
+   .0032
+</td>
+<td align="right">
+        43
 </td>
 </tr>
 <tr>
@@ -123,8 +238,58 @@ usd_cad
          3
 </td>
 </tr>
+<tr>
+<td>
+usd_chf
+</td>
+<td align="right">
+   .0162
+</td>
+<td align="right">
+   .0027
+</td>
+<td align="right">
+ 1.59
+</td>
+<td align="right">
+   .0007
+</td>
+<td align="right">
+   .0051
+</td>
+<td align="right">
+         6
+</td>
+</tr>
+<tr>
+<td>
+usd_jpy
+</td>
+<td align="right">
+   .0128
+</td>
+<td align="right">
+   .0012
+</td>
+<td align="right">
+  .64
+</td>
+<td align="right">
+  -.0011
+</td>
+<td align="right">
+   .0060
+</td>
+<td align="right">
+        11
+</td>
+</tr>
 </table>
 <p>
+
+11 rows selected.<br>
+<br>
+
 
 old  12: AND ydate &gt; '&amp;1'
 <br>
@@ -161,6 +326,29 @@ POSITION_COUNT
 </tr>
 <tr>
 <td>
+aud_jpy
+</td>
+<td align="right">
+  -.0016
+</td>
+<td align="right">
+  -.0003
+</td>
+<td align="right">
+ -.66
+</td>
+<td align="right">
+  -.0010
+</td>
+<td align="right">
+   .0003
+</td>
+<td align="right">
+         5
+</td>
+</tr>
+<tr>
+<td>
 aud_usd
 </td>
 <td align="right">
@@ -180,6 +368,52 @@ aud_usd
 </td>
 <td align="right">
         11
+</td>
+</tr>
+<tr>
+<td>
+eur_chf
+</td>
+<td align="right">
+   .0031
+</td>
+<td align="right">
+   .0008
+</td>
+<td align="right">
+ 1.25
+</td>
+<td align="right">
+  -.0001
+</td>
+<td align="right">
+   .0013
+</td>
+<td align="right">
+         4
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td align="right">
+  -.0186
+</td>
+<td align="right">
+  -.0012
+</td>
+<td align="right">
+ -.97
+</td>
+<td align="right">
+  -.0046
+</td>
+<td align="right">
+   .0003
+</td>
+<td align="right">
+        15
 </td>
 </tr>
 <tr>
@@ -205,6 +439,56 @@ usd_cad
         13
 </td>
 </tr>
+<tr>
+<td>
+usd_chf
+</td>
+<td align="right">
+   .0088
+</td>
+<td align="right">
+   .0007
+</td>
+<td align="right">
+  .30
+</td>
+<td align="right">
+  -.0044
+</td>
+<td align="right">
+   .0041
+</td>
+<td align="right">
+        12
+</td>
+</tr>
+<tr>
+<td>
+usd_jpy
+</td>
+<td align="right">
+   .0032
+</td>
+<td align="right">
+   .0002
+</td>
+<td align="right">
+  .15
+</td>
+<td align="right">
+  -.0036
+</td>
+<td align="right">
+   .0023
+</td>
+<td align="right">
+        13
+</td>
+</tr>
 </table>
 <p>
+
+7 rows selected.<br>
+<br>
+
 
