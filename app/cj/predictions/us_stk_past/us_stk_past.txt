@@ -1,0 +1,96 @@
+
+SQL*Plus: Release 11.2.0.1.0 Production on Tue Mar 29 03:57:00 2011
+
+Copyright (c) 1982, 2009, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 11g Enterprise Edition Release 11.2.0.1.0 - 64bit Production
+With the Partitioning, OLAP, Data Mining and Real Application Testing options
+
+03:57:00 SQL> ALTER SESSION SET NLS_DATE_FORMAT = 'YYYY-MM-DD hh24:mi:ss';
+
+Session altered.
+
+Elapsed: 00:00:00.00
+03:57:00 SQL> 
+03:57:00 SQL> 03:57:00 SQL> --
+03:57:00 SQL> -- us_stk_past.sql
+03:57:00 SQL> --
+03:57:00 SQL> 
+03:57:00 SQL> -- I use this script to join 3 types of tables:
+03:57:00 SQL> -- prices,gains
+03:57:00 SQL> -- gatt-scores
+03:57:00 SQL> -- gattn-scores
+03:57:00 SQL> 
+03:57:00 SQL> -- I can pattern off this script:
+03:57:00 SQL> -- /pt/s/rluck/svm62/qrs2.sql
+03:57:00 SQL> 
+03:57:00 SQL> DROP TABLE us_stk_pst10;
+
+Table dropped.
+
+Elapsed: 00:00:00.04
+03:57:00 SQL> PURGE RECYCLEBIN;
+
+Recyclebin purged.
+
+Elapsed: 00:00:00.07
+03:57:00 SQL> CREATE TABLE us_stk_pst10 COMPRESS AS
+03:57:00   2  SELECT
+03:57:00   3  tkr
+03:57:00   4  ,ydate
+03:57:00   5  ,tkrdate
+03:57:00   6  ,clse
+03:57:00   7  ,selldate
+03:57:00   8  ,gain1day g1
+03:57:00   9  FROM di5min_stk_c2
+03:57:00  10  WHERE ydate > '2011-01-30'
+03:57:00  11  ORDER BY tkr,ydate
+03:57:00  12  /
+
+Table created.
+
+Elapsed: 00:00:02.09
+03:57:02 SQL> 
+03:57:02 SQL> ANALYZE TABLE us_stk_pst10 ESTIMATE STATISTICS SAMPLE 9 PERCENT;
+
+Table analyzed.
+
+Elapsed: 00:00:00.52
+03:57:03 SQL> 
+03:57:03 SQL> DROP TABLE us_stk_pst12;
+DROP TABLE us_stk_pst12
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+Elapsed: 00:00:00.11
+03:57:03 SQL> CREATE TABLE us_stk_pst12 COMPRESS AS
+03:57:03   2  SELECT
+03:57:03   3  m.tkr
+03:57:03   4  ,m.ydate
+03:57:03   5  ,m.clse
+03:57:03   6  ,(l.score-s.score)	 score_diff
+03:57:03   7  ,ROUND(l.score-s.score,1) rscore_diff1
+03:57:03   8  ,ROUND(l.score-s.score,2) rscore_diff2
+03:57:03   9  ,m.g1
+03:57:03  10  ,CORR(l.score-s.score,m.g1)OVER(PARTITION BY l.tkr ORDER BY l.ydate ROWS BETWEEN 12*24*5 PRECEDING AND CURRENT ROW)rnng_crr1
+03:57:03  11  FROM stkscores l,stkscores s,us_stk_pst10 m
+03:57:03  12  WHERE l.targ='gatt'
+03:57:03  13  AND   s.targ='gattn'
+03:57:03  14  AND l.tkrdate = s.tkrdate
+03:57:03  15  AND l.tkrdate = m.tkrdate
+03:57:03  16  -- Speed things up:
+03:57:03  17  AND l.ydate > '2011-01-30'
+03:57:03  18  AND s.ydate > '2011-01-30'
+03:57:03  19  /
+
+Table created.
+
+Elapsed: 00:00:18.69
+03:57:21 SQL> 
+03:57:21 SQL> exit
+Disconnected from Oracle Database 11g Enterprise Edition Release 11.2.0.1.0 - 64bit Production
+With the Partitioning, OLAP, Data Mining and Real Application Testing options

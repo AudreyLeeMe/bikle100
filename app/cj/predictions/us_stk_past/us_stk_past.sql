@@ -19,12 +19,33 @@ tkr
 ,tkrdate
 ,clse
 ,selldate
-,gain1day
+,gain1day g1
 FROM di5min_stk_c2
 WHERE ydate > '2011-01-30'
 ORDER BY tkr,ydate
 /
 
 ANALYZE TABLE us_stk_pst10 ESTIMATE STATISTICS SAMPLE 9 PERCENT;
+
+DROP TABLE us_stk_pst12;
+CREATE TABLE us_stk_pst12 COMPRESS AS
+SELECT
+m.tkr
+,m.ydate
+,m.clse
+,(l.score-s.score)         score_diff
+,ROUND(l.score-s.score,1) rscore_diff1
+,ROUND(l.score-s.score,2) rscore_diff2
+,m.g1
+,CORR(l.score-s.score,m.g1)OVER(PARTITION BY l.tkr ORDER BY l.ydate ROWS BETWEEN 12*24*5 PRECEDING AND CURRENT ROW)rnng_crr1
+FROM stkscores l,stkscores s,us_stk_pst10 m
+WHERE l.targ='gatt'
+AND   s.targ='gattn'
+AND l.tkrdate = s.tkrdate
+AND l.tkrdate = m.tkrdate
+-- Speed things up:
+AND l.ydate > '2011-01-30'
+AND s.ydate > '2011-01-30'
+/
 
 exit
