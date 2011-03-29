@@ -48,4 +48,11 @@ jruby index.rb > /pt/s/rl/bikle100/app/views/predictions/_us_stk_past_spool.html
 # which was created by my call to us_stk_past.sql
 grep us_stk_past_week.sql us_stk_past_week.txt |awk '{print $1,$2}'> run_us_stk_past_week.sql
 
+sqt>run_us_stk_past_week.txt<<EOF
+@run_us_stk_past_week.sql
+EOF
+
+# Use ruby to loop through each file created by run_us_stk_past_week.sql
+jruby run_us_stk_past_week.rb
+
 exit 0
