@@ -48,4 +48,23 @@ AND l.ydate > '2011-01-30'
 AND s.ydate > '2011-01-30'
 /
 
+ANALYZE TABLE us_stk_pst12 ESTIMATE STATISTICS SAMPLE 9 PERCENT;
+
+-- rpt
+-- This SELECT gives me a list of recent week-names.
+-- I use minday, maxday to help me understand the contents of each week.
+SELECT
+TO_CHAR(ydate,'WW')
+,MIN(ydate)
+,TO_CHAR(MIN(ydate),'Dy')minday
+,COUNT(ydate)
+,MAX(ydate)
+,TO_CHAR(MAX(ydate),'Dy')maxday
+FROM us_stk_pst12
+GROUP BY 
+TO_CHAR(ydate,'WW')
+ORDER BY 
+MIN(ydate)
+/
+
 exit
