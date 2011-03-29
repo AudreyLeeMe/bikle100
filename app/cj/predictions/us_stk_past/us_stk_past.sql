@@ -67,4 +67,35 @@ ORDER BY
 MIN(ydate)
 /
 
+-- This SELECT gives me text for a-tags
+ALTER SESSION SET NLS_DATE_FORMAT = 'YYYY-MM-DD';
+SET TIME off TIMING off ECHO off HEADING off
+SET MARKUP HTML ON TABLE "id='table_us_stk_past'" ENTMAP ON
+SPOOL _us_stk_past_spool.html.erb
+
+SELECT
+'Week: '||MIN(ydate)||' Through '||MAX(ydate) wweek
+FROM us_stk_pst12
+GROUP BY 
+TO_CHAR(ydate,'WW')
+ORDER BY 
+MIN(ydate)
+/
+SPOOL OFF
+SET MARKUP HTML OFF
+
+-- This SELECT gives me syntax to run a series of SQL scripts.
+-- Each script will give me data for 1 week.
+
+SPOOL us_stk_past_week.txt
+SELECT
+'@us_stk_past_week.sql '||MIN(ydate) cmd
+FROM us_stk_pst12
+GROUP BY 
+TO_CHAR(ydate,'WW')
+ORDER BY 
+MIN(ydate)
+/
+SPOOL OFF
+
 exit

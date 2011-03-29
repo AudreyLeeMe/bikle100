@@ -27,7 +27,7 @@
 # gattn-scores
 
 # I use jruby to give me access to Hpricot:
-. /pt/s/rluck/svm62/.jruby
+. /pt/s/rluck/svmspy/.jruby
 
 set -x
 
