@@ -1,0 +1,17 @@
+[10, 19] in index.rb
+   10  
+   11  doc = open("tmp.html") { |f| Hpricot(f) }
+   12  
+   13  debugger
+   14  
+=> 15  p doc.class
+   16  
+   17  td_elems = doc.search("td")
+   18  
+   19  # Insert links inside each td-element:
+index.rb:15
+p doc.class
+(rdb:1) q
+Really quit? (y/n) q
+(rdb:1) 
+Really quit? (y/n) Hpricot::Doc

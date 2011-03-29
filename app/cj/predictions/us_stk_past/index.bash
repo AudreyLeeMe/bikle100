@@ -39,4 +39,8 @@ sqt>us_stk_past.txt<<EOF
 EOF
 grep -v 'rows selected' _us_stk_past_spool.html.erb > tmp.html
 
+# Use Hpricot to massage the HTML in tmp.html and redirect it into the partial full of a-tags:
+## jruby --debug index.rb
+jruby index.rb > /pt/s/rl/bikle100/app/views/predictions/_us_stk_past_spool.html.erb
+
 exit 0

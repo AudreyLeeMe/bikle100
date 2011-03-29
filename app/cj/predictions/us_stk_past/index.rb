@@ -1,0 +1,28 @@
+#
+# index.rb
+#
+
+# I use this script to massage the contents of tmp.html after it is created by sqlplus.
+
+require 'rubygems'
+require 'hpricot'
+# require 'ruby-debug'
+
+doc = open("tmp.html") { |f| Hpricot(f) }
+
+td_elems = doc.search("td")
+
+# Insert links inside each td-element:
+td_elems.each{|td|
+  # Change Week: 2011-01-31 Through 2011-02-04
+  # to
+  # /predictions/fx_past_wk2011_01_31
+  hhref=td.innerHTML.sub(/Week: /,'').sub(/ Through .*$/,'')
+  hhref=td.innerHTML.gsub(/\n/,'').sub(/Week: /,'').sub(/ Through .*$/,'')
+  hhref=td.innerHTML.gsub(/\n/,'').sub(/Week: /,'').sub(/ Through .*$/,'').gsub(/-/,'_')
+  hhref="/predictions/us_stk_past_wk#{hhref}"
+  td.innerHTML="<a href='#{hhref}'>#{td.innerHTML.gsub(/\n/,'')}</a>"
+}
+
+# Im done, print it now so my shell can redirect the HTML into a file:
+print doc.search("table#table_us_stk_past").to_html
