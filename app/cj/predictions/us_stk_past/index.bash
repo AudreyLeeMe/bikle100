@@ -43,4 +43,9 @@ grep -v 'rows selected' _us_stk_past_spool.html.erb > tmp.html
 ## jruby --debug index.rb
 jruby index.rb > /pt/s/rl/bikle100/app/views/predictions/_us_stk_past_spool.html.erb
 
+# Fill each of the partials with data.
+# Start by pulling some syntax out of us_stk_past_week.txt
+# which was created by my call to us_stk_past.sql
+grep us_stk_past_week.sql us_stk_past_week.txt |awk '{print $1,$2}'> run_us_stk_past_week.sql
+
 exit 0
