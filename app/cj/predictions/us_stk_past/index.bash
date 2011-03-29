@@ -37,3 +37,6 @@ cd /pt/s/rl/bikle100/app/cj/predictions/us_stk_past/
 sqt>us_stk_past.txt<<EOF
 @us_stk_past.sql
 EOF
+grep -v 'rows selected' _us_stk_past_spool.html.erb > tmp.html
+
+exit 0

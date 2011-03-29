@@ -1,5 +1,5 @@
 
-SQL*Plus: Release 11.2.0.1.0 Production on Tue Mar 29 03:57:00 2011
+SQL*Plus: Release 11.2.0.1.0 Production on Tue Mar 29 12:03:48 2011
 
 Copyright (c) 1982, 2009, Oracle.  All rights reserved.
 
@@ -8,89 +8,198 @@ Connected to:
 Oracle Database 11g Enterprise Edition Release 11.2.0.1.0 - 64bit Production
 With the Partitioning, OLAP, Data Mining and Real Application Testing options
 
-03:57:00 SQL> ALTER SESSION SET NLS_DATE_FORMAT = 'YYYY-MM-DD hh24:mi:ss';
+12:03:49 SQL> ALTER SESSION SET NLS_DATE_FORMAT = 'YYYY-MM-DD hh24:mi:ss';
 
 Session altered.
 
 Elapsed: 00:00:00.00
-03:57:00 SQL> 
-03:57:00 SQL> 03:57:00 SQL> --
-03:57:00 SQL> -- us_stk_past.sql
-03:57:00 SQL> --
-03:57:00 SQL> 
-03:57:00 SQL> -- I use this script to join 3 types of tables:
-03:57:00 SQL> -- prices,gains
-03:57:00 SQL> -- gatt-scores
-03:57:00 SQL> -- gattn-scores
-03:57:00 SQL> 
-03:57:00 SQL> -- I can pattern off this script:
-03:57:00 SQL> -- /pt/s/rluck/svm62/qrs2.sql
-03:57:00 SQL> 
-03:57:00 SQL> DROP TABLE us_stk_pst10;
+12:03:49 SQL> 
+12:03:49 SQL> 12:03:49 SQL> --
+12:03:49 SQL> -- us_stk_past.sql
+12:03:49 SQL> --
+12:03:49 SQL> 
+12:03:49 SQL> -- I use this script to join 3 types of tables:
+12:03:49 SQL> -- prices,gains
+12:03:49 SQL> -- gatt-scores
+12:03:49 SQL> -- gattn-scores
+12:03:49 SQL> 
+12:03:49 SQL> -- I can pattern off this script:
+12:03:49 SQL> -- /pt/s/rluck/svm62/qrs2.sql
+12:03:49 SQL> 
+12:03:49 SQL> DROP TABLE us_stk_pst10;
 
 Table dropped.
 
-Elapsed: 00:00:00.04
-03:57:00 SQL> PURGE RECYCLEBIN;
+Elapsed: 00:00:00.15
+12:03:49 SQL> PURGE RECYCLEBIN;
 
 Recyclebin purged.
 
-Elapsed: 00:00:00.07
-03:57:00 SQL> CREATE TABLE us_stk_pst10 COMPRESS AS
-03:57:00   2  SELECT
-03:57:00   3  tkr
-03:57:00   4  ,ydate
-03:57:00   5  ,tkrdate
-03:57:00   6  ,clse
-03:57:00   7  ,selldate
-03:57:00   8  ,gain1day g1
-03:57:00   9  FROM di5min_stk_c2
-03:57:00  10  WHERE ydate > '2011-01-30'
-03:57:00  11  ORDER BY tkr,ydate
-03:57:00  12  /
+Elapsed: 00:00:00.14
+12:03:49 SQL> CREATE TABLE us_stk_pst10 COMPRESS AS
+12:03:49   2  SELECT
+12:03:49   3  tkr
+12:03:49   4  ,ydate
+12:03:49   5  ,tkrdate
+12:03:49   6  ,clse
+12:03:49   7  ,selldate
+12:03:49   8  ,gain1day g1
+12:03:49   9  FROM di5min_stk_c2
+12:03:49  10  WHERE ydate > '2011-01-30'
+12:03:49  11  ORDER BY tkr,ydate
+12:03:49  12  /
 
 Table created.
 
-Elapsed: 00:00:02.09
-03:57:02 SQL> 
-03:57:02 SQL> ANALYZE TABLE us_stk_pst10 ESTIMATE STATISTICS SAMPLE 9 PERCENT;
+Elapsed: 00:00:05.00
+12:03:54 SQL> 
+12:03:54 SQL> ANALYZE TABLE us_stk_pst10 ESTIMATE STATISTICS SAMPLE 9 PERCENT;
 
 Table analyzed.
 
-Elapsed: 00:00:00.52
-03:57:03 SQL> 
-03:57:03 SQL> DROP TABLE us_stk_pst12;
-DROP TABLE us_stk_pst12
-           *
-ERROR at line 1:
-ORA-00942: table or view does not exist
+Elapsed: 00:00:00.61
+12:03:55 SQL> 
+12:03:55 SQL> DROP TABLE us_stk_pst12;
 
+Table dropped.
 
-Elapsed: 00:00:00.11
-03:57:03 SQL> CREATE TABLE us_stk_pst12 COMPRESS AS
-03:57:03   2  SELECT
-03:57:03   3  m.tkr
-03:57:03   4  ,m.ydate
-03:57:03   5  ,m.clse
-03:57:03   6  ,(l.score-s.score)	 score_diff
-03:57:03   7  ,ROUND(l.score-s.score,1) rscore_diff1
-03:57:03   8  ,ROUND(l.score-s.score,2) rscore_diff2
-03:57:03   9  ,m.g1
-03:57:03  10  ,CORR(l.score-s.score,m.g1)OVER(PARTITION BY l.tkr ORDER BY l.ydate ROWS BETWEEN 12*24*5 PRECEDING AND CURRENT ROW)rnng_crr1
-03:57:03  11  FROM stkscores l,stkscores s,us_stk_pst10 m
-03:57:03  12  WHERE l.targ='gatt'
-03:57:03  13  AND   s.targ='gattn'
-03:57:03  14  AND l.tkrdate = s.tkrdate
-03:57:03  15  AND l.tkrdate = m.tkrdate
-03:57:03  16  -- Speed things up:
-03:57:03  17  AND l.ydate > '2011-01-30'
-03:57:03  18  AND s.ydate > '2011-01-30'
-03:57:03  19  /
+Elapsed: 00:00:05.62
+12:04:00 SQL> CREATE TABLE us_stk_pst12 COMPRESS AS
+12:04:00   2  SELECT
+12:04:00   3  m.tkr
+12:04:00   4  ,m.ydate
+12:04:00   5  ,m.clse
+12:04:00   6  ,(l.score-s.score)	 score_diff
+12:04:00   7  ,ROUND(l.score-s.score,1) rscore_diff1
+12:04:00   8  ,ROUND(l.score-s.score,2) rscore_diff2
+12:04:00   9  ,m.g1
+12:04:00  10  ,CORR(l.score-s.score,m.g1)OVER(PARTITION BY l.tkr ORDER BY l.ydate ROWS BETWEEN 12*24*5 PRECEDING AND CURRENT ROW)rnng_crr1
+12:04:00  11  FROM stkscores l,stkscores s,us_stk_pst10 m
+12:04:00  12  WHERE l.targ='gatt'
+12:04:00  13  AND   s.targ='gattn'
+12:04:00  14  AND l.tkrdate = s.tkrdate
+12:04:00  15  AND l.tkrdate = m.tkrdate
+12:04:00  16  -- Speed things up:
+12:04:00  17  AND l.ydate > '2011-01-30'
+12:04:00  18  AND s.ydate > '2011-01-30'
+12:04:00  19  /
 
 Table created.
 
-Elapsed: 00:00:18.69
-03:57:21 SQL> 
-03:57:21 SQL> exit
+Elapsed: 00:00:10.69
+12:04:11 SQL> 
+12:04:11 SQL> ANALYZE TABLE us_stk_pst12 ESTIMATE STATISTICS SAMPLE 9 PERCENT;
+
+Table analyzed.
+
+Elapsed: 00:00:00.92
+12:04:12 SQL> 
+12:04:12 SQL> -- rpt
+12:04:12 SQL> -- This SELECT gives me a list of recent week-names.
+12:04:12 SQL> -- I use minday, maxday to help me understand the contents of each week.
+12:04:12 SQL> SELECT
+12:04:12   2  TO_CHAR(ydate,'WW')
+12:04:12   3  ,MIN(ydate)
+12:04:12   4  ,TO_CHAR(MIN(ydate),'Dy')minday
+12:04:12   5  ,COUNT(ydate)
+12:04:12   6  ,MAX(ydate)
+12:04:12   7  ,TO_CHAR(MAX(ydate),'Dy')maxday
+12:04:12   8  FROM us_stk_pst12
+12:04:12   9  GROUP BY
+12:04:12  10  TO_CHAR(ydate,'WW')
+12:04:12  11  ORDER BY
+12:04:12  12  MIN(ydate)
+12:04:12  13  /
+
+TO MIN(YDATE)	       MIN COUNT(YDATE) MAX(YDATE)	    MAX
+-- ------------------- --- ------------ ------------------- ---
+05 2011-01-31 13:00:00 Mon	  58168 2011-02-04 20:55:00 Fri
+06 2011-02-07 14:30:00 Mon	  60863 2011-02-11 20:55:00 Fri
+07 2011-02-14 14:30:00 Mon	  49781 2011-02-18 20:55:00 Fri
+08 2011-02-22 13:00:00 Tue	  50311 2011-02-25 20:55:00 Fri
+09 2011-02-28 14:30:00 Mon	  63252 2011-03-04 20:55:00 Fri
+10 2011-03-07 14:30:00 Mon	  63612 2011-03-11 20:55:00 Fri
+11 2011-03-14 13:00:00 Mon	  63715 2011-03-18 21:00:00 Fri
+12 2011-03-21 13:00:00 Mon	  50228 2011-03-25 19:55:00 Fri
+13 2011-03-28 13:30:00 Mon	   1508 2011-03-28 19:55:00 Mon
+
+9 rows selected.
+
+Elapsed: 00:00:00.30
+12:04:12 SQL> 
+12:04:12 SQL> -- This SELECT gives me text for a-tags
+12:04:12 SQL> ALTER SESSION SET NLS_DATE_FORMAT = 'YYYY-MM-DD';
+
+Session altered.
+
+Elapsed: 00:00:00.00
+12:04:12 SQL> SET TIME off TIMING off ECHO off HEADING off
+<p>
+<table id='table_us_stk_past'>
+<tr>
+<td>
+Week: 2011-01-31 Through 2011-02-04
+</td>
+</tr>
+<tr>
+<td>
+Week: 2011-02-07 Through 2011-02-11
+</td>
+</tr>
+<tr>
+<td>
+Week: 2011-02-14 Through 2011-02-18
+</td>
+</tr>
+<tr>
+<td>
+Week: 2011-02-22 Through 2011-02-25
+</td>
+</tr>
+<tr>
+<td>
+Week: 2011-02-28 Through 2011-03-04
+</td>
+</tr>
+<tr>
+<td>
+Week: 2011-03-07 Through 2011-03-11
+</td>
+</tr>
+<tr>
+<td>
+Week: 2011-03-14 Through 2011-03-18
+</td>
+</tr>
+<tr>
+<td>
+Week: 2011-03-21 Through 2011-03-25
+</td>
+</tr>
+<tr>
+<td>
+Week: 2011-03-28 Through 2011-03-28
+</td>
+</tr>
+</table>
+<p>
+
+9 rows selected.<br>
+<br>
+
+
+
+@us_stk_past_week.sql 2011-01-31
+@us_stk_past_week.sql 2011-02-07
+@us_stk_past_week.sql 2011-02-14
+@us_stk_past_week.sql 2011-02-22
+@us_stk_past_week.sql 2011-02-28
+@us_stk_past_week.sql 2011-03-07
+@us_stk_past_week.sql 2011-03-14
+@us_stk_past_week.sql 2011-03-21
+@us_stk_past_week.sql 2011-03-28
+
+9 rows selected.
+
 Disconnected from Oracle Database 11g Enterprise Edition Release 11.2.0.1.0 - 64bit Production
 With the Partitioning, OLAP, Data Mining and Real Application Testing options
