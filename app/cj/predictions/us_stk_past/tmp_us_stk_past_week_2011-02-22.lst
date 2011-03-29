@@ -1,0 +1,329 @@
+old  12: AND ydate &gt; '&amp;1'
+<br>
+new  12: AND ydate &gt; '2011-02-22'
+<br>
+old  13: AND ydate - 7 &lt; '&amp;1'
+<br>
+new  13: AND ydate - 7 &lt; '2011-02-22'
+<br>
+<p>
+<table class='table_us_stk_past_week'>
+<tr>
+<th scope="col">
+TKR
+</th>
+<th scope="col">
+SUM_G1
+</th>
+<th scope="col">
+AVG_G1
+</th>
+<th scope="col">
+SHARPE_RATIO
+</th>
+<th scope="col">
+MIN_G1
+</th>
+<th scope="col">
+MAX_G1
+</th>
+<th scope="col">
+POSITION_COUNT
+</th>
+</tr>
+<tr>
+<td>
+DIA
+</td>
+<td align="right">
+   -2.8488
+</td>
+<td align="right">
+   -.9496
+</td>
+<td align="right">
+  -7.32
+</td>
+<td align="right">
+  -1.0300
+</td>
+<td align="right">
+   -.8000
+</td>
+<td align="right">
+         3
+</td>
+</tr>
+<tr>
+<td>
+GDX
+</td>
+<td align="right">
+  -20.2374
+</td>
+<td align="right">
+  -2.5297
+</td>
+<td align="right">
+   -.71
+</td>
+<td align="right">
+  -7.0934
+</td>
+<td align="right">
+    .1900
+</td>
+<td align="right">
+         8
+</td>
+</tr>
+<tr>
+<td>
+LFT
+</td>
+<td align="right">
+   -1.3200
+</td>
+<td align="right">
+   -.4400
+</td>
+<td align="right">
+ -44.00
+</td>
+<td align="right">
+   -.4500
+</td>
+<td align="right">
+   -.4300
+</td>
+<td align="right">
+         3
+</td>
+</tr>
+<tr>
+<td>
+LMT
+</td>
+<td align="right">
+    -.5200
+</td>
+<td align="right">
+   -.2600
+</td>
+<td align="right">
+  -9.19
+</td>
+<td align="right">
+   -.2800
+</td>
+<td align="right">
+   -.2400
+</td>
+<td align="right">
+         2
+</td>
+</tr>
+<tr>
+<td>
+PM
+</td>
+<td align="right">
+    6.6300
+</td>
+<td align="right">
+    .1326
+</td>
+<td align="right">
+    .33
+</td>
+<td align="right">
+   -.6700
+</td>
+<td align="right">
+    .9100
+</td>
+<td align="right">
+        50
+</td>
+</tr>
+<tr>
+<td>
+SOHU
+</td>
+<td align="right">
+   99.8600
+</td>
+<td align="right">
+   1.2178
+</td>
+<td align="right">
+    .78
+</td>
+<td align="right">
+  -2.0000
+</td>
+<td align="right">
+   3.4500
+</td>
+<td align="right">
+        82
+</td>
+</tr>
+<tr>
+<td>
+XLU
+</td>
+<td align="right">
+     .1900
+</td>
+<td align="right">
+    .0317
+</td>
+<td align="right">
+   1.11
+</td>
+<td align="right">
+   -.0100
+</td>
+<td align="right">
+    .0700
+</td>
+<td align="right">
+         6
+</td>
+</tr>
+</table>
+<p>
+
+7 rows selected.<br>
+<br>
+
+
+old  12: AND ydate &gt; '&amp;1'
+<br>
+new  12: AND ydate &gt; '2011-02-22'
+<br>
+old  13: AND ydate - 7 &lt; '&amp;1'
+<br>
+new  13: AND ydate - 7 &lt; '2011-02-22'
+<br>
+<p>
+<table class='table_us_stk_past_week'>
+<tr>
+<th scope="col">
+TKR
+</th>
+<th scope="col">
+SUM_G1
+</th>
+<th scope="col">
+AVG_G1
+</th>
+<th scope="col">
+SHARPE_RATIO
+</th>
+<th scope="col">
+MIN_G1
+</th>
+<th scope="col">
+MAX_G1
+</th>
+<th scope="col">
+POSITION_COUNT
+</th>
+</tr>
+<tr>
+<td>
+AIG
+</td>
+<td align="right">
+ -413.6079
+</td>
+<td align="right">
+  -4.4957
+</td>
+<td align="right">
+   -.64
+</td>
+<td align="right">
+ -19.8370
+</td>
+<td align="right">
+   -.6805
+</td>
+<td align="right">
+        92
+</td>
+</tr>
+<tr>
+<td>
+MJN
+</td>
+<td align="right">
+    1.4489
+</td>
+<td align="right">
+    .0483
+</td>
+<td align="right">
+    .03
+</td>
+<td align="right">
+  -1.8000
+</td>
+<td align="right">
+   6.3273
+</td>
+<td align="right">
+        30
+</td>
+</tr>
+<tr>
+<td>
+PPLT
+</td>
+<td align="right">
+     .4600
+</td>
+<td align="right">
+    .0094
+</td>
+<td align="right">
+    .01
+</td>
+<td align="right">
+  -1.2800
+</td>
+<td align="right">
+   1.6200
+</td>
+<td align="right">
+        49
+</td>
+</tr>
+<tr>
+<td>
+VLO
+</td>
+<td align="right">
+   -3.5200
+</td>
+<td align="right">
+   -.8800
+</td>
+<td align="right">
+  -2.99
+</td>
+<td align="right">
+  -1.1500
+</td>
+<td align="right">
+   -.5100
+</td>
+<td align="right">
+         4
+</td>
+</tr>
+</table>
+<p>
+

@@ -1,5 +1,5 @@
 
-SQL*Plus: Release 11.2.0.1.0 Production on Tue Mar 29 12:38:49 2011
+SQL*Plus: Release 11.2.0.1.0 Production on Tue Mar 29 13:52:44 2011
 
 Copyright (c) 1982, 2009, Oracle.  All rights reserved.
 
@@ -8,108 +8,108 @@ Connected to:
 Oracle Database 11g Enterprise Edition Release 11.2.0.1.0 - 64bit Production
 With the Partitioning, OLAP, Data Mining and Real Application Testing options
 
-12:38:49 SQL> ALTER SESSION SET NLS_DATE_FORMAT = 'YYYY-MM-DD hh24:mi:ss';
+13:52:44 SQL> ALTER SESSION SET NLS_DATE_FORMAT = 'YYYY-MM-DD hh24:mi:ss';
 
 Session altered.
 
 Elapsed: 00:00:00.00
-12:38:49 SQL> 
-12:38:49 SQL> 12:38:49 SQL> --
-12:38:49 SQL> -- us_stk_past.sql
-12:38:49 SQL> --
-12:38:49 SQL> 
-12:38:49 SQL> -- I use this script to join 3 types of tables:
-12:38:49 SQL> -- prices,gains
-12:38:49 SQL> -- gatt-scores
-12:38:49 SQL> -- gattn-scores
-12:38:49 SQL> 
-12:38:49 SQL> -- I can pattern off this script:
-12:38:49 SQL> -- /pt/s/rluck/svm62/qrs2.sql
-12:38:49 SQL> 
-12:38:49 SQL> DROP TABLE us_stk_pst10;
+13:52:44 SQL> 
+13:52:44 SQL> 13:52:44 SQL> --
+13:52:44 SQL> -- us_stk_past.sql
+13:52:44 SQL> --
+13:52:44 SQL> 
+13:52:44 SQL> -- I use this script to join 3 types of tables:
+13:52:44 SQL> -- prices,gains
+13:52:44 SQL> -- gatt-scores
+13:52:44 SQL> -- gattn-scores
+13:52:44 SQL> 
+13:52:44 SQL> -- I can pattern off this script:
+13:52:44 SQL> -- /pt/s/rluck/svm62/qrs2.sql
+13:52:44 SQL> 
+13:52:44 SQL> DROP TABLE us_stk_pst10;
 
 Table dropped.
 
-Elapsed: 00:00:00.08
-12:38:49 SQL> PURGE RECYCLEBIN;
+Elapsed: 00:00:00.14
+13:52:44 SQL> PURGE RECYCLEBIN;
 
 Recyclebin purged.
 
-Elapsed: 00:00:00.45
-12:38:50 SQL> CREATE TABLE us_stk_pst10 COMPRESS AS
-12:38:50   2  SELECT
-12:38:50   3  tkr
-12:38:50   4  ,ydate
-12:38:50   5  ,tkrdate
-12:38:50   6  ,clse
-12:38:50   7  ,selldate
-12:38:50   8  ,gain1day g1
-12:38:50   9  FROM di5min_stk_c2
-12:38:50  10  WHERE ydate > '2011-01-30'
-12:38:50  11  ORDER BY tkr,ydate
-12:38:50  12  /
+Elapsed: 00:00:00.13
+13:52:44 SQL> CREATE TABLE us_stk_pst10 COMPRESS AS
+13:52:44   2  SELECT
+13:52:44   3  tkr
+13:52:44   4  ,ydate
+13:52:44   5  ,tkrdate
+13:52:44   6  ,clse
+13:52:44   7  ,selldate
+13:52:44   8  ,gain1day g1
+13:52:44   9  FROM di5min_stk_c2
+13:52:44  10  WHERE ydate > '2011-01-30'
+13:52:44  11  ORDER BY tkr,ydate
+13:52:44  12  /
 
 Table created.
 
-Elapsed: 00:00:03.73
-12:38:53 SQL> 
-12:38:53 SQL> ANALYZE TABLE us_stk_pst10 ESTIMATE STATISTICS SAMPLE 9 PERCENT;
+Elapsed: 00:00:02.72
+13:52:47 SQL> 
+13:52:47 SQL> ANALYZE TABLE us_stk_pst10 ESTIMATE STATISTICS SAMPLE 9 PERCENT;
 
 Table analyzed.
 
-Elapsed: 00:00:00.59
-12:38:54 SQL> 
-12:38:54 SQL> DROP TABLE us_stk_pst12;
+Elapsed: 00:00:00.60
+13:52:47 SQL> 
+13:52:47 SQL> DROP TABLE us_stk_pst12;
 
 Table dropped.
 
-Elapsed: 00:00:01.68
-12:38:56 SQL> CREATE TABLE us_stk_pst12 COMPRESS AS
-12:38:56   2  SELECT
-12:38:56   3  m.tkr
-12:38:56   4  ,m.ydate
-12:38:56   5  ,m.clse
-12:38:56   6  ,(l.score-s.score)	 score_diff
-12:38:56   7  ,ROUND(l.score-s.score,1) rscore_diff1
-12:38:56   8  ,ROUND(l.score-s.score,2) rscore_diff2
-12:38:56   9  ,m.g1
-12:38:56  10  ,CORR(l.score-s.score,m.g1)OVER(PARTITION BY l.tkr ORDER BY l.ydate ROWS BETWEEN 12*24*5 PRECEDING AND CURRENT ROW)rnng_crr1
-12:38:56  11  FROM stkscores l,stkscores s,us_stk_pst10 m
-12:38:56  12  WHERE l.targ='gatt'
-12:38:56  13  AND   s.targ='gattn'
-12:38:56  14  AND l.tkrdate = s.tkrdate
-12:38:56  15  AND l.tkrdate = m.tkrdate
-12:38:56  16  -- Speed things up:
-12:38:56  17  AND l.ydate > '2011-01-30'
-12:38:56  18  AND s.ydate > '2011-01-30'
-12:38:56  19  /
+Elapsed: 00:00:03.37
+13:52:51 SQL> CREATE TABLE us_stk_pst12 COMPRESS AS
+13:52:51   2  SELECT
+13:52:51   3  m.tkr
+13:52:51   4  ,m.ydate
+13:52:51   5  ,m.clse
+13:52:51   6  ,(l.score-s.score)	 score_diff
+13:52:51   7  ,ROUND(l.score-s.score,1) rscore_diff1
+13:52:51   8  ,ROUND(l.score-s.score,2) rscore_diff2
+13:52:51   9  ,m.g1
+13:52:51  10  ,CORR(l.score-s.score,m.g1)OVER(PARTITION BY l.tkr ORDER BY l.ydate ROWS BETWEEN 12*24*5 PRECEDING AND CURRENT ROW)rnng_crr1
+13:52:51  11  FROM stkscores l,stkscores s,us_stk_pst10 m
+13:52:51  12  WHERE l.targ='gatt'
+13:52:51  13  AND   s.targ='gattn'
+13:52:51  14  AND l.tkrdate = s.tkrdate
+13:52:51  15  AND l.tkrdate = m.tkrdate
+13:52:51  16  -- Speed things up:
+13:52:51  17  AND l.ydate > '2011-01-30'
+13:52:51  18  AND s.ydate > '2011-01-30'
+13:52:51  19  /
 
 Table created.
 
-Elapsed: 00:00:09.70
-12:39:05 SQL> 
-12:39:05 SQL> ANALYZE TABLE us_stk_pst12 ESTIMATE STATISTICS SAMPLE 9 PERCENT;
+Elapsed: 00:00:09.28
+13:53:00 SQL> 
+13:53:00 SQL> ANALYZE TABLE us_stk_pst12 ESTIMATE STATISTICS SAMPLE 9 PERCENT;
 
 Table analyzed.
 
-Elapsed: 00:00:00.70
-12:39:06 SQL> 
-12:39:06 SQL> -- rpt
-12:39:06 SQL> -- This SELECT gives me a list of recent week-names.
-12:39:06 SQL> -- I use minday, maxday to help me understand the contents of each week.
-12:39:06 SQL> SELECT
-12:39:06   2  TO_CHAR(ydate,'WW')
-12:39:06   3  ,MIN(ydate)
-12:39:06   4  ,TO_CHAR(MIN(ydate),'Dy')minday
-12:39:06   5  ,COUNT(ydate)
-12:39:06   6  ,MAX(ydate)
-12:39:06   7  ,TO_CHAR(MAX(ydate),'Dy')maxday
-12:39:06   8  FROM us_stk_pst12
-12:39:06   9  GROUP BY
-12:39:06  10  TO_CHAR(ydate,'WW')
-12:39:06  11  ORDER BY
-12:39:06  12  MIN(ydate)
-12:39:06  13  /
+Elapsed: 00:00:00.65
+13:53:01 SQL> 
+13:53:01 SQL> -- rpt
+13:53:01 SQL> -- This SELECT gives me a list of recent week-names.
+13:53:01 SQL> -- I use minday, maxday to help me understand the contents of each week.
+13:53:01 SQL> SELECT
+13:53:01   2  TO_CHAR(ydate,'WW')
+13:53:01   3  ,MIN(ydate)
+13:53:01   4  ,TO_CHAR(MIN(ydate),'Dy')minday
+13:53:01   5  ,COUNT(ydate)
+13:53:01   6  ,MAX(ydate)
+13:53:01   7  ,TO_CHAR(MAX(ydate),'Dy')maxday
+13:53:01   8  FROM us_stk_pst12
+13:53:01   9  GROUP BY
+13:53:01  10  TO_CHAR(ydate,'WW')
+13:53:01  11  ORDER BY
+13:53:01  12  MIN(ydate)
+13:53:01  13  /
 
 TO MIN(YDATE)	       MIN COUNT(YDATE) MAX(YDATE)	    MAX
 -- ------------------- --- ------------ ------------------- ---
@@ -120,20 +120,20 @@ TO MIN(YDATE)	       MIN COUNT(YDATE) MAX(YDATE)	    MAX
 09 2011-02-28 14:30:00 Mon	  63252 2011-03-04 20:55:00 Fri
 10 2011-03-07 14:30:00 Mon	  63612 2011-03-11 20:55:00 Fri
 11 2011-03-14 13:00:00 Mon	  63715 2011-03-18 21:00:00 Fri
-12 2011-03-21 13:00:00 Mon	  50405 2011-03-25 19:55:00 Fri
-13 2011-03-28 13:30:00 Mon	   1508 2011-03-28 19:55:00 Mon
+12 2011-03-21 13:00:00 Mon	  50432 2011-03-25 19:55:00 Fri
+13 2011-03-28 13:30:00 Mon	   1803 2011-03-28 19:55:00 Mon
 
 9 rows selected.
 
-Elapsed: 00:00:00.30
-12:39:06 SQL> 
-12:39:06 SQL> -- This SELECT gives me text for a-tags
-12:39:06 SQL> ALTER SESSION SET NLS_DATE_FORMAT = 'YYYY-MM-DD';
+Elapsed: 00:00:00.26
+13:53:01 SQL> 
+13:53:01 SQL> -- This SELECT gives me text for a-tags
+13:53:01 SQL> ALTER SESSION SET NLS_DATE_FORMAT = 'YYYY-MM-DD';
 
 Session altered.
 
 Elapsed: 00:00:00.00
-12:39:06 SQL> SET TIME off TIMING off ECHO off HEADING off
+13:53:01 SQL> SET TIME off TIMING off ECHO off HEADING off
 <p>
 <table id='table_us_stk_past'>
 <tr>

@@ -8,11 +8,11 @@
 
 -- Start by showing summarized data for each pair:
 
-COLUMN sum_g1 FORMAT 99.9999
-COLUMN avg_g1 FORMAT 99.9999
-COLUMN sharpe_ratio FORMAT 9.99
-COLUMN min_g1 FORMAT 99.9999
-COLUMN max_g1 FORMAT 99.9999
+COLUMN sum_g1 FORMAT 9999.9999
+COLUMN avg_g1 FORMAT 999.9999
+COLUMN sharpe_ratio FORMAT 999.99
+COLUMN min_g1 FORMAT 999.9999
+COLUMN max_g1 FORMAT 999.9999
 
 SET TIME off TIMING off ECHO off
 SET MARKUP HTML ON TABLE "class='table_us_stk_past_week'"

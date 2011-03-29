@@ -1,0 +1,448 @@
+old  12: AND ydate &gt; '&amp;1'
+<br>
+new  12: AND ydate &gt; '2011-03-14'
+<br>
+old  13: AND ydate - 7 &lt; '&amp;1'
+<br>
+new  13: AND ydate - 7 &lt; '2011-03-14'
+<br>
+<p>
+<table class='table_us_stk_past_week'>
+<tr>
+<th scope="col">
+TKR
+</th>
+<th scope="col">
+SUM_G1
+</th>
+<th scope="col">
+AVG_G1
+</th>
+<th scope="col">
+SHARPE_RATIO
+</th>
+<th scope="col">
+MIN_G1
+</th>
+<th scope="col">
+MAX_G1
+</th>
+<th scope="col">
+POSITION_COUNT
+</th>
+</tr>
+<tr>
+<td>
+CVE
+</td>
+<td align="right">
+  -11.6099
+</td>
+<td align="right">
+   -.2832
+</td>
+<td align="right">
+  -1.08
+</td>
+<td align="right">
+   -.6400
+</td>
+<td align="right">
+   1.0300
+</td>
+<td align="right">
+        41
+</td>
+</tr>
+<tr>
+<td>
+EBAY
+</td>
+<td align="right">
+   -4.8900
+</td>
+<td align="right">
+   -.0998
+</td>
+<td align="right">
+   -.21
+</td>
+<td align="right">
+   -.9700
+</td>
+<td align="right">
+    .7400
+</td>
+<td align="right">
+        49
+</td>
+</tr>
+<tr>
+<td>
+MON
+</td>
+<td align="right">
+    5.9300
+</td>
+<td align="right">
+    .7413
+</td>
+<td align="right">
+   4.27
+</td>
+<td align="right">
+    .5200
+</td>
+<td align="right">
+   1.1000
+</td>
+<td align="right">
+         8
+</td>
+</tr>
+<tr>
+<td>
+OIH
+</td>
+<td align="right">
+   39.7800
+</td>
+<td align="right">
+   3.3150
+</td>
+<td align="right">
+   2.03
+</td>
+<td align="right">
+    .8800
+</td>
+<td align="right">
+   5.4400
+</td>
+<td align="right">
+        12
+</td>
+</tr>
+<tr>
+<td>
+PM
+</td>
+<td align="right">
+   60.9600
+</td>
+<td align="right">
+    .7716
+</td>
+<td align="right">
+    .90
+</td>
+<td align="right">
+   -.6000
+</td>
+<td align="right">
+   1.8200
+</td>
+<td align="right">
+        79
+</td>
+</tr>
+<tr>
+<td>
+SLW
+</td>
+<td align="right">
+   28.3000
+</td>
+<td align="right">
+    .5054
+</td>
+<td align="right">
+    .97
+</td>
+<td align="right">
+   -.4400
+</td>
+<td align="right">
+   1.3900
+</td>
+<td align="right">
+        56
+</td>
+</tr>
+<tr>
+<td>
+SOHU
+</td>
+<td align="right">
+   -7.1100
+</td>
+<td align="right">
+  -1.7775
+</td>
+<td align="right">
+ -13.19
+</td>
+<td align="right">
+  -1.9600
+</td>
+<td align="right">
+  -1.6400
+</td>
+<td align="right">
+         4
+</td>
+</tr>
+<tr>
+<td>
+VMW
+</td>
+<td align="right">
+  -27.8200
+</td>
+<td align="right">
+  -1.9871
+</td>
+<td align="right">
+  -2.36
+</td>
+<td align="right">
+  -3.5500
+</td>
+<td align="right">
+   -.5400
+</td>
+<td align="right">
+        14
+</td>
+</tr>
+</table>
+<p>
+
+8 rows selected.<br>
+<br>
+
+
+old  12: AND ydate &gt; '&amp;1'
+<br>
+new  12: AND ydate &gt; '2011-03-14'
+<br>
+old  13: AND ydate - 7 &lt; '&amp;1'
+<br>
+new  13: AND ydate - 7 &lt; '2011-03-14'
+<br>
+<p>
+<table class='table_us_stk_past_week'>
+<tr>
+<th scope="col">
+TKR
+</th>
+<th scope="col">
+SUM_G1
+</th>
+<th scope="col">
+AVG_G1
+</th>
+<th scope="col">
+SHARPE_RATIO
+</th>
+<th scope="col">
+MIN_G1
+</th>
+<th scope="col">
+MAX_G1
+</th>
+<th scope="col">
+POSITION_COUNT
+</th>
+</tr>
+<tr>
+<td>
+AIG
+</td>
+<td align="right">
+   10.5800
+</td>
+<td align="right">
+    .1356
+</td>
+<td align="right">
+    .22
+</td>
+<td align="right">
+  -1.6100
+</td>
+<td align="right">
+   1.0800
+</td>
+<td align="right">
+        78
+</td>
+</tr>
+<tr>
+<td>
+BRCM
+</td>
+<td align="right">
+    -.8500
+</td>
+<td align="right">
+   -.2125
+</td>
+<td align="right">
+   -.37
+</td>
+<td align="right">
+   -.9300
+</td>
+<td align="right">
+    .2900
+</td>
+<td align="right">
+         4
+</td>
+</tr>
+<tr>
+<td>
+CVE
+</td>
+<td align="right">
+   -9.5500
+</td>
+<td align="right">
+   -.8682
+</td>
+<td align="right">
+  -1.88
+</td>
+<td align="right">
+  -1.4200
+</td>
+<td align="right">
+    .2800
+</td>
+<td align="right">
+        11
+</td>
+</tr>
+<tr>
+<td>
+EBAY
+</td>
+<td align="right">
+    6.4400
+</td>
+<td align="right">
+    .2477
+</td>
+<td align="right">
+    .81
+</td>
+<td align="right">
+   -.1500
+</td>
+<td align="right">
+    .8000
+</td>
+<td align="right">
+        26
+</td>
+</tr>
+<tr>
+<td>
+EFA
+</td>
+<td align="right">
+  -72.6401
+</td>
+<td align="right">
+  -1.2971
+</td>
+<td align="right">
+  -4.78
+</td>
+<td align="right">
+  -2.1900
+</td>
+<td align="right">
+   -.8500
+</td>
+<td align="right">
+        56
+</td>
+</tr>
+<tr>
+<td>
+GOOG
+</td>
+<td align="right">
+   11.3100
+</td>
+<td align="right">
+   2.8275
+</td>
+<td align="right">
+    .36
+</td>
+<td align="right">
+  -2.3100
+</td>
+<td align="right">
+  14.5500
+</td>
+<td align="right">
+         4
+</td>
+</tr>
+<tr>
+<td>
+OIH
+</td>
+<td align="right">
+   -5.4400
+</td>
+<td align="right">
+  -1.8133
+</td>
+<td align="right">
+   -.83
+</td>
+<td align="right">
+  -3.9700
+</td>
+<td align="right">
+    .4000
+</td>
+<td align="right">
+         3
+</td>
+</tr>
+<tr>
+<td>
+VMW
+</td>
+<td align="right">
+  -35.2700
+</td>
+<td align="right">
+  -2.5193
+</td>
+<td align="right">
+   -.79
+</td>
+<td align="right">
+  -5.9400
+</td>
+<td align="right">
+   2.0000
+</td>
+<td align="right">
+        14
+</td>
+</tr>
+</table>
+<p>
+
+8 rows selected.<br>
+<br>
+
+
