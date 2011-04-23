@@ -1,5 +1,5 @@
 
-SQL*Plus: Release 11.2.0.1.0 Production on Sat Apr 23 15:22:26 2011
+SQL*Plus: Release 11.2.0.1.0 Production on Sat Apr 23 18:13:31 2011
 
 Copyright (c) 1982, 2009, Oracle.  All rights reserved.
 
@@ -8,38 +8,38 @@ Connected to:
 Oracle Database 11g Enterprise Edition Release 11.2.0.1.0 - 64bit Production
 With the Partitioning, OLAP, Data Mining and Real Application Testing options
 
-15:22:26 SQL> ALTER SESSION SET NLS_DATE_FORMAT = 'YYYY-MM-DD hh24:mi:ss';
+18:13:31 SQL> ALTER SESSION SET NLS_DATE_FORMAT = 'YYYY-MM-DD hh24:mi:ss';
 
 Session altered.
 
 Elapsed: 00:00:00.00
-15:22:26 SQL> 15:22:26 SQL> @fx_past_week.sql 2011-01-30
-15:22:26 SQL> --
-15:22:26 SQL> -- fx_past_week.sql
-15:22:26 SQL> --
-15:22:26 SQL> 
-15:22:26 SQL> -- Usage: @fx_past_week.sql 2011-01-30
-15:22:26 SQL> 
-15:22:26 SQL> -- I use this script to get 1 week's worth of fx-prediction data.
-15:22:26 SQL> -- This script depends on tables created by fx_past.sql
-15:22:26 SQL> -- So, I should run fx_past.sql before I run fx_past_week.sql
-15:22:26 SQL> 
-15:22:26 SQL> -- Start by showing summarized data for each pair:
-15:22:26 SQL> 
-15:22:26 SQL> COLUMN pair   FORMAT A14
-15:22:26 SQL> COLUMN sum_g5 FORMAT 99.9999
-15:22:26 SQL> COLUMN avg_g5 FORMAT 99.9999
-15:22:26 SQL> COLUMN sharpe_ratio FORMAT 9999.99
-15:22:26 SQL> COLUMN min_g5 FORMAT 99.9999
-15:22:26 SQL> COLUMN max_g5 FORMAT 99.9999
-15:22:26 SQL> COLUMN avg_score FORMAT 9.99
-15:22:26 SQL> 
-15:22:26 SQL> BREAK ON REPORT
-15:22:26 SQL> 
-15:22:26 SQL> COMPUTE SUM LABEL 'All Pairs Sum:' OF sum_g5	   ON REPORT
-15:22:26 SQL> COMPUTE SUM LABEL 'All Pairs Sum:' OF position_count ON REPORT
-15:22:26 SQL> 
-15:22:26 SQL> SET TIME off TIMING off ECHO off
+18:13:31 SQL> 18:13:31 SQL> @fx_past_week.sql 2011-01-30
+18:13:31 SQL> --
+18:13:31 SQL> -- fx_past_week.sql
+18:13:31 SQL> --
+18:13:31 SQL> 
+18:13:31 SQL> -- Usage: @fx_past_week.sql 2011-01-30
+18:13:31 SQL> 
+18:13:31 SQL> -- I use this script to get 1 week's worth of fx-prediction data.
+18:13:31 SQL> -- This script depends on tables created by fx_past.sql
+18:13:31 SQL> -- So, I should run fx_past.sql before I run fx_past_week.sql
+18:13:31 SQL> 
+18:13:31 SQL> -- Start by showing summarized data for each pair:
+18:13:31 SQL> 
+18:13:31 SQL> COLUMN pair   FORMAT A14
+18:13:31 SQL> COLUMN sum_g5 FORMAT 99.9999
+18:13:31 SQL> COLUMN avg_g5 FORMAT 99.9999
+18:13:31 SQL> COLUMN sharpe_ratio FORMAT 9999.99
+18:13:31 SQL> COLUMN min_g5 FORMAT 99.9999
+18:13:31 SQL> COLUMN max_g5 FORMAT 99.9999
+18:13:31 SQL> COLUMN avg_score FORMAT 9.99
+18:13:31 SQL> 
+18:13:31 SQL> BREAK ON REPORT
+18:13:31 SQL> 
+18:13:31 SQL> COMPUTE SUM LABEL 'All Pairs Sum:' OF sum_g5	   ON REPORT
+18:13:31 SQL> COMPUTE SUM LABEL 'All Pairs Sum:' OF position_count ON REPORT
+18:13:31 SQL> 
+18:13:31 SQL> SET TIME off TIMING off ECHO off
 old  13: AND ydate &gt; '&amp;1'
 <br>
 new  13: AND ydate &gt; '2011-01-30'
