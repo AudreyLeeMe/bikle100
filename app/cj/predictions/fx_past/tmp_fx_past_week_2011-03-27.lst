@@ -36,54 +36,54 @@ MAX_G5
 </tr>
 <tr>
 <td>
-aud_jpy
+aud_usd
 </td>
 <td align="right">
-  .65
+ -.63
 </td>
 <td align="right">
- 1.08
+    -.04
 </td>
 <td align="right">
-   .0039
+  -.0001
 </td>
 <td align="right">
-        48
+         9
 </td>
 <td align="right">
-   .1864
+  -.0010
 </td>
 <td align="right">
-  -.0026
+  -.0043
 </td>
 <td align="right">
-   .0103
+   .0029
 </td>
 </tr>
 <tr>
 <td>
-aud_usd
+eur_aud
 </td>
 <td align="right">
-  .70
+ -.68
 </td>
 <td align="right">
-  .42
+    -.34
 </td>
 <td align="right">
-   .0007
+  -.0008
 </td>
 <td align="right">
-       100
+        10
 </td>
 <td align="right">
-   .0711
+  -.0082
 </td>
 <td align="right">
-  -.0042
+  -.0032
 </td>
 <td align="right">
-   .0042
+   .0031
 </td>
 </tr>
 <tr>
@@ -91,25 +91,25 @@ aud_usd
 eur_chf
 </td>
 <td align="right">
-  .63
+ -.67
 </td>
 <td align="right">
- 1.01
+    -.17
 </td>
 <td align="right">
-   .0017
+  -.0002
 </td>
 <td align="right">
-        17
+        30
 </td>
 <td align="right">
-   .0289
+  -.0067
 </td>
 <td align="right">
-  -.0004
+  -.0028
 </td>
 <td align="right">
-   .0042
+   .0014
 </td>
 </tr>
 <tr>
@@ -117,25 +117,25 @@ eur_chf
 eur_gbp
 </td>
 <td align="right">
-  .61
+ -.64
 </td>
 <td align="right">
-  .73
+    -.21
 </td>
 <td align="right">
-   .0009
+  -.0003
 </td>
 <td align="right">
-        20
+        17
 </td>
 <td align="right">
-   .0181
+  -.0056
 </td>
 <td align="right">
-  -.0012
+  -.0025
 </td>
 <td align="right">
-   .0030
+   .0023
 </td>
 </tr>
 <tr>
@@ -143,25 +143,25 @@ eur_gbp
 eur_jpy
 </td>
 <td align="right">
-  .67
+ -.61
 </td>
 <td align="right">
- 1.13
+    -.34
 </td>
 <td align="right">
-   .0019
+  -.0005
 </td>
 <td align="right">
-        26
+        16
 </td>
 <td align="right">
-   .0489
+  -.0075
 </td>
 <td align="right">
-  -.0016
+  -.0025
 </td>
 <td align="right">
-   .0051
+   .0023
 </td>
 </tr>
 <tr>
@@ -169,25 +169,25 @@ eur_jpy
 eur_usd
 </td>
 <td align="right">
-  .65
+ -.61
 </td>
 <td align="right">
- -.20
+    -.44
 </td>
 <td align="right">
-  -.0002
+  -.0009
 </td>
 <td align="right">
-        23
+         9
 </td>
 <td align="right">
-  -.0052
+  -.0078
 </td>
 <td align="right">
-  -.0024
+  -.0044
 </td>
 <td align="right">
-   .0019
+   .0014
 </td>
 </tr>
 <tr>
@@ -195,25 +195,25 @@ eur_usd
 gbp_usd
 </td>
 <td align="right">
-  .63
+ -.65
 </td>
 <td align="right">
-  .75
+    -.38
 </td>
 <td align="right">
-   .0020
+  -.0005
 </td>
 <td align="right">
-        32
+        39
 </td>
 <td align="right">
-   .0649
+  -.0201
 </td>
 <td align="right">
-  -.0054
+  -.0025
 </td>
 <td align="right">
-   .0051
+   .0025
 </td>
 </tr>
 <tr>
@@ -221,83 +221,83 @@ gbp_usd
 usd_cad
 </td>
 <td align="right">
-  .60
+ -.63
 </td>
 <td align="right">
--1.29
+   -2.10
 </td>
 <td align="right">
-  -.0012
+  -.0015
 </td>
 <td align="right">
-         4
+        12
 </td>
 <td align="right">
-  -.0049
+  -.0179
 </td>
 <td align="right">
-  -.0020
+  -.0023
 </td>
 <td align="right">
-   .0001
+   .0002
 </td>
 </tr>
 <tr>
 <td>
-usd_chf
+&nbsp;
 </td>
 <td align="right">
-  .64
+&nbsp;
 </td>
 <td align="right">
- -.96
+&nbsp;
 </td>
 <td align="right">
-  -.0005
+&nbsp;
 </td>
 <td align="right">
-         9
+--------------
 </td>
 <td align="right">
-  -.0041
+--------
 </td>
 <td align="right">
-  -.0016
+&nbsp;
 </td>
 <td align="right">
-   .0001
+&nbsp;
 </td>
 </tr>
 <tr>
 <td>
-usd_jpy
+All Pairs Sum:
 </td>
 <td align="right">
-  .63
+&nbsp;
 </td>
 <td align="right">
- 1.35
+&nbsp;
 </td>
 <td align="right">
-   .0036
+&nbsp;
 </td>
 <td align="right">
-         6
+       142
 </td>
 <td align="right">
-   .0213
+  -.0748
 </td>
 <td align="right">
-  -.0012
+&nbsp;
 </td>
 <td align="right">
-   .0068
+&nbsp;
 </td>
 </tr>
 </table>
 <p>
 
-10 rows selected.<br>
+8 rows selected.<br>
 <br>
 
 
@@ -339,54 +339,54 @@ MAX_G5
 </tr>
 <tr>
 <td>
-aud_usd
+aud_jpy
 </td>
 <td align="right">
- -.63
+  .65
 </td>
 <td align="right">
- -.04
+    1.08
 </td>
 <td align="right">
-  -.0001
+   .0039
 </td>
 <td align="right">
-         9
+        48
 </td>
 <td align="right">
-  -.0010
+   .1864
 </td>
 <td align="right">
-  -.0043
+  -.0026
 </td>
 <td align="right">
-   .0029
+   .0103
 </td>
 </tr>
 <tr>
 <td>
-eur_aud
+aud_usd
 </td>
 <td align="right">
- -.68
+  .70
 </td>
 <td align="right">
- -.34
+     .42
 </td>
 <td align="right">
-  -.0008
+   .0007
 </td>
 <td align="right">
-        10
+       100
 </td>
 <td align="right">
-  -.0082
+   .0711
 </td>
 <td align="right">
-  -.0032
+  -.0042
 </td>
 <td align="right">
-   .0031
+   .0042
 </td>
 </tr>
 <tr>
@@ -394,25 +394,25 @@ eur_aud
 eur_chf
 </td>
 <td align="right">
- -.67
+  .63
 </td>
 <td align="right">
- -.17
+    1.01
 </td>
 <td align="right">
-  -.0002
+   .0017
 </td>
 <td align="right">
-        30
+        17
 </td>
 <td align="right">
-  -.0067
+   .0289
 </td>
 <td align="right">
-  -.0028
+  -.0004
 </td>
 <td align="right">
-   .0014
+   .0042
 </td>
 </tr>
 <tr>
@@ -420,25 +420,25 @@ eur_chf
 eur_gbp
 </td>
 <td align="right">
- -.64
+  .61
 </td>
 <td align="right">
- -.21
+     .73
 </td>
 <td align="right">
-  -.0003
+   .0009
 </td>
 <td align="right">
-        17
+        20
 </td>
 <td align="right">
-  -.0056
+   .0181
 </td>
 <td align="right">
-  -.0025
+  -.0012
 </td>
 <td align="right">
-   .0023
+   .0030
 </td>
 </tr>
 <tr>
@@ -446,25 +446,25 @@ eur_gbp
 eur_jpy
 </td>
 <td align="right">
- -.61
+  .67
 </td>
 <td align="right">
- -.34
+    1.13
 </td>
 <td align="right">
-  -.0005
+   .0019
 </td>
 <td align="right">
-        16
+        26
 </td>
 <td align="right">
-  -.0075
+   .0489
 </td>
 <td align="right">
-  -.0025
+  -.0016
 </td>
 <td align="right">
-   .0023
+   .0051
 </td>
 </tr>
 <tr>
@@ -472,25 +472,25 @@ eur_jpy
 eur_usd
 </td>
 <td align="right">
- -.61
+  .65
 </td>
 <td align="right">
- -.44
+    -.20
 </td>
 <td align="right">
-  -.0009
+  -.0002
 </td>
 <td align="right">
-         9
+        23
 </td>
 <td align="right">
-  -.0078
+  -.0052
 </td>
 <td align="right">
-  -.0044
+  -.0024
 </td>
 <td align="right">
-   .0014
+   .0019
 </td>
 </tr>
 <tr>
@@ -498,25 +498,25 @@ eur_usd
 gbp_usd
 </td>
 <td align="right">
- -.65
+  .63
 </td>
 <td align="right">
- -.38
+     .75
 </td>
 <td align="right">
-  -.0005
+   .0020
 </td>
 <td align="right">
-        39
+        32
 </td>
 <td align="right">
-  -.0201
+   .0649
 </td>
 <td align="right">
-  -.0025
+  -.0054
 </td>
 <td align="right">
-   .0025
+   .0051
 </td>
 </tr>
 <tr>
@@ -524,31 +524,135 @@ gbp_usd
 usd_cad
 </td>
 <td align="right">
- -.63
+  .60
 </td>
 <td align="right">
--2.10
+   -1.29
 </td>
 <td align="right">
-  -.0015
+  -.0012
 </td>
 <td align="right">
-        12
+         4
 </td>
 <td align="right">
-  -.0179
+  -.0049
 </td>
 <td align="right">
-  -.0023
+  -.0020
 </td>
 <td align="right">
-   .0002
+   .0001
+</td>
+</tr>
+<tr>
+<td>
+usd_chf
+</td>
+<td align="right">
+  .64
+</td>
+<td align="right">
+    -.96
+</td>
+<td align="right">
+  -.0005
+</td>
+<td align="right">
+         9
+</td>
+<td align="right">
+  -.0041
+</td>
+<td align="right">
+  -.0016
+</td>
+<td align="right">
+   .0001
+</td>
+</tr>
+<tr>
+<td>
+usd_jpy
+</td>
+<td align="right">
+  .63
+</td>
+<td align="right">
+    1.35
+</td>
+<td align="right">
+   .0036
+</td>
+<td align="right">
+         6
+</td>
+<td align="right">
+   .0213
+</td>
+<td align="right">
+  -.0012
+</td>
+<td align="right">
+   .0068
+</td>
+</tr>
+<tr>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+--------------
+</td>
+<td align="right">
+--------
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+All Pairs Sum:
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+       285
+</td>
+<td align="right">
+   .4254
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
 </td>
 </tr>
 </table>
 <p>
 
-8 rows selected.<br>
+10 rows selected.<br>
 <br>
 
 
