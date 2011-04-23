@@ -7,3 +7,6 @@
 @fx_past_week.sql 2011-03-13
 @fx_past_week.sql 2011-03-20
 @fx_past_week.sql 2011-03-27
+@fx_past_week.sql 2011-04-03
+@fx_past_week.sql 2011-04-10
+@fx_past_week.sql 2011-04-17

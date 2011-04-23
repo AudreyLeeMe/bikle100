@@ -18,7 +18,7 @@ pair
 ,ydate
 ,clse
 ,prdate
-,(LEAD(clse,12*2,NULL)OVER(PARTITION BY pair ORDER BY ydate)-clse)/clse g2
+,(LEAD(clse,12*1,NULL)OVER(PARTITION BY pair ORDER BY ydate)-clse)/clse g1
 ,(LEAD(clse,12*6,NULL)OVER(PARTITION BY pair ORDER BY ydate)-clse)/clse g6
 FROM di5min
 WHERE ydate > '2011-01-30'
@@ -37,9 +37,9 @@ m.pair
 ,(l.score-s.score)         score_diff
 ,ROUND(l.score-s.score,1) rscore_diff1
 ,ROUND(l.score-s.score,2) rscore_diff2
-,m.g2
+,m.g1
 ,m.g6
-,m.g6-m.g2 g4
+,m.g6-m.g1 g5
 ,CORR(l.score-s.score,g6)OVER(PARTITION BY l.pair ORDER BY l.ydate ROWS BETWEEN 12*24*1 PRECEDING AND CURRENT ROW)rnng_crr1
 FROM svm62scores l,svm62scores s,fxpst10 m
 WHERE l.targ='gatt'
@@ -111,7 +111,7 @@ SELECT
 pair
 ,ydate
 ,rscore_diff2
-,g2
+,g1
 ,ROUND(rnng_crr1,2)      rnng_crr1
 ,(sysdate - ydate)*24*60 minutes_age
 FROM fxpst12
@@ -127,7 +127,7 @@ pair
 ,CASE WHEN rscore_diff2<0 THEN'sell'ELSE'buy'END bors
 ,ROUND(clse,4)clse
 ,rscore_diff2
-,ROUND(g2,4)g2
+,ROUND(g1,4)g1
 ,ROUND(rnng_crr1,2)      rnng_crr1
 ,(sysdate - ydate)*24*60 minutes_age
 --,ydate + 6/24 cls_date
