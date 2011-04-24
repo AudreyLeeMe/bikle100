@@ -3,20 +3,48 @@
 
 :javascript
   $(document).ready(function() {
-    $("div#help4_currency_pair").hide();
-    $("a#a_currency_pair").click(function(event){
-      $("div#help4_currency_pair").dialog();
+    $("div#help4_currencypair").hide();
+    $("div#help4_avgdanbotscore").hide();
+    $("a.currencypair").click(function(event){
+      $("div#help4_currencypair").dialog();
     });
+    $("a.avgdanbotscore").click(function(event){
+      $("div#help4_avgdanbotscore").dialog();
+    });
+
   });
 
-%a#a_currency_pair currency_pair 
+%br/
+%a.currencypair currency_pair 
+%br/
+%a.avgdanbotscore Avg DanBot Score
+%br/
+%br/
 
-#help4_currency_pair(title="Currency Pair")
+#help4_currencypair(title="Currency Pair")
   Currency pairs have names like EUR/USD.
   The name on the left is the currency getting bought.
-  The name on the right is the currency you use to pay for the currency on the left.
+  The name on the right is the currency I use to pay for the currency on the left.
   So, if I buy the EUR/USD pair, I am buying EUR with USD.
   If I sell the EUR/USD pair, I am selling EUR and receiving USD.
   By convention, some pairs are rarely referred to.
-  For example, the EUR/USD pair is often mentioned in the media, but not the USD/EUR pair.
+  For example, the EUR/USD pair is often mentioned in the media, but the USD/EUR pair is not.
 
+#help4_avgdanbotscore(title="Avg DanBot Score")
+  The DanBot is software I wrote and perfected during the years 2008 through 2011.
+  I run the DanBot on a set of servers which feed data to this website.
+  The DanBot relies on a machine learning algorithm called:
+  %a(target="w" href="http://en.wikipedia.org/wiki/Support_vector_machine")Support Vector Machine.
+  The DanBot scores 11 differenct currency pairs every 5 minutes when the Forex market is open.
+  Currently the Forex market is open every hour between 9pm Sunday and 9pm Friday London time.
+  So, every hour the DanBot calculates 660 scores which is almost 16,000 scores per day.
+  If the  DanBot score is between -0.55 and 0.55, then I ignore it.
+  If the DanBot score is greater than 0.55 on a currency pair at a point in time,
+  then the DanBot is predicting that the currency pair price will be higher after 6 hours.
+  Likewise, if the DanBot score is less than -0.55 on a currency pair at a point in time,
+  then the DanBot is predicting that the currency pair price will be lower after 6 hours.
+  I ignore the vast majority of DanBot scores.
+  In a typical week, about 1,000 DanBot scores will catch my attention.
+  Once I see a DanBot score that I like, I wait until the score is 1 hour old.
+  Then I check the price of the currency pair.  If the price has not moved much during that 1 hour,
+  I will open a position in that currency pair for 5 hours and then I will close it.
