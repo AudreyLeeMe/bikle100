@@ -1,5 +1,5 @@
 
-SQL*Plus: Release 11.2.0.1.0 Production on Sun Apr 24 04:25:25 2011
+SQL*Plus: Release 11.2.0.1.0 Production on Sun Apr 24 06:43:40 2011
 
 Copyright (c) 1982, 2009, Oracle.  All rights reserved.
 
@@ -8,110 +8,116 @@ Connected to:
 Oracle Database 11g Enterprise Edition Release 11.2.0.1.0 - 64bit Production
 With the Partitioning, OLAP, Data Mining and Real Application Testing options
 
-04:25:26 SQL> ALTER SESSION SET NLS_DATE_FORMAT = 'YYYY-MM-DD hh24:mi:ss';
+06:43:40 SQL> ALTER SESSION SET NLS_DATE_FORMAT = 'YYYY-MM-DD hh24:mi:ss';
 
 Session altered.
 
 Elapsed: 00:00:00.00
-04:25:26 SQL> 04:25:26 SQL> --
-04:25:26 SQL> -- fx_past.sql
-04:25:26 SQL> --
-04:25:26 SQL> 
-04:25:26 SQL> -- I use this script to join 3 types of tables:
-04:25:26 SQL> -- prices,gains
-04:25:26 SQL> -- gatt-scores
-04:25:26 SQL> -- gattn-scores
-04:25:26 SQL> 
-04:25:26 SQL> -- I can pattern off this script:
-04:25:26 SQL> -- /pt/s/rluck/svm62/qrs2.sql
-04:25:26 SQL> 
-04:25:26 SQL> DROP TABLE fxpst10;
+06:43:40 SQL> 06:43:40 SQL> --
+06:43:40 SQL> -- fx_past.sql
+06:43:40 SQL> --
+06:43:40 SQL> 
+06:43:40 SQL> -- I use this script to join 3 types of tables:
+06:43:40 SQL> -- prices,gains
+06:43:40 SQL> -- gatt-scores
+06:43:40 SQL> -- gattn-scores
+06:43:40 SQL> 
+06:43:40 SQL> -- I can pattern off this script:
+06:43:40 SQL> -- /pt/s/rluck/svm62/qrs2.sql
+06:43:40 SQL> 
+06:43:40 SQL> DROP TABLE fxpst10;
 
 Table dropped.
 
-Elapsed: 00:00:00.88
-04:25:27 SQL> PURGE RECYCLEBIN;
+Elapsed: 00:00:00.04
+06:43:40 SQL> PURGE RECYCLEBIN;
 
 Recyclebin purged.
 
-Elapsed: 00:00:00.53
-04:25:27 SQL> CREATE TABLE fxpst10 COMPRESS AS
-04:25:27   2  SELECT
-04:25:27   3  pair
-04:25:27   4  ,ydate
-04:25:27   5  ,clse
-04:25:27   6  ,prdate
-04:25:27   7  ,(LEAD(clse,12*1,NULL)OVER(PARTITION BY pair ORDER BY ydate)-clse)/clse g1
-04:25:27   8  ,(LEAD(clse,12*6,NULL)OVER(PARTITION BY pair ORDER BY ydate)-clse)/clse g6
-04:25:27   9  FROM di5min
-04:25:27  10  WHERE ydate > '2011-01-30'
-04:25:27  11  AND clse > 0
-04:25:27  12  ORDER BY pair,ydate
-04:25:27  13  /
+Elapsed: 00:00:00.17
+06:43:41 SQL> CREATE TABLE fxpst10 COMPRESS AS
+06:43:41   2  SELECT
+06:43:41   3  pair
+06:43:41   4  ,ydate
+06:43:41   5  ,clse
+06:43:41   6  ,prdate
+06:43:41   7  ,(LEAD(clse,12*1,NULL)OVER(PARTITION BY pair ORDER BY ydate)-clse)/clse g1
+06:43:41   8  ,(LEAD(clse,12*6,NULL)OVER(PARTITION BY pair ORDER BY ydate)-clse)/clse g6
+06:43:41   9  ,clse price_0hr
+06:43:41  10  ,LEAD(clse,12*1,NULL)OVER(PARTITION BY pair ORDER BY ydate) price_1hr
+06:43:41  11  ,LEAD(clse,12*6,NULL)OVER(PARTITION BY pair ORDER BY ydate) price_6hr
+06:43:41  12  FROM di5min
+06:43:41  13  WHERE ydate > '2011-01-30'
+06:43:41  14  AND clse > 0
+06:43:41  15  ORDER BY pair,ydate
+06:43:41  16  /
 
 Table created.
 
-Elapsed: 00:00:03.16
-04:25:31 SQL> 
-04:25:31 SQL> ANALYZE TABLE fxpst10 ESTIMATE STATISTICS SAMPLE 9 PERCENT;
+Elapsed: 00:00:02.26
+06:43:43 SQL> 
+06:43:43 SQL> ANALYZE TABLE fxpst10 ESTIMATE STATISTICS SAMPLE 9 PERCENT;
 
 Table analyzed.
 
-Elapsed: 00:00:00.33
-04:25:31 SQL> 
-04:25:31 SQL> DROP TABLE fxpst12;
+Elapsed: 00:00:00.34
+06:43:43 SQL> 
+06:43:43 SQL> DROP TABLE fxpst12;
 
 Table dropped.
 
-Elapsed: 00:00:00.05
-04:25:31 SQL> CREATE TABLE fxpst12 COMPRESS AS
-04:25:31   2  SELECT
-04:25:31   3  m.pair
-04:25:31   4  ,m.ydate
-04:25:31   5  ,m.clse
-04:25:31   6  ,(l.score-s.score)	 score_diff
-04:25:31   7  ,ROUND(l.score-s.score,1) rscore_diff1
-04:25:31   8  ,ROUND(l.score-s.score,2) rscore_diff2
-04:25:31   9  ,m.g1
-04:25:31  10  ,m.g6
-04:25:31  11  ,m.g6-m.g1 g5
-04:25:31  12  ,CORR(l.score-s.score,g6)OVER(PARTITION BY l.pair ORDER BY l.ydate ROWS BETWEEN 12*24*1 PRECEDING AND CURRENT ROW)rnng_crr1
-04:25:31  13  FROM svm62scores l,svm62scores s,fxpst10 m
-04:25:31  14  WHERE l.targ='gatt'
-04:25:31  15  AND   s.targ='gattn'
-04:25:31  16  AND l.prdate = s.prdate
-04:25:31  17  AND l.prdate = m.prdate
-04:25:31  18  -- Speed things up:
-04:25:31  19  AND l.ydate > '2011-01-30'
-04:25:31  20  AND s.ydate > '2011-01-30'
-04:25:31  21  /
+Elapsed: 00:00:00.04
+06:43:43 SQL> CREATE TABLE fxpst12 COMPRESS AS
+06:43:43   2  SELECT
+06:43:43   3  m.pair
+06:43:43   4  ,m.ydate
+06:43:43   5  ,m.clse
+06:43:43   6  ,(l.score-s.score)	 score_diff
+06:43:43   7  ,ROUND(l.score-s.score,1) rscore_diff1
+06:43:43   8  ,ROUND(l.score-s.score,2) rscore_diff2
+06:43:43   9  ,m.g1
+06:43:43  10  ,m.g6
+06:43:43  11  ,price_0hr
+06:43:43  12  ,price_1hr
+06:43:43  13  ,price_6hr
+06:43:43  14  ,m.g6-m.g1 g5
+06:43:43  15  ,CORR(l.score-s.score,g6)OVER(PARTITION BY l.pair ORDER BY l.ydate ROWS BETWEEN 12*24*1 PRECEDING AND CURRENT ROW)rnng_crr1
+06:43:43  16  FROM svm62scores l,svm62scores s,fxpst10 m
+06:43:43  17  WHERE l.targ='gatt'
+06:43:43  18  AND   s.targ='gattn'
+06:43:43  19  AND l.prdate = s.prdate
+06:43:43  20  AND l.prdate = m.prdate
+06:43:43  21  -- Speed things up:
+06:43:43  22  AND l.ydate > '2011-01-30'
+06:43:43  23  AND s.ydate > '2011-01-30'
+06:43:43  24  /
 
 Table created.
 
-Elapsed: 00:00:06.07
-04:25:37 SQL> 
-04:25:37 SQL> ANALYZE TABLE fxpst12 ESTIMATE STATISTICS SAMPLE 9 PERCENT;
+Elapsed: 00:00:04.43
+06:43:48 SQL> 
+06:43:48 SQL> ANALYZE TABLE fxpst12 ESTIMATE STATISTICS SAMPLE 9 PERCENT;
 
 Table analyzed.
 
-Elapsed: 00:00:00.59
-04:25:38 SQL> 
-04:25:38 SQL> -- rpt
-04:25:38 SQL> -- This SELECT gives me a list of recent week-names.
-04:25:38 SQL> -- I use minday, maxday to help me understand the contents of each week.
-04:25:38 SQL> SELECT
-04:25:38   2  TO_CHAR(ydate,'WW')
-04:25:38   3  ,MIN(ydate)
-04:25:38   4  ,TO_CHAR(MIN(ydate),'Dy')minday
-04:25:38   5  ,COUNT(ydate)
-04:25:38   6  ,MAX(ydate)
-04:25:38   7  ,TO_CHAR(MAX(ydate),'Dy')maxday
-04:25:38   8  FROM fxpst12
-04:25:38   9  GROUP BY
-04:25:38  10  TO_CHAR(ydate,'WW')
-04:25:38  11  ORDER BY
-04:25:38  12  MIN(ydate)
-04:25:38  13  /
+Elapsed: 00:00:00.42
+06:43:48 SQL> 
+06:43:48 SQL> -- rpt
+06:43:48 SQL> -- This SELECT gives me a list of recent week-names.
+06:43:48 SQL> -- I use minday, maxday to help me understand the contents of each week.
+06:43:48 SQL> SELECT
+06:43:48   2  TO_CHAR(ydate,'WW')
+06:43:48   3  ,MIN(ydate)
+06:43:48   4  ,TO_CHAR(MIN(ydate),'Dy')minday
+06:43:48   5  ,COUNT(ydate)
+06:43:48   6  ,MAX(ydate)
+06:43:48   7  ,TO_CHAR(MAX(ydate),'Dy')maxday
+06:43:48   8  FROM fxpst12
+06:43:48   9  GROUP BY
+06:43:48  10  TO_CHAR(ydate,'WW')
+06:43:48  11  ORDER BY
+06:43:48  12  MIN(ydate)
+06:43:48  13  /
 
 TO MIN(YDATE)	       MIN COUNT(YDATE) MAX(YDATE)	    MAX
 -- ------------------- --- ------------ ------------------- ---
@@ -130,15 +136,15 @@ TO MIN(YDATE)	       MIN COUNT(YDATE) MAX(YDATE)	    MAX
 
 12 rows selected.
 
-Elapsed: 00:00:00.12
-04:25:38 SQL> 
-04:25:38 SQL> -- This SELECT gives me text for a-tags
-04:25:38 SQL> ALTER SESSION SET NLS_DATE_FORMAT = 'YYYY-MM-DD';
+Elapsed: 00:00:00.11
+06:43:48 SQL> 
+06:43:48 SQL> -- This SELECT gives me text for a-tags
+06:43:48 SQL> ALTER SESSION SET NLS_DATE_FORMAT = 'YYYY-MM-DD';
 
 Session altered.
 
 Elapsed: 00:00:00.00
-04:25:38 SQL> SET TIME off TIMING off ECHO off HEADING off
+06:43:48 SQL> SET TIME off TIMING off ECHO off HEADING off
 <p>
 <table id='table_fx_past'>
 <tr>

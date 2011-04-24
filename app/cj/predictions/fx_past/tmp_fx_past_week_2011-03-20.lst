@@ -29,9 +29,7 @@ Ratio
 <th scope="col">
 Avg of
 <br>
-5hr
-<br>
-gains
+5hr gains
 </th>
 <th scope="col">
 Count of
@@ -41,34 +39,26 @@ positions
 <th scope="col">
 Sum of
 <br>
-5hr
-<br>
-gains
+5hr gains
 </th>
 <th scope="col">
 Min of
 <br>
 of
 <br>
-5hr
-<br>
-gains
+5hr gains
 </th>
 <th scope="col">
 Max of
 <br>
-5hr
-<br>
-gains
+5hr gains
 </th>
 <th scope="col">
-StdDeviation
+Standard
 <br>
-of
+Deviation
 <br>
-5hr
-<br>
-gains
+of 5hr gains
 </th>
 </tr>
 <tr>
@@ -378,7 +368,7 @@ usd_jpy
 ---------
 </td>
 <td align="right">
---------
+---------
 </td>
 <td align="right">
 &nbsp;
@@ -457,9 +447,7 @@ Ratio
 <th scope="col">
 Avg of
 <br>
-5hr
-<br>
-gains
+5hr gains
 </th>
 <th scope="col">
 Count of
@@ -469,34 +457,26 @@ positions
 <th scope="col">
 Sum of
 <br>
-5hr
-<br>
-gains
+5hr gains
 </th>
 <th scope="col">
 Min of
 <br>
 of
 <br>
-5hr
-<br>
-gains
+5hr gains
 </th>
 <th scope="col">
 Max of
 <br>
-5hr
-<br>
-gains
+5hr gains
 </th>
 <th scope="col">
-StdDeviation
+Standard
 <br>
-of
+Deviation
 <br>
-5hr
-<br>
-gains
+of 5hr gains
 </th>
 </tr>
 <tr>
@@ -806,7 +786,7 @@ usd_jpy
 ---------
 </td>
 <td align="right">
---------
+---------
 </td>
 <td align="right">
 &nbsp;
@@ -851,6 +831,15263 @@ Sum:
 <p>
 
 10 rows selected.<br>
+<br>
+
+
+<p>
+<table class='table_fx_past_week'>
+<tr>
+<th scope="col">
+Note:
+</th>
+</tr>
+<tr>
+<td>
+The above tables are summaries of predictions. A list of all predictions is displayed below if you want to load it into
+a spreadsheet.
+</td>
+</tr>
+</table>
+<p>
+
+old  13: AND ydate &gt; '&amp;1'
+<br>
+new  13: AND ydate &gt; '2011-03-20'
+<br>
+old  14: AND ydate - 7 &lt; '&amp;1'
+<br>
+new  14: AND ydate - 7 &lt; '2011-03-20'
+<br>
+<p>
+<table class='table_fx_past_week'>
+<tr>
+<th scope="col">
+Currency
+<br>
+Pair
+</th>
+<th scope="col">
+Timestamp
+<br>
+at hour 0
+</th>
+<th scope="col">
+DanBot
+<br>
+Score
+<br>
+at hour 0
+</th>
+<th scope="col">
+Price at
+<br>
+hour 0
+</th>
+<th scope="col">
+Price after
+<br>
+1 hour
+</th>
+<th scope="col">
+Price after
+<br>
+6 hours
+</th>
+<th scope="col">
+5 hour gain
+<br>
+between
+<br>
+hr1 and hr6
+</th>
+<th scope="col">
+Normalized
+<br>
+5hr gain
+</th>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-23
+10:50:00
+</td>
+<td align="right">
+ -.61
+</td>
+<td align="right">
+  81.7737
+</td>
+<td align="right">
+  81.7964
+</td>
+<td align="right">
+  81.8662
+</td>
+<td align="right">
+   .0698
+</td>
+<td align="right">
+  .0009
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-23
+20:30:00
+</td>
+<td align="right">
+ -.58
+</td>
+<td align="right">
+  82.0164
+</td>
+<td align="right">
+  82.0267
+</td>
+<td align="right">
+  82.0809
+</td>
+<td align="right">
+   .0542
+</td>
+<td align="right">
+  .0007
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-23
+20:35:00
+</td>
+<td align="right">
+ -.63
+</td>
+<td align="right">
+  82.0007
+</td>
+<td align="right">
+  82.0393
+</td>
+<td align="right">
+  82.0733
+</td>
+<td align="right">
+   .0339
+</td>
+<td align="right">
+  .0004
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-25
+05:55:00
+</td>
+<td align="right">
+ -.57
+</td>
+<td align="right">
+  82.7626
+</td>
+<td align="right">
+  82.8157
+</td>
+<td align="right">
+  83.2042
+</td>
+<td align="right">
+   .3885
+</td>
+<td align="right">
+  .0047
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-25
+08:20:00
+</td>
+<td align="right">
+ -.74
+</td>
+<td align="right">
+  82.9248
+</td>
+<td align="right">
+  83.0853
+</td>
+<td align="right">
+  83.2194
+</td>
+<td align="right">
+   .1341
+</td>
+<td align="right">
+  .0016
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-25
+15:30:00
+</td>
+<td align="right">
+ -.56
+</td>
+<td align="right">
+  83.4015
+</td>
+<td align="right">
+  83.5598
+</td>
+<td align="right">
+  83.3599
+</td>
+<td align="right">
+  -.1999
+</td>
+<td align="right">
+ -.0024
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-25
+15:35:00
+</td>
+<td align="right">
+ -.57
+</td>
+<td align="right">
+  83.3842
+</td>
+<td align="right">
+  83.4791
+</td>
+<td align="right">
+  83.3917
+</td>
+<td align="right">
+  -.0874
+</td>
+<td align="right">
+ -.0010
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-25
+15:40:00
+</td>
+<td align="right">
+ -.56
+</td>
+<td align="right">
+  83.3421
+</td>
+<td align="right">
+  83.4682
+</td>
+<td align="right">
+  83.4095
+</td>
+<td align="right">
+  -.0587
+</td>
+<td align="right">
+ -.0007
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-25
+15:50:00
+</td>
+<td align="right">
+ -.57
+</td>
+<td align="right">
+  83.4356
+</td>
+<td align="right">
+  83.4556
+</td>
+<td align="right">
+  83.4712
+</td>
+<td align="right">
+   .0155
+</td>
+<td align="right">
+  .0002
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-25
+15:55:00
+</td>
+<td align="right">
+ -.74
+</td>
+<td align="right">
+  83.4072
+</td>
+<td align="right">
+  83.4385
+</td>
+<td align="right">
+  83.4550
+</td>
+<td align="right">
+   .0165
+</td>
+<td align="right">
+  .0002
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-25
+16:40:00
+</td>
+<td align="right">
+ -.61
+</td>
+<td align="right">
+  83.4682
+</td>
+<td align="right">
+  83.4532
+</td>
+<td align="right">
+  83.4171
+</td>
+<td align="right">
+  -.0362
+</td>
+<td align="right">
+ -.0004
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-25
+16:50:00
+</td>
+<td align="right">
+ -.64
+</td>
+<td align="right">
+  83.4556
+</td>
+<td align="right">
+  83.4584
+</td>
+<td align="right">
+  83.4573
+</td>
+<td align="right">
+  -.0010
+</td>
+<td align="right">
+  .0000
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-25
+16:55:00
+</td>
+<td align="right">
+ -.69
+</td>
+<td align="right">
+  83.4385
+</td>
+<td align="right">
+  83.4451
+</td>
+<td align="right">
+  83.4405
+</td>
+<td align="right">
+  -.0046
+</td>
+<td align="right">
+ -.0001
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-25
+17:05:00
+</td>
+<td align="right">
+ -.75
+</td>
+<td align="right">
+  83.4302
+</td>
+<td align="right">
+  83.4439
+</td>
+<td align="right">
+  83.4858
+</td>
+<td align="right">
+   .0419
+</td>
+<td align="right">
+  .0005
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-25
+17:20:00
+</td>
+<td align="right">
+ -.59
+</td>
+<td align="right">
+  83.3976
+</td>
+<td align="right">
+  83.4801
+</td>
+<td align="right">
+  83.6014
+</td>
+<td align="right">
+   .1213
+</td>
+<td align="right">
+  .0015
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-25
+17:35:00
+</td>
+<td align="right">
+ -.63
+</td>
+<td align="right">
+  83.4361
+</td>
+<td align="right">
+  83.4358
+</td>
+<td align="right">
+  83.6174
+</td>
+<td align="right">
+   .1816
+</td>
+<td align="right">
+  .0022
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-25
+17:45:00
+</td>
+<td align="right">
+ -.57
+</td>
+<td align="right">
+  83.4525
+</td>
+<td align="right">
+  83.4561
+</td>
+<td align="right">
+  83.7325
+</td>
+<td align="right">
+   .2765
+</td>
+<td align="right">
+  .0033
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-25
+17:50:00
+</td>
+<td align="right">
+ -.60
+</td>
+<td align="right">
+  83.4584
+</td>
+<td align="right">
+  83.4767
+</td>
+<td align="right">
+  83.6820
+</td>
+<td align="right">
+   .2053
+</td>
+<td align="right">
+  .0025
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-25
+18:05:00
+</td>
+<td align="right">
+ -.64
+</td>
+<td align="right">
+  83.4439
+</td>
+<td align="right">
+  83.4872
+</td>
+<td align="right">
+  83.6415
+</td>
+<td align="right">
+   .1543
+</td>
+<td align="right">
+  .0018
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-25
+18:15:00
+</td>
+<td align="right">
+ -.72
+</td>
+<td align="right">
+  83.4667
+</td>
+<td align="right">
+  83.4990
+</td>
+<td align="right">
+  83.5932
+</td>
+<td align="right">
+   .0942
+</td>
+<td align="right">
+  .0011
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-25
+18:25:00
+</td>
+<td align="right">
+ -.63
+</td>
+<td align="right">
+  83.4708
+</td>
+<td align="right">
+  83.4725
+</td>
+<td align="right">
+  83.5552
+</td>
+<td align="right">
+   .0827
+</td>
+<td align="right">
+  .0010
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-25
+18:30:00
+</td>
+<td align="right">
+ -.56
+</td>
+<td align="right">
+  83.4532
+</td>
+<td align="right">
+  83.4873
+</td>
+<td align="right">
+  83.5717
+</td>
+<td align="right">
+   .0844
+</td>
+<td align="right">
+  .0010
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-25
+18:40:00
+</td>
+<td align="right">
+ -.55
+</td>
+<td align="right">
+  83.4296
+</td>
+<td align="right">
+  83.4998
+</td>
+<td align="right">
+  83.6266
+</td>
+<td align="right">
+   .1268
+</td>
+<td align="right">
+  .0015
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-25
+18:55:00
+</td>
+<td align="right">
+ -.81
+</td>
+<td align="right">
+  83.4701
+</td>
+<td align="right">
+  83.5470
+</td>
+<td align="right">
+  83.5819
+</td>
+<td align="right">
+   .0349
+</td>
+<td align="right">
+  .0004
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-25
+19:00:00
+</td>
+<td align="right">
+ -.68
+</td>
+<td align="right">
+  83.4963
+</td>
+<td align="right">
+  83.5228
+</td>
+<td align="right">
+  83.6064
+</td>
+<td align="right">
+   .0836
+</td>
+<td align="right">
+  .0010
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-25
+19:05:00
+</td>
+<td align="right">
+ -.58
+</td>
+<td align="right">
+  83.4872
+</td>
+<td align="right">
+  83.5243
+</td>
+<td align="right">
+  83.5946
+</td>
+<td align="right">
+   .0703
+</td>
+<td align="right">
+  .0008
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-25
+19:10:00
+</td>
+<td align="right">
+ -.60
+</td>
+<td align="right">
+  83.5025
+</td>
+<td align="right">
+  83.4912
+</td>
+<td align="right">
+  83.5982
+</td>
+<td align="right">
+   .1070
+</td>
+<td align="right">
+  .0013
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-25
+19:25:00
+</td>
+<td align="right">
+ -.72
+</td>
+<td align="right">
+  83.4725
+</td>
+<td align="right">
+  83.5037
+</td>
+<td align="right">
+  83.6053
+</td>
+<td align="right">
+   .1015
+</td>
+<td align="right">
+  .0012
+</td>
+</tr>
+<tr>
+<td>
+aud_usd
+</td>
+<td>
+2011-03-21
+20:15:00
+</td>
+<td align="right">
+ -.57
+</td>
+<td align="right">
+   1.0056
+</td>
+<td align="right">
+   1.0062
+</td>
+<td align="right">
+   1.0047
+</td>
+<td align="right">
+  -.0015
+</td>
+<td align="right">
+ -.0015
+</td>
+</tr>
+<tr>
+<td>
+aud_usd
+</td>
+<td>
+2011-03-23
+06:10:00
+</td>
+<td align="right">
+ -.63
+</td>
+<td align="right">
+   1.0088
+</td>
+<td align="right">
+   1.0099
+</td>
+<td align="right">
+   1.0102
+</td>
+<td align="right">
+   .0003
+</td>
+<td align="right">
+  .0002
+</td>
+</tr>
+<tr>
+<td>
+aud_usd
+</td>
+<td>
+2011-03-23
+07:45:00
+</td>
+<td align="right">
+ -.58
+</td>
+<td align="right">
+   1.0078
+</td>
+<td align="right">
+   1.0091
+</td>
+<td align="right">
+   1.0086
+</td>
+<td align="right">
+  -.0005
+</td>
+<td align="right">
+ -.0005
+</td>
+</tr>
+<tr>
+<td>
+eur_aud
+</td>
+<td>
+2011-03-24
+07:40:00
+</td>
+<td align="right">
+ -.55
+</td>
+<td align="right">
+   1.3869
+</td>
+<td align="right">
+   1.3884
+</td>
+<td align="right">
+   1.3895
+</td>
+<td align="right">
+   .0012
+</td>
+<td align="right">
+  .0008
+</td>
+</tr>
+<tr>
+<td>
+eur_aud
+</td>
+<td>
+2011-03-24
+15:35:00
+</td>
+<td align="right">
+ -.68
+</td>
+<td align="right">
+   1.3896
+</td>
+<td align="right">
+   1.3899
+</td>
+<td align="right">
+   1.3882
+</td>
+<td align="right">
+  -.0017
+</td>
+<td align="right">
+ -.0013
+</td>
+</tr>
+<tr>
+<td>
+eur_aud
+</td>
+<td>
+2011-03-25
+01:45:00
+</td>
+<td align="right">
+ -.57
+</td>
+<td align="right">
+   1.3897
+</td>
+<td align="right">
+   1.3892
+</td>
+<td align="right">
+   1.3853
+</td>
+<td align="right">
+  -.0039
+</td>
+<td align="right">
+ -.0028
+</td>
+</tr>
+<tr>
+<td>
+eur_aud
+</td>
+<td>
+2011-03-25
+02:05:00
+</td>
+<td align="right">
+ -.66
+</td>
+<td align="right">
+   1.3889
+</td>
+<td align="right">
+   1.3894
+</td>
+<td align="right">
+   1.3837
+</td>
+<td align="right">
+  -.0057
+</td>
+<td align="right">
+ -.0041
+</td>
+</tr>
+<tr>
+<td>
+eur_aud
+</td>
+<td>
+2011-03-25
+02:25:00
+</td>
+<td align="right">
+ -.59
+</td>
+<td align="right">
+   1.3886
+</td>
+<td align="right">
+   1.3895
+</td>
+<td align="right">
+   1.3843
+</td>
+<td align="right">
+  -.0052
+</td>
+<td align="right">
+ -.0037
+</td>
+</tr>
+<tr>
+<td>
+eur_aud
+</td>
+<td>
+2011-03-25
+09:50:00
+</td>
+<td align="right">
+ -.58
+</td>
+<td align="right">
+   1.3831
+</td>
+<td align="right">
+   1.3837
+</td>
+<td align="right">
+   1.3758
+</td>
+<td align="right">
+  -.0078
+</td>
+<td align="right">
+ -.0057
+</td>
+</tr>
+<tr>
+<td>
+eur_aud
+</td>
+<td>
+2011-03-25
+16:15:00
+</td>
+<td align="right">
+ -.59
+</td>
+<td align="right">
+   1.3728
+</td>
+<td align="right">
+   1.3733
+</td>
+<td align="right">
+   1.3704
+</td>
+<td align="right">
+  -.0028
+</td>
+<td align="right">
+ -.0020
+</td>
+</tr>
+<tr>
+<td>
+eur_chf
+</td>
+<td>
+2011-03-22
+07:50:00
+</td>
+<td align="right">
+ -.84
+</td>
+<td align="right">
+   1.2882
+</td>
+<td align="right">
+   1.2888
+</td>
+<td align="right">
+   1.2825
+</td>
+<td align="right">
+  -.0063
+</td>
+<td align="right">
+ -.0049
+</td>
+</tr>
+<tr>
+<td>
+eur_chf
+</td>
+<td>
+2011-03-22
+10:45:00
+</td>
+<td align="right">
+ -.55
+</td>
+<td align="right">
+   1.2857
+</td>
+<td align="right">
+   1.2855
+</td>
+<td align="right">
+   1.2823
+</td>
+<td align="right">
+  -.0031
+</td>
+<td align="right">
+ -.0024
+</td>
+</tr>
+<tr>
+<td>
+eur_chf
+</td>
+<td>
+2011-03-22
+13:40:00
+</td>
+<td align="right">
+ -.73
+</td>
+<td align="right">
+   1.2828
+</td>
+<td align="right">
+   1.2831
+</td>
+<td align="right">
+   1.2826
+</td>
+<td align="right">
+  -.0005
+</td>
+<td align="right">
+ -.0004
+</td>
+</tr>
+<tr>
+<td>
+eur_chf
+</td>
+<td>
+2011-03-22
+13:45:00
+</td>
+<td align="right">
+ -.60
+</td>
+<td align="right">
+   1.2827
+</td>
+<td align="right">
+   1.2831
+</td>
+<td align="right">
+   1.2827
+</td>
+<td align="right">
+  -.0004
+</td>
+<td align="right">
+ -.0003
+</td>
+</tr>
+<tr>
+<td>
+eur_chf
+</td>
+<td>
+2011-03-22
+13:55:00
+</td>
+<td align="right">
+ -.79
+</td>
+<td align="right">
+   1.2827
+</td>
+<td align="right">
+   1.2823
+</td>
+<td align="right">
+   1.2826
+</td>
+<td align="right">
+   .0003
+</td>
+<td align="right">
+  .0002
+</td>
+</tr>
+<tr>
+<td>
+eur_chf
+</td>
+<td>
+2011-03-22
+14:00:00
+</td>
+<td align="right">
+ -.64
+</td>
+<td align="right">
+   1.2828
+</td>
+<td align="right">
+   1.2828
+</td>
+<td align="right">
+   1.2829
+</td>
+<td align="right">
+   .0001
+</td>
+<td align="right">
+  .0001
+</td>
+</tr>
+<tr>
+<td>
+eur_chf
+</td>
+<td>
+2011-03-22
+14:05:00
+</td>
+<td align="right">
+ -.65
+</td>
+<td align="right">
+   1.2832
+</td>
+<td align="right">
+   1.2830
+</td>
+<td align="right">
+   1.2830
+</td>
+<td align="right">
+   .0000
+</td>
+<td align="right">
+  .0000
+</td>
+</tr>
+<tr>
+<td>
+eur_chf
+</td>
+<td>
+2011-03-22
+15:10:00
+</td>
+<td align="right">
+ -.69
+</td>
+<td align="right">
+   1.2824
+</td>
+<td align="right">
+   1.2837
+</td>
+<td align="right">
+   1.2827
+</td>
+<td align="right">
+  -.0011
+</td>
+<td align="right">
+ -.0008
+</td>
+</tr>
+<tr>
+<td>
+eur_chf
+</td>
+<td>
+2011-03-22
+15:15:00
+</td>
+<td align="right">
+ -.63
+</td>
+<td align="right">
+   1.2824
+</td>
+<td align="right">
+   1.2837
+</td>
+<td align="right">
+   1.2827
+</td>
+<td align="right">
+  -.0010
+</td>
+<td align="right">
+ -.0008
+</td>
+</tr>
+<tr>
+<td>
+eur_chf
+</td>
+<td>
+2011-03-22
+15:20:00
+</td>
+<td align="right">
+ -.67
+</td>
+<td align="right">
+   1.2820
+</td>
+<td align="right">
+   1.2836
+</td>
+<td align="right">
+   1.2827
+</td>
+<td align="right">
+  -.0009
+</td>
+<td align="right">
+ -.0007
+</td>
+</tr>
+<tr>
+<td>
+eur_chf
+</td>
+<td>
+2011-03-22
+15:25:00
+</td>
+<td align="right">
+ -.68
+</td>
+<td align="right">
+   1.2823
+</td>
+<td align="right">
+   1.2833
+</td>
+<td align="right">
+   1.2827
+</td>
+<td align="right">
+  -.0006
+</td>
+<td align="right">
+ -.0004
+</td>
+</tr>
+<tr>
+<td>
+eur_chf
+</td>
+<td>
+2011-03-22
+15:30:00
+</td>
+<td align="right">
+ -.59
+</td>
+<td align="right">
+   1.2827
+</td>
+<td align="right">
+   1.2825
+</td>
+<td align="right">
+   1.2829
+</td>
+<td align="right">
+   .0003
+</td>
+<td align="right">
+  .0003
+</td>
+</tr>
+<tr>
+<td>
+eur_chf
+</td>
+<td>
+2011-03-22
+19:00:00
+</td>
+<td align="right">
+ -.65
+</td>
+<td align="right">
+   1.2828
+</td>
+<td align="right">
+   1.2829
+</td>
+<td align="right">
+   1.2794
+</td>
+<td align="right">
+  -.0035
+</td>
+<td align="right">
+ -.0027
+</td>
+</tr>
+<tr>
+<td>
+eur_chf
+</td>
+<td>
+2011-03-23
+01:20:00
+</td>
+<td align="right">
+ -.56
+</td>
+<td align="right">
+   1.2796
+</td>
+<td align="right">
+   1.2802
+</td>
+<td align="right">
+   1.2760
+</td>
+<td align="right">
+  -.0043
+</td>
+<td align="right">
+ -.0033
+</td>
+</tr>
+<tr>
+<td>
+eur_chf
+</td>
+<td>
+2011-03-24
+07:45:00
+</td>
+<td align="right">
+ -.78
+</td>
+<td align="right">
+   1.2822
+</td>
+<td align="right">
+   1.2846
+</td>
+<td align="right">
+   1.2810
+</td>
+<td align="right">
+  -.0037
+</td>
+<td align="right">
+ -.0029
+</td>
+</tr>
+<tr>
+<td>
+eur_chf
+</td>
+<td>
+2011-03-24
+07:50:00
+</td>
+<td align="right">
+ -.75
+</td>
+<td align="right">
+   1.2833
+</td>
+<td align="right">
+   1.2858
+</td>
+<td align="right">
+   1.2807
+</td>
+<td align="right">
+  -.0050
+</td>
+<td align="right">
+ -.0039
+</td>
+</tr>
+<tr>
+<td>
+eur_chf
+</td>
+<td>
+2011-03-24
+07:55:00
+</td>
+<td align="right">
+ -.69
+</td>
+<td align="right">
+   1.2833
+</td>
+<td align="right">
+   1.2839
+</td>
+<td align="right">
+   1.2812
+</td>
+<td align="right">
+  -.0027
+</td>
+<td align="right">
+ -.0021
+</td>
+</tr>
+<tr>
+<td>
+eur_chf
+</td>
+<td>
+2011-03-24
+08:05:00
+</td>
+<td align="right">
+ -.59
+</td>
+<td align="right">
+   1.2829
+</td>
+<td align="right">
+   1.2850
+</td>
+<td align="right">
+   1.2815
+</td>
+<td align="right">
+  -.0035
+</td>
+<td align="right">
+ -.0027
+</td>
+</tr>
+<tr>
+<td>
+eur_chf
+</td>
+<td>
+2011-03-24
+09:00:00
+</td>
+<td align="right">
+ -.56
+</td>
+<td align="right">
+   1.2847
+</td>
+<td align="right">
+   1.2869
+</td>
+<td align="right">
+   1.2839
+</td>
+<td align="right">
+  -.0030
+</td>
+<td align="right">
+ -.0024
+</td>
+</tr>
+<tr>
+<td>
+eur_chf
+</td>
+<td>
+2011-03-24
+09:05:00
+</td>
+<td align="right">
+ -.68
+</td>
+<td align="right">
+   1.2850
+</td>
+<td align="right">
+   1.2859
+</td>
+<td align="right">
+   1.2838
+</td>
+<td align="right">
+  -.0021
+</td>
+<td align="right">
+ -.0016
+</td>
+</tr>
+<tr>
+<td>
+eur_chf
+</td>
+<td>
+2011-03-24
+09:25:00
+</td>
+<td align="right">
+ -.59
+</td>
+<td align="right">
+   1.2860
+</td>
+<td align="right">
+   1.2862
+</td>
+<td align="right">
+   1.2837
+</td>
+<td align="right">
+  -.0024
+</td>
+<td align="right">
+ -.0019
+</td>
+</tr>
+<tr>
+<td>
+eur_chf
+</td>
+<td>
+2011-03-24
+09:30:00
+</td>
+<td align="right">
+ -.70
+</td>
+<td align="right">
+   1.2857
+</td>
+<td align="right">
+   1.2865
+</td>
+<td align="right">
+   1.2839
+</td>
+<td align="right">
+  -.0025
+</td>
+<td align="right">
+ -.0020
+</td>
+</tr>
+<tr>
+<td>
+eur_chf
+</td>
+<td>
+2011-03-24
+09:35:00
+</td>
+<td align="right">
+ -.59
+</td>
+<td align="right">
+   1.2860
+</td>
+<td align="right">
+   1.2861
+</td>
+<td align="right">
+   1.2843
+</td>
+<td align="right">
+  -.0018
+</td>
+<td align="right">
+ -.0014
+</td>
+</tr>
+<tr>
+<td>
+eur_gbp
+</td>
+<td>
+2011-03-21
+18:25:00
+</td>
+<td align="right">
+ -.58
+</td>
+<td align="right">
+    .8723
+</td>
+<td align="right">
+    .8720
+</td>
+<td align="right">
+    .8720
+</td>
+<td align="right">
+   .0000
+</td>
+<td align="right">
+  .0000
+</td>
+</tr>
+<tr>
+<td>
+eur_gbp
+</td>
+<td>
+2011-03-21
+18:45:00
+</td>
+<td align="right">
+ -.64
+</td>
+<td align="right">
+    .8721
+</td>
+<td align="right">
+    .8719
+</td>
+<td align="right">
+    .8715
+</td>
+<td align="right">
+  -.0004
+</td>
+<td align="right">
+ -.0004
+</td>
+</tr>
+<tr>
+<td>
+eur_gbp
+</td>
+<td>
+2011-03-21
+19:00:00
+</td>
+<td align="right">
+ -.66
+</td>
+<td align="right">
+    .8721
+</td>
+<td align="right">
+    .8717
+</td>
+<td align="right">
+    .8719
+</td>
+<td align="right">
+   .0002
+</td>
+<td align="right">
+  .0002
+</td>
+</tr>
+<tr>
+<td>
+eur_gbp
+</td>
+<td>
+2011-03-21
+19:15:00
+</td>
+<td align="right">
+ -.63
+</td>
+<td align="right">
+    .8721
+</td>
+<td align="right">
+    .8718
+</td>
+<td align="right">
+    .8721
+</td>
+<td align="right">
+   .0002
+</td>
+<td align="right">
+  .0003
+</td>
+</tr>
+<tr>
+<td>
+eur_gbp
+</td>
+<td>
+2011-03-21
+19:20:00
+</td>
+<td align="right">
+ -.65
+</td>
+<td align="right">
+    .8720
+</td>
+<td align="right">
+    .8720
+</td>
+<td align="right">
+    .8722
+</td>
+<td align="right">
+   .0002
+</td>
+<td align="right">
+  .0002
+</td>
+</tr>
+<tr>
+<td>
+eur_gbp
+</td>
+<td>
+2011-03-21
+19:25:00
+</td>
+<td align="right">
+ -.68
+</td>
+<td align="right">
+    .8720
+</td>
+<td align="right">
+    .8721
+</td>
+<td align="right">
+    .8723
+</td>
+<td align="right">
+   .0002
+</td>
+<td align="right">
+  .0003
+</td>
+</tr>
+<tr>
+<td>
+eur_gbp
+</td>
+<td>
+2011-03-22
+01:45:00
+</td>
+<td align="right">
+ -.56
+</td>
+<td align="right">
+    .8721
+</td>
+<td align="right">
+    .8723
+</td>
+<td align="right">
+    .8725
+</td>
+<td align="right">
+   .0002
+</td>
+<td align="right">
+  .0002
+</td>
+</tr>
+<tr>
+<td>
+eur_gbp
+</td>
+<td>
+2011-03-22
+01:50:00
+</td>
+<td align="right">
+ -.55
+</td>
+<td align="right">
+    .8721
+</td>
+<td align="right">
+    .8722
+</td>
+<td align="right">
+    .8723
+</td>
+<td align="right">
+   .0001
+</td>
+<td align="right">
+  .0001
+</td>
+</tr>
+<tr>
+<td>
+eur_gbp
+</td>
+<td>
+2011-03-22
+01:55:00
+</td>
+<td align="right">
+ -.69
+</td>
+<td align="right">
+    .8719
+</td>
+<td align="right">
+    .8722
+</td>
+<td align="right">
+    .8724
+</td>
+<td align="right">
+   .0002
+</td>
+<td align="right">
+  .0002
+</td>
+</tr>
+<tr>
+<td>
+eur_gbp
+</td>
+<td>
+2011-03-22
+02:00:00
+</td>
+<td align="right">
+ -.55
+</td>
+<td align="right">
+    .8719
+</td>
+<td align="right">
+    .8721
+</td>
+<td align="right">
+    .8721
+</td>
+<td align="right">
+   .0000
+</td>
+<td align="right">
+  .0000
+</td>
+</tr>
+<tr>
+<td>
+eur_gbp
+</td>
+<td>
+2011-03-22
+02:25:00
+</td>
+<td align="right">
+ -.70
+</td>
+<td align="right">
+    .8718
+</td>
+<td align="right">
+    .8719
+</td>
+<td align="right">
+    .8716
+</td>
+<td align="right">
+  -.0003
+</td>
+<td align="right">
+ -.0003
+</td>
+</tr>
+<tr>
+<td>
+eur_gbp
+</td>
+<td>
+2011-03-22
+02:30:00
+</td>
+<td align="right">
+ -.55
+</td>
+<td align="right">
+    .8720
+</td>
+<td align="right">
+    .8719
+</td>
+<td align="right">
+    .8715
+</td>
+<td align="right">
+  -.0004
+</td>
+<td align="right">
+ -.0004
+</td>
+</tr>
+<tr>
+<td>
+eur_gbp
+</td>
+<td>
+2011-03-22
+02:35:00
+</td>
+<td align="right">
+ -.75
+</td>
+<td align="right">
+    .8720
+</td>
+<td align="right">
+    .8719
+</td>
+<td align="right">
+    .8716
+</td>
+<td align="right">
+  -.0003
+</td>
+<td align="right">
+ -.0004
+</td>
+</tr>
+<tr>
+<td>
+eur_gbp
+</td>
+<td>
+2011-03-22
+04:20:00
+</td>
+<td align="right">
+ -.59
+</td>
+<td align="right">
+    .8721
+</td>
+<td align="right">
+    .8726
+</td>
+<td align="right">
+    .8684
+</td>
+<td align="right">
+  -.0042
+</td>
+<td align="right">
+ -.0048
+</td>
+</tr>
+<tr>
+<td>
+eur_gbp
+</td>
+<td>
+2011-03-22
+04:25:00
+</td>
+<td align="right">
+ -.55
+</td>
+<td align="right">
+    .8722
+</td>
+<td align="right">
+    .8725
+</td>
+<td align="right">
+    .8683
+</td>
+<td align="right">
+  -.0042
+</td>
+<td align="right">
+ -.0048
+</td>
+</tr>
+<tr>
+<td>
+eur_gbp
+</td>
+<td>
+2011-03-22
+05:00:00
+</td>
+<td align="right">
+ -.57
+</td>
+<td align="right">
+    .8725
+</td>
+<td align="right">
+    .8724
+</td>
+<td align="right">
+    .8692
+</td>
+<td align="right">
+  -.0032
+</td>
+<td align="right">
+ -.0037
+</td>
+</tr>
+<tr>
+<td>
+eur_gbp
+</td>
+<td>
+2011-03-22
+05:05:00
+</td>
+<td align="right">
+ -.70
+</td>
+<td align="right">
+    .8724
+</td>
+<td align="right">
+    .8721
+</td>
+<td align="right">
+    .8690
+</td>
+<td align="right">
+  -.0030
+</td>
+<td align="right">
+ -.0035
+</td>
+</tr>
+<tr>
+<td>
+eur_gbp
+</td>
+<td>
+2011-03-22
+05:50:00
+</td>
+<td align="right">
+ -.81
+</td>
+<td align="right">
+    .8724
+</td>
+<td align="right">
+    .8724
+</td>
+<td align="right">
+    .8691
+</td>
+<td align="right">
+  -.0033
+</td>
+<td align="right">
+ -.0038
+</td>
+</tr>
+<tr>
+<td>
+eur_gbp
+</td>
+<td>
+2011-03-22
+06:50:00
+</td>
+<td align="right">
+ -.67
+</td>
+<td align="right">
+    .8724
+</td>
+<td align="right">
+    .8723
+</td>
+<td align="right">
+    .8684
+</td>
+<td align="right">
+  -.0039
+</td>
+<td align="right">
+ -.0045
+</td>
+</tr>
+<tr>
+<td>
+eur_gbp
+</td>
+<td>
+2011-03-22
+16:50:00
+</td>
+<td align="right">
+ -.63
+</td>
+<td align="right">
+    .8672
+</td>
+<td align="right">
+    .8679
+</td>
+<td align="right">
+    .8666
+</td>
+<td align="right">
+  -.0013
+</td>
+<td align="right">
+ -.0015
+</td>
+</tr>
+<tr>
+<td>
+eur_gbp
+</td>
+<td>
+2011-03-22
+16:55:00
+</td>
+<td align="right">
+ -.63
+</td>
+<td align="right">
+    .8677
+</td>
+<td align="right">
+    .8680
+</td>
+<td align="right">
+    .8666
+</td>
+<td align="right">
+  -.0014
+</td>
+<td align="right">
+ -.0016
+</td>
+</tr>
+<tr>
+<td>
+eur_gbp
+</td>
+<td>
+2011-03-22
+17:10:00
+</td>
+<td align="right">
+ -.71
+</td>
+<td align="right">
+    .8673
+</td>
+<td align="right">
+    .8675
+</td>
+<td align="right">
+    .8667
+</td>
+<td align="right">
+  -.0009
+</td>
+<td align="right">
+ -.0010
+</td>
+</tr>
+<tr>
+<td>
+eur_gbp
+</td>
+<td>
+2011-03-22
+17:20:00
+</td>
+<td align="right">
+ -.80
+</td>
+<td align="right">
+    .8676
+</td>
+<td align="right">
+    .8675
+</td>
+<td align="right">
+    .8664
+</td>
+<td align="right">
+  -.0011
+</td>
+<td align="right">
+ -.0013
+</td>
+</tr>
+<tr>
+<td>
+eur_gbp
+</td>
+<td>
+2011-03-23
+08:20:00
+</td>
+<td align="right">
+ -.74
+</td>
+<td align="right">
+    .8671
+</td>
+<td align="right">
+    .8689
+</td>
+<td align="right">
+    .8697
+</td>
+<td align="right">
+   .0008
+</td>
+<td align="right">
+  .0010
+</td>
+</tr>
+<tr>
+<td>
+eur_gbp
+</td>
+<td>
+2011-03-23
+08:30:00
+</td>
+<td align="right">
+ -.68
+</td>
+<td align="right">
+    .8670
+</td>
+<td align="right">
+    .8699
+</td>
+<td align="right">
+    .8701
+</td>
+<td align="right">
+   .0002
+</td>
+<td align="right">
+  .0002
+</td>
+</tr>
+<tr>
+<td>
+eur_gbp
+</td>
+<td>
+2011-03-23
+08:35:00
+</td>
+<td align="right">
+ -.68
+</td>
+<td align="right">
+    .8671
+</td>
+<td align="right">
+    .8696
+</td>
+<td align="right">
+    .8701
+</td>
+<td align="right">
+   .0004
+</td>
+<td align="right">
+  .0005
+</td>
+</tr>
+<tr>
+<td>
+eur_gbp
+</td>
+<td>
+2011-03-23
+08:40:00
+</td>
+<td align="right">
+ -.59
+</td>
+<td align="right">
+    .8673
+</td>
+<td align="right">
+    .8697
+</td>
+<td align="right">
+    .8702
+</td>
+<td align="right">
+   .0005
+</td>
+<td align="right">
+  .0005
+</td>
+</tr>
+<tr>
+<td>
+eur_gbp
+</td>
+<td>
+2011-03-23
+08:45:00
+</td>
+<td align="right">
+ -.60
+</td>
+<td align="right">
+    .8670
+</td>
+<td align="right">
+    .8703
+</td>
+<td align="right">
+    .8696
+</td>
+<td align="right">
+  -.0007
+</td>
+<td align="right">
+ -.0008
+</td>
+</tr>
+<tr>
+<td>
+eur_gbp
+</td>
+<td>
+2011-03-23
+08:50:00
+</td>
+<td align="right">
+ -.62
+</td>
+<td align="right">
+    .8671
+</td>
+<td align="right">
+    .8704
+</td>
+<td align="right">
+    .8700
+</td>
+<td align="right">
+  -.0004
+</td>
+<td align="right">
+ -.0005
+</td>
+</tr>
+<tr>
+<td>
+eur_gbp
+</td>
+<td>
+2011-03-25
+08:40:00
+</td>
+<td align="right">
+ -.82
+</td>
+<td align="right">
+    .8802
+</td>
+<td align="right">
+    .8805
+</td>
+<td align="right">
+    .8794
+</td>
+<td align="right">
+  -.0011
+</td>
+<td align="right">
+ -.0012
+</td>
+</tr>
+<tr>
+<td>
+eur_gbp
+</td>
+<td>
+2011-03-25
+08:50:00
+</td>
+<td align="right">
+ -.59
+</td>
+<td align="right">
+    .8803
+</td>
+<td align="right">
+    .8802
+</td>
+<td align="right">
+    .8794
+</td>
+<td align="right">
+  -.0008
+</td>
+<td align="right">
+ -.0009
+</td>
+</tr>
+<tr>
+<td>
+eur_gbp
+</td>
+<td>
+2011-03-25
+08:55:00
+</td>
+<td align="right">
+ -.58
+</td>
+<td align="right">
+    .8803
+</td>
+<td align="right">
+    .8804
+</td>
+<td align="right">
+    .8796
+</td>
+<td align="right">
+  -.0007
+</td>
+<td align="right">
+ -.0009
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-20
+21:35:00
+</td>
+<td align="right">
+ -.57
+</td>
+<td align="right">
+ 114.6006
+</td>
+<td align="right">
+ 114.6337
+</td>
+<td align="right">
+ 114.6712
+</td>
+<td align="right">
+   .0375
+</td>
+<td align="right">
+  .0003
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-20
+21:45:00
+</td>
+<td align="right">
+ -.79
+</td>
+<td align="right">
+ 114.5966
+</td>
+<td align="right">
+ 114.6221
+</td>
+<td align="right">
+ 114.6839
+</td>
+<td align="right">
+   .0618
+</td>
+<td align="right">
+  .0005
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-20
+22:00:00
+</td>
+<td align="right">
+ -.81
+</td>
+<td align="right">
+ 114.4995
+</td>
+<td align="right">
+ 114.6069
+</td>
+<td align="right">
+ 114.7046
+</td>
+<td align="right">
+   .0978
+</td>
+<td align="right">
+  .0009
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-20
+22:05:00
+</td>
+<td align="right">
+ -.84
+</td>
+<td align="right">
+ 114.5551
+</td>
+<td align="right">
+ 114.5740
+</td>
+<td align="right">
+ 114.7072
+</td>
+<td align="right">
+   .1332
+</td>
+<td align="right">
+  .0012
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-22
+13:40:00
+</td>
+<td align="right">
+ -.58
+</td>
+<td align="right">
+ 115.0047
+</td>
+<td align="right">
+ 115.0064
+</td>
+<td align="right">
+ 114.9266
+</td>
+<td align="right">
+  -.0797
+</td>
+<td align="right">
+ -.0007
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-22
+20:10:00
+</td>
+<td align="right">
+ -.55
+</td>
+<td align="right">
+ 114.9195
+</td>
+<td align="right">
+ 114.9775
+</td>
+<td align="right">
+ 114.6090
+</td>
+<td align="right">
+  -.3685
+</td>
+<td align="right">
+ -.0032
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-22
+20:35:00
+</td>
+<td align="right">
+ -.64
+</td>
+<td align="right">
+ 114.9095
+</td>
+<td align="right">
+ 115.0073
+</td>
+<td align="right">
+ 114.6039
+</td>
+<td align="right">
+  -.4034
+</td>
+<td align="right">
+ -.0035
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-22
+21:35:00
+</td>
+<td align="right">
+ -.60
+</td>
+<td align="right">
+ 115.0077
+</td>
+<td align="right">
+ 114.9805
+</td>
+<td align="right">
+ 114.6019
+</td>
+<td align="right">
+  -.3787
+</td>
+<td align="right">
+ -.0033
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-23
+02:30:00
+</td>
+<td align="right">
+ -.67
+</td>
+<td align="right">
+ 114.5691
+</td>
+<td align="right">
+ 114.6004
+</td>
+<td align="right">
+ 114.6811
+</td>
+<td align="right">
+   .0807
+</td>
+<td align="right">
+  .0007
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-23
+02:55:00
+</td>
+<td align="right">
+ -.68
+</td>
+<td align="right">
+ 114.6272
+</td>
+<td align="right">
+ 114.6717
+</td>
+<td align="right">
+ 114.6710
+</td>
+<td align="right">
+  -.0007
+</td>
+<td align="right">
+  .0000
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-23
+03:05:00
+</td>
+<td align="right">
+ -.64
+</td>
+<td align="right">
+ 114.6434
+</td>
+<td align="right">
+ 114.6717
+</td>
+<td align="right">
+ 114.5961
+</td>
+<td align="right">
+  -.0755
+</td>
+<td align="right">
+ -.0007
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-23
+03:15:00
+</td>
+<td align="right">
+ -.64
+</td>
+<td align="right">
+ 114.6125
+</td>
+<td align="right">
+ 114.7203
+</td>
+<td align="right">
+ 114.5618
+</td>
+<td align="right">
+  -.1585
+</td>
+<td align="right">
+ -.0014
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-23
+03:20:00
+</td>
+<td align="right">
+ -.72
+</td>
+<td align="right">
+ 114.5877
+</td>
+<td align="right">
+ 114.7395
+</td>
+<td align="right">
+ 114.5552
+</td>
+<td align="right">
+  -.1843
+</td>
+<td align="right">
+ -.0016
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-23
+03:25:00
+</td>
+<td align="right">
+ -.68
+</td>
+<td align="right">
+ 114.5923
+</td>
+<td align="right">
+ 114.7658
+</td>
+<td align="right">
+ 114.6139
+</td>
+<td align="right">
+  -.1519
+</td>
+<td align="right">
+ -.0013
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-23
+03:30:00
+</td>
+<td align="right">
+ -.65
+</td>
+<td align="right">
+ 114.6004
+</td>
+<td align="right">
+ 114.7537
+</td>
+<td align="right">
+ 114.6791
+</td>
+<td align="right">
+  -.0746
+</td>
+<td align="right">
+ -.0007
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-23
+04:10:00
+</td>
+<td align="right">
+ -.70
+</td>
+<td align="right">
+ 114.7101
+</td>
+<td align="right">
+ 114.7142
+</td>
+<td align="right">
+ 114.9400
+</td>
+<td align="right">
+   .2258
+</td>
+<td align="right">
+  .0020
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-23
+04:15:00
+</td>
+<td align="right">
+ -.68
+</td>
+<td align="right">
+ 114.7203
+</td>
+<td align="right">
+ 114.7116
+</td>
+<td align="right">
+ 115.0159
+</td>
+<td align="right">
+   .3042
+</td>
+<td align="right">
+  .0027
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-24
+08:35:00
+</td>
+<td align="right">
+ -.56
+</td>
+<td align="right">
+ 113.8357
+</td>
+<td align="right">
+ 114.1772
+</td>
+<td align="right">
+ 114.5938
+</td>
+<td align="right">
+   .4166
+</td>
+<td align="right">
+  .0037
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-24
+14:10:00
+</td>
+<td align="right">
+ -.71
+</td>
+<td align="right">
+ 114.3131
+</td>
+<td align="right">
+ 114.8096
+</td>
+<td align="right">
+ 114.7325
+</td>
+<td align="right">
+  -.0771
+</td>
+<td align="right">
+ -.0007
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-24
+15:50:00
+</td>
+<td align="right">
+ -.66
+</td>
+<td align="right">
+ 114.7409
+</td>
+<td align="right">
+ 114.7501
+</td>
+<td align="right">
+ 114.7709
+</td>
+<td align="right">
+   .0208
+</td>
+<td align="right">
+  .0002
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-24
+23:20:00
+</td>
+<td align="right">
+ -.58
+</td>
+<td align="right">
+ 114.7182
+</td>
+<td align="right">
+ 114.7461
+</td>
+<td align="right">
+ 114.7304
+</td>
+<td align="right">
+  -.0157
+</td>
+<td align="right">
+ -.0001
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-25
+00:35:00
+</td>
+<td align="right">
+ -.70
+</td>
+<td align="right">
+ 114.7618
+</td>
+<td align="right">
+ 114.8307
+</td>
+<td align="right">
+ 114.8170
+</td>
+<td align="right">
+  -.0137
+</td>
+<td align="right">
+ -.0001
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-25
+00:40:00
+</td>
+<td align="right">
+ -.55
+</td>
+<td align="right">
+ 114.8059
+</td>
+<td align="right">
+ 114.8079
+</td>
+<td align="right">
+ 114.8873
+</td>
+<td align="right">
+   .0794
+</td>
+<td align="right">
+  .0007
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-25
+00:55:00
+</td>
+<td align="right">
+ -.67
+</td>
+<td align="right">
+ 114.8251
+</td>
+<td align="right">
+ 114.8276
+</td>
+<td align="right">
+ 114.9030
+</td>
+<td align="right">
+   .0754
+</td>
+<td align="right">
+  .0007
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-25
+01:05:00
+</td>
+<td align="right">
+ -.59
+</td>
+<td align="right">
+ 114.8134
+</td>
+<td align="right">
+ 114.8393
+</td>
+<td align="right">
+ 114.8595
+</td>
+<td align="right">
+   .0202
+</td>
+<td align="right">
+  .0002
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-25
+01:25:00
+</td>
+<td align="right">
+ -.59
+</td>
+<td align="right">
+ 114.8372
+</td>
+<td align="right">
+ 114.8043
+</td>
+<td align="right">
+ 114.8210
+</td>
+<td align="right">
+   .0167
+</td>
+<td align="right">
+  .0001
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-25
+01:35:00
+</td>
+<td align="right">
+ -.70
+</td>
+<td align="right">
+ 114.8307
+</td>
+<td align="right">
+ 114.8043
+</td>
+<td align="right">
+ 114.8964
+</td>
+<td align="right">
+   .0921
+</td>
+<td align="right">
+  .0008
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-25
+02:15:00
+</td>
+<td align="right">
+ -.69
+</td>
+<td align="right">
+ 114.8205
+</td>
+<td align="right">
+ 114.7760
+</td>
+<td align="right">
+ 114.8509
+</td>
+<td align="right">
+   .0749
+</td>
+<td align="right">
+  .0007
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-25
+02:20:00
+</td>
+<td align="right">
+ -.67
+</td>
+<td align="right">
+ 114.8079
+</td>
+<td align="right">
+ 114.7821
+</td>
+<td align="right">
+ 114.8145
+</td>
+<td align="right">
+   .0324
+</td>
+<td align="right">
+  .0003
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-25
+02:35:00
+</td>
+<td align="right">
+ -.61
+</td>
+<td align="right">
+ 114.8043
+</td>
+<td align="right">
+ 114.7740
+</td>
+<td align="right">
+ 114.7880
+</td>
+<td align="right">
+   .0140
+</td>
+<td align="right">
+  .0001
+</td>
+</tr>
+<tr>
+<th scope="col">
+Currency
+<br>
+Pair
+</th>
+<th scope="col">
+Timestamp
+<br>
+at hour 0
+</th>
+<th scope="col">
+DanBot
+<br>
+Score
+<br>
+at hour 0
+</th>
+<th scope="col">
+Price at
+<br>
+hour 0
+</th>
+<th scope="col">
+Price after
+<br>
+1 hour
+</th>
+<th scope="col">
+Price after
+<br>
+6 hours
+</th>
+<th scope="col">
+5 hour gain
+<br>
+between
+<br>
+hr1 and hr6
+</th>
+<th scope="col">
+Normalized
+<br>
+5hr gain
+</th>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-25
+02:40:00
+</td>
+<td align="right">
+ -.74
+</td>
+<td align="right">
+ 114.8033
+</td>
+<td align="right">
+ 114.7800
+</td>
+<td align="right">
+ 114.8542
+</td>
+<td align="right">
+   .0742
+</td>
+<td align="right">
+  .0006
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-25
+02:45:00
+</td>
+<td align="right">
+ -.61
+</td>
+<td align="right">
+ 114.8175
+</td>
+<td align="right">
+ 114.7841
+</td>
+<td align="right">
+ 114.9040
+</td>
+<td align="right">
+   .1199
+</td>
+<td align="right">
+  .0010
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-25
+05:25:00
+</td>
+<td align="right">
+ -.65
+</td>
+<td align="right">
+ 114.7482
+</td>
+<td align="right">
+ 114.7694
+</td>
+<td align="right">
+ 115.1373
+</td>
+<td align="right">
+   .3679
+</td>
+<td align="right">
+  .0032
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-25
+05:30:00
+</td>
+<td align="right">
+ -.75
+</td>
+<td align="right">
+ 114.7249
+</td>
+<td align="right">
+ 114.7836
+</td>
+<td align="right">
+ 115.1201
+</td>
+<td align="right">
+   .3366
+</td>
+<td align="right">
+  .0029
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-25
+05:35:00
+</td>
+<td align="right">
+ -.61
+</td>
+<td align="right">
+ 114.7380
+</td>
+<td align="right">
+ 114.8170
+</td>
+<td align="right">
+ 115.1272
+</td>
+<td align="right">
+   .3102
+</td>
+<td align="right">
+  .0027
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-25
+05:50:00
+</td>
+<td align="right">
+ -.67
+</td>
+<td align="right">
+ 114.7962
+</td>
+<td align="right">
+ 114.9238
+</td>
+<td align="right">
+ 115.0551
+</td>
+<td align="right">
+   .1313
+</td>
+<td align="right">
+  .0011
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-25
+05:55:00
+</td>
+<td align="right">
+ -.59
+</td>
+<td align="right">
+ 114.7780
+</td>
+<td align="right">
+ 114.9030
+</td>
+<td align="right">
+ 114.9989
+</td>
+<td align="right">
+   .0959
+</td>
+<td align="right">
+  .0008
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-25
+06:20:00
+</td>
+<td align="right">
+ -.61
+</td>
+<td align="right">
+ 114.7917
+</td>
+<td align="right">
+ 114.8413
+</td>
+<td align="right">
+ 114.6270
+</td>
+<td align="right">
+  -.2142
+</td>
+<td align="right">
+ -.0019
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-25
+06:25:00
+</td>
+<td align="right">
+ -.78
+</td>
+<td align="right">
+ 114.7694
+</td>
+<td align="right">
+ 114.8210
+</td>
+<td align="right">
+ 114.5657
+</td>
+<td align="right">
+  -.2553
+</td>
+<td align="right">
+ -.0022
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-25
+06:30:00
+</td>
+<td align="right">
+ -.74
+</td>
+<td align="right">
+ 114.7836
+</td>
+<td align="right">
+ 114.8823
+</td>
+<td align="right">
+ 114.6779
+</td>
+<td align="right">
+  -.2043
+</td>
+<td align="right">
+ -.0018
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-25
+06:35:00
+</td>
+<td align="right">
+ -.75
+</td>
+<td align="right">
+ 114.8170
+</td>
+<td align="right">
+ 114.8964
+</td>
+<td align="right">
+ 114.6211
+</td>
+<td align="right">
+  -.2754
+</td>
+<td align="right">
+ -.0024
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-25
+06:40:00
+</td>
+<td align="right">
+ -.94
+</td>
+<td align="right">
+ 114.8873
+</td>
+<td align="right">
+ 114.9233
+</td>
+<td align="right">
+ 114.6171
+</td>
+<td align="right">
+  -.3061
+</td>
+<td align="right">
+ -.0027
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-25
+06:45:00
+</td>
+<td align="right">
+ -.86
+</td>
+<td align="right">
+ 114.9238
+</td>
+<td align="right">
+ 114.8793
+</td>
+<td align="right">
+ 114.5617
+</td>
+<td align="right">
+  -.3175
+</td>
+<td align="right">
+ -.0028
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-25
+06:50:00
+</td>
+<td align="right">
+ -.84
+</td>
+<td align="right">
+ 114.9238
+</td>
+<td align="right">
+ 114.9000
+</td>
+<td align="right">
+ 114.5593
+</td>
+<td align="right">
+  -.3407
+</td>
+<td align="right">
+ -.0030
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-25
+06:55:00
+</td>
+<td align="right">
+ -.90
+</td>
+<td align="right">
+ 114.9030
+</td>
+<td align="right">
+ 114.8894
+</td>
+<td align="right">
+ 114.5168
+</td>
+<td align="right">
+  -.3726
+</td>
+<td align="right">
+ -.0032
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-25
+07:10:00
+</td>
+<td align="right">
+ -.76
+</td>
+<td align="right">
+ 114.7896
+</td>
+<td align="right">
+ 114.7922
+</td>
+<td align="right">
+ 114.5745
+</td>
+<td align="right">
+  -.2176
+</td>
+<td align="right">
+ -.0019
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-25
+07:20:00
+</td>
+<td align="right">
+ -.59
+</td>
+<td align="right">
+ 114.8413
+</td>
+<td align="right">
+ 114.8145
+</td>
+<td align="right">
+ 114.5952
+</td>
+<td align="right">
+  -.2192
+</td>
+<td align="right">
+ -.0019
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-25
+07:25:00
+</td>
+<td align="right">
+ -.74
+</td>
+<td align="right">
+ 114.8210
+</td>
+<td align="right">
+ 114.7866
+</td>
+<td align="right">
+ 114.6033
+</td>
+<td align="right">
+  -.1833
+</td>
+<td align="right">
+ -.0016
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-25
+07:45:00
+</td>
+<td align="right">
+ -.83
+</td>
+<td align="right">
+ 114.8793
+</td>
+<td align="right">
+ 114.9040
+</td>
+<td align="right">
+ 114.6239
+</td>
+<td align="right">
+  -.2801
+</td>
+<td align="right">
+ -.0024
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-25
+07:50:00
+</td>
+<td align="right">
+ -.86
+</td>
+<td align="right">
+ 114.9000
+</td>
+<td align="right">
+ 114.9066
+</td>
+<td align="right">
+ 114.6699
+</td>
+<td align="right">
+  -.2367
+</td>
+<td align="right">
+ -.0021
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-25
+07:55:00
+</td>
+<td align="right">
+ -.83
+</td>
+<td align="right">
+ 114.8894
+</td>
+<td align="right">
+ 114.9010
+</td>
+<td align="right">
+ 114.6552
+</td>
+<td align="right">
+  -.2458
+</td>
+<td align="right">
+ -.0021
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-25
+08:00:00
+</td>
+<td align="right">
+ -.68
+</td>
+<td align="right">
+ 114.7552
+</td>
+<td align="right">
+ 114.9867
+</td>
+<td align="right">
+ 114.6641
+</td>
+<td align="right">
+  -.3226
+</td>
+<td align="right">
+ -.0028
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-25
+08:40:00
+</td>
+<td align="right">
+ -.67
+</td>
+<td align="right">
+ 114.8542
+</td>
+<td align="right">
+ 114.9766
+</td>
+<td align="right">
+ 114.7591
+</td>
+<td align="right">
+  -.2176
+</td>
+<td align="right">
+ -.0019
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-25
+08:45:00
+</td>
+<td align="right">
+ -.87
+</td>
+<td align="right">
+ 114.9040
+</td>
+<td align="right">
+ 114.9958
+</td>
+<td align="right">
+ 114.7511
+</td>
+<td align="right">
+  -.2447
+</td>
+<td align="right">
+ -.0021
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-25
+08:50:00
+</td>
+<td align="right">
+ -.83
+</td>
+<td align="right">
+ 114.9066
+</td>
+<td align="right">
+ 115.0315
+</td>
+<td align="right">
+ 114.7695
+</td>
+<td align="right">
+  -.2621
+</td>
+<td align="right">
+ -.0023
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-25
+08:55:00
+</td>
+<td align="right">
+ -.86
+</td>
+<td align="right">
+ 114.9010
+</td>
+<td align="right">
+ 115.0838
+</td>
+<td align="right">
+ 114.7382
+</td>
+<td align="right">
+  -.3456
+</td>
+<td align="right">
+ -.0030
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-25
+09:05:00
+</td>
+<td align="right">
+ -.84
+</td>
+<td align="right">
+ 114.9396
+</td>
+<td align="right">
+ 115.1726
+</td>
+<td align="right">
+ 114.7194
+</td>
+<td align="right">
+  -.4532
+</td>
+<td align="right">
+ -.0039
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-25
+09:15:00
+</td>
+<td align="right">
+ -.88
+</td>
+<td align="right">
+ 114.9050
+</td>
+<td align="right">
+ 115.1972
+</td>
+<td align="right">
+ 114.8038
+</td>
+<td align="right">
+  -.3933
+</td>
+<td align="right">
+ -.0034
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-25
+09:20:00
+</td>
+<td align="right">
+ -.82
+</td>
+<td align="right">
+ 114.9655
+</td>
+<td align="right">
+ 115.1627
+</td>
+<td align="right">
+ 114.7901
+</td>
+<td align="right">
+  -.3726
+</td>
+<td align="right">
+ -.0032
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-25
+09:25:00
+</td>
+<td align="right">
+ -.84
+</td>
+<td align="right">
+ 114.9680
+</td>
+<td align="right">
+ 115.1519
+</td>
+<td align="right">
+ 114.7778
+</td>
+<td align="right">
+  -.3740
+</td>
+<td align="right">
+ -.0033
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-25
+09:35:00
+</td>
+<td align="right">
+ -.63
+</td>
+<td align="right">
+ 114.9563
+</td>
+<td align="right">
+ 115.1133
+</td>
+<td align="right">
+ 114.7699
+</td>
+<td align="right">
+  -.3433
+</td>
+<td align="right">
+ -.0030
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-25
+09:40:00
+</td>
+<td align="right">
+ -.68
+</td>
+<td align="right">
+ 114.9766
+</td>
+<td align="right">
+ 115.0805
+</td>
+<td align="right">
+ 114.7833
+</td>
+<td align="right">
+  -.2972
+</td>
+<td align="right">
+ -.0026
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-25
+09:45:00
+</td>
+<td align="right">
+ -.79
+</td>
+<td align="right">
+ 114.9958
+</td>
+<td align="right">
+ 115.0982
+</td>
+<td align="right">
+ 114.8308
+</td>
+<td align="right">
+  -.2673
+</td>
+<td align="right">
+ -.0023
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-25
+09:50:00
+</td>
+<td align="right">
+ -.71
+</td>
+<td align="right">
+ 115.0315
+</td>
+<td align="right">
+ 115.0651
+</td>
+<td align="right">
+ 114.7937
+</td>
+<td align="right">
+  -.2714
+</td>
+<td align="right">
+ -.0024
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-25
+09:55:00
+</td>
+<td align="right">
+ -.80
+</td>
+<td align="right">
+ 115.0838
+</td>
+<td align="right">
+ 115.0859
+</td>
+<td align="right">
+ 114.7407
+</td>
+<td align="right">
+  -.3453
+</td>
+<td align="right">
+ -.0030
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-25
+10:20:00
+</td>
+<td align="right">
+ -.67
+</td>
+<td align="right">
+ 115.1627
+</td>
+<td align="right">
+ 115.1328
+</td>
+<td align="right">
+ 114.7405
+</td>
+<td align="right">
+  -.3923
+</td>
+<td align="right">
+ -.0034
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-25
+10:25:00
+</td>
+<td align="right">
+ -.79
+</td>
+<td align="right">
+ 115.1519
+</td>
+<td align="right">
+ 115.1373
+</td>
+<td align="right">
+ 114.6834
+</td>
+<td align="right">
+  -.4539
+</td>
+<td align="right">
+ -.0039
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-25
+10:30:00
+</td>
+<td align="right">
+ -.75
+</td>
+<td align="right">
+ 115.0965
+</td>
+<td align="right">
+ 115.1201
+</td>
+<td align="right">
+ 114.5859
+</td>
+<td align="right">
+  -.5343
+</td>
+<td align="right">
+ -.0046
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-25
+10:35:00
+</td>
+<td align="right">
+ -.83
+</td>
+<td align="right">
+ 115.1133
+</td>
+<td align="right">
+ 115.1272
+</td>
+<td align="right">
+ 114.5693
+</td>
+<td align="right">
+  -.5578
+</td>
+<td align="right">
+ -.0048
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-25
+10:40:00
+</td>
+<td align="right">
+ -.76
+</td>
+<td align="right">
+ 115.0805
+</td>
+<td align="right">
+ 115.0962
+</td>
+<td align="right">
+ 114.6144
+</td>
+<td align="right">
+  -.4818
+</td>
+<td align="right">
+ -.0042
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-25
+10:45:00
+</td>
+<td align="right">
+ -.72
+</td>
+<td align="right">
+ 115.0982
+</td>
+<td align="right">
+ 115.0796
+</td>
+<td align="right">
+ 114.6227
+</td>
+<td align="right">
+  -.4569
+</td>
+<td align="right">
+ -.0040
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-25
+10:50:00
+</td>
+<td align="right">
+ -.67
+</td>
+<td align="right">
+ 115.0651
+</td>
+<td align="right">
+ 115.0551
+</td>
+<td align="right">
+ 114.6227
+</td>
+<td align="right">
+  -.4324
+</td>
+<td align="right">
+ -.0038
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-25
+12:25:00
+</td>
+<td align="right">
+ -.57
+</td>
+<td align="right">
+ 114.5657
+</td>
+<td align="right">
+ 114.6033
+</td>
+<td align="right">
+ 114.5731
+</td>
+<td align="right">
+  -.0302
+</td>
+<td align="right">
+ -.0003
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-25
+16:30:00
+</td>
+<td align="right">
+ -.57
+</td>
+<td align="right">
+ 114.5859
+</td>
+<td align="right">
+ 114.5825
+</td>
+<td align="right">
+ 114.2680
+</td>
+<td align="right">
+  -.3145
+</td>
+<td align="right">
+ -.0027
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-25
+16:35:00
+</td>
+<td align="right">
+ -.61
+</td>
+<td align="right">
+ 114.5693
+</td>
+<td align="right">
+ 114.5572
+</td>
+<td align="right">
+ 114.2343
+</td>
+<td align="right">
+  -.3229
+</td>
+<td align="right">
+ -.0028
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-25
+16:55:00
+</td>
+<td align="right">
+ -.77
+</td>
+<td align="right">
+ 114.6027
+</td>
+<td align="right">
+ 114.5829
+</td>
+<td align="right">
+ 114.2424
+</td>
+<td align="right">
+  -.3404
+</td>
+<td align="right">
+ -.0030
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-25
+17:35:00
+</td>
+<td align="right">
+ -.72
+</td>
+<td align="right">
+ 114.5572
+</td>
+<td align="right">
+ 114.5801
+</td>
+<td align="right">
+ 114.4488
+</td>
+<td align="right">
+  -.1312
+</td>
+<td align="right">
+ -.0011
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-25
+17:45:00
+</td>
+<td align="right">
+ -.62
+</td>
+<td align="right">
+ 114.5390
+</td>
+<td align="right">
+ 114.5619
+</td>
+<td align="right">
+ 114.5730
+</td>
+<td align="right">
+   .0111
+</td>
+<td align="right">
+  .0001
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-25
+17:55:00
+</td>
+<td align="right">
+ -.55
+</td>
+<td align="right">
+ 114.5829
+</td>
+<td align="right">
+ 114.5374
+</td>
+<td align="right">
+ 114.5528
+</td>
+<td align="right">
+   .0154
+</td>
+<td align="right">
+  .0001
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-25
+18:30:00
+</td>
+<td align="right">
+ -.60
+</td>
+<td align="right">
+ 114.5666
+</td>
+<td align="right">
+ 114.5807
+</td>
+<td align="right">
+ 114.5551
+</td>
+<td align="right">
+  -.0257
+</td>
+<td align="right">
+ -.0002
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-25
+18:35:00
+</td>
+<td align="right">
+ -.56
+</td>
+<td align="right">
+ 114.5801
+</td>
+<td align="right">
+ 114.5787
+</td>
+<td align="right">
+ 114.4807
+</td>
+<td align="right">
+  -.0980
+</td>
+<td align="right">
+ -.0009
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-25
+18:40:00
+</td>
+<td align="right">
+ -.64
+</td>
+<td align="right">
+ 114.5660
+</td>
+<td align="right">
+ 114.5481
+</td>
+<td align="right">
+ 114.5986
+</td>
+<td align="right">
+   .0505
+</td>
+<td align="right">
+  .0004
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-25
+18:45:00
+</td>
+<td align="right">
+ -.64
+</td>
+<td align="right">
+ 114.5619
+</td>
+<td align="right">
+ 114.5598
+</td>
+<td align="right">
+ 114.5954
+</td>
+<td align="right">
+   .0356
+</td>
+<td align="right">
+  .0003
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-25
+19:25:00
+</td>
+<td align="right">
+ -.88
+</td>
+<td align="right">
+ 114.5855
+</td>
+<td align="right">
+ 114.6380
+</td>
+<td align="right">
+ 114.6299
+</td>
+<td align="right">
+  -.0082
+</td>
+<td align="right">
+ -.0001
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-25
+19:30:00
+</td>
+<td align="right">
+ -.76
+</td>
+<td align="right">
+ 114.5807
+</td>
+<td align="right">
+ 114.6229
+</td>
+<td align="right">
+ 114.6747
+</td>
+<td align="right">
+   .0519
+</td>
+<td align="right">
+  .0005
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-25
+19:35:00
+</td>
+<td align="right">
+ -.62
+</td>
+<td align="right">
+ 114.5787
+</td>
+<td align="right">
+ 114.6125
+</td>
+<td align="right">
+ 114.6729
+</td>
+<td align="right">
+   .0605
+</td>
+<td align="right">
+  .0005
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-25
+19:40:00
+</td>
+<td align="right">
+ -.88
+</td>
+<td align="right">
+ 114.5481
+</td>
+<td align="right">
+ 114.5965
+</td>
+<td align="right">
+ 114.6831
+</td>
+<td align="right">
+   .0866
+</td>
+<td align="right">
+  .0008
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-25
+19:45:00
+</td>
+<td align="right">
+ -.72
+</td>
+<td align="right">
+ 114.5598
+</td>
+<td align="right">
+ 114.5930
+</td>
+<td align="right">
+ 114.6716
+</td>
+<td align="right">
+   .0786
+</td>
+<td align="right">
+  .0007
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-25
+19:50:00
+</td>
+<td align="right">
+ -.70
+</td>
+<td align="right">
+ 114.5104
+</td>
+<td align="right">
+ 114.5914
+</td>
+<td align="right">
+ 114.6792
+</td>
+<td align="right">
+   .0878
+</td>
+<td align="right">
+  .0008
+</td>
+</tr>
+<tr>
+<td>
+eur_usd
+</td>
+<td>
+2011-03-23
+07:30:00
+</td>
+<td align="right">
+ -.59
+</td>
+<td align="right">
+   1.4179
+</td>
+<td align="right">
+   1.4188
+</td>
+<td align="right">
+   1.4117
+</td>
+<td align="right">
+  -.0071
+</td>
+<td align="right">
+ -.0050
+</td>
+</tr>
+<tr>
+<td>
+eur_usd
+</td>
+<td>
+2011-03-24
+00:15:00
+</td>
+<td align="right">
+ -.56
+</td>
+<td align="right">
+   1.4107
+</td>
+<td align="right">
+   1.4105
+</td>
+<td align="right">
+   1.4088
+</td>
+<td align="right">
+  -.0017
+</td>
+<td align="right">
+ -.0012
+</td>
+</tr>
+<tr>
+<td>
+eur_usd
+</td>
+<td>
+2011-03-24
+02:00:00
+</td>
+<td align="right">
+ -.75
+</td>
+<td align="right">
+   1.4081
+</td>
+<td align="right">
+   1.4082
+</td>
+<td align="right">
+   1.4069
+</td>
+<td align="right">
+  -.0013
+</td>
+<td align="right">
+ -.0009
+</td>
+</tr>
+<tr>
+<td>
+eur_usd
+</td>
+<td>
+2011-03-24
+03:15:00
+</td>
+<td align="right">
+ -.77
+</td>
+<td align="right">
+   1.4082
+</td>
+<td align="right">
+   1.4080
+</td>
+<td align="right">
+   1.4102
+</td>
+<td align="right">
+   .0022
+</td>
+<td align="right">
+  .0015
+</td>
+</tr>
+<tr>
+<td>
+eur_usd
+</td>
+<td>
+2011-03-24
+03:20:00
+</td>
+<td align="right">
+ -.62
+</td>
+<td align="right">
+   1.4083
+</td>
+<td align="right">
+   1.4081
+</td>
+<td align="right">
+   1.4096
+</td>
+<td align="right">
+   .0015
+</td>
+<td align="right">
+  .0011
+</td>
+</tr>
+<tr>
+<td>
+eur_usd
+</td>
+<td>
+2011-03-25
+09:00:00
+</td>
+<td align="right">
+ -.61
+</td>
+<td align="right">
+   1.4159
+</td>
+<td align="right">
+   1.4158
+</td>
+<td align="right">
+   1.4147
+</td>
+<td align="right">
+  -.0011
+</td>
+<td align="right">
+ -.0008
+</td>
+</tr>
+<tr>
+<td>
+eur_usd
+</td>
+<td>
+2011-03-25
+09:05:00
+</td>
+<td align="right">
+ -.59
+</td>
+<td align="right">
+   1.4156
+</td>
+<td align="right">
+   1.4154
+</td>
+<td align="right">
+   1.4143
+</td>
+<td align="right">
+  -.0011
+</td>
+<td align="right">
+ -.0007
+</td>
+</tr>
+<tr>
+<td>
+eur_usd
+</td>
+<td>
+2011-03-25
+10:05:00
+</td>
+<td align="right">
+ -.61
+</td>
+<td align="right">
+   1.4154
+</td>
+<td align="right">
+   1.4165
+</td>
+<td align="right">
+   1.4135
+</td>
+<td align="right">
+  -.0030
+</td>
+<td align="right">
+ -.0022
+</td>
+</tr>
+<tr>
+<td>
+eur_usd
+</td>
+<td>
+2011-03-25
+19:05:00
+</td>
+<td align="right">
+ -.72
+</td>
+<td align="right">
+   1.4068
+</td>
+<td align="right">
+   1.4079
+</td>
+<td align="right">
+   1.4048
+</td>
+<td align="right">
+  -.0031
+</td>
+<td align="right">
+ -.0022
+</td>
+</tr>
+<tr>
+<td>
+eur_usd
+</td>
+<td>
+2011-03-25
+19:15:00
+</td>
+<td align="right">
+ -.60
+</td>
+<td align="right">
+   1.4058
+</td>
+<td align="right">
+   1.4079
+</td>
+<td align="right">
+   1.4050
+</td>
+<td align="right">
+  -.0029
+</td>
+<td align="right">
+ -.0021
+</td>
+</tr>
+<tr>
+<td>
+usd_cad
+</td>
+<td>
+2011-03-20
+21:25:00
+</td>
+<td align="right">
+ -.59
+</td>
+<td align="right">
+    .9853
+</td>
+<td align="right">
+    .9851
+</td>
+<td align="right">
+    .9829
+</td>
+<td align="right">
+  -.0022
+</td>
+<td align="right">
+ -.0023
+</td>
+</tr>
+<tr>
+<td>
+usd_cad
+</td>
+<td>
+2011-03-23
+04:55:00
+</td>
+<td align="right">
+ -.70
+</td>
+<td align="right">
+    .9814
+</td>
+<td align="right">
+    .9819
+</td>
+<td align="right">
+    .9804
+</td>
+<td align="right">
+  -.0015
+</td>
+<td align="right">
+ -.0015
+</td>
+</tr>
+<tr>
+<td>
+usd_cad
+</td>
+<td>
+2011-03-23
+05:20:00
+</td>
+<td align="right">
+ -.78
+</td>
+<td align="right">
+    .9815
+</td>
+<td align="right">
+    .9817
+</td>
+<td align="right">
+    .9811
+</td>
+<td align="right">
+  -.0007
+</td>
+<td align="right">
+ -.0007
+</td>
+</tr>
+<tr>
+<td>
+usd_cad
+</td>
+<td>
+2011-03-23
+05:35:00
+</td>
+<td align="right">
+ -.58
+</td>
+<td align="right">
+    .9818
+</td>
+<td align="right">
+    .9816
+</td>
+<td align="right">
+    .9808
+</td>
+<td align="right">
+  -.0008
+</td>
+<td align="right">
+ -.0008
+</td>
+</tr>
+<tr>
+<td>
+usd_cad
+</td>
+<td>
+2011-03-23
+05:40:00
+</td>
+<td align="right">
+ -.69
+</td>
+<td align="right">
+    .9817
+</td>
+<td align="right">
+    .9813
+</td>
+<td align="right">
+    .9813
+</td>
+<td align="right">
+   .0000
+</td>
+<td align="right">
+  .0000
+</td>
+</tr>
+<tr>
+<td>
+usd_cad
+</td>
+<td>
+2011-03-23
+05:45:00
+</td>
+<td align="right">
+ -.73
+</td>
+<td align="right">
+    .9818
+</td>
+<td align="right">
+    .9816
+</td>
+<td align="right">
+    .9817
+</td>
+<td align="right">
+   .0001
+</td>
+<td align="right">
+  .0001
+</td>
+</tr>
+<tr>
+<td>
+usd_cad
+</td>
+<td>
+2011-03-23
+07:40:00
+</td>
+<td align="right">
+ -.61
+</td>
+<td align="right">
+    .9821
+</td>
+<td align="right">
+    .9822
+</td>
+<td align="right">
+    .9830
+</td>
+<td align="right">
+   .0008
+</td>
+<td align="right">
+  .0008
+</td>
+</tr>
+<tr>
+<td>
+usd_cad
+</td>
+<td>
+2011-03-23
+07:45:00
+</td>
+<td align="right">
+ -.57
+</td>
+<td align="right">
+    .9821
+</td>
+<td align="right">
+    .9823
+</td>
+<td align="right">
+    .9836
+</td>
+<td align="right">
+   .0014
+</td>
+<td align="right">
+  .0014
+</td>
+</tr>
+<tr>
+<td>
+usd_cad
+</td>
+<td>
+2011-03-23
+22:55:00
+</td>
+<td align="right">
+ -.59
+</td>
+<td align="right">
+    .9808
+</td>
+<td align="right">
+    .9807
+</td>
+<td align="right">
+    .9806
+</td>
+<td align="right">
+  -.0001
+</td>
+<td align="right">
+ -.0001
+</td>
+</tr>
+<tr>
+<td>
+usd_cad
+</td>
+<td>
+2011-03-25
+17:20:00
+</td>
+<td align="right">
+ -.69
+</td>
+<td align="right">
+    .9814
+</td>
+<td align="right">
+    .9810
+</td>
+<td align="right">
+    .9816
+</td>
+<td align="right">
+   .0005
+</td>
+<td align="right">
+  .0006
+</td>
+</tr>
+<tr>
+<td>
+usd_cad
+</td>
+<td>
+2011-03-25
+19:00:00
+</td>
+<td align="right">
+ -.56
+</td>
+<td align="right">
+    .9811
+</td>
+<td align="right">
+    .9821
+</td>
+<td align="right">
+    .9817
+</td>
+<td align="right">
+  -.0004
+</td>
+<td align="right">
+ -.0004
+</td>
+</tr>
+<tr>
+<td>
+usd_chf
+</td>
+<td>
+2011-03-20
+23:05:00
+</td>
+<td align="right">
+ -.66
+</td>
+<td align="right">
+    .9023
+</td>
+<td align="right">
+    .9039
+</td>
+<td align="right">
+    .9048
+</td>
+<td align="right">
+   .0009
+</td>
+<td align="right">
+  .0010
+</td>
+</tr>
+<tr>
+<td>
+usd_chf
+</td>
+<td>
+2011-03-20
+23:10:00
+</td>
+<td align="right">
+ -.59
+</td>
+<td align="right">
+    .9022
+</td>
+<td align="right">
+    .9040
+</td>
+<td align="right">
+    .9050
+</td>
+<td align="right">
+   .0010
+</td>
+<td align="right">
+  .0011
+</td>
+</tr>
+<tr>
+<td>
+usd_chf
+</td>
+<td>
+2011-03-20
+23:15:00
+</td>
+<td align="right">
+ -.63
+</td>
+<td align="right">
+    .9024
+</td>
+<td align="right">
+    .9039
+</td>
+<td align="right">
+    .9050
+</td>
+<td align="right">
+   .0012
+</td>
+<td align="right">
+  .0013
+</td>
+</tr>
+<tr>
+<td>
+usd_chf
+</td>
+<td>
+2011-03-20
+23:20:00
+</td>
+<td align="right">
+ -.56
+</td>
+<td align="right">
+    .9025
+</td>
+<td align="right">
+    .9043
+</td>
+<td align="right">
+    .9051
+</td>
+<td align="right">
+   .0009
+</td>
+<td align="right">
+  .0010
+</td>
+</tr>
+<tr>
+<td>
+usd_chf
+</td>
+<td>
+2011-03-20
+23:25:00
+</td>
+<td align="right">
+ -.61
+</td>
+<td align="right">
+    .9028
+</td>
+<td align="right">
+    .9047
+</td>
+<td align="right">
+    .9051
+</td>
+<td align="right">
+   .0005
+</td>
+<td align="right">
+  .0005
+</td>
+</tr>
+<tr>
+<td>
+usd_chf
+</td>
+<td>
+2011-03-20
+23:35:00
+</td>
+<td align="right">
+ -.60
+</td>
+<td align="right">
+    .9033
+</td>
+<td align="right">
+    .9047
+</td>
+<td align="right">
+    .9054
+</td>
+<td align="right">
+   .0007
+</td>
+<td align="right">
+  .0008
+</td>
+</tr>
+<tr>
+<td>
+usd_chf
+</td>
+<td>
+2011-03-20
+23:50:00
+</td>
+<td align="right">
+ -.57
+</td>
+<td align="right">
+    .9032
+</td>
+<td align="right">
+    .9046
+</td>
+<td align="right">
+    .9049
+</td>
+<td align="right">
+   .0003
+</td>
+<td align="right">
+  .0003
+</td>
+</tr>
+<tr>
+<td>
+usd_chf
+</td>
+<td>
+2011-03-21
+01:15:00
+</td>
+<td align="right">
+ -.65
+</td>
+<td align="right">
+    .9040
+</td>
+<td align="right">
+    .9040
+</td>
+<td align="right">
+    .9042
+</td>
+<td align="right">
+   .0002
+</td>
+<td align="right">
+  .0002
+</td>
+</tr>
+<tr>
+<td>
+usd_chf
+</td>
+<td>
+2011-03-21
+01:40:00
+</td>
+<td align="right">
+ -.63
+</td>
+<td align="right">
+    .9037
+</td>
+<td align="right">
+    .9044
+</td>
+<td align="right">
+    .9057
+</td>
+<td align="right">
+   .0013
+</td>
+<td align="right">
+  .0015
+</td>
+</tr>
+<tr>
+<td>
+usd_chf
+</td>
+<td>
+2011-03-21
+01:45:00
+</td>
+<td align="right">
+ -.64
+</td>
+<td align="right">
+    .9039
+</td>
+<td align="right">
+    .9043
+</td>
+<td align="right">
+    .9057
+</td>
+<td align="right">
+   .0015
+</td>
+<td align="right">
+  .0016
+</td>
+</tr>
+<tr>
+<td>
+usd_chf
+</td>
+<td>
+2011-03-21
+01:50:00
+</td>
+<td align="right">
+ -.60
+</td>
+<td align="right">
+    .9039
+</td>
+<td align="right">
+    .9041
+</td>
+<td align="right">
+    .9060
+</td>
+<td align="right">
+   .0018
+</td>
+<td align="right">
+  .0020
+</td>
+</tr>
+<tr>
+<td>
+usd_chf
+</td>
+<td>
+2011-03-21
+01:55:00
+</td>
+<td align="right">
+ -.57
+</td>
+<td align="right">
+    .9041
+</td>
+<td align="right">
+    .9042
+</td>
+<td align="right">
+    .9059
+</td>
+<td align="right">
+   .0017
+</td>
+<td align="right">
+  .0018
+</td>
+</tr>
+<tr>
+<td>
+usd_chf
+</td>
+<td>
+2011-03-21
+02:00:00
+</td>
+<td align="right">
+ -.64
+</td>
+<td align="right">
+    .9040
+</td>
+<td align="right">
+    .9043
+</td>
+<td align="right">
+    .9040
+</td>
+<td align="right">
+  -.0003
+</td>
+<td align="right">
+ -.0003
+</td>
+</tr>
+<tr>
+<td>
+usd_chf
+</td>
+<td>
+2011-03-21
+02:10:00
+</td>
+<td align="right">
+ -.60
+</td>
+<td align="right">
+    .9040
+</td>
+<td align="right">
+    .9045
+</td>
+<td align="right">
+    .9047
+</td>
+<td align="right">
+   .0002
+</td>
+<td align="right">
+  .0002
+</td>
+</tr>
+<tr>
+<td>
+usd_chf
+</td>
+<td>
+2011-03-21
+02:15:00
+</td>
+<td align="right">
+ -.69
+</td>
+<td align="right">
+    .9040
+</td>
+<td align="right">
+    .9045
+</td>
+<td align="right">
+    .9056
+</td>
+<td align="right">
+   .0011
+</td>
+<td align="right">
+  .0012
+</td>
+</tr>
+<tr>
+<td>
+usd_chf
+</td>
+<td>
+2011-03-21
+02:20:00
+</td>
+<td align="right">
+ -.72
+</td>
+<td align="right">
+    .9040
+</td>
+<td align="right">
+    .9044
+</td>
+<td align="right">
+    .9054
+</td>
+<td align="right">
+   .0010
+</td>
+<td align="right">
+  .0011
+</td>
+</tr>
+<tr>
+<td>
+usd_chf
+</td>
+<td>
+2011-03-21
+02:25:00
+</td>
+<td align="right">
+ -.60
+</td>
+<td align="right">
+    .9042
+</td>
+<td align="right">
+    .9047
+</td>
+<td align="right">
+    .9054
+</td>
+<td align="right">
+   .0007
+</td>
+<td align="right">
+  .0008
+</td>
+</tr>
+<tr>
+<td>
+usd_chf
+</td>
+<td>
+2011-03-21
+02:30:00
+</td>
+<td align="right">
+ -.66
+</td>
+<td align="right">
+    .9046
+</td>
+<td align="right">
+    .9048
+</td>
+<td align="right">
+    .9056
+</td>
+<td align="right">
+   .0008
+</td>
+<td align="right">
+  .0009
+</td>
+</tr>
+<tr>
+<td>
+usd_chf
+</td>
+<td>
+2011-03-21
+02:35:00
+</td>
+<td align="right">
+ -.61
+</td>
+<td align="right">
+    .9044
+</td>
+<td align="right">
+    .9046
+</td>
+<td align="right">
+    .9048
+</td>
+<td align="right">
+   .0002
+</td>
+<td align="right">
+  .0002
+</td>
+</tr>
+<tr>
+<td>
+usd_chf
+</td>
+<td>
+2011-03-21
+02:40:00
+</td>
+<td align="right">
+ -.59
+</td>
+<td align="right">
+    .9044
+</td>
+<td align="right">
+    .9047
+</td>
+<td align="right">
+    .9048
+</td>
+<td align="right">
+   .0001
+</td>
+<td align="right">
+  .0001
+</td>
+</tr>
+<tr>
+<td>
+usd_chf
+</td>
+<td>
+2011-03-21
+02:45:00
+</td>
+<td align="right">
+ -.57
+</td>
+<td align="right">
+    .9043
+</td>
+<td align="right">
+    .9047
+</td>
+<td align="right">
+    .9051
+</td>
+<td align="right">
+   .0004
+</td>
+<td align="right">
+  .0004
+</td>
+</tr>
+<tr>
+<td>
+usd_chf
+</td>
+<td>
+2011-03-21
+02:50:00
+</td>
+<td align="right">
+ -.69
+</td>
+<td align="right">
+    .9041
+</td>
+<td align="right">
+    .9049
+</td>
+<td align="right">
+    .9056
+</td>
+<td align="right">
+   .0007
+</td>
+<td align="right">
+  .0008
+</td>
+</tr>
+<tr>
+<td>
+usd_chf
+</td>
+<td>
+2011-03-21
+02:55:00
+</td>
+<td align="right">
+ -.60
+</td>
+<td align="right">
+    .9042
+</td>
+<td align="right">
+    .9049
+</td>
+<td align="right">
+    .9064
+</td>
+<td align="right">
+   .0015
+</td>
+<td align="right">
+  .0017
+</td>
+</tr>
+<tr>
+<td>
+usd_chf
+</td>
+<td>
+2011-03-21
+03:00:00
+</td>
+<td align="right">
+ -.62
+</td>
+<td align="right">
+    .9043
+</td>
+<td align="right">
+    .9051
+</td>
+<td align="right">
+    .9062
+</td>
+<td align="right">
+   .0011
+</td>
+<td align="right">
+  .0012
+</td>
+</tr>
+<tr>
+<td>
+usd_chf
+</td>
+<td>
+2011-03-21
+03:05:00
+</td>
+<td align="right">
+ -.61
+</td>
+<td align="right">
+    .9046
+</td>
+<td align="right">
+    .9051
+</td>
+<td align="right">
+    .9066
+</td>
+<td align="right">
+   .0015
+</td>
+<td align="right">
+  .0017
+</td>
+</tr>
+<tr>
+<td>
+usd_chf
+</td>
+<td>
+2011-03-21
+03:10:00
+</td>
+<td align="right">
+ -.62
+</td>
+<td align="right">
+    .9045
+</td>
+<td align="right">
+    .9051
+</td>
+<td align="right">
+    .9066
+</td>
+<td align="right">
+   .0015
+</td>
+<td align="right">
+  .0016
+</td>
+</tr>
+<tr>
+<td>
+usd_chf
+</td>
+<td>
+2011-03-21
+03:15:00
+</td>
+<td align="right">
+ -.59
+</td>
+<td align="right">
+    .9045
+</td>
+<td align="right">
+    .9052
+</td>
+<td align="right">
+    .9067
+</td>
+<td align="right">
+   .0015
+</td>
+<td align="right">
+  .0017
+</td>
+</tr>
+<tr>
+<td>
+usd_chf
+</td>
+<td>
+2011-03-21
+03:20:00
+</td>
+<td align="right">
+ -.64
+</td>
+<td align="right">
+    .9044
+</td>
+<td align="right">
+    .9052
+</td>
+<td align="right">
+    .9061
+</td>
+<td align="right">
+   .0009
+</td>
+<td align="right">
+  .0010
+</td>
+</tr>
+<tr>
+<td>
+usd_chf
+</td>
+<td>
+2011-03-21
+03:25:00
+</td>
+<td align="right">
+ -.65
+</td>
+<td align="right">
+    .9047
+</td>
+<td align="right">
+    .9053
+</td>
+<td align="right">
+    .9063
+</td>
+<td align="right">
+   .0010
+</td>
+<td align="right">
+  .0011
+</td>
+</tr>
+<tr>
+<td>
+usd_chf
+</td>
+<td>
+2011-03-21
+03:30:00
+</td>
+<td align="right">
+ -.56
+</td>
+<td align="right">
+    .9048
+</td>
+<td align="right">
+    .9054
+</td>
+<td align="right">
+    .9064
+</td>
+<td align="right">
+   .0010
+</td>
+<td align="right">
+  .0011
+</td>
+</tr>
+<tr>
+<td>
+usd_chf
+</td>
+<td>
+2011-03-21
+03:40:00
+</td>
+<td align="right">
+ -.61
+</td>
+<td align="right">
+    .9047
+</td>
+<td align="right">
+    .9050
+</td>
+<td align="right">
+    .9061
+</td>
+<td align="right">
+   .0010
+</td>
+<td align="right">
+  .0011
+</td>
+</tr>
+<tr>
+<td>
+usd_chf
+</td>
+<td>
+2011-03-21
+20:15:00
+</td>
+<td align="right">
+ -.61
+</td>
+<td align="right">
+    .9049
+</td>
+<td align="right">
+    .9050
+</td>
+<td align="right">
+    .9044
+</td>
+<td align="right">
+  -.0006
+</td>
+<td align="right">
+ -.0007
+</td>
+</tr>
+<tr>
+<td>
+usd_chf
+</td>
+<td>
+2011-03-21
+20:20:00
+</td>
+<td align="right">
+ -.71
+</td>
+<td align="right">
+    .9050
+</td>
+<td align="right">
+    .9050
+</td>
+<td align="right">
+    .9042
+</td>
+<td align="right">
+  -.0008
+</td>
+<td align="right">
+ -.0009
+</td>
+</tr>
+<tr>
+<td>
+usd_chf
+</td>
+<td>
+2011-03-21
+20:25:00
+</td>
+<td align="right">
+ -.56
+</td>
+<td align="right">
+    .9047
+</td>
+<td align="right">
+    .9050
+</td>
+<td align="right">
+    .9041
+</td>
+<td align="right">
+  -.0009
+</td>
+<td align="right">
+ -.0010
+</td>
+</tr>
+<tr>
+<td>
+usd_chf
+</td>
+<td>
+2011-03-22
+12:05:00
+</td>
+<td align="right">
+ -.63
+</td>
+<td align="right">
+    .9028
+</td>
+<td align="right">
+    .9040
+</td>
+<td align="right">
+    .9034
+</td>
+<td align="right">
+  -.0006
+</td>
+<td align="right">
+ -.0006
+</td>
+</tr>
+<tr>
+<td>
+usd_chf
+</td>
+<td>
+2011-03-22
+12:15:00
+</td>
+<td align="right">
+ -.55
+</td>
+<td align="right">
+    .9027
+</td>
+<td align="right">
+    .9031
+</td>
+<td align="right">
+    .9033
+</td>
+<td align="right">
+   .0002
+</td>
+<td align="right">
+  .0002
+</td>
+</tr>
+<tr>
+<td>
+usd_chf
+</td>
+<td>
+2011-03-22
+12:30:00
+</td>
+<td align="right">
+ -.59
+</td>
+<td align="right">
+    .9033
+</td>
+<td align="right">
+    .9033
+</td>
+<td align="right">
+    .9032
+</td>
+<td align="right">
+  -.0001
+</td>
+<td align="right">
+ -.0002
+</td>
+</tr>
+<tr>
+<td>
+usd_chf
+</td>
+<td>
+2011-03-22
+14:00:00
+</td>
+<td align="right">
+ -.60
+</td>
+<td align="right">
+    .9041
+</td>
+<td align="right">
+    .9039
+</td>
+<td align="right">
+    .9033
+</td>
+<td align="right">
+  -.0006
+</td>
+<td align="right">
+ -.0007
+</td>
+</tr>
+<tr>
+<td>
+usd_chf
+</td>
+<td>
+2011-03-22
+14:15:00
+</td>
+<td align="right">
+ -.61
+</td>
+<td align="right">
+    .9039
+</td>
+<td align="right">
+    .9041
+</td>
+<td align="right">
+    .9031
+</td>
+<td align="right">
+  -.0011
+</td>
+<td align="right">
+ -.0012
+</td>
+</tr>
+<tr>
+<td>
+usd_chf
+</td>
+<td>
+2011-03-22
+20:25:00
+</td>
+<td align="right">
+ -.56
+</td>
+<td align="right">
+    .9033
+</td>
+<td align="right">
+    .9034
+</td>
+<td align="right">
+    .9040
+</td>
+<td align="right">
+   .0006
+</td>
+<td align="right">
+  .0006
+</td>
+</tr>
+<tr>
+<td>
+usd_chf
+</td>
+<td>
+2011-03-23
+11:00:00
+</td>
+<td align="right">
+ -.56
+</td>
+<td align="right">
+    .9000
+</td>
+<td align="right">
+    .9007
+</td>
+<td align="right">
+    .9079
+</td>
+<td align="right">
+   .0072
+</td>
+<td align="right">
+  .0080
+</td>
+</tr>
+<tr>
+<td>
+usd_chf
+</td>
+<td>
+2011-03-23
+16:00:00
+</td>
+<td align="right">
+ -.56
+</td>
+<td align="right">
+    .9070
+</td>
+<td align="right">
+    .9079
+</td>
+<td align="right">
+    .9079
+</td>
+<td align="right">
+   .0001
+</td>
+<td align="right">
+  .0001
+</td>
+</tr>
+<tr>
+<td>
+usd_chf
+</td>
+<td>
+2011-03-23
+19:40:00
+</td>
+<td align="right">
+ -.61
+</td>
+<td align="right">
+    .9083
+</td>
+<td align="right">
+    .9082
+</td>
+<td align="right">
+    .9082
+</td>
+<td align="right">
+  -.0001
+</td>
+<td align="right">
+ -.0001
+</td>
+</tr>
+<tr>
+<th scope="col">
+Currency
+<br>
+Pair
+</th>
+<th scope="col">
+Timestamp
+<br>
+at hour 0
+</th>
+<th scope="col">
+DanBot
+<br>
+Score
+<br>
+at hour 0
+</th>
+<th scope="col">
+Price at
+<br>
+hour 0
+</th>
+<th scope="col">
+Price after
+<br>
+1 hour
+</th>
+<th scope="col">
+Price after
+<br>
+6 hours
+</th>
+<th scope="col">
+5 hour gain
+<br>
+between
+<br>
+hr1 and hr6
+</th>
+<th scope="col">
+Normalized
+<br>
+5hr gain
+</th>
+</tr>
+<tr>
+<td>
+usd_chf
+</td>
+<td>
+2011-03-25
+00:40:00
+</td>
+<td align="right">
+ -.67
+</td>
+<td align="right">
+    .9083
+</td>
+<td align="right">
+    .9081
+</td>
+<td align="right">
+    .9092
+</td>
+<td align="right">
+   .0011
+</td>
+<td align="right">
+  .0012
+</td>
+</tr>
+<tr>
+<td>
+usd_chf
+</td>
+<td>
+2011-03-25
+01:05:00
+</td>
+<td align="right">
+ -.59
+</td>
+<td align="right">
+    .9085
+</td>
+<td align="right">
+    .9082
+</td>
+<td align="right">
+    .9092
+</td>
+<td align="right">
+   .0010
+</td>
+<td align="right">
+  .0011
+</td>
+</tr>
+<tr>
+<td>
+usd_chf
+</td>
+<td>
+2011-03-25
+01:10:00
+</td>
+<td align="right">
+ -.57
+</td>
+<td align="right">
+    .9083
+</td>
+<td align="right">
+    .9081
+</td>
+<td align="right">
+    .9094
+</td>
+<td align="right">
+   .0013
+</td>
+<td align="right">
+  .0014
+</td>
+</tr>
+<tr>
+<td>
+usd_chf
+</td>
+<td>
+2011-03-25
+01:15:00
+</td>
+<td align="right">
+ -.65
+</td>
+<td align="right">
+    .9082
+</td>
+<td align="right">
+    .9081
+</td>
+<td align="right">
+    .9094
+</td>
+<td align="right">
+   .0013
+</td>
+<td align="right">
+  .0015
+</td>
+</tr>
+<tr>
+<td>
+usd_chf
+</td>
+<td>
+2011-03-25
+01:20:00
+</td>
+<td align="right">
+ -.64
+</td>
+<td align="right">
+    .9082
+</td>
+<td align="right">
+    .9081
+</td>
+<td align="right">
+    .9100
+</td>
+<td align="right">
+   .0018
+</td>
+<td align="right">
+  .0020
+</td>
+</tr>
+<tr>
+<td>
+usd_chf
+</td>
+<td>
+2011-03-25
+01:35:00
+</td>
+<td align="right">
+ -.57
+</td>
+<td align="right">
+    .9081
+</td>
+<td align="right">
+    .9081
+</td>
+<td align="right">
+    .9107
+</td>
+<td align="right">
+   .0026
+</td>
+<td align="right">
+  .0028
+</td>
+</tr>
+<tr>
+<td>
+usd_jpy
+</td>
+<td>
+2011-03-22
+08:40:00
+</td>
+<td align="right">
+ -.63
+</td>
+<td align="right">
+  81.1225
+</td>
+<td align="right">
+  81.1225
+</td>
+<td align="right">
+  81.0175
+</td>
+<td align="right">
+  -.1050
+</td>
+<td align="right">
+ -.0013
+</td>
+</tr>
+<tr>
+<td>
+usd_jpy
+</td>
+<td>
+2011-03-22
+09:30:00
+</td>
+<td align="right">
+ -.63
+</td>
+<td align="right">
+  81.0825
+</td>
+<td align="right">
+  81.0775
+</td>
+<td align="right">
+  81.0150
+</td>
+<td align="right">
+  -.0625
+</td>
+<td align="right">
+ -.0008
+</td>
+</tr>
+<tr>
+<td>
+usd_jpy
+</td>
+<td>
+2011-03-23
+12:35:00
+</td>
+<td align="right">
+ -.56
+</td>
+<td align="right">
+  80.9725
+</td>
+<td align="right">
+  80.9750
+</td>
+<td align="right">
+  80.8550
+</td>
+<td align="right">
+  -.1200
+</td>
+<td align="right">
+ -.0015
+</td>
+</tr>
+<tr>
+<td>
+usd_jpy
+</td>
+<td>
+2011-03-23
+13:00:00
+</td>
+<td align="right">
+ -.59
+</td>
+<td align="right">
+  80.9725
+</td>
+<td align="right">
+  80.9525
+</td>
+<td align="right">
+  80.8350
+</td>
+<td align="right">
+  -.1175
+</td>
+<td align="right">
+ -.0015
+</td>
+</tr>
+<tr>
+<td>
+usd_jpy
+</td>
+<td>
+2011-03-23
+15:00:00
+</td>
+<td align="right">
+ -.67
+</td>
+<td align="right">
+  80.9350
+</td>
+<td align="right">
+  80.9600
+</td>
+<td align="right">
+  80.9200
+</td>
+<td align="right">
+  -.0400
+</td>
+<td align="right">
+ -.0005
+</td>
+</tr>
+<tr>
+<td>
+usd_jpy
+</td>
+<td>
+2011-03-23
+15:05:00
+</td>
+<td align="right">
+ -.69
+</td>
+<td align="right">
+  80.9475
+</td>
+<td align="right">
+  80.9200
+</td>
+<td align="right">
+  80.9300
+</td>
+<td align="right">
+   .0100
+</td>
+<td align="right">
+  .0001
+</td>
+</tr>
+<tr>
+<td>
+usd_jpy
+</td>
+<td>
+2011-03-23
+15:20:00
+</td>
+<td align="right">
+ -.75
+</td>
+<td align="right">
+  80.9300
+</td>
+<td align="right">
+  80.9325
+</td>
+<td align="right">
+  80.9450
+</td>
+<td align="right">
+   .0125
+</td>
+<td align="right">
+  .0002
+</td>
+</tr>
+<tr>
+<td>
+usd_jpy
+</td>
+<td>
+2011-03-23
+22:20:00
+</td>
+<td align="right">
+ -.69
+</td>
+<td align="right">
+  80.9250
+</td>
+<td align="right">
+  80.9300
+</td>
+<td align="right">
+  81.0000
+</td>
+<td align="right">
+   .0700
+</td>
+<td align="right">
+  .0009
+</td>
+</tr>
+<tr>
+<td>
+usd_jpy
+</td>
+<td>
+2011-03-23
+23:05:00
+</td>
+<td align="right">
+ -.59
+</td>
+<td align="right">
+  80.9200
+</td>
+<td align="right">
+  80.9000
+</td>
+<td align="right">
+  81.0025
+</td>
+<td align="right">
+   .1025
+</td>
+<td align="right">
+  .0013
+</td>
+</tr>
+</table>
+<p>
+
+261 rows selected.<br>
+<br>
+
+
+old  13: AND ydate &gt; '&amp;1'
+<br>
+new  13: AND ydate &gt; '2011-03-20'
+<br>
+old  14: AND ydate - 7 &lt; '&amp;1'
+<br>
+new  14: AND ydate - 7 &lt; '2011-03-20'
+<br>
+<p>
+<table class='table_fx_past_week'>
+<tr>
+<th scope="col">
+Currency
+<br>
+Pair
+</th>
+<th scope="col">
+Timestamp
+<br>
+at hour 0
+</th>
+<th scope="col">
+DanBot
+<br>
+Score
+<br>
+at hour 0
+</th>
+<th scope="col">
+Price at
+<br>
+hour 0
+</th>
+<th scope="col">
+Price after
+<br>
+1 hour
+</th>
+<th scope="col">
+Price after
+<br>
+6 hours
+</th>
+<th scope="col">
+5 hour gain
+<br>
+between
+<br>
+hr1 and hr6
+</th>
+<th scope="col">
+Normalized
+<br>
+5hr gain
+</th>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-20
+21:50:00
+</td>
+<td align="right">
+  .57
+</td>
+<td align="right">
+  80.5339
+</td>
+<td align="right">
+  80.5358
+</td>
+<td align="right">
+  80.9774
+</td>
+<td align="right">
+   .4416
+</td>
+<td align="right">
+  .0055
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-20
+21:55:00
+</td>
+<td align="right">
+  .55
+</td>
+<td align="right">
+  80.5238
+</td>
+<td align="right">
+  80.5193
+</td>
+<td align="right">
+  80.9864
+</td>
+<td align="right">
+   .4671
+</td>
+<td align="right">
+  .0058
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-20
+22:05:00
+</td>
+<td align="right">
+  .68
+</td>
+<td align="right">
+  80.4580
+</td>
+<td align="right">
+  80.4588
+</td>
+<td align="right">
+  80.9955
+</td>
+<td align="right">
+   .5367
+</td>
+<td align="right">
+  .0067
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-20
+23:30:00
+</td>
+<td align="right">
+  .60
+</td>
+<td align="right">
+  80.6328
+</td>
+<td align="right">
+  80.5870
+</td>
+<td align="right">
+  81.0761
+</td>
+<td align="right">
+   .4891
+</td>
+<td align="right">
+  .0061
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-20
+23:35:00
+</td>
+<td align="right">
+  .59
+</td>
+<td align="right">
+  80.6412
+</td>
+<td align="right">
+  80.5479
+</td>
+<td align="right">
+  81.0878
+</td>
+<td align="right">
+   .5399
+</td>
+<td align="right">
+  .0067
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-20
+23:40:00
+</td>
+<td align="right">
+  .65
+</td>
+<td align="right">
+  80.5907
+</td>
+<td align="right">
+  80.5741
+</td>
+<td align="right">
+  81.0797
+</td>
+<td align="right">
+   .5057
+</td>
+<td align="right">
+  .0063
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-21
+14:50:00
+</td>
+<td align="right">
+  .68
+</td>
+<td align="right">
+  81.4333
+</td>
+<td align="right">
+  81.4292
+</td>
+<td align="right">
+  81.5430
+</td>
+<td align="right">
+   .1138
+</td>
+<td align="right">
+  .0014
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-21
+14:55:00
+</td>
+<td align="right">
+  .69
+</td>
+<td align="right">
+  81.4760
+</td>
+<td align="right">
+  81.4663
+</td>
+<td align="right">
+  81.5325
+</td>
+<td align="right">
+   .0661
+</td>
+<td align="right">
+  .0008
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-21
+15:40:00
+</td>
+<td align="right">
+  .58
+</td>
+<td align="right">
+  81.4174
+</td>
+<td align="right">
+  81.3907
+</td>
+<td align="right">
+  81.6315
+</td>
+<td align="right">
+   .2409
+</td>
+<td align="right">
+  .0030
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-21
+15:45:00
+</td>
+<td align="right">
+  .63
+</td>
+<td align="right">
+  81.4165
+</td>
+<td align="right">
+  81.4132
+</td>
+<td align="right">
+  81.6301
+</td>
+<td align="right">
+   .2169
+</td>
+<td align="right">
+  .0027
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-21
+15:50:00
+</td>
+<td align="right">
+  .64
+</td>
+<td align="right">
+  81.4292
+</td>
+<td align="right">
+  81.4090
+</td>
+<td align="right">
+  81.6427
+</td>
+<td align="right">
+   .2337
+</td>
+<td align="right">
+  .0029
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-21
+15:55:00
+</td>
+<td align="right">
+  .66
+</td>
+<td align="right">
+  81.4663
+</td>
+<td align="right">
+  81.3818
+</td>
+<td align="right">
+  81.6366
+</td>
+<td align="right">
+   .2547
+</td>
+<td align="right">
+  .0031
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-21
+16:00:00
+</td>
+<td align="right">
+  .65
+</td>
+<td align="right">
+  81.4940
+</td>
+<td align="right">
+  81.3647
+</td>
+<td align="right">
+  81.6622
+</td>
+<td align="right">
+   .2976
+</td>
+<td align="right">
+  .0037
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-21
+16:05:00
+</td>
+<td align="right">
+  .64
+</td>
+<td align="right">
+  81.4652
+</td>
+<td align="right">
+  81.3049
+</td>
+<td align="right">
+  81.6471
+</td>
+<td align="right">
+   .3422
+</td>
+<td align="right">
+  .0042
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-21
+16:10:00
+</td>
+<td align="right">
+  .65
+</td>
+<td align="right">
+  81.4779
+</td>
+<td align="right">
+  81.3059
+</td>
+<td align="right">
+  81.6441
+</td>
+<td align="right">
+   .3383
+</td>
+<td align="right">
+  .0042
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-21
+16:15:00
+</td>
+<td align="right">
+  .66
+</td>
+<td align="right">
+  81.4738
+</td>
+<td align="right">
+  81.2999
+</td>
+<td align="right">
+  81.7010
+</td>
+<td align="right">
+   .4011
+</td>
+<td align="right">
+  .0049
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-21
+16:20:00
+</td>
+<td align="right">
+  .60
+</td>
+<td align="right">
+  81.4876
+</td>
+<td align="right">
+  81.3374
+</td>
+<td align="right">
+  81.6705
+</td>
+<td align="right">
+   .3331
+</td>
+<td align="right">
+  .0041
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-21
+16:25:00
+</td>
+<td align="right">
+  .62
+</td>
+<td align="right">
+  81.4410
+</td>
+<td align="right">
+  81.2951
+</td>
+<td align="right">
+  81.6638
+</td>
+<td align="right">
+   .3687
+</td>
+<td align="right">
+  .0045
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-21
+16:30:00
+</td>
+<td align="right">
+  .64
+</td>
+<td align="right">
+  81.4745
+</td>
+<td align="right">
+  81.2904
+</td>
+<td align="right">
+  81.6771
+</td>
+<td align="right">
+   .3867
+</td>
+<td align="right">
+  .0047
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-21
+16:35:00
+</td>
+<td align="right">
+  .62
+</td>
+<td align="right">
+  81.4748
+</td>
+<td align="right">
+  81.3293
+</td>
+<td align="right">
+  81.7415
+</td>
+<td align="right">
+   .4121
+</td>
+<td align="right">
+  .0051
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-21
+16:45:00
+</td>
+<td align="right">
+  .63
+</td>
+<td align="right">
+  81.4132
+</td>
+<td align="right">
+  81.3957
+</td>
+<td align="right">
+  81.7345
+</td>
+<td align="right">
+   .3388
+</td>
+<td align="right">
+  .0042
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-21
+16:50:00
+</td>
+<td align="right">
+  .64
+</td>
+<td align="right">
+  81.4090
+</td>
+<td align="right">
+  81.3643
+</td>
+<td align="right">
+  81.7403
+</td>
+<td align="right">
+   .3760
+</td>
+<td align="right">
+  .0046
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-21
+16:55:00
+</td>
+<td align="right">
+  .79
+</td>
+<td align="right">
+  81.3818
+</td>
+<td align="right">
+  81.3932
+</td>
+<td align="right">
+  81.7454
+</td>
+<td align="right">
+   .3523
+</td>
+<td align="right">
+  .0043
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-21
+17:00:00
+</td>
+<td align="right">
+  .81
+</td>
+<td align="right">
+  81.3647
+</td>
+<td align="right">
+  81.3676
+</td>
+<td align="right">
+  81.6903
+</td>
+<td align="right">
+   .3227
+</td>
+<td align="right">
+  .0040
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-21
+17:20:00
+</td>
+<td align="right">
+  .72
+</td>
+<td align="right">
+  81.3374
+</td>
+<td align="right">
+  81.3413
+</td>
+<td align="right">
+  81.7038
+</td>
+<td align="right">
+   .3626
+</td>
+<td align="right">
+  .0045
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-21
+18:45:00
+</td>
+<td align="right">
+  .77
+</td>
+<td align="right">
+  81.4623
+</td>
+<td align="right">
+  81.4608
+</td>
+<td align="right">
+  81.3385
+</td>
+<td align="right">
+  -.1223
+</td>
+<td align="right">
+ -.0015
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-22
+01:15:00
+</td>
+<td align="right">
+  .64
+</td>
+<td align="right">
+  81.3885
+</td>
+<td align="right">
+  81.3543
+</td>
+<td align="right">
+  81.6837
+</td>
+<td align="right">
+   .3294
+</td>
+<td align="right">
+  .0040
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-22
+01:20:00
+</td>
+<td align="right">
+  .66
+</td>
+<td align="right">
+  81.4304
+</td>
+<td align="right">
+  81.3840
+</td>
+<td align="right">
+  81.7176
+</td>
+<td align="right">
+   .3336
+</td>
+<td align="right">
+  .0041
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-22
+01:25:00
+</td>
+<td align="right">
+  .78
+</td>
+<td align="right">
+  81.4067
+</td>
+<td align="right">
+  81.3937
+</td>
+<td align="right">
+  81.6706
+</td>
+<td align="right">
+   .2769
+</td>
+<td align="right">
+  .0034
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-22
+01:30:00
+</td>
+<td align="right">
+  .57
+</td>
+<td align="right">
+  81.4007
+</td>
+<td align="right">
+  81.4129
+</td>
+<td align="right">
+  81.6488
+</td>
+<td align="right">
+   .2359
+</td>
+<td align="right">
+  .0029
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-22
+01:35:00
+</td>
+<td align="right">
+  .71
+</td>
+<td align="right">
+  81.4599
+</td>
+<td align="right">
+  81.3854
+</td>
+<td align="right">
+  81.6892
+</td>
+<td align="right">
+   .3038
+</td>
+<td align="right">
+  .0037
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-22
+01:40:00
+</td>
+<td align="right">
+  .69
+</td>
+<td align="right">
+  81.4746
+</td>
+<td align="right">
+  81.2756
+</td>
+<td align="right">
+  81.6270
+</td>
+<td align="right">
+   .3514
+</td>
+<td align="right">
+  .0043
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-22
+01:45:00
+</td>
+<td align="right">
+  .61
+</td>
+<td align="right">
+  81.4332
+</td>
+<td align="right">
+  81.3487
+</td>
+<td align="right">
+  81.6856
+</td>
+<td align="right">
+   .3368
+</td>
+<td align="right">
+  .0041
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-22
+01:50:00
+</td>
+<td align="right">
+  .66
+</td>
+<td align="right">
+  81.4171
+</td>
+<td align="right">
+  81.3594
+</td>
+<td align="right">
+  81.7013
+</td>
+<td align="right">
+   .3418
+</td>
+<td align="right">
+  .0042
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-22
+01:55:00
+</td>
+<td align="right">
+  .56
+</td>
+<td align="right">
+  81.3586
+</td>
+<td align="right">
+  81.3680
+</td>
+<td align="right">
+  81.7339
+</td>
+<td align="right">
+   .3659
+</td>
+<td align="right">
+  .0045
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-22
+02:30:00
+</td>
+<td align="right">
+  .64
+</td>
+<td align="right">
+  81.4129
+</td>
+<td align="right">
+  81.4234
+</td>
+<td align="right">
+  81.9303
+</td>
+<td align="right">
+   .5068
+</td>
+<td align="right">
+  .0062
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-22
+03:35:00
+</td>
+<td align="right">
+  .67
+</td>
+<td align="right">
+  81.3962
+</td>
+<td align="right">
+  81.4163
+</td>
+<td align="right">
+  81.9835
+</td>
+<td align="right">
+   .5672
+</td>
+<td align="right">
+  .0070
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-22
+03:45:00
+</td>
+<td align="right">
+  .61
+</td>
+<td align="right">
+  81.4113
+</td>
+<td align="right">
+  81.4356
+</td>
+<td align="right">
+  81.9880
+</td>
+<td align="right">
+   .5524
+</td>
+<td align="right">
+  .0068
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-22
+04:35:00
+</td>
+<td align="right">
+  .58
+</td>
+<td align="right">
+  81.4163
+</td>
+<td align="right">
+  81.3476
+</td>
+<td align="right">
+  82.1107
+</td>
+<td align="right">
+   .7632
+</td>
+<td align="right">
+  .0094
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-22
+05:00:00
+</td>
+<td align="right">
+  .69
+</td>
+<td align="right">
+  81.4710
+</td>
+<td align="right">
+  81.4355
+</td>
+<td align="right">
+  81.9148
+</td>
+<td align="right">
+   .4794
+</td>
+<td align="right">
+  .0059
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-22
+17:00:00
+</td>
+<td align="right">
+  .56
+</td>
+<td align="right">
+  81.8536
+</td>
+<td align="right">
+  81.8663
+</td>
+<td align="right">
+  81.8048
+</td>
+<td align="right">
+  -.0614
+</td>
+<td align="right">
+ -.0008
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-22
+17:35:00
+</td>
+<td align="right">
+  .58
+</td>
+<td align="right">
+  81.8486
+</td>
+<td align="right">
+  81.7990
+</td>
+<td align="right">
+  81.7794
+</td>
+<td align="right">
+  -.0196
+</td>
+<td align="right">
+ -.0002
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-22
+18:35:00
+</td>
+<td align="right">
+  .60
+</td>
+<td align="right">
+  81.7990
+</td>
+<td align="right">
+  81.8263
+</td>
+<td align="right">
+  81.6258
+</td>
+<td align="right">
+  -.2005
+</td>
+<td align="right">
+ -.0025
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-22
+18:50:00
+</td>
+<td align="right">
+  .61
+</td>
+<td align="right">
+  81.8354
+</td>
+<td align="right">
+  81.7702
+</td>
+<td align="right">
+  81.6205
+</td>
+<td align="right">
+  -.1497
+</td>
+<td align="right">
+ -.0018
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-22
+19:05:00
+</td>
+<td align="right">
+  .62
+</td>
+<td align="right">
+  81.8359
+</td>
+<td align="right">
+  81.7960
+</td>
+<td align="right">
+  81.6037
+</td>
+<td align="right">
+  -.1923
+</td>
+<td align="right">
+ -.0023
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-22
+19:25:00
+</td>
+<td align="right">
+  .57
+</td>
+<td align="right">
+  81.8334
+</td>
+<td align="right">
+  81.7985
+</td>
+<td align="right">
+  81.6020
+</td>
+<td align="right">
+  -.1965
+</td>
+<td align="right">
+ -.0024
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-22
+19:30:00
+</td>
+<td align="right">
+  .56
+</td>
+<td align="right">
+  81.8344
+</td>
+<td align="right">
+  81.8101
+</td>
+<td align="right">
+  81.6168
+</td>
+<td align="right">
+  -.1933
+</td>
+<td align="right">
+ -.0024
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-23
+05:00:00
+</td>
+<td align="right">
+  .56
+</td>
+<td align="right">
+  81.7414
+</td>
+<td align="right">
+  81.5999
+</td>
+<td align="right">
+  81.7484
+</td>
+<td align="right">
+   .1486
+</td>
+<td align="right">
+  .0018
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-23
+05:05:00
+</td>
+<td align="right">
+  .57
+</td>
+<td align="right">
+  81.7368
+</td>
+<td align="right">
+  81.5887
+</td>
+<td align="right">
+  81.7879
+</td>
+<td align="right">
+   .1991
+</td>
+<td align="right">
+  .0024
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-23
+08:15:00
+</td>
+<td align="right">
+  .58
+</td>
+<td align="right">
+  81.5524
+</td>
+<td align="right">
+  81.5661
+</td>
+<td align="right">
+  81.6100
+</td>
+<td align="right">
+   .0439
+</td>
+<td align="right">
+  .0005
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-23
+23:05:00
+</td>
+<td align="right">
+  .57
+</td>
+<td align="right">
+  81.9780
+</td>
+<td align="right">
+  82.0104
+</td>
+<td align="right">
+  82.0110
+</td>
+<td align="right">
+   .0006
+</td>
+<td align="right">
+  .0000
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-23
+23:10:00
+</td>
+<td align="right">
+  .58
+</td>
+<td align="right">
+  81.9467
+</td>
+<td align="right">
+  81.9764
+</td>
+<td align="right">
+  82.0125
+</td>
+<td align="right">
+   .0361
+</td>
+<td align="right">
+  .0004
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-24
+04:05:00
+</td>
+<td align="right">
+  .65
+</td>
+<td align="right">
+  82.0378
+</td>
+<td align="right">
+  82.0110
+</td>
+<td align="right">
+  82.2737
+</td>
+<td align="right">
+   .2627
+</td>
+<td align="right">
+  .0032
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-24
+12:00:00
+</td>
+<td align="right">
+  .75
+</td>
+<td align="right">
+  82.4136
+</td>
+<td align="right">
+  82.3012
+</td>
+<td align="right">
+  82.5788
+</td>
+<td align="right">
+   .2776
+</td>
+<td align="right">
+  .0034
+</td>
+</tr>
+<tr>
+<td>
+aud_jpy
+</td>
+<td>
+2011-03-24
+12:10:00
+</td>
+<td align="right">
+  .61
+</td>
+<td align="right">
+  82.4273
+</td>
+<td align="right">
+  82.3367
+</td>
+<td align="right">
+  82.5890
+</td>
+<td align="right">
+   .2523
+</td>
+<td align="right">
+  .0031
+</td>
+</tr>
+<tr>
+<td>
+aud_usd
+</td>
+<td>
+2011-03-20
+23:25:00
+</td>
+<td align="right">
+  .91
+</td>
+<td align="right">
+    .9964
+</td>
+<td align="right">
+    .9960
+</td>
+<td align="right">
+   1.0015
+</td>
+<td align="right">
+   .0055
+</td>
+<td align="right">
+  .0055
+</td>
+</tr>
+<tr>
+<td>
+aud_usd
+</td>
+<td>
+2011-03-20
+23:30:00
+</td>
+<td align="right">
+  .90
+</td>
+<td align="right">
+    .9974
+</td>
+<td align="right">
+    .9957
+</td>
+<td align="right">
+   1.0017
+</td>
+<td align="right">
+   .0060
+</td>
+<td align="right">
+  .0060
+</td>
+</tr>
+<tr>
+<td>
+aud_usd
+</td>
+<td>
+2011-03-20
+23:40:00
+</td>
+<td align="right">
+  .68
+</td>
+<td align="right">
+    .9967
+</td>
+<td align="right">
+    .9957
+</td>
+<td align="right">
+   1.0019
+</td>
+<td align="right">
+   .0061
+</td>
+<td align="right">
+  .0061
+</td>
+</tr>
+<tr>
+<td>
+aud_usd
+</td>
+<td>
+2011-03-20
+23:45:00
+</td>
+<td align="right">
+  .88
+</td>
+<td align="right">
+    .9966
+</td>
+<td align="right">
+    .9960
+</td>
+<td align="right">
+   1.0018
+</td>
+<td align="right">
+   .0059
+</td>
+<td align="right">
+  .0059
+</td>
+</tr>
+<tr>
+<td>
+aud_usd
+</td>
+<td>
+2011-03-20
+23:50:00
+</td>
+<td align="right">
+  .67
+</td>
+<td align="right">
+    .9968
+</td>
+<td align="right">
+    .9959
+</td>
+<td align="right">
+   1.0018
+</td>
+<td align="right">
+   .0059
+</td>
+<td align="right">
+  .0059
+</td>
+</tr>
+<tr>
+<td>
+aud_usd
+</td>
+<td>
+2011-03-20
+23:55:00
+</td>
+<td align="right">
+  .76
+</td>
+<td align="right">
+    .9975
+</td>
+<td align="right">
+    .9957
+</td>
+<td align="right">
+   1.0020
+</td>
+<td align="right">
+   .0064
+</td>
+<td align="right">
+  .0064
+</td>
+</tr>
+<tr>
+<td>
+aud_usd
+</td>
+<td>
+2011-03-21
+00:10:00
+</td>
+<td align="right">
+  .75
+</td>
+<td align="right">
+    .9964
+</td>
+<td align="right">
+    .9956
+</td>
+<td align="right">
+   1.0023
+</td>
+<td align="right">
+   .0068
+</td>
+<td align="right">
+  .0068
+</td>
+</tr>
+<tr>
+<td>
+aud_usd
+</td>
+<td>
+2011-03-21
+00:15:00
+</td>
+<td align="right">
+  .79
+</td>
+<td align="right">
+    .9962
+</td>
+<td align="right">
+    .9961
+</td>
+<td align="right">
+   1.0023
+</td>
+<td align="right">
+   .0063
+</td>
+<td align="right">
+  .0063
+</td>
+</tr>
+<tr>
+<td>
+aud_usd
+</td>
+<td>
+2011-03-21
+14:40:00
+</td>
+<td align="right">
+  .64
+</td>
+<td align="right">
+   1.0037
+</td>
+<td align="right">
+   1.0040
+</td>
+<td align="right">
+   1.0063
+</td>
+<td align="right">
+   .0023
+</td>
+<td align="right">
+  .0023
+</td>
+</tr>
+<tr>
+<td>
+aud_usd
+</td>
+<td>
+2011-03-21
+16:00:00
+</td>
+<td align="right">
+  .78
+</td>
+<td align="right">
+   1.0044
+</td>
+<td align="right">
+   1.0048
+</td>
+<td align="right">
+   1.0063
+</td>
+<td align="right">
+   .0015
+</td>
+<td align="right">
+  .0015
+</td>
+</tr>
+<tr>
+<td>
+aud_usd
+</td>
+<td>
+2011-03-21
+16:05:00
+</td>
+<td align="right">
+  .68
+</td>
+<td align="right">
+   1.0042
+</td>
+<td align="right">
+   1.0040
+</td>
+<td align="right">
+   1.0063
+</td>
+<td align="right">
+   .0023
+</td>
+<td align="right">
+  .0023
+</td>
+</tr>
+<tr>
+<td>
+aud_usd
+</td>
+<td>
+2011-03-21
+16:10:00
+</td>
+<td align="right">
+  .78
+</td>
+<td align="right">
+   1.0044
+</td>
+<td align="right">
+   1.0039
+</td>
+<td align="right">
+   1.0063
+</td>
+<td align="right">
+   .0024
+</td>
+<td align="right">
+  .0023
+</td>
+</tr>
+<tr>
+<td>
+aud_usd
+</td>
+<td>
+2011-03-21
+16:15:00
+</td>
+<td align="right">
+  .78
+</td>
+<td align="right">
+   1.0050
+</td>
+<td align="right">
+   1.0040
+</td>
+<td align="right">
+   1.0063
+</td>
+<td align="right">
+   .0023
+</td>
+<td align="right">
+  .0023
+</td>
+</tr>
+<tr>
+<td>
+aud_usd
+</td>
+<td>
+2011-03-21
+16:20:00
+</td>
+<td align="right">
+  .78
+</td>
+<td align="right">
+   1.0053
+</td>
+<td align="right">
+   1.0045
+</td>
+<td align="right">
+   1.0063
+</td>
+<td align="right">
+   .0019
+</td>
+<td align="right">
+  .0018
+</td>
+</tr>
+<tr>
+<td>
+aud_usd
+</td>
+<td>
+2011-03-21
+16:25:00
+</td>
+<td align="right">
+  .80
+</td>
+<td align="right">
+   1.0055
+</td>
+<td align="right">
+   1.0043
+</td>
+<td align="right">
+   1.0058
+</td>
+<td align="right">
+   .0015
+</td>
+<td align="right">
+  .0015
+</td>
+</tr>
+<tr>
+<td>
+aud_usd
+</td>
+<td>
+2011-03-21
+16:30:00
+</td>
+<td align="right">
+  .74
+</td>
+<td align="right">
+   1.0053
+</td>
+<td align="right">
+   1.0041
+</td>
+<td align="right">
+   1.0057
+</td>
+<td align="right">
+   .0016
+</td>
+<td align="right">
+  .0016
+</td>
+</tr>
+<tr>
+<td>
+aud_usd
+</td>
+<td>
+2011-03-21
+16:35:00
+</td>
+<td align="right">
+  .75
+</td>
+<td align="right">
+   1.0049
+</td>
+<td align="right">
+   1.0045
+</td>
+<td align="right">
+   1.0059
+</td>
+<td align="right">
+   .0014
+</td>
+<td align="right">
+  .0014
+</td>
+</tr>
+<tr>
+<td>
+aud_usd
+</td>
+<td>
+2011-03-21
+16:40:00
+</td>
+<td align="right">
+  .68
+</td>
+<td align="right">
+   1.0046
+</td>
+<td align="right">
+   1.0045
+</td>
+<td align="right">
+   1.0059
+</td>
+<td align="right">
+   .0015
+</td>
+<td align="right">
+  .0014
+</td>
+</tr>
+<tr>
+<td>
+aud_usd
+</td>
+<td>
+2011-03-21
+16:45:00
+</td>
+<td align="right">
+  .71
+</td>
+<td align="right">
+   1.0052
+</td>
+<td align="right">
+   1.0046
+</td>
+<td align="right">
+   1.0059
+</td>
+<td align="right">
+   .0013
+</td>
+<td align="right">
+  .0013
+</td>
+</tr>
+<tr>
+<td>
+aud_usd
+</td>
+<td>
+2011-03-21
+16:50:00
+</td>
+<td align="right">
+  .72
+</td>
+<td align="right">
+   1.0049
+</td>
+<td align="right">
+   1.0043
+</td>
+<td align="right">
+   1.0060
+</td>
+<td align="right">
+   .0018
+</td>
+<td align="right">
+  .0018
+</td>
+</tr>
+<tr>
+<td>
+aud_usd
+</td>
+<td>
+2011-03-21
+16:55:00
+</td>
+<td align="right">
+  .68
+</td>
+<td align="right">
+   1.0049
+</td>
+<td align="right">
+   1.0046
+</td>
+<td align="right">
+   1.0057
+</td>
+<td align="right">
+   .0012
+</td>
+<td align="right">
+  .0011
+</td>
+</tr>
+<tr>
+<td>
+aud_usd
+</td>
+<td>
+2011-03-21
+17:00:00
+</td>
+<td align="right">
+  .65
+</td>
+<td align="right">
+   1.0048
+</td>
+<td align="right">
+   1.0046
+</td>
+<td align="right">
+   1.0059
+</td>
+<td align="right">
+   .0013
+</td>
+<td align="right">
+  .0012
+</td>
+</tr>
+<tr>
+<td>
+aud_usd
+</td>
+<td>
+2011-03-21
+17:10:00
+</td>
+<td align="right">
+  .56
+</td>
+<td align="right">
+   1.0039
+</td>
+<td align="right">
+   1.0043
+</td>
+<td align="right">
+   1.0053
+</td>
+<td align="right">
+   .0011
+</td>
+<td align="right">
+  .0011
+</td>
+</tr>
+<tr>
+<td>
+aud_usd
+</td>
+<td>
+2011-03-21
+17:20:00
+</td>
+<td align="right">
+  .66
+</td>
+<td align="right">
+   1.0045
+</td>
+<td align="right">
+   1.0043
+</td>
+<td align="right">
+   1.0054
+</td>
+<td align="right">
+   .0012
+</td>
+<td align="right">
+  .0011
+</td>
+</tr>
+<tr>
+<td>
+aud_usd
+</td>
+<td>
+2011-03-21
+17:25:00
+</td>
+<td align="right">
+  .72
+</td>
+<td align="right">
+   1.0043
+</td>
+<td align="right">
+   1.0046
+</td>
+<td align="right">
+   1.0054
+</td>
+<td align="right">
+   .0009
+</td>
+<td align="right">
+  .0008
+</td>
+</tr>
+<tr>
+<td>
+aud_usd
+</td>
+<td>
+2011-03-22
+01:20:00
+</td>
+<td align="right">
+  .58
+</td>
+<td align="right">
+   1.0046
+</td>
+<td align="right">
+   1.0044
+</td>
+<td align="right">
+   1.0100
+</td>
+<td align="right">
+   .0056
+</td>
+<td align="right">
+  .0055
+</td>
+</tr>
+<tr>
+<td>
+aud_usd
+</td>
+<td>
+2011-03-22
+01:35:00
+</td>
+<td align="right">
+  .71
+</td>
+<td align="right">
+   1.0053
+</td>
+<td align="right">
+   1.0050
+</td>
+<td align="right">
+   1.0094
+</td>
+<td align="right">
+   .0044
+</td>
+<td align="right">
+  .0044
+</td>
+</tr>
+<tr>
+<td>
+aud_usd
+</td>
+<td>
+2011-03-22
+06:40:00
+</td>
+<td align="right">
+  .79
+</td>
+<td align="right">
+   1.0085
+</td>
+<td align="right">
+   1.0086
+</td>
+<td align="right">
+   1.0125
+</td>
+<td align="right">
+   .0039
+</td>
+<td align="right">
+  .0039
+</td>
+</tr>
+<tr>
+<td>
+aud_usd
+</td>
+<td>
+2011-03-23
+22:10:00
+</td>
+<td align="right">
+  .72
+</td>
+<td align="right">
+   1.0135
+</td>
+<td align="right">
+   1.0126
+</td>
+<td align="right">
+   1.0131
+</td>
+<td align="right">
+   .0005
+</td>
+<td align="right">
+  .0005
+</td>
+</tr>
+<tr>
+<td>
+aud_usd
+</td>
+<td>
+2011-03-23
+23:00:00
+</td>
+<td align="right">
+  .70
+</td>
+<td align="right">
+   1.0133
+</td>
+<td align="right">
+   1.0131
+</td>
+<td align="right">
+   1.0126
+</td>
+<td align="right">
+  -.0005
+</td>
+<td align="right">
+ -.0005
+</td>
+</tr>
+<tr>
+<td>
+aud_usd
+</td>
+<td>
+2011-03-25
+01:50:00
+</td>
+<td align="right">
+  .79
+</td>
+<td align="right">
+   1.0206
+</td>
+<td align="right">
+   1.0203
+</td>
+<td align="right">
+   1.0250
+</td>
+<td align="right">
+   .0047
+</td>
+<td align="right">
+  .0046
+</td>
+</tr>
+<tr>
+<td>
+aud_usd
+</td>
+<td>
+2011-03-25
+01:55:00
+</td>
+<td align="right">
+  .72
+</td>
+<td align="right">
+   1.0207
+</td>
+<td align="right">
+   1.0202
+</td>
+<td align="right">
+   1.0242
+</td>
+<td align="right">
+   .0041
+</td>
+<td align="right">
+  .0040
+</td>
+</tr>
+<tr>
+<td>
+aud_usd
+</td>
+<td>
+2011-03-25
+02:05:00
+</td>
+<td align="right">
+  .73
+</td>
+<td align="right">
+   1.0208
+</td>
+<td align="right">
+   1.0196
+</td>
+<td align="right">
+   1.0236
+</td>
+<td align="right">
+   .0040
+</td>
+<td align="right">
+  .0039
+</td>
+</tr>
+<tr>
+<td>
+aud_usd
+</td>
+<td>
+2011-03-25
+02:15:00
+</td>
+<td align="right">
+  .55
+</td>
+<td align="right">
+   1.0209
+</td>
+<td align="right">
+   1.0197
+</td>
+<td align="right">
+   1.0244
+</td>
+<td align="right">
+   .0047
+</td>
+<td align="right">
+  .0046
+</td>
+</tr>
+<tr>
+<td>
+aud_usd
+</td>
+<td>
+2011-03-25
+02:20:00
+</td>
+<td align="right">
+  .70
+</td>
+<td align="right">
+   1.0206
+</td>
+<td align="right">
+   1.0196
+</td>
+<td align="right">
+   1.0237
+</td>
+<td align="right">
+   .0041
+</td>
+<td align="right">
+  .0040
+</td>
+</tr>
+<tr>
+<td>
+aud_usd
+</td>
+<td>
+2011-03-25
+02:25:00
+</td>
+<td align="right">
+  .67
+</td>
+<td align="right">
+   1.0206
+</td>
+<td align="right">
+   1.0196
+</td>
+<td align="right">
+   1.0234
+</td>
+<td align="right">
+   .0039
+</td>
+<td align="right">
+  .0038
+</td>
+</tr>
+<tr>
+<td>
+aud_usd
+</td>
+<td>
+2011-03-25
+02:30:00
+</td>
+<td align="right">
+  .71
+</td>
+<td align="right">
+   1.0205
+</td>
+<td align="right">
+   1.0193
+</td>
+<td align="right">
+   1.0232
+</td>
+<td align="right">
+   .0038
+</td>
+<td align="right">
+  .0037
+</td>
+</tr>
+<tr>
+<td>
+aud_usd
+</td>
+<td>
+2011-03-25
+02:40:00
+</td>
+<td align="right">
+  .57
+</td>
+<td align="right">
+   1.0202
+</td>
+<td align="right">
+   1.0197
+</td>
+<td align="right">
+   1.0228
+</td>
+<td align="right">
+   .0031
+</td>
+<td align="right">
+  .0030
+</td>
+</tr>
+<tr>
+<td>
+aud_usd
+</td>
+<td>
+2011-03-25
+03:05:00
+</td>
+<td align="right">
+  .62
+</td>
+<td align="right">
+   1.0196
+</td>
+<td align="right">
+   1.0196
+</td>
+<td align="right">
+   1.0228
+</td>
+<td align="right">
+   .0032
+</td>
+<td align="right">
+  .0032
+</td>
+</tr>
+<tr>
+<td>
+aud_usd
+</td>
+<td>
+2011-03-25
+03:20:00
+</td>
+<td align="right">
+  .62
+</td>
+<td align="right">
+   1.0196
+</td>
+<td align="right">
+   1.0200
+</td>
+<td align="right">
+   1.0233
+</td>
+<td align="right">
+   .0033
+</td>
+<td align="right">
+  .0032
+</td>
+</tr>
+<tr>
+<td>
+aud_usd
+</td>
+<td>
+2011-03-25
+08:30:00
+</td>
+<td align="right">
+  .56
+</td>
+<td align="right">
+   1.0232
+</td>
+<td align="right">
+   1.0233
+</td>
+<td align="right">
+   1.0271
+</td>
+<td align="right">
+   .0038
+</td>
+<td align="right">
+  .0037
+</td>
+</tr>
+<tr>
+<td>
+aud_usd
+</td>
+<td>
+2011-03-25
+20:40:00
+</td>
+<td align="right">
+  .57
+</td>
+<td align="right">
+   1.0260
+</td>
+<td align="right">
+   1.0248
+</td>
+<td align="right">
+   1.0262
+</td>
+<td align="right">
+   .0015
+</td>
+<td align="right">
+  .0014
+</td>
+</tr>
+<tr>
+<td>
+aud_usd
+</td>
+<td>
+2011-03-25
+20:50:00
+</td>
+<td align="right">
+  .78
+</td>
+<td align="right">
+   1.0260
+</td>
+<td align="right">
+   1.0254
+</td>
+<td align="right">
+   1.0267
+</td>
+<td align="right">
+   .0013
+</td>
+<td align="right">
+  .0013
+</td>
+</tr>
+<tr>
+<td>
+eur_aud
+</td>
+<td>
+2011-03-21
+01:05:00
+</td>
+<td align="right">
+  .59
+</td>
+<td align="right">
+   1.4216
+</td>
+<td align="right">
+   1.4183
+</td>
+<td align="right">
+   1.4131
+</td>
+<td align="right">
+  -.0052
+</td>
+<td align="right">
+ -.0037
+</td>
+</tr>
+<tr>
+<td>
+eur_aud
+</td>
+<td>
+2011-03-21
+02:40:00
+</td>
+<td align="right">
+  .61
+</td>
+<td align="right">
+   1.4168
+</td>
+<td align="right">
+   1.4164
+</td>
+<td align="right">
+   1.4112
+</td>
+<td align="right">
+  -.0052
+</td>
+<td align="right">
+ -.0037
+</td>
+</tr>
+<tr>
+<td>
+eur_chf
+</td>
+<td>
+2011-03-20
+21:30:00
+</td>
+<td align="right">
+  .66
+</td>
+<td align="right">
+   1.2778
+</td>
+<td align="right">
+   1.2779
+</td>
+<td align="right">
+   1.2822
+</td>
+<td align="right">
+   .0043
+</td>
+<td align="right">
+  .0034
+</td>
+</tr>
+<tr>
+<td>
+eur_chf
+</td>
+<td>
+2011-03-20
+21:35:00
+</td>
+<td align="right">
+  .60
+</td>
+<td align="right">
+   1.2779
+</td>
+<td align="right">
+   1.2783
+</td>
+<td align="right">
+   1.2820
+</td>
+<td align="right">
+   .0037
+</td>
+<td align="right">
+  .0029
+</td>
+</tr>
+<tr>
+<td>
+eur_chf
+</td>
+<td>
+2011-03-20
+21:40:00
+</td>
+<td align="right">
+  .70
+</td>
+<td align="right">
+   1.2783
+</td>
+<td align="right">
+   1.2782
+</td>
+<td align="right">
+   1.2822
+</td>
+<td align="right">
+   .0040
+</td>
+<td align="right">
+  .0031
+</td>
+</tr>
+<tr>
+<td>
+eur_chf
+</td>
+<td>
+2011-03-20
+21:45:00
+</td>
+<td align="right">
+  .70
+</td>
+<td align="right">
+   1.2788
+</td>
+<td align="right">
+   1.2784
+</td>
+<td align="right">
+   1.2822
+</td>
+<td align="right">
+   .0038
+</td>
+<td align="right">
+  .0030
+</td>
+</tr>
+<tr>
+<td>
+eur_chf
+</td>
+<td>
+2011-03-20
+22:20:00
+</td>
+<td align="right">
+  .58
+</td>
+<td align="right">
+   1.2788
+</td>
+<td align="right">
+   1.2788
+</td>
+<td align="right">
+   1.2828
+</td>
+<td align="right">
+   .0040
+</td>
+<td align="right">
+  .0031
+</td>
+</tr>
+<tr>
+<td>
+eur_chf
+</td>
+<td>
+2011-03-21
+19:20:00
+</td>
+<td align="right">
+  .56
+</td>
+<td align="right">
+   1.2879
+</td>
+<td align="right">
+   1.2871
+</td>
+<td align="right">
+   1.2867
+</td>
+<td align="right">
+  -.0004
+</td>
+<td align="right">
+ -.0003
+</td>
+</tr>
+<tr>
+<td>
+eur_chf
+</td>
+<td>
+2011-03-21
+19:25:00
+</td>
+<td align="right">
+  .60
+</td>
+<td align="right">
+   1.2878
+</td>
+<td align="right">
+   1.2868
+</td>
+<td align="right">
+   1.2869
+</td>
+<td align="right">
+   .0001
+</td>
+<td align="right">
+  .0001
+</td>
+</tr>
+<tr>
+<td>
+eur_chf
+</td>
+<td>
+2011-03-22
+00:35:00
+</td>
+<td align="right">
+  .59
+</td>
+<td align="right">
+   1.2870
+</td>
+<td align="right">
+   1.2867
+</td>
+<td align="right">
+   1.2854
+</td>
+<td align="right">
+  -.0013
+</td>
+<td align="right">
+ -.0010
+</td>
+</tr>
+<tr>
+<td>
+eur_chf
+</td>
+<td>
+2011-03-22
+20:55:00
+</td>
+<td align="right">
+  .62
+</td>
+<td align="right">
+   1.2826
+</td>
+<td align="right">
+   1.2829
+</td>
+<td align="right">
+   1.2808
+</td>
+<td align="right">
+  -.0021
+</td>
+<td align="right">
+ -.0016
+</td>
+</tr>
+<tr>
+<td>
+eur_chf
+</td>
+<td>
+2011-03-22
+22:50:00
+</td>
+<td align="right">
+  .58
+</td>
+<td align="right">
+   1.2822
+</td>
+<td align="right">
+   1.2809
+</td>
+<td align="right">
+   1.2803
+</td>
+<td align="right">
+  -.0005
+</td>
+<td align="right">
+ -.0004
+</td>
+</tr>
+<tr>
+<td>
+eur_chf
+</td>
+<td>
+2011-03-23
+00:00:00
+</td>
+<td align="right">
+  .61
+</td>
+<td align="right">
+   1.2811
+</td>
+<td align="right">
+   1.2794
+</td>
+<td align="right">
+   1.2795
+</td>
+<td align="right">
+   .0001
+</td>
+<td align="right">
+  .0001
+</td>
+</tr>
+<tr>
+<td>
+eur_chf
+</td>
+<td>
+2011-03-23
+00:05:00
+</td>
+<td align="right">
+  .74
+</td>
+<td align="right">
+   1.2812
+</td>
+<td align="right">
+   1.2798
+</td>
+<td align="right">
+   1.2786
+</td>
+<td align="right">
+  -.0012
+</td>
+<td align="right">
+ -.0009
+</td>
+</tr>
+<tr>
+<td>
+eur_chf
+</td>
+<td>
+2011-03-25
+08:25:00
+</td>
+<td align="right">
+  .56
+</td>
+<td align="right">
+   1.2935
+</td>
+<td align="right">
+   1.2937
+</td>
+<td align="right">
+   1.2929
+</td>
+<td align="right">
+  -.0008
+</td>
+<td align="right">
+ -.0006
+</td>
+</tr>
+<tr>
+<td>
+eur_chf
+</td>
+<td>
+2011-03-25
+08:30:00
+</td>
+<td align="right">
+  .65
+</td>
+<td align="right">
+   1.2935
+</td>
+<td align="right">
+   1.2934
+</td>
+<td align="right">
+   1.2937
+</td>
+<td align="right">
+   .0003
+</td>
+<td align="right">
+  .0002
+</td>
+</tr>
+<tr>
+<td>
+eur_chf
+</td>
+<td>
+2011-03-25
+15:35:00
+</td>
+<td align="right">
+  .56
+</td>
+<td align="right">
+   1.2934
+</td>
+<td align="right">
+   1.2935
+</td>
+<td align="right">
+   1.2938
+</td>
+<td align="right">
+   .0003
+</td>
+<td align="right">
+  .0002
+</td>
+</tr>
+<tr>
+<td>
+eur_gbp
+</td>
+<td>
+2011-03-22
+10:10:00
+</td>
+<td align="right">
+  .55
+</td>
+<td align="right">
+    .8684
+</td>
+<td align="right">
+    .8687
+</td>
+<td align="right">
+    .8667
+</td>
+<td align="right">
+  -.0020
+</td>
+<td align="right">
+ -.0023
+</td>
+</tr>
+<tr>
+<td>
+eur_gbp
+</td>
+<td>
+2011-03-22
+10:35:00
+</td>
+<td align="right">
+  .57
+</td>
+<td align="right">
+    .8689
+</td>
+<td align="right">
+    .8688
+</td>
+<td align="right">
+    .8668
+</td>
+<td align="right">
+  -.0020
+</td>
+<td align="right">
+ -.0023
+</td>
+</tr>
+<tr>
+<td>
+eur_gbp
+</td>
+<td>
+2011-03-22
+12:25:00
+</td>
+<td align="right">
+  .61
+</td>
+<td align="right">
+    .8686
+</td>
+<td align="right">
+    .8677
+</td>
+<td align="right">
+    .8675
+</td>
+<td align="right">
+  -.0003
+</td>
+<td align="right">
+ -.0003
+</td>
+</tr>
+<tr>
+<td>
+eur_gbp
+</td>
+<td>
+2011-03-22
+13:10:00
+</td>
+<td align="right">
+  .62
+</td>
+<td align="right">
+    .8678
+</td>
+<td align="right">
+    .8664
+</td>
+<td align="right">
+    .8674
+</td>
+<td align="right">
+   .0010
+</td>
+<td align="right">
+  .0012
+</td>
+</tr>
+<tr>
+<td>
+eur_gbp
+</td>
+<td>
+2011-03-22
+13:15:00
+</td>
+<td align="right">
+  .69
+</td>
+<td align="right">
+    .8676
+</td>
+<td align="right">
+    .8663
+</td>
+<td align="right">
+    .8675
+</td>
+<td align="right">
+   .0012
+</td>
+<td align="right">
+  .0013
+</td>
+</tr>
+<tr>
+<td>
+eur_gbp
+</td>
+<td>
+2011-03-23
+19:20:00
+</td>
+<td align="right">
+  .56
+</td>
+<td align="right">
+    .8697
+</td>
+<td align="right">
+    .8686
+</td>
+<td align="right">
+    .8671
+</td>
+<td align="right">
+  -.0015
+</td>
+<td align="right">
+ -.0017
+</td>
+</tr>
+<tr>
+<td>
+eur_gbp
+</td>
+<td>
+2011-03-23
+20:25:00
+</td>
+<td align="right">
+  .60
+</td>
+<td align="right">
+    .8685
+</td>
+<td align="right">
+    .8674
+</td>
+<td align="right">
+    .8671
+</td>
+<td align="right">
+  -.0003
+</td>
+<td align="right">
+ -.0004
+</td>
+</tr>
+<tr>
+<td>
+eur_gbp
+</td>
+<td>
+2011-03-23
+20:30:00
+</td>
+<td align="right">
+  .69
+</td>
+<td align="right">
+    .8682
+</td>
+<td align="right">
+    .8676
+</td>
+<td align="right">
+    .8670
+</td>
+<td align="right">
+  -.0006
+</td>
+<td align="right">
+ -.0007
+</td>
+</tr>
+<tr>
+<th scope="col">
+Currency
+<br>
+Pair
+</th>
+<th scope="col">
+Timestamp
+<br>
+at hour 0
+</th>
+<th scope="col">
+DanBot
+<br>
+Score
+<br>
+at hour 0
+</th>
+<th scope="col">
+Price at
+<br>
+hour 0
+</th>
+<th scope="col">
+Price after
+<br>
+1 hour
+</th>
+<th scope="col">
+Price after
+<br>
+6 hours
+</th>
+<th scope="col">
+5 hour gain
+<br>
+between
+<br>
+hr1 and hr6
+</th>
+<th scope="col">
+Normalized
+<br>
+5hr gain
+</th>
+</tr>
+<tr>
+<td>
+eur_gbp
+</td>
+<td>
+2011-03-23
+20:45:00
+</td>
+<td align="right">
+  .73
+</td>
+<td align="right">
+    .8682
+</td>
+<td align="right">
+    .8683
+</td>
+<td align="right">
+    .8670
+</td>
+<td align="right">
+  -.0013
+</td>
+<td align="right">
+ -.0015
+</td>
+</tr>
+<tr>
+<td>
+eur_gbp
+</td>
+<td>
+2011-03-23
+20:50:00
+</td>
+<td align="right">
+  .91
+</td>
+<td align="right">
+    .8679
+</td>
+<td align="right">
+    .8682
+</td>
+<td align="right">
+    .8671
+</td>
+<td align="right">
+  -.0011
+</td>
+<td align="right">
+ -.0013
+</td>
+</tr>
+<tr>
+<td>
+eur_gbp
+</td>
+<td>
+2011-03-23
+21:55:00
+</td>
+<td align="right">
+  .57
+</td>
+<td align="right">
+    .8679
+</td>
+<td align="right">
+    .8681
+</td>
+<td align="right">
+    .8670
+</td>
+<td align="right">
+  -.0011
+</td>
+<td align="right">
+ -.0013
+</td>
+</tr>
+<tr>
+<td>
+eur_gbp
+</td>
+<td>
+2011-03-23
+22:20:00
+</td>
+<td align="right">
+  .64
+</td>
+<td align="right">
+    .8682
+</td>
+<td align="right">
+    .8681
+</td>
+<td align="right">
+    .8672
+</td>
+<td align="right">
+  -.0009
+</td>
+<td align="right">
+ -.0010
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-22
+00:45:00
+</td>
+<td align="right">
+  .60
+</td>
+<td align="right">
+ 115.1814
+</td>
+<td align="right">
+ 115.2165
+</td>
+<td align="right">
+ 115.1420
+</td>
+<td align="right">
+  -.0745
+</td>
+<td align="right">
+ -.0006
+</td>
+</tr>
+<tr>
+<td>
+eur_jpy
+</td>
+<td>
+2011-03-24
+22:55:00
+</td>
+<td align="right">
+  .57
+</td>
+<td align="right">
+ 114.8621
+</td>
+<td align="right">
+ 114.8139
+</td>
+<td align="right">
+ 114.7760
+</td>
+<td align="right">
+  -.0380
+</td>
+<td align="right">
+ -.0003
+</td>
+</tr>
+<tr>
+<td>
+eur_usd
+</td>
+<td>
+2011-03-20
+23:40:00
+</td>
+<td align="right">
+  .83
+</td>
+<td align="right">
+   1.4168
+</td>
+<td align="right">
+   1.4164
+</td>
+<td align="right">
+   1.4174
+</td>
+<td align="right">
+   .0010
+</td>
+<td align="right">
+  .0007
+</td>
+</tr>
+<tr>
+<td>
+eur_usd
+</td>
+<td>
+2011-03-20
+23:50:00
+</td>
+<td align="right">
+  .58
+</td>
+<td align="right">
+   1.4171
+</td>
+<td align="right">
+   1.4162
+</td>
+<td align="right">
+   1.4169
+</td>
+<td align="right">
+   .0007
+</td>
+<td align="right">
+  .0005
+</td>
+</tr>
+<tr>
+<td>
+eur_usd
+</td>
+<td>
+2011-03-21
+00:05:00
+</td>
+<td align="right">
+  .84
+</td>
+<td align="right">
+   1.4164
+</td>
+<td align="right">
+   1.4163
+</td>
+<td align="right">
+   1.4168
+</td>
+<td align="right">
+   .0005
+</td>
+<td align="right">
+  .0004
+</td>
+</tr>
+<tr>
+<td>
+eur_usd
+</td>
+<td>
+2011-03-21
+00:10:00
+</td>
+<td align="right">
+  .58
+</td>
+<td align="right">
+   1.4164
+</td>
+<td align="right">
+   1.4163
+</td>
+<td align="right">
+   1.4169
+</td>
+<td align="right">
+   .0006
+</td>
+<td align="right">
+  .0004
+</td>
+</tr>
+<tr>
+<td>
+eur_usd
+</td>
+<td>
+2011-03-21
+00:15:00
+</td>
+<td align="right">
+  .76
+</td>
+<td align="right">
+   1.4168
+</td>
+<td align="right">
+   1.4166
+</td>
+<td align="right">
+   1.4167
+</td>
+<td align="right">
+   .0001
+</td>
+<td align="right">
+  .0001
+</td>
+</tr>
+<tr>
+<td>
+eur_usd
+</td>
+<td>
+2011-03-21
+02:50:00
+</td>
+<td align="right">
+  .80
+</td>
+<td align="right">
+   1.4178
+</td>
+<td align="right">
+   1.4171
+</td>
+<td align="right">
+   1.4157
+</td>
+<td align="right">
+  -.0014
+</td>
+<td align="right">
+ -.0010
+</td>
+</tr>
+<tr>
+<td>
+eur_usd
+</td>
+<td>
+2011-03-21
+03:30:00
+</td>
+<td align="right">
+  .79
+</td>
+<td align="right">
+   1.4172
+</td>
+<td align="right">
+   1.4168
+</td>
+<td align="right">
+   1.4150
+</td>
+<td align="right">
+  -.0018
+</td>
+<td align="right">
+ -.0012
+</td>
+</tr>
+<tr>
+<td>
+eur_usd
+</td>
+<td>
+2011-03-21
+03:35:00
+</td>
+<td align="right">
+  .71
+</td>
+<td align="right">
+   1.4172
+</td>
+<td align="right">
+   1.4172
+</td>
+<td align="right">
+   1.4151
+</td>
+<td align="right">
+  -.0021
+</td>
+<td align="right">
+ -.0015
+</td>
+</tr>
+<tr>
+<td>
+eur_usd
+</td>
+<td>
+2011-03-21
+03:40:00
+</td>
+<td align="right">
+  .62
+</td>
+<td align="right">
+   1.4173
+</td>
+<td align="right">
+   1.4172
+</td>
+<td align="right">
+   1.4153
+</td>
+<td align="right">
+  -.0019
+</td>
+<td align="right">
+ -.0014
+</td>
+</tr>
+<tr>
+<td>
+eur_usd
+</td>
+<td>
+2011-03-21
+03:45:00
+</td>
+<td align="right">
+  .72
+</td>
+<td align="right">
+   1.4173
+</td>
+<td align="right">
+   1.4172
+</td>
+<td align="right">
+   1.4158
+</td>
+<td align="right">
+  -.0015
+</td>
+<td align="right">
+ -.0010
+</td>
+</tr>
+<tr>
+<td>
+eur_usd
+</td>
+<td>
+2011-03-21
+03:55:00
+</td>
+<td align="right">
+  .73
+</td>
+<td align="right">
+   1.4170
+</td>
+<td align="right">
+   1.4173
+</td>
+<td align="right">
+   1.4160
+</td>
+<td align="right">
+  -.0014
+</td>
+<td align="right">
+ -.0010
+</td>
+</tr>
+<tr>
+<td>
+eur_usd
+</td>
+<td>
+2011-03-21
+04:00:00
+</td>
+<td align="right">
+  .79
+</td>
+<td align="right">
+   1.4169
+</td>
+<td align="right">
+   1.4171
+</td>
+<td align="right">
+   1.4165
+</td>
+<td align="right">
+  -.0006
+</td>
+<td align="right">
+ -.0004
+</td>
+</tr>
+<tr>
+<td>
+eur_usd
+</td>
+<td>
+2011-03-21
+04:05:00
+</td>
+<td align="right">
+  .68
+</td>
+<td align="right">
+   1.4169
+</td>
+<td align="right">
+   1.4174
+</td>
+<td align="right">
+   1.4165
+</td>
+<td align="right">
+  -.0009
+</td>
+<td align="right">
+ -.0006
+</td>
+</tr>
+<tr>
+<td>
+eur_usd
+</td>
+<td>
+2011-03-21
+15:05:00
+</td>
+<td align="right">
+  .56
+</td>
+<td align="right">
+   1.4186
+</td>
+<td align="right">
+   1.4190
+</td>
+<td align="right">
+   1.4223
+</td>
+<td align="right">
+   .0033
+</td>
+<td align="right">
+  .0023
+</td>
+</tr>
+<tr>
+<td>
+eur_usd
+</td>
+<td>
+2011-03-21
+17:55:00
+</td>
+<td align="right">
+  .57
+</td>
+<td align="right">
+   1.4224
+</td>
+<td align="right">
+   1.4226
+</td>
+<td align="right">
+   1.4218
+</td>
+<td align="right">
+  -.0008
+</td>
+<td align="right">
+ -.0006
+</td>
+</tr>
+<tr>
+<td>
+eur_usd
+</td>
+<td>
+2011-03-21
+18:05:00
+</td>
+<td align="right">
+  .74
+</td>
+<td align="right">
+   1.4233
+</td>
+<td align="right">
+   1.4226
+</td>
+<td align="right">
+   1.4219
+</td>
+<td align="right">
+  -.0008
+</td>
+<td align="right">
+ -.0005
+</td>
+</tr>
+<tr>
+<td>
+eur_usd
+</td>
+<td>
+2011-03-21
+20:30:00
+</td>
+<td align="right">
+  .59
+</td>
+<td align="right">
+   1.4223
+</td>
+<td align="right">
+   1.4220
+</td>
+<td align="right">
+   1.4227
+</td>
+<td align="right">
+   .0007
+</td>
+<td align="right">
+  .0005
+</td>
+</tr>
+<tr>
+<td>
+eur_usd
+</td>
+<td>
+2011-03-21
+20:50:00
+</td>
+<td align="right">
+  .62
+</td>
+<td align="right">
+   1.4223
+</td>
+<td align="right">
+   1.4217
+</td>
+<td align="right">
+   1.4222
+</td>
+<td align="right">
+   .0005
+</td>
+<td align="right">
+  .0003
+</td>
+</tr>
+<tr>
+<td>
+eur_usd
+</td>
+<td>
+2011-03-21
+21:20:00
+</td>
+<td align="right">
+  .70
+</td>
+<td align="right">
+   1.4223
+</td>
+<td align="right">
+   1.4217
+</td>
+<td align="right">
+   1.4224
+</td>
+<td align="right">
+   .0008
+</td>
+<td align="right">
+  .0005
+</td>
+</tr>
+<tr>
+<td>
+eur_usd
+</td>
+<td>
+2011-03-21
+21:30:00
+</td>
+<td align="right">
+  .70
+</td>
+<td align="right">
+   1.4220
+</td>
+<td align="right">
+   1.4218
+</td>
+<td align="right">
+   1.4223
+</td>
+<td align="right">
+   .0006
+</td>
+<td align="right">
+  .0004
+</td>
+</tr>
+<tr>
+<td>
+eur_usd
+</td>
+<td>
+2011-03-22
+04:10:00
+</td>
+<td align="right">
+  .65
+</td>
+<td align="right">
+   1.4221
+</td>
+<td align="right">
+   1.4220
+</td>
+<td align="right">
+   1.4234
+</td>
+<td align="right">
+   .0014
+</td>
+<td align="right">
+  .0010
+</td>
+</tr>
+<tr>
+<td>
+eur_usd
+</td>
+<td>
+2011-03-22
+04:20:00
+</td>
+<td align="right">
+  .73
+</td>
+<td align="right">
+   1.4220
+</td>
+<td align="right">
+   1.4225
+</td>
+<td align="right">
+   1.4228
+</td>
+<td align="right">
+   .0003
+</td>
+<td align="right">
+  .0002
+</td>
+</tr>
+<tr>
+<td>
+eur_usd
+</td>
+<td>
+2011-03-22
+05:10:00
+</td>
+<td align="right">
+  .63
+</td>
+<td align="right">
+   1.4220
+</td>
+<td align="right">
+   1.4225
+</td>
+<td align="right">
+   1.4243
+</td>
+<td align="right">
+   .0018
+</td>
+<td align="right">
+  .0013
+</td>
+</tr>
+<tr>
+<td>
+eur_usd
+</td>
+<td>
+2011-03-22
+11:35:00
+</td>
+<td align="right">
+  .64
+</td>
+<td align="right">
+   1.4240
+</td>
+<td align="right">
+   1.4227
+</td>
+<td align="right">
+   1.4214
+</td>
+<td align="right">
+  -.0014
+</td>
+<td align="right">
+ -.0010
+</td>
+</tr>
+<tr>
+<td>
+eur_usd
+</td>
+<td>
+2011-03-22
+13:15:00
+</td>
+<td align="right">
+  .59
+</td>
+<td align="right">
+   1.4211
+</td>
+<td align="right">
+   1.4184
+</td>
+<td align="right">
+   1.4213
+</td>
+<td align="right">
+   .0030
+</td>
+<td align="right">
+  .0021
+</td>
+</tr>
+<tr>
+<td>
+eur_usd
+</td>
+<td>
+2011-03-22
+14:25:00
+</td>
+<td align="right">
+  .60
+</td>
+<td align="right">
+   1.4193
+</td>
+<td align="right">
+   1.4191
+</td>
+<td align="right">
+   1.4199
+</td>
+<td align="right">
+   .0008
+</td>
+<td align="right">
+  .0006
+</td>
+</tr>
+<tr>
+<td>
+eur_usd
+</td>
+<td>
+2011-03-22
+15:45:00
+</td>
+<td align="right">
+  .58
+</td>
+<td align="right">
+   1.4212
+</td>
+<td align="right">
+   1.4197
+</td>
+<td align="right">
+   1.4201
+</td>
+<td align="right">
+   .0004
+</td>
+<td align="right">
+  .0003
+</td>
+</tr>
+<tr>
+<td>
+eur_usd
+</td>
+<td>
+2011-03-22
+15:55:00
+</td>
+<td align="right">
+  .58
+</td>
+<td align="right">
+   1.4211
+</td>
+<td align="right">
+   1.4209
+</td>
+<td align="right">
+   1.4200
+</td>
+<td align="right">
+  -.0008
+</td>
+<td align="right">
+ -.0006
+</td>
+</tr>
+<tr>
+<td>
+eur_usd
+</td>
+<td>
+2011-03-23
+00:45:00
+</td>
+<td align="right">
+  .56
+</td>
+<td align="right">
+   1.4168
+</td>
+<td align="right">
+   1.4172
+</td>
+<td align="right">
+   1.4171
+</td>
+<td align="right">
+  -.0002
+</td>
+<td align="right">
+ -.0001
+</td>
+</tr>
+<tr>
+<td>
+eur_usd
+</td>
+<td>
+2011-03-23
+09:00:00
+</td>
+<td align="right">
+  .59
+</td>
+<td align="right">
+   1.4183
+</td>
+<td align="right">
+   1.4187
+</td>
+<td align="right">
+   1.4143
+</td>
+<td align="right">
+  -.0044
+</td>
+<td align="right">
+ -.0031
+</td>
+</tr>
+<tr>
+<td>
+eur_usd
+</td>
+<td>
+2011-03-23
+10:20:00
+</td>
+<td align="right">
+  .63
+</td>
+<td align="right">
+   1.4199
+</td>
+<td align="right">
+   1.4171
+</td>
+<td align="right">
+   1.4115
+</td>
+<td align="right">
+  -.0056
+</td>
+<td align="right">
+ -.0040
+</td>
+</tr>
+<tr>
+<td>
+eur_usd
+</td>
+<td>
+2011-03-23
+12:20:00
+</td>
+<td align="right">
+  .57
+</td>
+<td align="right">
+   1.4151
+</td>
+<td align="right">
+   1.4117
+</td>
+<td align="right">
+   1.4124
+</td>
+<td align="right">
+   .0007
+</td>
+<td align="right">
+  .0005
+</td>
+</tr>
+<tr>
+<td>
+eur_usd
+</td>
+<td>
+2011-03-23
+22:20:00
+</td>
+<td align="right">
+  .58
+</td>
+<td align="right">
+   1.4102
+</td>
+<td align="right">
+   1.4108
+</td>
+<td align="right">
+   1.4081
+</td>
+<td align="right">
+  -.0027
+</td>
+<td align="right">
+ -.0019
+</td>
+</tr>
+<tr>
+<td>
+eur_usd
+</td>
+<td>
+2011-03-25
+16:45:00
+</td>
+<td align="right">
+  .60
+</td>
+<td align="right">
+   1.4075
+</td>
+<td align="right">
+   1.4077
+</td>
+<td align="right">
+   1.4025
+</td>
+<td align="right">
+  -.0052
+</td>
+<td align="right">
+ -.0037
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-20
+23:15:00
+</td>
+<td align="right">
+  .61
+</td>
+<td align="right">
+   1.6217
+</td>
+<td align="right">
+   1.6221
+</td>
+<td align="right">
+   1.6216
+</td>
+<td align="right">
+  -.0005
+</td>
+<td align="right">
+ -.0003
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-20
+23:25:00
+</td>
+<td align="right">
+  .68
+</td>
+<td align="right">
+   1.6215
+</td>
+<td align="right">
+   1.6216
+</td>
+<td align="right">
+   1.6214
+</td>
+<td align="right">
+  -.0002
+</td>
+<td align="right">
+ -.0001
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-21
+00:30:00
+</td>
+<td align="right">
+  .63
+</td>
+<td align="right">
+   1.6212
+</td>
+<td align="right">
+   1.6218
+</td>
+<td align="right">
+   1.6218
+</td>
+<td align="right">
+   .0000
+</td>
+<td align="right">
+  .0000
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-21
+00:45:00
+</td>
+<td align="right">
+  .58
+</td>
+<td align="right">
+   1.6214
+</td>
+<td align="right">
+   1.6220
+</td>
+<td align="right">
+   1.6222
+</td>
+<td align="right">
+   .0003
+</td>
+<td align="right">
+  .0002
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-21
+01:20:00
+</td>
+<td align="right">
+  .63
+</td>
+<td align="right">
+   1.6216
+</td>
+<td align="right">
+   1.6217
+</td>
+<td align="right">
+   1.6232
+</td>
+<td align="right">
+   .0015
+</td>
+<td align="right">
+  .0009
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-21
+01:25:00
+</td>
+<td align="right">
+  .69
+</td>
+<td align="right">
+   1.6217
+</td>
+<td align="right">
+   1.6222
+</td>
+<td align="right">
+   1.6234
+</td>
+<td align="right">
+   .0012
+</td>
+<td align="right">
+  .0007
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-21
+02:15:00
+</td>
+<td align="right">
+  .61
+</td>
+<td align="right">
+   1.6219
+</td>
+<td align="right">
+   1.6219
+</td>
+<td align="right">
+   1.6236
+</td>
+<td align="right">
+   .0017
+</td>
+<td align="right">
+  .0010
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-21
+02:45:00
+</td>
+<td align="right">
+  .61
+</td>
+<td align="right">
+   1.6219
+</td>
+<td align="right">
+   1.6213
+</td>
+<td align="right">
+   1.6238
+</td>
+<td align="right">
+   .0025
+</td>
+<td align="right">
+  .0015
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-21
+02:55:00
+</td>
+<td align="right">
+  .62
+</td>
+<td align="right">
+   1.6218
+</td>
+<td align="right">
+   1.6210
+</td>
+<td align="right">
+   1.6241
+</td>
+<td align="right">
+   .0030
+</td>
+<td align="right">
+  .0019
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-21
+03:00:00
+</td>
+<td align="right">
+  .64
+</td>
+<td align="right">
+   1.6218
+</td>
+<td align="right">
+   1.6209
+</td>
+<td align="right">
+   1.6243
+</td>
+<td align="right">
+   .0034
+</td>
+<td align="right">
+  .0021
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-21
+03:30:00
+</td>
+<td align="right">
+  .67
+</td>
+<td align="right">
+   1.6213
+</td>
+<td align="right">
+   1.6208
+</td>
+<td align="right">
+   1.6232
+</td>
+<td align="right">
+   .0024
+</td>
+<td align="right">
+  .0015
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-21
+03:50:00
+</td>
+<td align="right">
+  .57
+</td>
+<td align="right">
+   1.6212
+</td>
+<td align="right">
+   1.6211
+</td>
+<td align="right">
+   1.6243
+</td>
+<td align="right">
+   .0032
+</td>
+<td align="right">
+  .0020
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-21
+03:55:00
+</td>
+<td align="right">
+  .72
+</td>
+<td align="right">
+   1.6210
+</td>
+<td align="right">
+   1.6215
+</td>
+<td align="right">
+   1.6247
+</td>
+<td align="right">
+   .0032
+</td>
+<td align="right">
+  .0020
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-21
+04:15:00
+</td>
+<td align="right">
+  .72
+</td>
+<td align="right">
+   1.6210
+</td>
+<td align="right">
+   1.6216
+</td>
+<td align="right">
+   1.6247
+</td>
+<td align="right">
+   .0030
+</td>
+<td align="right">
+  .0019
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-21
+04:20:00
+</td>
+<td align="right">
+  .66
+</td>
+<td align="right">
+   1.6210
+</td>
+<td align="right">
+   1.6216
+</td>
+<td align="right">
+   1.6249
+</td>
+<td align="right">
+   .0033
+</td>
+<td align="right">
+  .0021
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-21
+04:25:00
+</td>
+<td align="right">
+  .61
+</td>
+<td align="right">
+   1.6211
+</td>
+<td align="right">
+   1.6214
+</td>
+<td align="right">
+   1.6272
+</td>
+<td align="right">
+   .0058
+</td>
+<td align="right">
+  .0035
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-21
+04:30:00
+</td>
+<td align="right">
+  .69
+</td>
+<td align="right">
+   1.6208
+</td>
+<td align="right">
+   1.6214
+</td>
+<td align="right">
+   1.6272
+</td>
+<td align="right">
+   .0058
+</td>
+<td align="right">
+  .0036
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-21
+04:50:00
+</td>
+<td align="right">
+  .75
+</td>
+<td align="right">
+   1.6211
+</td>
+<td align="right">
+   1.6210
+</td>
+<td align="right">
+   1.6260
+</td>
+<td align="right">
+   .0050
+</td>
+<td align="right">
+  .0031
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-21
+04:55:00
+</td>
+<td align="right">
+  .75
+</td>
+<td align="right">
+   1.6215
+</td>
+<td align="right">
+   1.6212
+</td>
+<td align="right">
+   1.6252
+</td>
+<td align="right">
+   .0040
+</td>
+<td align="right">
+  .0025
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-21
+05:00:00
+</td>
+<td align="right">
+  .72
+</td>
+<td align="right">
+   1.6214
+</td>
+<td align="right">
+   1.6213
+</td>
+<td align="right">
+   1.6258
+</td>
+<td align="right">
+   .0045
+</td>
+<td align="right">
+  .0027
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-21
+05:05:00
+</td>
+<td align="right">
+  .85
+</td>
+<td align="right">
+   1.6218
+</td>
+<td align="right">
+   1.6217
+</td>
+<td align="right">
+   1.6257
+</td>
+<td align="right">
+   .0040
+</td>
+<td align="right">
+  .0025
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-21
+05:10:00
+</td>
+<td align="right">
+  .83
+</td>
+<td align="right">
+   1.6218
+</td>
+<td align="right">
+   1.6215
+</td>
+<td align="right">
+   1.6262
+</td>
+<td align="right">
+   .0047
+</td>
+<td align="right">
+  .0029
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-21
+05:15:00
+</td>
+<td align="right">
+  .69
+</td>
+<td align="right">
+   1.6216
+</td>
+<td align="right">
+   1.6212
+</td>
+<td align="right">
+   1.6257
+</td>
+<td align="right">
+   .0045
+</td>
+<td align="right">
+  .0027
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-21
+05:20:00
+</td>
+<td align="right">
+  .68
+</td>
+<td align="right">
+   1.6216
+</td>
+<td align="right">
+   1.6216
+</td>
+<td align="right">
+   1.6261
+</td>
+<td align="right">
+   .0045
+</td>
+<td align="right">
+  .0028
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-21
+05:25:00
+</td>
+<td align="right">
+  .60
+</td>
+<td align="right">
+   1.6214
+</td>
+<td align="right">
+   1.6215
+</td>
+<td align="right">
+   1.6266
+</td>
+<td align="right">
+   .0052
+</td>
+<td align="right">
+  .0032
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-21
+05:35:00
+</td>
+<td align="right">
+  .62
+</td>
+<td align="right">
+   1.6215
+</td>
+<td align="right">
+   1.6221
+</td>
+<td align="right">
+   1.6269
+</td>
+<td align="right">
+   .0049
+</td>
+<td align="right">
+  .0030
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-21
+14:10:00
+</td>
+<td align="right">
+  .57
+</td>
+<td align="right">
+   1.6285
+</td>
+<td align="right">
+   1.6280
+</td>
+<td align="right">
+   1.6310
+</td>
+<td align="right">
+   .0030
+</td>
+<td align="right">
+  .0018
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-21
+16:45:00
+</td>
+<td align="right">
+  .66
+</td>
+<td align="right">
+   1.6298
+</td>
+<td align="right">
+   1.6301
+</td>
+<td align="right">
+   1.6311
+</td>
+<td align="right">
+   .0010
+</td>
+<td align="right">
+  .0006
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-21
+16:50:00
+</td>
+<td align="right">
+  .59
+</td>
+<td align="right">
+   1.6299
+</td>
+<td align="right">
+   1.6300
+</td>
+<td align="right">
+   1.6311
+</td>
+<td align="right">
+   .0011
+</td>
+<td align="right">
+  .0006
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-21
+16:55:00
+</td>
+<td align="right">
+  .64
+</td>
+<td align="right">
+   1.6307
+</td>
+<td align="right">
+   1.6305
+</td>
+<td align="right">
+   1.6309
+</td>
+<td align="right">
+   .0004
+</td>
+<td align="right">
+  .0003
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-21
+17:00:00
+</td>
+<td align="right">
+  .75
+</td>
+<td align="right">
+   1.6308
+</td>
+<td align="right">
+   1.6307
+</td>
+<td align="right">
+   1.6306
+</td>
+<td align="right">
+  -.0001
+</td>
+<td align="right">
+  .0000
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-21
+17:25:00
+</td>
+<td align="right">
+  .61
+</td>
+<td align="right">
+   1.6310
+</td>
+<td align="right">
+   1.6312
+</td>
+<td align="right">
+   1.6306
+</td>
+<td align="right">
+  -.0006
+</td>
+<td align="right">
+ -.0004
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-21
+17:30:00
+</td>
+<td align="right">
+  .74
+</td>
+<td align="right">
+   1.6306
+</td>
+<td align="right">
+   1.6312
+</td>
+<td align="right">
+   1.6306
+</td>
+<td align="right">
+  -.0007
+</td>
+<td align="right">
+ -.0004
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-21
+18:25:00
+</td>
+<td align="right">
+  .64
+</td>
+<td align="right">
+   1.6312
+</td>
+<td align="right">
+   1.6314
+</td>
+<td align="right">
+   1.6311
+</td>
+<td align="right">
+  -.0004
+</td>
+<td align="right">
+ -.0002
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-21
+18:35:00
+</td>
+<td align="right">
+  .74
+</td>
+<td align="right">
+   1.6319
+</td>
+<td align="right">
+   1.6317
+</td>
+<td align="right">
+   1.6315
+</td>
+<td align="right">
+  -.0002
+</td>
+<td align="right">
+ -.0001
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-21
+19:05:00
+</td>
+<td align="right">
+  .63
+</td>
+<td align="right">
+   1.6313
+</td>
+<td align="right">
+   1.6310
+</td>
+<td align="right">
+   1.6307
+</td>
+<td align="right">
+  -.0003
+</td>
+<td align="right">
+ -.0002
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-21
+19:10:00
+</td>
+<td align="right">
+  .57
+</td>
+<td align="right">
+   1.6313
+</td>
+<td align="right">
+   1.6310
+</td>
+<td align="right">
+   1.6307
+</td>
+<td align="right">
+  -.0003
+</td>
+<td align="right">
+ -.0002
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-21
+19:15:00
+</td>
+<td align="right">
+  .66
+</td>
+<td align="right">
+   1.6314
+</td>
+<td align="right">
+   1.6311
+</td>
+<td align="right">
+   1.6308
+</td>
+<td align="right">
+  -.0003
+</td>
+<td align="right">
+ -.0002
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-21
+19:45:00
+</td>
+<td align="right">
+  .73
+</td>
+<td align="right">
+   1.6309
+</td>
+<td align="right">
+   1.6311
+</td>
+<td align="right">
+   1.6306
+</td>
+<td align="right">
+  -.0005
+</td>
+<td align="right">
+ -.0003
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-23
+12:00:00
+</td>
+<td align="right">
+  .56
+</td>
+<td align="right">
+   1.6278
+</td>
+<td align="right">
+   1.6249
+</td>
+<td align="right">
+   1.6239
+</td>
+<td align="right">
+  -.0010
+</td>
+<td align="right">
+ -.0006
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-23
+15:40:00
+</td>
+<td align="right">
+  .62
+</td>
+<td align="right">
+   1.6246
+</td>
+<td align="right">
+   1.6246
+</td>
+<td align="right">
+   1.6243
+</td>
+<td align="right">
+  -.0003
+</td>
+<td align="right">
+ -.0002
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-23
+15:50:00
+</td>
+<td align="right">
+  .59
+</td>
+<td align="right">
+   1.6248
+</td>
+<td align="right">
+   1.6252
+</td>
+<td align="right">
+   1.6242
+</td>
+<td align="right">
+  -.0010
+</td>
+<td align="right">
+ -.0006
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-23
+16:00:00
+</td>
+<td align="right">
+  .81
+</td>
+<td align="right">
+   1.6246
+</td>
+<td align="right">
+   1.6251
+</td>
+<td align="right">
+   1.6242
+</td>
+<td align="right">
+  -.0009
+</td>
+<td align="right">
+ -.0005
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-23
+16:05:00
+</td>
+<td align="right">
+  .71
+</td>
+<td align="right">
+   1.6252
+</td>
+<td align="right">
+   1.6247
+</td>
+<td align="right">
+   1.6243
+</td>
+<td align="right">
+  -.0004
+</td>
+<td align="right">
+ -.0003
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-23
+16:10:00
+</td>
+<td align="right">
+  .62
+</td>
+<td align="right">
+   1.6252
+</td>
+<td align="right">
+   1.6246
+</td>
+<td align="right">
+   1.6243
+</td>
+<td align="right">
+  -.0003
+</td>
+<td align="right">
+ -.0002
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-23
+16:15:00
+</td>
+<td align="right">
+  .57
+</td>
+<td align="right">
+   1.6240
+</td>
+<td align="right">
+   1.6246
+</td>
+<td align="right">
+   1.6243
+</td>
+<td align="right">
+  -.0003
+</td>
+<td align="right">
+ -.0002
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-23
+16:40:00
+</td>
+<td align="right">
+  .66
+</td>
+<td align="right">
+   1.6246
+</td>
+<td align="right">
+   1.6244
+</td>
+<td align="right">
+   1.6244
+</td>
+<td align="right">
+   .0000
+</td>
+<td align="right">
+  .0000
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-23
+17:10:00
+</td>
+<td align="right">
+  .59
+</td>
+<td align="right">
+   1.6246
+</td>
+<td align="right">
+   1.6238
+</td>
+<td align="right">
+   1.6251
+</td>
+<td align="right">
+   .0013
+</td>
+<td align="right">
+  .0008
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-23
+17:40:00
+</td>
+<td align="right">
+  .58
+</td>
+<td align="right">
+   1.6244
+</td>
+<td align="right">
+   1.6238
+</td>
+<td align="right">
+   1.6247
+</td>
+<td align="right">
+   .0009
+</td>
+<td align="right">
+  .0005
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-23
+17:45:00
+</td>
+<td align="right">
+  .63
+</td>
+<td align="right">
+   1.6245
+</td>
+<td align="right">
+   1.6239
+</td>
+<td align="right">
+   1.6245
+</td>
+<td align="right">
+   .0006
+</td>
+<td align="right">
+  .0004
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-23
+17:50:00
+</td>
+<td align="right">
+  .80
+</td>
+<td align="right">
+   1.6245
+</td>
+<td align="right">
+   1.6239
+</td>
+<td align="right">
+   1.6248
+</td>
+<td align="right">
+   .0009
+</td>
+<td align="right">
+  .0005
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-23
+18:00:00
+</td>
+<td align="right">
+  .64
+</td>
+<td align="right">
+   1.6239
+</td>
+<td align="right">
+   1.6244
+</td>
+<td align="right">
+   1.6251
+</td>
+<td align="right">
+   .0007
+</td>
+<td align="right">
+  .0004
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-23
+20:00:00
+</td>
+<td align="right">
+  .61
+</td>
+<td align="right">
+   1.6242
+</td>
+<td align="right">
+   1.6231
+</td>
+<td align="right">
+   1.6249
+</td>
+<td align="right">
+   .0018
+</td>
+<td align="right">
+  .0011
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-23
+20:05:00
+</td>
+<td align="right">
+  .63
+</td>
+<td align="right">
+   1.6241
+</td>
+<td align="right">
+   1.6231
+</td>
+<td align="right">
+   1.6247
+</td>
+<td align="right">
+   .0016
+</td>
+<td align="right">
+  .0010
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-23
+20:10:00
+</td>
+<td align="right">
+  .61
+</td>
+<td align="right">
+   1.6246
+</td>
+<td align="right">
+   1.6229
+</td>
+<td align="right">
+   1.6248
+</td>
+<td align="right">
+   .0019
+</td>
+<td align="right">
+  .0011
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-23
+20:15:00
+</td>
+<td align="right">
+  .68
+</td>
+<td align="right">
+   1.6240
+</td>
+<td align="right">
+   1.6235
+</td>
+<td align="right">
+   1.6250
+</td>
+<td align="right">
+   .0016
+</td>
+<td align="right">
+  .0010
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-23
+20:20:00
+</td>
+<td align="right">
+  .67
+</td>
+<td align="right">
+   1.6241
+</td>
+<td align="right">
+   1.6235
+</td>
+<td align="right">
+   1.6247
+</td>
+<td align="right">
+   .0013
+</td>
+<td align="right">
+  .0008
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-23
+20:25:00
+</td>
+<td align="right">
+  .66
+</td>
+<td align="right">
+   1.6240
+</td>
+<td align="right">
+   1.6237
+</td>
+<td align="right">
+   1.6247
+</td>
+<td align="right">
+   .0010
+</td>
+<td align="right">
+  .0006
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-23
+20:40:00
+</td>
+<td align="right">
+  .55
+</td>
+<td align="right">
+   1.6239
+</td>
+<td align="right">
+   1.6243
+</td>
+<td align="right">
+   1.6247
+</td>
+<td align="right">
+   .0004
+</td>
+<td align="right">
+  .0002
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-23
+21:40:00
+</td>
+<td align="right">
+  .85
+</td>
+<td align="right">
+   1.6237
+</td>
+<td align="right">
+   1.6242
+</td>
+<td align="right">
+   1.6237
+</td>
+<td align="right">
+  -.0006
+</td>
+<td align="right">
+ -.0003
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-23
+21:45:00
+</td>
+<td align="right">
+  .71
+</td>
+<td align="right">
+   1.6241
+</td>
+<td align="right">
+   1.6242
+</td>
+<td align="right">
+   1.6240
+</td>
+<td align="right">
+  -.0003
+</td>
+<td align="right">
+ -.0002
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-23
+21:50:00
+</td>
+<td align="right">
+  .71
+</td>
+<td align="right">
+   1.6241
+</td>
+<td align="right">
+   1.6242
+</td>
+<td align="right">
+   1.6238
+</td>
+<td align="right">
+  -.0004
+</td>
+<td align="right">
+ -.0002
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-23
+22:00:00
+</td>
+<td align="right">
+  .82
+</td>
+<td align="right">
+   1.6243
+</td>
+<td align="right">
+   1.6244
+</td>
+<td align="right">
+   1.6234
+</td>
+<td align="right">
+  -.0010
+</td>
+<td align="right">
+ -.0006
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-23
+22:05:00
+</td>
+<td align="right">
+  .73
+</td>
+<td align="right">
+   1.6242
+</td>
+<td align="right">
+   1.6247
+</td>
+<td align="right">
+   1.6237
+</td>
+<td align="right">
+  -.0010
+</td>
+<td align="right">
+ -.0006
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-23
+22:10:00
+</td>
+<td align="right">
+  .76
+</td>
+<td align="right">
+   1.6243
+</td>
+<td align="right">
+   1.6249
+</td>
+<td align="right">
+   1.6237
+</td>
+<td align="right">
+  -.0012
+</td>
+<td align="right">
+ -.0008
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-23
+22:55:00
+</td>
+<td align="right">
+  .57
+</td>
+<td align="right">
+   1.6244
+</td>
+<td align="right">
+   1.6247
+</td>
+<td align="right">
+   1.6240
+</td>
+<td align="right">
+  -.0008
+</td>
+<td align="right">
+ -.0005
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-23
+23:20:00
+</td>
+<td align="right">
+  .76
+</td>
+<td align="right">
+   1.6251
+</td>
+<td align="right">
+   1.6250
+</td>
+<td align="right">
+   1.6237
+</td>
+<td align="right">
+  -.0013
+</td>
+<td align="right">
+ -.0008
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-24
+10:10:00
+</td>
+<td align="right">
+  .63
+</td>
+<td align="right">
+   1.6179
+</td>
+<td align="right">
+   1.6183
+</td>
+<td align="right">
+   1.6155
+</td>
+<td align="right">
+  -.0028
+</td>
+<td align="right">
+ -.0017
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-24
+11:55:00
+</td>
+<td align="right">
+  .62
+</td>
+<td align="right">
+   1.6181
+</td>
+<td align="right">
+   1.6178
+</td>
+<td align="right">
+   1.6126
+</td>
+<td align="right">
+  -.0052
+</td>
+<td align="right">
+ -.0032
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-24
+12:50:00
+</td>
+<td align="right">
+  .63
+</td>
+<td align="right">
+   1.6174
+</td>
+<td align="right">
+   1.6160
+</td>
+<td align="right">
+   1.6109
+</td>
+<td align="right">
+  -.0051
+</td>
+<td align="right">
+ -.0032
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-24
+15:55:00
+</td>
+<td align="right">
+  .61
+</td>
+<td align="right">
+   1.6159
+</td>
+<td align="right">
+   1.6103
+</td>
+<td align="right">
+   1.6119
+</td>
+<td align="right">
+   .0016
+</td>
+<td align="right">
+  .0010
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-24
+16:00:00
+</td>
+<td align="right">
+  .75
+</td>
+<td align="right">
+   1.6163
+</td>
+<td align="right">
+   1.6107
+</td>
+<td align="right">
+   1.6119
+</td>
+<td align="right">
+   .0013
+</td>
+<td align="right">
+  .0008
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-24
+16:15:00
+</td>
+<td align="right">
+  .67
+</td>
+<td align="right">
+   1.6150
+</td>
+<td align="right">
+   1.6108
+</td>
+<td align="right">
+   1.6120
+</td>
+<td align="right">
+   .0012
+</td>
+<td align="right">
+  .0008
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-24
+16:35:00
+</td>
+<td align="right">
+  .71
+</td>
+<td align="right">
+   1.6137
+</td>
+<td align="right">
+   1.6116
+</td>
+<td align="right">
+   1.6126
+</td>
+<td align="right">
+   .0010
+</td>
+<td align="right">
+  .0006
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-24
+16:40:00
+</td>
+<td align="right">
+  .70
+</td>
+<td align="right">
+   1.6134
+</td>
+<td align="right">
+   1.6111
+</td>
+<td align="right">
+   1.6126
+</td>
+<td align="right">
+   .0015
+</td>
+<td align="right">
+  .0009
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-24
+16:45:00
+</td>
+<td align="right">
+  .87
+</td>
+<td align="right">
+   1.6124
+</td>
+<td align="right">
+   1.6109
+</td>
+<td align="right">
+   1.6125
+</td>
+<td align="right">
+   .0015
+</td>
+<td align="right">
+  .0009
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-24
+16:50:00
+</td>
+<td align="right">
+  .67
+</td>
+<td align="right">
+   1.6109
+</td>
+<td align="right">
+   1.6114
+</td>
+<td align="right">
+   1.6124
+</td>
+<td align="right">
+   .0010
+</td>
+<td align="right">
+  .0006
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-24
+17:40:00
+</td>
+<td align="right">
+  .89
+</td>
+<td align="right">
+   1.6111
+</td>
+<td align="right">
+   1.6114
+</td>
+<td align="right">
+   1.6120
+</td>
+<td align="right">
+   .0005
+</td>
+<td align="right">
+  .0003
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-24
+17:45:00
+</td>
+<td align="right">
+  .91
+</td>
+<td align="right">
+   1.6109
+</td>
+<td align="right">
+   1.6112
+</td>
+<td align="right">
+   1.6103
+</td>
+<td align="right">
+  -.0008
+</td>
+<td align="right">
+ -.0005
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-24
+17:50:00
+</td>
+<td align="right">
+  .62
+</td>
+<td align="right">
+   1.6114
+</td>
+<td align="right">
+   1.6109
+</td>
+<td align="right">
+   1.6105
+</td>
+<td align="right">
+  -.0003
+</td>
+<td align="right">
+ -.0002
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-24
+18:10:00
+</td>
+<td align="right">
+  .57
+</td>
+<td align="right">
+   1.6120
+</td>
+<td align="right">
+   1.6109
+</td>
+<td align="right">
+   1.6107
+</td>
+<td align="right">
+  -.0002
+</td>
+<td align="right">
+ -.0001
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-24
+18:15:00
+</td>
+<td align="right">
+  .73
+</td>
+<td align="right">
+   1.6116
+</td>
+<td align="right">
+   1.6114
+</td>
+<td align="right">
+   1.6114
+</td>
+<td align="right">
+   .0000
+</td>
+<td align="right">
+  .0000
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-24
+18:25:00
+</td>
+<td align="right">
+  .70
+</td>
+<td align="right">
+   1.6115
+</td>
+<td align="right">
+   1.6113
+</td>
+<td align="right">
+   1.6114
+</td>
+<td align="right">
+   .0000
+</td>
+<td align="right">
+  .0000
+</td>
+</tr>
+<tr>
+<th scope="col">
+Currency
+<br>
+Pair
+</th>
+<th scope="col">
+Timestamp
+<br>
+at hour 0
+</th>
+<th scope="col">
+DanBot
+<br>
+Score
+<br>
+at hour 0
+</th>
+<th scope="col">
+Price at
+<br>
+hour 0
+</th>
+<th scope="col">
+Price after
+<br>
+1 hour
+</th>
+<th scope="col">
+Price after
+<br>
+6 hours
+</th>
+<th scope="col">
+5 hour gain
+<br>
+between
+<br>
+hr1 and hr6
+</th>
+<th scope="col">
+Normalized
+<br>
+5hr gain
+</th>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-24
+18:30:00
+</td>
+<td align="right">
+  .89
+</td>
+<td align="right">
+   1.6113
+</td>
+<td align="right">
+   1.6112
+</td>
+<td align="right">
+   1.6115
+</td>
+<td align="right">
+   .0003
+</td>
+<td align="right">
+  .0002
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-24
+18:35:00
+</td>
+<td align="right">
+  .84
+</td>
+<td align="right">
+   1.6113
+</td>
+<td align="right">
+   1.6114
+</td>
+<td align="right">
+   1.6118
+</td>
+<td align="right">
+   .0003
+</td>
+<td align="right">
+  .0002
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-24
+18:40:00
+</td>
+<td align="right">
+  .77
+</td>
+<td align="right">
+   1.6114
+</td>
+<td align="right">
+   1.6111
+</td>
+<td align="right">
+   1.6114
+</td>
+<td align="right">
+   .0003
+</td>
+<td align="right">
+  .0002
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-24
+18:45:00
+</td>
+<td align="right">
+  .91
+</td>
+<td align="right">
+   1.6112
+</td>
+<td align="right">
+   1.6106
+</td>
+<td align="right">
+   1.6113
+</td>
+<td align="right">
+   .0007
+</td>
+<td align="right">
+  .0004
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-24
+18:50:00
+</td>
+<td align="right">
+  .71
+</td>
+<td align="right">
+   1.6109
+</td>
+<td align="right">
+   1.6104
+</td>
+<td align="right">
+   1.6112
+</td>
+<td align="right">
+   .0009
+</td>
+<td align="right">
+  .0005
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-24
+19:00:00
+</td>
+<td align="right">
+  .77
+</td>
+<td align="right">
+   1.6108
+</td>
+<td align="right">
+   1.6108
+</td>
+<td align="right">
+   1.6113
+</td>
+<td align="right">
+   .0006
+</td>
+<td align="right">
+  .0004
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-24
+19:05:00
+</td>
+<td align="right">
+  .89
+</td>
+<td align="right">
+   1.6107
+</td>
+<td align="right">
+   1.6103
+</td>
+<td align="right">
+   1.6115
+</td>
+<td align="right">
+   .0012
+</td>
+<td align="right">
+  .0007
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-24
+19:10:00
+</td>
+<td align="right">
+  .78
+</td>
+<td align="right">
+   1.6109
+</td>
+<td align="right">
+   1.6105
+</td>
+<td align="right">
+   1.6113
+</td>
+<td align="right">
+   .0008
+</td>
+<td align="right">
+  .0005
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-24
+19:25:00
+</td>
+<td align="right">
+  .74
+</td>
+<td align="right">
+   1.6113
+</td>
+<td align="right">
+   1.6110
+</td>
+<td align="right">
+   1.6108
+</td>
+<td align="right">
+  -.0002
+</td>
+<td align="right">
+ -.0001
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-24
+19:40:00
+</td>
+<td align="right">
+  .82
+</td>
+<td align="right">
+   1.6111
+</td>
+<td align="right">
+   1.6111
+</td>
+<td align="right">
+   1.6111
+</td>
+<td align="right">
+   .0001
+</td>
+<td align="right">
+  .0000
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-24
+19:45:00
+</td>
+<td align="right">
+  .82
+</td>
+<td align="right">
+   1.6106
+</td>
+<td align="right">
+   1.6112
+</td>
+<td align="right">
+   1.6114
+</td>
+<td align="right">
+   .0002
+</td>
+<td align="right">
+  .0001
+</td>
+</tr>
+<tr>
+<td>
+gbp_usd
+</td>
+<td>
+2011-03-25
+07:00:00
+</td>
+<td align="right">
+  .57
+</td>
+<td align="right">
+   1.6127
+</td>
+<td align="right">
+   1.6117
+</td>
+<td align="right">
+   1.6084
+</td>
+<td align="right">
+  -.0033
+</td>
+<td align="right">
+ -.0020
+</td>
+</tr>
+<tr>
+<td>
+usd_cad
+</td>
+<td>
+2011-03-23
+09:35:00
+</td>
+<td align="right">
+  .58
+</td>
+<td align="right">
+    .9801
+</td>
+<td align="right">
+    .9802
+</td>
+<td align="right">
+    .9823
+</td>
+<td align="right">
+   .0021
+</td>
+<td align="right">
+  .0022
+</td>
+</tr>
+<tr>
+<td>
+usd_chf
+</td>
+<td>
+2011-03-24
+15:45:00
+</td>
+<td align="right">
+  .77
+</td>
+<td align="right">
+    .9053
+</td>
+<td align="right">
+    .9052
+</td>
+<td align="right">
+    .9083
+</td>
+<td align="right">
+   .0031
+</td>
+<td align="right">
+  .0034
+</td>
+</tr>
+<tr>
+<td>
+usd_chf
+</td>
+<td>
+2011-03-24
+16:40:00
+</td>
+<td align="right">
+  .62
+</td>
+<td align="right">
+    .9059
+</td>
+<td align="right">
+    .9062
+</td>
+<td align="right">
+    .9077
+</td>
+<td align="right">
+   .0015
+</td>
+<td align="right">
+  .0017
+</td>
+</tr>
+<tr>
+<td>
+usd_chf
+</td>
+<td>
+2011-03-25
+14:30:00
+</td>
+<td align="right">
+  .61
+</td>
+<td align="right">
+    .9150
+</td>
+<td align="right">
+    .9139
+</td>
+<td align="right">
+    .9200
+</td>
+<td align="right">
+   .0062
+</td>
+<td align="right">
+  .0067
+</td>
+</tr>
+<tr>
+<td>
+usd_chf
+</td>
+<td>
+2011-03-25
+19:25:00
+</td>
+<td align="right">
+  .62
+</td>
+<td align="right">
+    .9205
+</td>
+<td align="right">
+    .9203
+</td>
+<td align="right">
+    .9208
+</td>
+<td align="right">
+   .0005
+</td>
+<td align="right">
+  .0005
+</td>
+</tr>
+<tr>
+<td>
+usd_chf
+</td>
+<td>
+2011-03-25
+19:30:00
+</td>
+<td align="right">
+  .62
+</td>
+<td align="right">
+    .9205
+</td>
+<td align="right">
+    .9200
+</td>
+<td align="right">
+    .9208
+</td>
+<td align="right">
+   .0008
+</td>
+<td align="right">
+  .0009
+</td>
+</tr>
+<tr>
+<td>
+usd_chf
+</td>
+<td>
+2011-03-25
+19:35:00
+</td>
+<td align="right">
+  .63
+</td>
+<td align="right">
+    .9206
+</td>
+<td align="right">
+    .9202
+</td>
+<td align="right">
+    .9210
+</td>
+<td align="right">
+   .0009
+</td>
+<td align="right">
+  .0009
+</td>
+</tr>
+<tr>
+<td>
+usd_chf
+</td>
+<td>
+2011-03-25
+19:40:00
+</td>
+<td align="right">
+  .65
+</td>
+<td align="right">
+    .9208
+</td>
+<td align="right">
+    .9203
+</td>
+<td align="right">
+    .9210
+</td>
+<td align="right">
+   .0007
+</td>
+<td align="right">
+  .0008
+</td>
+</tr>
+<tr>
+<td>
+usd_chf
+</td>
+<td>
+2011-03-25
+19:45:00
+</td>
+<td align="right">
+  .62
+</td>
+<td align="right">
+    .9208
+</td>
+<td align="right">
+    .9202
+</td>
+<td align="right">
+    .9214
+</td>
+<td align="right">
+   .0013
+</td>
+<td align="right">
+  .0014
+</td>
+</tr>
+<tr>
+<td>
+usd_chf
+</td>
+<td>
+2011-03-25
+19:50:00
+</td>
+<td align="right">
+  .69
+</td>
+<td align="right">
+    .9209
+</td>
+<td align="right">
+    .9198
+</td>
+<td align="right">
+    .9213
+</td>
+<td align="right">
+   .0014
+</td>
+<td align="right">
+  .0015
+</td>
+</tr>
+<tr>
+<td>
+usd_jpy
+</td>
+<td>
+2011-03-20
+21:25:00
+</td>
+<td align="right">
+  .55
+</td>
+<td align="right">
+  80.8100
+</td>
+<td align="right">
+  80.8125
+</td>
+<td align="right">
+  80.9000
+</td>
+<td align="right">
+   .0875
+</td>
+<td align="right">
+  .0011
+</td>
+</tr>
+<tr>
+<td>
+usd_jpy
+</td>
+<td>
+2011-03-22
+18:00:00
+</td>
+<td align="right">
+  .72
+</td>
+<td align="right">
+  80.9475
+</td>
+<td align="right">
+  80.9250
+</td>
+<td align="right">
+  80.9263
+</td>
+<td align="right">
+   .0013
+</td>
+<td align="right">
+  .0000
+</td>
+</tr>
+<tr>
+<td>
+usd_jpy
+</td>
+<td>
+2011-03-22
+18:05:00
+</td>
+<td align="right">
+  .68
+</td>
+<td align="right">
+  80.9350
+</td>
+<td align="right">
+  80.9175
+</td>
+<td align="right">
+  80.9150
+</td>
+<td align="right">
+  -.0025
+</td>
+<td align="right">
+  .0000
+</td>
+</tr>
+<tr>
+<td>
+usd_jpy
+</td>
+<td>
+2011-03-22
+18:10:00
+</td>
+<td align="right">
+  .79
+</td>
+<td align="right">
+  80.9500
+</td>
+<td align="right">
+  80.9150
+</td>
+<td align="right">
+  80.8988
+</td>
+<td align="right">
+  -.0163
+</td>
+<td align="right">
+ -.0002
+</td>
+</tr>
+<tr>
+<td>
+usd_jpy
+</td>
+<td>
+2011-03-22
+18:25:00
+</td>
+<td align="right">
+  .64
+</td>
+<td align="right">
+  80.9350
+</td>
+<td align="right">
+  80.9150
+</td>
+<td align="right">
+  80.9350
+</td>
+<td align="right">
+   .0200
+</td>
+<td align="right">
+  .0002
+</td>
+</tr>
+<tr>
+<td>
+usd_jpy
+</td>
+<td>
+2011-03-22
+18:40:00
+</td>
+<td align="right">
+  .69
+</td>
+<td align="right">
+  80.9325
+</td>
+<td align="right">
+  80.9200
+</td>
+<td align="right">
+  81.0100
+</td>
+<td align="right">
+   .0900
+</td>
+<td align="right">
+  .0011
+</td>
+</tr>
+<tr>
+<td>
+usd_jpy
+</td>
+<td>
+2011-03-22
+18:45:00
+</td>
+<td align="right">
+  .74
+</td>
+<td align="right">
+  80.9250
+</td>
+<td align="right">
+  80.9200
+</td>
+<td align="right">
+  81.0150
+</td>
+<td align="right">
+   .0950
+</td>
+<td align="right">
+  .0012
+</td>
+</tr>
+<tr>
+<td>
+usd_jpy
+</td>
+<td>
+2011-03-22
+21:30:00
+</td>
+<td align="right">
+  .59
+</td>
+<td align="right">
+  80.9794
+</td>
+<td align="right">
+  80.9925
+</td>
+<td align="right">
+  80.8725
+</td>
+<td align="right">
+  -.1200
+</td>
+<td align="right">
+ -.0015
+</td>
+</tr>
+<tr>
+<td>
+usd_jpy
+</td>
+<td>
+2011-03-23
+04:10:00
+</td>
+<td align="right">
+  .60
+</td>
+<td align="right">
+  80.9000
+</td>
+<td align="right">
+  80.8900
+</td>
+<td align="right">
+  80.9750
+</td>
+<td align="right">
+   .0850
+</td>
+<td align="right">
+  .0011
+</td>
+</tr>
+<tr>
+<td>
+usd_jpy
+</td>
+<td>
+2011-03-23
+04:15:00
+</td>
+<td align="right">
+  .62
+</td>
+<td align="right">
+  80.9100
+</td>
+<td align="right">
+  80.8925
+</td>
+<td align="right">
+  80.9700
+</td>
+<td align="right">
+   .0775
+</td>
+<td align="right">
+  .0010
+</td>
+</tr>
+<tr>
+<td>
+usd_jpy
+</td>
+<td>
+2011-03-23
+04:35:00
+</td>
+<td align="right">
+  .69
+</td>
+<td align="right">
+  80.9200
+</td>
+<td align="right">
+  80.8600
+</td>
+<td align="right">
+  80.8925
+</td>
+<td align="right">
+   .0325
+</td>
+<td align="right">
+  .0004
+</td>
+</tr>
+<tr>
+<td>
+usd_jpy
+</td>
+<td>
+2011-03-23
+04:40:00
+</td>
+<td align="right">
+  .58
+</td>
+<td align="right">
+  80.9113
+</td>
+<td align="right">
+  80.8050
+</td>
+<td align="right">
+  80.9200
+</td>
+<td align="right">
+   .1150
+</td>
+<td align="right">
+  .0014
+</td>
+</tr>
+<tr>
+<td>
+usd_jpy
+</td>
+<td>
+2011-03-23
+04:45:00
+</td>
+<td align="right">
+  .55
+</td>
+<td align="right">
+  80.9000
+</td>
+<td align="right">
+  80.8250
+</td>
+<td align="right">
+  80.9000
+</td>
+<td align="right">
+   .0750
+</td>
+<td align="right">
+  .0009
+</td>
+</tr>
+<tr>
+<td>
+usd_jpy
+</td>
+<td>
+2011-03-23
+04:55:00
+</td>
+<td align="right">
+  .57
+</td>
+<td align="right">
+  80.8950
+</td>
+<td align="right">
+  80.8475
+</td>
+<td align="right">
+  80.8975
+</td>
+<td align="right">
+   .0500
+</td>
+<td align="right">
+  .0006
+</td>
+</tr>
+<tr>
+<td>
+usd_jpy
+</td>
+<td>
+2011-03-23
+06:15:00
+</td>
+<td align="right">
+  .60
+</td>
+<td align="right">
+  80.8850
+</td>
+<td align="right">
+  80.8800
+</td>
+<td align="right">
+  80.9650
+</td>
+<td align="right">
+   .0850
+</td>
+<td align="right">
+  .0011
+</td>
+</tr>
+<tr>
+<td>
+usd_jpy
+</td>
+<td>
+2011-03-23
+06:45:00
+</td>
+<td align="right">
+  .57
+</td>
+<td align="right">
+  80.8800
+</td>
+<td align="right">
+  80.7875
+</td>
+<td align="right">
+  80.9475
+</td>
+<td align="right">
+   .1600
+</td>
+<td align="right">
+  .0020
+</td>
+</tr>
+<tr>
+<td>
+usd_jpy
+</td>
+<td>
+2011-03-23
+07:15:00
+</td>
+<td align="right">
+  .64
+</td>
+<td align="right">
+  80.8800
+</td>
+<td align="right">
+  80.8450
+</td>
+<td align="right">
+  80.9375
+</td>
+<td align="right">
+   .0925
+</td>
+<td align="right">
+  .0011
+</td>
+</tr>
+<tr>
+<td>
+usd_jpy
+</td>
+<td>
+2011-03-23
+07:20:00
+</td>
+<td align="right">
+  .60
+</td>
+<td align="right">
+  80.8725
+</td>
+<td align="right">
+  80.8425
+</td>
+<td align="right">
+  81.0300
+</td>
+<td align="right">
+   .1875
+</td>
+<td align="right">
+  .0023
+</td>
+</tr>
+<tr>
+<td>
+usd_jpy
+</td>
+<td>
+2011-03-23
+17:20:00
+</td>
+<td align="right">
+  .60
+</td>
+<td align="right">
+  80.8550
+</td>
+<td align="right">
+  80.8200
+</td>
+<td align="right">
+  80.8900
+</td>
+<td align="right">
+   .0700
+</td>
+<td align="right">
+  .0009
+</td>
+</tr>
+<tr>
+<td>
+usd_jpy
+</td>
+<td>
+2011-03-23
+17:35:00
+</td>
+<td align="right">
+  .58
+</td>
+<td align="right">
+  80.8525
+</td>
+<td align="right">
+  80.8550
+</td>
+<td align="right">
+  80.9000
+</td>
+<td align="right">
+   .0450
+</td>
+<td align="right">
+  .0006
+</td>
+</tr>
+<tr>
+<td>
+usd_jpy
+</td>
+<td>
+2011-03-23
+18:35:00
+</td>
+<td align="right">
+  .59
+</td>
+<td align="right">
+  80.8550
+</td>
+<td align="right">
+  80.8800
+</td>
+<td align="right">
+  80.9525
+</td>
+<td align="right">
+   .0725
+</td>
+<td align="right">
+  .0009
+</td>
+</tr>
+<tr>
+<td>
+usd_jpy
+</td>
+<td>
+2011-03-23
+19:55:00
+</td>
+<td align="right">
+  .58
+</td>
+<td align="right">
+  80.8950
+</td>
+<td align="right">
+  80.9175
+</td>
+<td align="right">
+  80.9550
+</td>
+<td align="right">
+   .0375
+</td>
+<td align="right">
+  .0005
+</td>
+</tr>
+<tr>
+<td>
+usd_jpy
+</td>
+<td>
+2011-03-24
+12:50:00
+</td>
+<td align="right">
+  .66
+</td>
+<td align="right">
+  80.8850
+</td>
+<td align="right">
+  80.9150
+</td>
+<td align="right">
+  80.9550
+</td>
+<td align="right">
+   .0400
+</td>
+<td align="right">
+  .0005
+</td>
+</tr>
+<tr>
+<td>
+usd_jpy
+</td>
+<td>
+2011-03-24
+13:05:00
+</td>
+<td align="right">
+  .60
+</td>
+<td align="right">
+  80.9075
+</td>
+<td align="right">
+  80.9025
+</td>
+<td align="right">
+  80.9475
+</td>
+<td align="right">
+   .0450
+</td>
+<td align="right">
+  .0006
+</td>
+</tr>
+</table>
+<p>
+
+292 rows selected.<br>
 <br>
 
 
