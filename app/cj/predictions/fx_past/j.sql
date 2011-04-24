@@ -10,30 +10,35 @@
 
 -- Start by showing summarized data for each pair:
 
-COLUMN pair   FORMAT A14
-COLUMN sum_g5 FORMAT 99.9999
-COLUMN avg_g5 FORMAT 99.9999
-COLUMN sharpe_ratio FORMAT 999.99
-COLUMN min_g5 FORMAT 99.9999
-COLUMN max_g5 FORMAT 99.9999
-COLUMN avg_score FORMAT 9.99
+COLUMN pair             FORMAT A8  HEADING     'Currency|Pair'    JUSTIFY left
+COLUMN avg_danbot_score FORMAT 9.99 HEADING    'Avg|DanBot|Score' JUSTIFY left
+COLUMN sharpe_ratio     FORMAT 9999.99 HEADING 'Sharpe|Ratio'     JUSTIFY left
+COLUMN avg_5hr_gain   FORMAT 99.9999 HEADING 'Avg of|5hr|gains'   JUSTIFY left
+COLUMN position_count FORMAT 9999  HEADING 'Count of|positions'   JUSTIFY left
+COLUMN sum_5hr_gain   FORMAT 99.9999 HEADING 'Sum of|5hr|gains'   JUSTIFY center
+COLUMN min_5hr_gain   FORMAT 99.9999 HEADING 'Min of|of|5hr|gains'JUSTIFY center
+COLUMN max_5hr_gain   FORMAT 99.9999 HEADING 'Max of|5hr|gains'   JUSTIFY right
+COLUMN stddev_5hr_gain FORMAT 99.9999 HEADING 'StdDeviation|of|5hr|gains' JUSTIFY right
 
 BREAK ON REPORT
 
-COMPUTE SUM LABEL 'All Pairs Sum:' OF sum_g5         ON REPORT
-COMPUTE SUM LABEL 'All Pairs Sum:' OF position_count ON REPORT
+COMPUTE SUM LABEL 'Sum:' OF sum_5hr_gain   ON REPORT
+COMPUTE SUM LABEL 'Sum:' OF position_count ON REPORT
 
-SET TIME off TIMING off ECHO off
+SET TIME off TIMING off ECHO off LINESIZE 100 WRAP on
+
+SPOOL tmp_fx_past_week_&1
 
 SELECT
 pair
-,ROUND(AVG(score_diff),2) avg_score
+,ROUND(AVG(score_diff),2) avg_danbot_score
 ,ROUND(AVG(g5) / STDDEV(g5),2) sharpe_ratio
-,ROUND(AVG(g5),4)   avg_g5
+,ROUND(AVG(g5),4)   avg_5hr_gain
 ,COUNT(g5)          position_count
-,ROUND(SUM(g5),4)   sum_g5
-,ROUND(MIN(g5),4)   min_g5
-,ROUND(MAX(g5),4)   max_g5
+,ROUND(SUM(g5),4)   sum_5hr_gain
+,ROUND(MIN(g5),4)   min_5hr_gain
+,ROUND(MAX(g5),4)   max_5hr_gain
+,ROUND(STDDEV(g5),4)stddev_5hr_gain
 FROM fxpst12
 WHERE rnng_crr1 > 0.0
 AND score_diff < -0.55
@@ -45,19 +50,16 @@ HAVING(STDDEV(g5) > 0)
 ORDER BY pair
 /
 
-
-
-exit
-
 SELECT
 pair
-,ROUND(AVG(score_diff),2) avg_score
+,ROUND(AVG(score_diff),2) avg_danbot_score
 ,ROUND(AVG(g5) / STDDEV(g5),2) sharpe_ratio
-,ROUND(AVG(g5),4)   avg_g5
+,ROUND(AVG(g5),4)   avg_5hr_gain
 ,COUNT(g5)          position_count
-,ROUND(SUM(g5),4)   sum_g5
-,ROUND(MIN(g5),4)   min_g5
-,ROUND(MAX(g5),4)   max_g5
+,ROUND(SUM(g5),4)   sum_5hr_gain
+,ROUND(MIN(g5),4)   min_5hr_gain
+,ROUND(MAX(g5),4)   max_5hr_gain
+,ROUND(STDDEV(g5),4)stddev_5hr_gain
 FROM fxpst12
 WHERE rnng_crr1 > 0.0
 AND score_diff > 0.55
@@ -68,7 +70,6 @@ GROUP BY pair
 HAVING(STDDEV(g5) > 0)
 ORDER BY pair
 /
-
 
 
 -- This is called by other sql scripts.

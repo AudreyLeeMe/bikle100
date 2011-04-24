@@ -1,37 +1,74 @@
-old  13: AND ydate &gt; '&amp;1'
+old  14: AND ydate &gt; '&amp;1'
 <br>
-new  13: AND ydate &gt; '2011-03-27'
+new  14: AND ydate &gt; '2011-03-27'
 <br>
-old  14: AND ydate - 7 &lt; '&amp;1'
+old  15: AND ydate - 7 &lt; '&amp;1'
 <br>
-new  14: AND ydate - 7 &lt; '2011-03-27'
+new  15: AND ydate - 7 &lt; '2011-03-27'
 <br>
 <p>
 <table class='table_fx_past_week'>
 <tr>
 <th scope="col">
-PAIR
+Currency
+<br>
+Pair
 </th>
 <th scope="col">
-AVG_SCORE
+Avg
+<br>
+DanBot
+<br>
+Score
 </th>
 <th scope="col">
-SHARPE_RATIO
+Sharpe
+<br>
+Ratio
 </th>
 <th scope="col">
-AVG_G5
+Avg of
+<br>
+5hr
+<br>
+gains
 </th>
 <th scope="col">
-POSITION_COUNT
+Count of
+<br>
+positions
 </th>
 <th scope="col">
-SUM_G5
+Sum of
+<br>
+5hr
+<br>
+gains
 </th>
 <th scope="col">
-MIN_G5
+Min of
+<br>
+of
+<br>
+5hr
+<br>
+gains
 </th>
 <th scope="col">
-MAX_G5
+Max of
+<br>
+5hr
+<br>
+gains
+</th>
+<th scope="col">
+StdDeviation
+<br>
+of
+<br>
+5hr
+<br>
+gains
 </th>
 </tr>
 <tr>
@@ -48,7 +85,7 @@ aud_usd
   -.0001
 </td>
 <td align="right">
-         9
+    9
 </td>
 <td align="right">
   -.0010
@@ -58,6 +95,9 @@ aud_usd
 </td>
 <td align="right">
    .0029
+</td>
+<td align="right">
+   .0027
 </td>
 </tr>
 <tr>
@@ -74,7 +114,7 @@ eur_aud
   -.0008
 </td>
 <td align="right">
-        10
+   10
 </td>
 <td align="right">
   -.0082
@@ -84,6 +124,9 @@ eur_aud
 </td>
 <td align="right">
    .0031
+</td>
+<td align="right">
+   .0024
 </td>
 </tr>
 <tr>
@@ -100,7 +143,7 @@ eur_chf
   -.0002
 </td>
 <td align="right">
-        30
+   30
 </td>
 <td align="right">
   -.0067
@@ -110,6 +153,9 @@ eur_chf
 </td>
 <td align="right">
    .0014
+</td>
+<td align="right">
+   .0013
 </td>
 </tr>
 <tr>
@@ -126,7 +172,7 @@ eur_gbp
   -.0003
 </td>
 <td align="right">
-        17
+   17
 </td>
 <td align="right">
   -.0056
@@ -136,6 +182,9 @@ eur_gbp
 </td>
 <td align="right">
    .0023
+</td>
+<td align="right">
+   .0016
 </td>
 </tr>
 <tr>
@@ -152,7 +201,7 @@ eur_jpy
   -.0005
 </td>
 <td align="right">
-        16
+   16
 </td>
 <td align="right">
   -.0075
@@ -162,6 +211,9 @@ eur_jpy
 </td>
 <td align="right">
    .0023
+</td>
+<td align="right">
+   .0014
 </td>
 </tr>
 <tr>
@@ -178,7 +230,7 @@ eur_usd
   -.0009
 </td>
 <td align="right">
-         9
+    9
 </td>
 <td align="right">
   -.0078
@@ -188,6 +240,9 @@ eur_usd
 </td>
 <td align="right">
    .0014
+</td>
+<td align="right">
+   .0020
 </td>
 </tr>
 <tr>
@@ -204,7 +259,7 @@ gbp_usd
   -.0005
 </td>
 <td align="right">
-        39
+   39
 </td>
 <td align="right">
   -.0201
@@ -214,6 +269,9 @@ gbp_usd
 </td>
 <td align="right">
    .0025
+</td>
+<td align="right">
+   .0014
 </td>
 </tr>
 <tr>
@@ -230,7 +288,7 @@ usd_cad
   -.0015
 </td>
 <td align="right">
-        12
+   12
 </td>
 <td align="right">
   -.0179
@@ -241,6 +299,9 @@ usd_cad
 <td align="right">
    .0002
 </td>
+<td align="right">
+   .0007
+</td>
 </tr>
 <tr>
 <td>
@@ -256,7 +317,7 @@ usd_cad
 &nbsp;
 </td>
 <td align="right">
---------------
+---------
 </td>
 <td align="right">
 --------
@@ -267,10 +328,13 @@ usd_cad
 <td align="right">
 &nbsp;
 </td>
+<td align="right">
+&nbsp;
+</td>
 </tr>
 <tr>
 <td>
-All Pairs Sum:
+Sum:
 </td>
 <td align="right">
 &nbsp;
@@ -282,10 +346,13 @@ All Pairs Sum:
 &nbsp;
 </td>
 <td align="right">
-       142
+  142
 </td>
 <td align="right">
   -.0748
+</td>
+<td align="right">
+&nbsp;
 </td>
 <td align="right">
 &nbsp;
@@ -301,40 +368,77 @@ All Pairs Sum:
 <br>
 
 
-old  13: AND ydate &gt; '&amp;1'
+old  14: AND ydate &gt; '&amp;1'
 <br>
-new  13: AND ydate &gt; '2011-03-27'
+new  14: AND ydate &gt; '2011-03-27'
 <br>
-old  14: AND ydate - 7 &lt; '&amp;1'
+old  15: AND ydate - 7 &lt; '&amp;1'
 <br>
-new  14: AND ydate - 7 &lt; '2011-03-27'
+new  15: AND ydate - 7 &lt; '2011-03-27'
 <br>
 <p>
 <table class='table_fx_past_week'>
 <tr>
 <th scope="col">
-PAIR
+Currency
+<br>
+Pair
 </th>
 <th scope="col">
-AVG_SCORE
+Avg
+<br>
+DanBot
+<br>
+Score
 </th>
 <th scope="col">
-SHARPE_RATIO
+Sharpe
+<br>
+Ratio
 </th>
 <th scope="col">
-AVG_G5
+Avg of
+<br>
+5hr
+<br>
+gains
 </th>
 <th scope="col">
-POSITION_COUNT
+Count of
+<br>
+positions
 </th>
 <th scope="col">
-SUM_G5
+Sum of
+<br>
+5hr
+<br>
+gains
 </th>
 <th scope="col">
-MIN_G5
+Min of
+<br>
+of
+<br>
+5hr
+<br>
+gains
 </th>
 <th scope="col">
-MAX_G5
+Max of
+<br>
+5hr
+<br>
+gains
+</th>
+<th scope="col">
+StdDeviation
+<br>
+of
+<br>
+5hr
+<br>
+gains
 </th>
 </tr>
 <tr>
@@ -351,7 +455,7 @@ aud_jpy
    .0039
 </td>
 <td align="right">
-        48
+   48
 </td>
 <td align="right">
    .1864
@@ -361,6 +465,9 @@ aud_jpy
 </td>
 <td align="right">
    .0103
+</td>
+<td align="right">
+   .0036
 </td>
 </tr>
 <tr>
@@ -377,7 +484,7 @@ aud_usd
    .0007
 </td>
 <td align="right">
-       100
+  100
 </td>
 <td align="right">
    .0711
@@ -387,6 +494,9 @@ aud_usd
 </td>
 <td align="right">
    .0042
+</td>
+<td align="right">
+   .0017
 </td>
 </tr>
 <tr>
@@ -403,7 +513,7 @@ eur_chf
    .0017
 </td>
 <td align="right">
-        17
+   17
 </td>
 <td align="right">
    .0289
@@ -413,6 +523,9 @@ eur_chf
 </td>
 <td align="right">
    .0042
+</td>
+<td align="right">
+   .0017
 </td>
 </tr>
 <tr>
@@ -429,7 +542,7 @@ eur_gbp
    .0009
 </td>
 <td align="right">
-        20
+   20
 </td>
 <td align="right">
    .0181
@@ -439,6 +552,9 @@ eur_gbp
 </td>
 <td align="right">
    .0030
+</td>
+<td align="right">
+   .0013
 </td>
 </tr>
 <tr>
@@ -455,7 +571,7 @@ eur_jpy
    .0019
 </td>
 <td align="right">
-        26
+   26
 </td>
 <td align="right">
    .0489
@@ -465,6 +581,9 @@ eur_jpy
 </td>
 <td align="right">
    .0051
+</td>
+<td align="right">
+   .0017
 </td>
 </tr>
 <tr>
@@ -481,7 +600,7 @@ eur_usd
   -.0002
 </td>
 <td align="right">
-        23
+   23
 </td>
 <td align="right">
   -.0052
@@ -491,6 +610,9 @@ eur_usd
 </td>
 <td align="right">
    .0019
+</td>
+<td align="right">
+   .0011
 </td>
 </tr>
 <tr>
@@ -507,7 +629,7 @@ gbp_usd
    .0020
 </td>
 <td align="right">
-        32
+   32
 </td>
 <td align="right">
    .0649
@@ -517,6 +639,9 @@ gbp_usd
 </td>
 <td align="right">
    .0051
+</td>
+<td align="right">
+   .0027
 </td>
 </tr>
 <tr>
@@ -533,7 +658,7 @@ usd_cad
   -.0012
 </td>
 <td align="right">
-         4
+    4
 </td>
 <td align="right">
   -.0049
@@ -543,6 +668,9 @@ usd_cad
 </td>
 <td align="right">
    .0001
+</td>
+<td align="right">
+   .0009
 </td>
 </tr>
 <tr>
@@ -559,7 +687,7 @@ usd_chf
   -.0005
 </td>
 <td align="right">
-         9
+    9
 </td>
 <td align="right">
   -.0041
@@ -569,6 +697,9 @@ usd_chf
 </td>
 <td align="right">
    .0001
+</td>
+<td align="right">
+   .0005
 </td>
 </tr>
 <tr>
@@ -585,7 +716,7 @@ usd_jpy
    .0036
 </td>
 <td align="right">
-         6
+    6
 </td>
 <td align="right">
    .0213
@@ -596,6 +727,9 @@ usd_jpy
 <td align="right">
    .0068
 </td>
+<td align="right">
+   .0026
+</td>
 </tr>
 <tr>
 <td>
@@ -611,7 +745,7 @@ usd_jpy
 &nbsp;
 </td>
 <td align="right">
---------------
+---------
 </td>
 <td align="right">
 --------
@@ -622,10 +756,13 @@ usd_jpy
 <td align="right">
 &nbsp;
 </td>
+<td align="right">
+&nbsp;
+</td>
 </tr>
 <tr>
 <td>
-All Pairs Sum:
+Sum:
 </td>
 <td align="right">
 &nbsp;
@@ -637,10 +774,13 @@ All Pairs Sum:
 &nbsp;
 </td>
 <td align="right">
-       285
+  285
 </td>
 <td align="right">
    .4254
+</td>
+<td align="right">
+&nbsp;
 </td>
 <td align="right">
 &nbsp;
