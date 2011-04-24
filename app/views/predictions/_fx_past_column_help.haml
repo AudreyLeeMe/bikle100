@@ -1,0 +1,22 @@
+/
+  app/views/predictions/_fx_past_column_help.haml
+
+:javascript
+  $(document).ready(function() {
+    $("div#help4_currency_pair").hide();
+    $("a#a_currency_pair").click(function(event){
+      $("div#help4_currency_pair").dialog();
+    });
+  });
+
+%a#a_currency_pair currency_pair 
+
+#help4_currency_pair(title="Currency Pair")
+  Currency pairs have names like EUR/USD.
+  The name on the left is the currency getting bought.
+  The name on the right is the currency you use to pay for the currency on the left.
+  So, if I buy the EUR/USD pair, I am buying EUR with USD.
+  If I sell the EUR/USD pair, I am selling EUR and receiving USD.
+  By convention, some pairs are rarely referred to.
+  For example, the EUR/USD pair is often mentioned in the media, but not the USD/EUR pair.
+

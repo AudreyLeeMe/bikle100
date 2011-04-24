@@ -13,12 +13,12 @@
 COLUMN pair             FORMAT A8  HEADING     'Currency|Pair'    
 COLUMN avg_danbot_score FORMAT 9.99 HEADING    'Avg|DanBot|Score' 
 COLUMN sharpe_ratio     FORMAT 9999.99 HEADING 'Sharpe|Ratio'     
-COLUMN avg_5hr_n_gain   FORMAT 99.9999 HEADING 'Avg of|5hr gains'   
+COLUMN avg_5hr_n_gain   FORMAT 99.9999 HEADING 'Avg of|normalized|5hr gains'   
 COLUMN position_count   FORMAT 9999  HEADING   'Count of|positions'   
-COLUMN sum_5hr_n_gain   FORMAT 99.9999 HEADING 'Sum of|5hr gains'   
-COLUMN min_5hr_n_gain   FORMAT 99.9999 HEADING 'Min of|of|5hr gains'
-COLUMN max_5hr_n_gain   FORMAT 99.9999 HEADING 'Max of|5hr gains'   
-COLUMN stddev_5hr_n_gain FORMAT 99.9999 HEADING'Standard|Deviation|of 5hr gains'
+COLUMN sum_5hr_n_gain   FORMAT 99.9999 HEADING 'Sum of|normalized|5hr gains'   
+COLUMN min_5hr_n_gain   FORMAT 99.9999 HEADING 'Min of|of|normalized|5hr gains'
+COLUMN max_5hr_n_gain   FORMAT 99.9999 HEADING 'Max of|normalized|5hr gains'   
+COLUMN stddev_5hr_n_gain FORMAT 99.9999 HEADING'Standard|Deviation|of normalized|5hr gains'
 
 BREAK ON REPORT
 
@@ -78,7 +78,6 @@ SELECT
 'if you want to load it into a spreadsheet.' anote
 FROM dual
 /
-
 
 COLUMN timestamp_0hr FORMAT A11   HEADING 'Timestamp|at hour 0' 
 COLUMN danbot_score FORMAT 9.99   HEADING 'DanBot|Score|at hour 0' 

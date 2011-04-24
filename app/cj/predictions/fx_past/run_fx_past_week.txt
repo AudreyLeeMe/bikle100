@@ -1,5 +1,5 @@
 
-SQL*Plus: Release 11.2.0.1.0 Production on Sun Apr 24 06:43:51 2011
+SQL*Plus: Release 11.2.0.1.0 Production on Sun Apr 24 06:51:41 2011
 
 Copyright (c) 1982, 2009, Oracle.  All rights reserved.
 
@@ -8,40 +8,40 @@ Connected to:
 Oracle Database 11g Enterprise Edition Release 11.2.0.1.0 - 64bit Production
 With the Partitioning, OLAP, Data Mining and Real Application Testing options
 
-06:43:51 SQL> ALTER SESSION SET NLS_DATE_FORMAT = 'YYYY-MM-DD hh24:mi:ss';
+06:51:41 SQL> ALTER SESSION SET NLS_DATE_FORMAT = 'YYYY-MM-DD hh24:mi:ss';
 
 Session altered.
 
 Elapsed: 00:00:00.00
-06:43:51 SQL> 06:43:51 SQL> @fx_past_week.sql 2011-01-30
-06:43:51 SQL> --
-06:43:51 SQL> -- fx_past_week.sql
-06:43:51 SQL> --
-06:43:51 SQL> 
-06:43:51 SQL> -- Usage: @fx_past_week.sql 2011-01-30
-06:43:51 SQL> 
-06:43:51 SQL> -- I use this script to get 1 week's worth of fx-prediction data.
-06:43:51 SQL> -- This script depends on tables created by fx_past.sql
-06:43:51 SQL> -- So, I should run fx_past.sql before I run fx_past_week.sql
-06:43:51 SQL> 
-06:43:51 SQL> -- Start by showing summarized data for each pair:
-06:43:51 SQL> 
-06:43:51 SQL> COLUMN pair	      FORMAT A8  HEADING     'Currency|Pair'
-06:43:51 SQL> COLUMN avg_danbot_score FORMAT 9.99 HEADING    'Avg|DanBot|Score'
-06:43:51 SQL> COLUMN sharpe_ratio	FORMAT 9999.99 HEADING 'Sharpe|Ratio'
-06:43:51 SQL> COLUMN avg_5hr_n_gain	FORMAT 99.9999 HEADING 'Avg of|5hr gains'
-06:43:51 SQL> COLUMN position_count	FORMAT 9999  HEADING   'Count of|positions'
-06:43:51 SQL> COLUMN sum_5hr_n_gain	FORMAT 99.9999 HEADING 'Sum of|5hr gains'
-06:43:51 SQL> COLUMN min_5hr_n_gain	FORMAT 99.9999 HEADING 'Min of|of|5hr gains'
-06:43:51 SQL> COLUMN max_5hr_n_gain	FORMAT 99.9999 HEADING 'Max of|5hr gains'
-06:43:51 SQL> COLUMN stddev_5hr_n_gain FORMAT 99.9999 HEADING'Standard|Deviation|of 5hr gains'
-06:43:51 SQL> 
-06:43:51 SQL> BREAK ON REPORT
-06:43:51 SQL> 
-06:43:51 SQL> COMPUTE SUM LABEL 'Sum:' OF sum_5hr_n_gain   ON REPORT
-06:43:51 SQL> COMPUTE SUM LABEL 'Sum:' OF position_count ON REPORT
-06:43:51 SQL> 
-06:43:51 SQL> SET TIME off TIMING off ECHO off PAGESIZE 123 LINESIZE 188
+06:51:41 SQL> 06:51:41 SQL> @fx_past_week.sql 2011-01-30
+06:51:41 SQL> --
+06:51:41 SQL> -- fx_past_week.sql
+06:51:41 SQL> --
+06:51:41 SQL> 
+06:51:41 SQL> -- Usage: @fx_past_week.sql 2011-01-30
+06:51:41 SQL> 
+06:51:41 SQL> -- I use this script to get 1 week's worth of fx-prediction data.
+06:51:41 SQL> -- This script depends on tables created by fx_past.sql
+06:51:41 SQL> -- So, I should run fx_past.sql before I run fx_past_week.sql
+06:51:41 SQL> 
+06:51:41 SQL> -- Start by showing summarized data for each pair:
+06:51:41 SQL> 
+06:51:41 SQL> COLUMN pair	      FORMAT A8  HEADING     'Currency|Pair'
+06:51:41 SQL> COLUMN avg_danbot_score FORMAT 9.99 HEADING    'Avg|DanBot|Score'
+06:51:41 SQL> COLUMN sharpe_ratio	FORMAT 9999.99 HEADING 'Sharpe|Ratio'
+06:51:41 SQL> COLUMN avg_5hr_n_gain	FORMAT 99.9999 HEADING 'Avg of|normalized|5hr gains'
+06:51:41 SQL> COLUMN position_count	FORMAT 9999  HEADING   'Count of|positions'
+06:51:41 SQL> COLUMN sum_5hr_n_gain	FORMAT 99.9999 HEADING 'Sum of|normalized|5hr gains'
+06:51:41 SQL> COLUMN min_5hr_n_gain	FORMAT 99.9999 HEADING 'Min of|of|normalized|5hr gains'
+06:51:41 SQL> COLUMN max_5hr_n_gain	FORMAT 99.9999 HEADING 'Max of|normalized|5hr gains'
+06:51:41 SQL> COLUMN stddev_5hr_n_gain FORMAT 99.9999 HEADING'Standard|Deviation|of normalized|5hr gains'
+06:51:41 SQL> 
+06:51:41 SQL> BREAK ON REPORT
+06:51:41 SQL> 
+06:51:41 SQL> COMPUTE SUM LABEL 'Sum:' OF sum_5hr_n_gain   ON REPORT
+06:51:41 SQL> COMPUTE SUM LABEL 'Sum:' OF position_count ON REPORT
+06:51:41 SQL> 
+06:51:41 SQL> SET TIME off TIMING off ECHO off PAGESIZE 123 LINESIZE 188
 old  14: AND ydate &gt; '&amp;1'
 <br>
 new  14: AND ydate &gt; '2011-01-30'
@@ -73,6 +73,8 @@ Ratio
 <th scope="col">
 Avg of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
@@ -83,6 +85,8 @@ positions
 <th scope="col">
 Sum of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
@@ -90,10 +94,14 @@ Min of
 <br>
 of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
 Max of
+<br>
+normalized
 <br>
 5hr gains
 </th>
@@ -102,7 +110,9 @@ Standard
 <br>
 Deviation
 <br>
-of 5hr gains
+of normalized
+<br>
+5hr gains
 </th>
 </tr>
 <tr>
@@ -441,7 +451,7 @@ usd_jpy
 ---------
 </td>
 <td align="right">
----------
+----------
 </td>
 <td align="right">
 &nbsp;
@@ -520,6 +530,8 @@ Ratio
 <th scope="col">
 Avg of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
@@ -530,6 +542,8 @@ positions
 <th scope="col">
 Sum of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
@@ -537,10 +551,14 @@ Min of
 <br>
 of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
 Max of
+<br>
+normalized
 <br>
 5hr gains
 </th>
@@ -549,7 +567,9 @@ Standard
 <br>
 Deviation
 <br>
-of 5hr gains
+of normalized
+<br>
+5hr gains
 </th>
 </tr>
 <tr>
@@ -888,7 +908,7 @@ usd_jpy
 ---------
 </td>
 <td align="right">
----------
+----------
 </td>
 <td align="right">
 &nbsp;
@@ -21967,6 +21987,8 @@ Ratio
 <th scope="col">
 Avg of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
@@ -21977,6 +21999,8 @@ positions
 <th scope="col">
 Sum of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
@@ -21984,10 +22008,14 @@ Min of
 <br>
 of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
 Max of
+<br>
+normalized
 <br>
 5hr gains
 </th>
@@ -21996,7 +22024,9 @@ Standard
 <br>
 Deviation
 <br>
-of 5hr gains
+of normalized
+<br>
+5hr gains
 </th>
 </tr>
 <tr>
@@ -22335,7 +22365,7 @@ usd_jpy
 ---------
 </td>
 <td align="right">
----------
+----------
 </td>
 <td align="right">
 &nbsp;
@@ -22414,6 +22444,8 @@ Ratio
 <th scope="col">
 Avg of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
@@ -22424,6 +22456,8 @@ positions
 <th scope="col">
 Sum of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
@@ -22431,10 +22465,14 @@ Min of
 <br>
 of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
 Max of
+<br>
+normalized
 <br>
 5hr gains
 </th>
@@ -22443,7 +22481,9 @@ Standard
 <br>
 Deviation
 <br>
-of 5hr gains
+of normalized
+<br>
+5hr gains
 </th>
 </tr>
 <tr>
@@ -22782,7 +22822,7 @@ usd_jpy
 ---------
 </td>
 <td align="right">
----------
+----------
 </td>
 <td align="right">
 &nbsp;
@@ -45716,6 +45756,8 @@ Ratio
 <th scope="col">
 Avg of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
@@ -45726,6 +45768,8 @@ positions
 <th scope="col">
 Sum of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
@@ -45733,10 +45777,14 @@ Min of
 <br>
 of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
 Max of
+<br>
+normalized
 <br>
 5hr gains
 </th>
@@ -45745,7 +45793,9 @@ Standard
 <br>
 Deviation
 <br>
-of 5hr gains
+of normalized
+<br>
+5hr gains
 </th>
 </tr>
 <tr>
@@ -46084,7 +46134,7 @@ usd_jpy
 ---------
 </td>
 <td align="right">
----------
+----------
 </td>
 <td align="right">
 &nbsp;
@@ -46163,6 +46213,8 @@ Ratio
 <th scope="col">
 Avg of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
@@ -46173,6 +46225,8 @@ positions
 <th scope="col">
 Sum of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
@@ -46180,10 +46234,14 @@ Min of
 <br>
 of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
 Max of
+<br>
+normalized
 <br>
 5hr gains
 </th>
@@ -46192,7 +46250,9 @@ Standard
 <br>
 Deviation
 <br>
-of 5hr gains
+of normalized
+<br>
+5hr gains
 </th>
 </tr>
 <tr>
@@ -46531,7 +46591,7 @@ usd_jpy
 ---------
 </td>
 <td align="right">
----------
+----------
 </td>
 <td align="right">
 &nbsp;
@@ -68096,6 +68156,8 @@ Ratio
 <th scope="col">
 Avg of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
@@ -68106,6 +68168,8 @@ positions
 <th scope="col">
 Sum of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
@@ -68113,10 +68177,14 @@ Min of
 <br>
 of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
 Max of
+<br>
+normalized
 <br>
 5hr gains
 </th>
@@ -68125,7 +68193,9 @@ Standard
 <br>
 Deviation
 <br>
-of 5hr gains
+of normalized
+<br>
+5hr gains
 </th>
 </tr>
 <tr>
@@ -68435,7 +68505,7 @@ usd_jpy
 ---------
 </td>
 <td align="right">
----------
+----------
 </td>
 <td align="right">
 &nbsp;
@@ -68514,6 +68584,8 @@ Ratio
 <th scope="col">
 Avg of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
@@ -68524,6 +68596,8 @@ positions
 <th scope="col">
 Sum of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
@@ -68531,10 +68605,14 @@ Min of
 <br>
 of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
 Max of
+<br>
+normalized
 <br>
 5hr gains
 </th>
@@ -68543,7 +68621,9 @@ Standard
 <br>
 Deviation
 <br>
-of 5hr gains
+of normalized
+<br>
+5hr gains
 </th>
 </tr>
 <tr>
@@ -68853,7 +68933,7 @@ usd_jpy
 ---------
 </td>
 <td align="right">
----------
+----------
 </td>
 <td align="right">
 &nbsp;
@@ -95154,6 +95234,8 @@ Ratio
 <th scope="col">
 Avg of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
@@ -95164,6 +95246,8 @@ positions
 <th scope="col">
 Sum of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
@@ -95171,10 +95255,14 @@ Min of
 <br>
 of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
 Max of
+<br>
+normalized
 <br>
 5hr gains
 </th>
@@ -95183,7 +95271,9 @@ Standard
 <br>
 Deviation
 <br>
-of 5hr gains
+of normalized
+<br>
+5hr gains
 </th>
 </tr>
 <tr>
@@ -95522,7 +95612,7 @@ usd_jpy
 ---------
 </td>
 <td align="right">
----------
+----------
 </td>
 <td align="right">
 &nbsp;
@@ -95601,6 +95691,8 @@ Ratio
 <th scope="col">
 Avg of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
@@ -95611,6 +95703,8 @@ positions
 <th scope="col">
 Sum of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
@@ -95618,10 +95712,14 @@ Min of
 <br>
 of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
 Max of
+<br>
+normalized
 <br>
 5hr gains
 </th>
@@ -95630,7 +95728,9 @@ Standard
 <br>
 Deviation
 <br>
-of 5hr gains
+of normalized
+<br>
+5hr gains
 </th>
 </tr>
 <tr>
@@ -95969,7 +96069,7 @@ usd_jpy
 ---------
 </td>
 <td align="right">
----------
+----------
 </td>
 <td align="right">
 &nbsp;
@@ -123107,6 +123207,8 @@ Ratio
 <th scope="col">
 Avg of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
@@ -123117,6 +123219,8 @@ positions
 <th scope="col">
 Sum of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
@@ -123124,10 +123228,14 @@ Min of
 <br>
 of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
 Max of
+<br>
+normalized
 <br>
 5hr gains
 </th>
@@ -123136,7 +123244,9 @@ Standard
 <br>
 Deviation
 <br>
-of 5hr gains
+of normalized
+<br>
+5hr gains
 </th>
 </tr>
 <tr>
@@ -123475,7 +123585,7 @@ usd_jpy
 ---------
 </td>
 <td align="right">
----------
+----------
 </td>
 <td align="right">
 &nbsp;
@@ -123554,6 +123664,8 @@ Ratio
 <th scope="col">
 Avg of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
@@ -123564,6 +123676,8 @@ positions
 <th scope="col">
 Sum of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
@@ -123571,10 +123685,14 @@ Min of
 <br>
 of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
 Max of
+<br>
+normalized
 <br>
 5hr gains
 </th>
@@ -123583,7 +123701,9 @@ Standard
 <br>
 Deviation
 <br>
-of 5hr gains
+of normalized
+<br>
+5hr gains
 </th>
 </tr>
 <tr>
@@ -123922,7 +124042,7 @@ usd_jpy
 ---------
 </td>
 <td align="right">
----------
+----------
 </td>
 <td align="right">
 &nbsp;
@@ -142841,6 +142961,8 @@ Ratio
 <th scope="col">
 Avg of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
@@ -142851,6 +142973,8 @@ positions
 <th scope="col">
 Sum of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
@@ -142858,10 +142982,14 @@ Min of
 <br>
 of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
 Max of
+<br>
+normalized
 <br>
 5hr gains
 </th>
@@ -142870,7 +142998,9 @@ Standard
 <br>
 Deviation
 <br>
-of 5hr gains
+of normalized
+<br>
+5hr gains
 </th>
 </tr>
 <tr>
@@ -143209,7 +143339,7 @@ usd_jpy
 ---------
 </td>
 <td align="right">
----------
+----------
 </td>
 <td align="right">
 &nbsp;
@@ -143288,6 +143418,8 @@ Ratio
 <th scope="col">
 Avg of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
@@ -143298,6 +143430,8 @@ positions
 <th scope="col">
 Sum of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
@@ -143305,10 +143439,14 @@ Min of
 <br>
 of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
 Max of
+<br>
+normalized
 <br>
 5hr gains
 </th>
@@ -143317,7 +143455,9 @@ Standard
 <br>
 Deviation
 <br>
-of 5hr gains
+of normalized
+<br>
+5hr gains
 </th>
 </tr>
 <tr>
@@ -143627,7 +143767,7 @@ usd_jpy
 ---------
 </td>
 <td align="right">
----------
+----------
 </td>
 <td align="right">
 &nbsp;
@@ -170927,6 +171067,8 @@ Ratio
 <th scope="col">
 Avg of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
@@ -170937,6 +171079,8 @@ positions
 <th scope="col">
 Sum of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
@@ -170944,10 +171088,14 @@ Min of
 <br>
 of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
 Max of
+<br>
+normalized
 <br>
 5hr gains
 </th>
@@ -170956,7 +171104,9 @@ Standard
 <br>
 Deviation
 <br>
-of 5hr gains
+of normalized
+<br>
+5hr gains
 </th>
 </tr>
 <tr>
@@ -171266,7 +171416,7 @@ usd_jpy
 ---------
 </td>
 <td align="right">
----------
+----------
 </td>
 <td align="right">
 &nbsp;
@@ -171345,6 +171495,8 @@ Ratio
 <th scope="col">
 Avg of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
@@ -171355,6 +171507,8 @@ positions
 <th scope="col">
 Sum of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
@@ -171362,10 +171516,14 @@ Min of
 <br>
 of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
 Max of
+<br>
+normalized
 <br>
 5hr gains
 </th>
@@ -171374,7 +171532,9 @@ Standard
 <br>
 Deviation
 <br>
-of 5hr gains
+of normalized
+<br>
+5hr gains
 </th>
 </tr>
 <tr>
@@ -171684,7 +171844,7 @@ usd_jpy
 ---------
 </td>
 <td align="right">
----------
+----------
 </td>
 <td align="right">
 &nbsp;
@@ -187020,6 +187180,8 @@ Ratio
 <th scope="col">
 Avg of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
@@ -187030,6 +187192,8 @@ positions
 <th scope="col">
 Sum of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
@@ -187037,10 +187201,14 @@ Min of
 <br>
 of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
 Max of
+<br>
+normalized
 <br>
 5hr gains
 </th>
@@ -187049,7 +187217,9 @@ Standard
 <br>
 Deviation
 <br>
-of 5hr gains
+of normalized
+<br>
+5hr gains
 </th>
 </tr>
 <tr>
@@ -187301,7 +187471,7 @@ usd_cad
 ---------
 </td>
 <td align="right">
----------
+----------
 </td>
 <td align="right">
 &nbsp;
@@ -187380,6 +187550,8 @@ Ratio
 <th scope="col">
 Avg of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
@@ -187390,6 +187562,8 @@ positions
 <th scope="col">
 Sum of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
@@ -187397,10 +187571,14 @@ Min of
 <br>
 of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
 Max of
+<br>
+normalized
 <br>
 5hr gains
 </th>
@@ -187409,7 +187587,9 @@ Standard
 <br>
 Deviation
 <br>
-of 5hr gains
+of normalized
+<br>
+5hr gains
 </th>
 </tr>
 <tr>
@@ -187719,7 +187899,7 @@ usd_jpy
 ---------
 </td>
 <td align="right">
----------
+----------
 </td>
 <td align="right">
 &nbsp;
@@ -199607,6 +199787,8 @@ Ratio
 <th scope="col">
 Avg of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
@@ -199617,6 +199799,8 @@ positions
 <th scope="col">
 Sum of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
@@ -199624,10 +199808,14 @@ Min of
 <br>
 of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
 Max of
+<br>
+normalized
 <br>
 5hr gains
 </th>
@@ -199636,7 +199824,9 @@ Standard
 <br>
 Deviation
 <br>
-of 5hr gains
+of normalized
+<br>
+5hr gains
 </th>
 </tr>
 <tr>
@@ -199801,7 +199991,7 @@ usd_chf
 ---------
 </td>
 <td align="right">
----------
+----------
 </td>
 <td align="right">
 &nbsp;
@@ -199876,6 +200066,8 @@ Ratio
 <th scope="col">
 Avg of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
@@ -199886,6 +200078,8 @@ positions
 <th scope="col">
 Sum of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
@@ -199893,10 +200087,14 @@ Min of
 <br>
 of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
 Max of
+<br>
+normalized
 <br>
 5hr gains
 </th>
@@ -199905,7 +200103,9 @@ Standard
 <br>
 Deviation
 <br>
-of 5hr gains
+of normalized
+<br>
+5hr gains
 </th>
 </tr>
 <tr>
@@ -200186,7 +200386,7 @@ usd_jpy
 ---------
 </td>
 <td align="right">
----------
+----------
 </td>
 <td align="right">
 &nbsp;
@@ -211245,6 +211445,8 @@ Ratio
 <th scope="col">
 Avg of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
@@ -211255,6 +211457,8 @@ positions
 <th scope="col">
 Sum of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
@@ -211262,10 +211466,14 @@ Min of
 <br>
 of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
 Max of
+<br>
+normalized
 <br>
 5hr gains
 </th>
@@ -211274,7 +211482,9 @@ Standard
 <br>
 Deviation
 <br>
-of 5hr gains
+of normalized
+<br>
+5hr gains
 </th>
 </tr>
 <tr>
@@ -211584,7 +211794,7 @@ usd_jpy
 ---------
 </td>
 <td align="right">
----------
+----------
 </td>
 <td align="right">
 &nbsp;
@@ -211663,6 +211873,8 @@ Ratio
 <th scope="col">
 Avg of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
@@ -211673,6 +211885,8 @@ positions
 <th scope="col">
 Sum of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
@@ -211680,10 +211894,14 @@ Min of
 <br>
 of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
 Max of
+<br>
+normalized
 <br>
 5hr gains
 </th>
@@ -211692,7 +211910,9 @@ Standard
 <br>
 Deviation
 <br>
-of 5hr gains
+of normalized
+<br>
+5hr gains
 </th>
 </tr>
 <tr>
@@ -211973,7 +212193,7 @@ usd_chf
 ---------
 </td>
 <td align="right">
----------
+----------
 </td>
 <td align="right">
 &nbsp;
@@ -221871,6 +222091,8 @@ Ratio
 <th scope="col">
 Avg of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
@@ -221881,6 +222103,8 @@ positions
 <th scope="col">
 Sum of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
@@ -221888,10 +222112,14 @@ Min of
 <br>
 of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
 Max of
+<br>
+normalized
 <br>
 5hr gains
 </th>
@@ -221900,7 +222128,9 @@ Standard
 <br>
 Deviation
 <br>
-of 5hr gains
+of normalized
+<br>
+5hr gains
 </th>
 </tr>
 <tr>
@@ -222152,7 +222382,7 @@ usd_jpy
 ---------
 </td>
 <td align="right">
----------
+----------
 </td>
 <td align="right">
 &nbsp;
@@ -222231,6 +222461,8 @@ Ratio
 <th scope="col">
 Avg of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
@@ -222241,6 +222473,8 @@ positions
 <th scope="col">
 Sum of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
@@ -222248,10 +222482,14 @@ Min of
 <br>
 of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
 Max of
+<br>
+normalized
 <br>
 5hr gains
 </th>
@@ -222260,7 +222498,9 @@ Standard
 <br>
 Deviation
 <br>
-of 5hr gains
+of normalized
+<br>
+5hr gains
 </th>
 </tr>
 <tr>
@@ -222541,7 +222781,7 @@ usd_jpy
 ---------
 </td>
 <td align="right">
----------
+----------
 </td>
 <td align="right">
 &nbsp;

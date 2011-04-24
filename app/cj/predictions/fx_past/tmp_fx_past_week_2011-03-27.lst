@@ -29,6 +29,8 @@ Ratio
 <th scope="col">
 Avg of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
@@ -39,6 +41,8 @@ positions
 <th scope="col">
 Sum of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
@@ -46,10 +50,14 @@ Min of
 <br>
 of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
 Max of
+<br>
+normalized
 <br>
 5hr gains
 </th>
@@ -58,7 +66,9 @@ Standard
 <br>
 Deviation
 <br>
-of 5hr gains
+of normalized
+<br>
+5hr gains
 </th>
 </tr>
 <tr>
@@ -310,7 +320,7 @@ usd_cad
 ---------
 </td>
 <td align="right">
----------
+----------
 </td>
 <td align="right">
 &nbsp;
@@ -389,6 +399,8 @@ Ratio
 <th scope="col">
 Avg of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
@@ -399,6 +411,8 @@ positions
 <th scope="col">
 Sum of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
@@ -406,10 +420,14 @@ Min of
 <br>
 of
 <br>
+normalized
+<br>
 5hr gains
 </th>
 <th scope="col">
 Max of
+<br>
+normalized
 <br>
 5hr gains
 </th>
@@ -418,7 +436,9 @@ Standard
 <br>
 Deviation
 <br>
-of 5hr gains
+of normalized
+<br>
+5hr gains
 </th>
 </tr>
 <tr>
@@ -728,7 +748,7 @@ usd_jpy
 ---------
 </td>
 <td align="right">
----------
+----------
 </td>
 <td align="right">
 &nbsp;
