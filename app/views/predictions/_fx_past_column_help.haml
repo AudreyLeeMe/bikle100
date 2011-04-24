@@ -5,11 +5,18 @@
   $(document).ready(function() {
     $("div#help4_currencypair").hide();
     $("div#help4_avgdanbotscore").hide();
+    $("div#help4_sharperatio").hide();
+
     $("a.currencypair").click(function(event){
       $("div#help4_currencypair").dialog();
     });
+
     $("a.avgdanbotscore").click(function(event){
       $("div#help4_avgdanbotscore").dialog();
+    });
+
+    $("a.sharperatio").click(function(event){
+      $("div#help4_sharperatio").dialog();
     });
 
   });
@@ -19,6 +26,7 @@
 %br/
 %a.avgdanbotscore Avg DanBot Score
 %br/
+%a.sharperatio Sharpe Ratio
 %br/
 
 #help4_currencypair(title="Currency Pair")
@@ -48,3 +56,28 @@
   Once I see a DanBot score that I like, I wait until the score is 1 hour old.
   Then I check the price of the currency pair.  If the price has not moved much during that 1 hour,
   I will open a position in that currency pair for 5 hours and then I will close it.
+
+#help4_sharperatio(title="Sharpe Ratio")
+  I use the Sharpe Ratio to help me measure the effectiveness of the DanBot.
+  First I compare the sign of the Sharpe Ratio to the sign of Avg DanBot Score.
+  If the signs match, that is probably good.
+  If the signs don't match that is definitely bad; the DanBot is issuing money losing predictions.
+  For example if I see that Avg DanBot Score for AUD/JPY is -0.65,
+  I want to see a Sharpe Ratio of -1.0 or less.  
+  That means that the DanBot predictions are lucrative should I chose to follow them.
+  If the Sharpe Ratio is between -0.4 and 0.0, 
+  that is not great but I'm not losing money either.
+  I calculate the Sharpe Ratio by taking the Avg of Normalized 5hr Gains and dividing it by Standard Deviation of Normalized 5hr Gains.
+  Wikipedia has an article about the Sharpe Ratio:
+  %a(target="w" href="http://en.wikipedia.org/wiki/Sharpe_ratio")http://en.wikipedia.org/wiki/Sharpe_ratio
+  The article is a bit dense but the idea is simple.
+  Suppose during week one I do 2 trades and earn gains of $10 and $30.
+  The average gain for that week is $20.
+  During week two I do 2 trades and earn gains of -$20 and $60 and again the average for that week is $20.
+  Although the gains match, I would argue that the "quality" of the gains from week one are better because
+  I endured less heartburn than during week two.
+  This heartburn cost is quantified by the Sharpe Ratio; week one has a higher Sharpe Ratio than week two.
+
+  
+
+  
