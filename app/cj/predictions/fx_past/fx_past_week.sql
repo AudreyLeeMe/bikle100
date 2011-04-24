@@ -16,7 +16,7 @@ COLUMN sharpe_ratio     FORMAT 9999.99 HEADING 'Sharpe|Ratio'
 COLUMN avg_5hr_n_gain   FORMAT 99.9999 HEADING 'Avg of|normalized|5hr gains'   
 COLUMN position_count   FORMAT 9999  HEADING   'Count of|positions'   
 COLUMN sum_5hr_n_gain   FORMAT 99.9999 HEADING 'Sum of|normalized|5hr gains'   
-COLUMN min_5hr_n_gain   FORMAT 99.9999 HEADING 'Min of|of|normalized|5hr gains'
+COLUMN min_5hr_n_gain   FORMAT 99.9999 HEADING 'Min of|normalized|5hr gains'
 COLUMN max_5hr_n_gain   FORMAT 99.9999 HEADING 'Max of|normalized|5hr gains'   
 COLUMN stddev_5hr_n_gain FORMAT 99.9999 HEADING'Standard|Deviation|of normalized|5hr gains'
 

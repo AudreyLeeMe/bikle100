@@ -31,6 +31,15 @@ glb.each{|fn|
   # Next, I feed the file to Hpricot so I can access HTML in the file:
   doc = open(fn){ |f| Hpricot(f) }
 
+  # Generate some a-elements from th-elements.
+  th_elems = doc.search("th")
+
+  th_elems.each {|elm| 
+    ei_h =   elm.innerHTML
+    ei_hclass = ei_h.gsub(/\n/,'').gsub(/\<br \/>/,'').gsub(/ /,'').downcase
+    elm.innerHTML = "<a class='#{ei_hclass}'>#{ei_h}</a>"
+  }
+
   # Load some html into a string:
   some_html=doc.search("table.table_fx_past_week").to_html
 

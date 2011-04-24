@@ -53,6 +53,7 @@ EOF
 
 # Use ruby to loop through each file created by run_fx_past_week.sql
 jruby run_fx_past_week.rb
+# jruby --debug run_fx_past_week.rb
 
 
 exit 0
